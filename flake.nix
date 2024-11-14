@@ -17,11 +17,18 @@
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
       domino = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd
+        ];
+      };
+
+      dominion = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/dominion/configuration.nix
         ];
       };
     };
