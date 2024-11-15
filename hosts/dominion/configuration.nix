@@ -105,6 +105,13 @@
   services.minecraft-servers = {
     enable = true;
     eula = true;
+
+    servers = {
+      edgy-veggies = {
+        enable = true;
+        package = pkgs.paperServers.paper
+      }
+    }
   };
 
   # This value determines the NixOS release from which the default
