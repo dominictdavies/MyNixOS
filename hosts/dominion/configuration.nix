@@ -112,6 +112,8 @@
         package = pkgs.paperServers.paper;
 
         serverProperties = {
+          level-name = "edgetable-vegetables";
+          motd = "And by vegetables lets justr say edgetable";
           level-seed = 7644964991330705060;
           difficulty = 3;
           spawn-protection = 0;
