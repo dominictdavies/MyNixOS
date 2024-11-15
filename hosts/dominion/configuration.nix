@@ -120,6 +120,7 @@
           white-list = true;
           enforce-whitelist = true;
           enable-rcon = true;
+          enforce-secure-profile = false;
         };
 
         whitelist = {
