@@ -107,12 +107,12 @@
     eula = true;
 
     servers = {
-      edgy-veggies = {
+      edgetable_vegetables = {
         enable = true;
         package = pkgs.paperServers.paper;
 
         serverProperties = {
-          level-name = "edgetable-vegetables";
+          level-name = "edgetable_vegetables";
           motd = "And by vegetables lets justr say edgetable";
           level-seed = 7644964991330705060;
           difficulty = 3;
