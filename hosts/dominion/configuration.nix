@@ -111,10 +111,15 @@
         enable = true;
         package = pkgs.paperServers.paper;
 
+        serverProperties = {
+          server-ip = "58.179.210.39";
+        };
+
         whitelist = {
           doomimic = "d61aa5e5-2697-4b02-bc0d-164176c9169e";
           kooark = "9b47e99b-526d-4fc1-b2e1-8770ef34f7a1";
           dash = "ee4b4673-e0fe-436d-b2ae-095f2eea2ae1";
+          kelly_sama = "0de2dec5-5332-4375-9df5-83e64c665c70";
         };
       };
     };
