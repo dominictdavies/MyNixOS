@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      inputs.nix-minecraft.nixosModules.minecraft-servers
     ];
 
   # Bootloader.
@@ -98,6 +99,13 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # Minecraft server
+  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+  services.minecraft-servers = {
+    enable = true;
+    eula = true;
+  }
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
