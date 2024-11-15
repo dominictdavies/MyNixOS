@@ -119,6 +119,7 @@
           spawn-protection = 0;
           white-list = true;
           enforce-whitelist = true;
+          enable-rcon = true;
         };
 
         whitelist = {
