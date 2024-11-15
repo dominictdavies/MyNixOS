@@ -96,7 +96,7 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 25565 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedUDPPorts = [ 25565 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -110,6 +110,12 @@
       edgy-veggies = {
         enable = true;
         package = pkgs.paperServers.paper;
+      };
+
+      whitelist = {
+        Doomimic = "d61aa5e5-2697-4b02-bc0d-164176c9169e";
+        Kooark = "9b47e99b-526d-4fc1-b2e1-8770ef34f7a1";
+        Dash505 = "ee4b4673-e0fe-436d-b2ae-095f2eea2ae1";
       };
     };
   };
