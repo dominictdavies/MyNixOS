@@ -127,6 +127,8 @@
           dash = "ee4b4673-e0fe-436d-b2ae-095f2eea2ae1";
           kelly_sama = "0de2dec5-5332-4375-9df5-83e64c665c70";
           ethan = "98bf0aab-a174-4afe-bd90-8cb5dbbae867";
+          emeraldorekiller = "91694e45-1090-46fb-b83b-db40db0d3f48";
+          adopolus100 = "63899fa9-9e5a-4a33-9a72-7510d0a79d1a";
         };
       };
     };
