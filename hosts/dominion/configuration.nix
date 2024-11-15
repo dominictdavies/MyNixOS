@@ -109,7 +109,7 @@
     servers = {
       edgy-veggies = {
         enable = true;
-        package = pkgs.paperServers.paper
+        package = pkgs.paperServers.paper;
       }
     }
   };
