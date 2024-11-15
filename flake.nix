@@ -29,6 +29,8 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/dominion/configuration.nix
+          inputs.home-manager.nixosModules.default
+          inputs.nixos-hardware.nixosModules.acer-aspire-4810t
         ];
       };
     };
