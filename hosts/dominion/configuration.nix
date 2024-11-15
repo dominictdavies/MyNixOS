@@ -113,6 +113,11 @@
 
         serverProperties = {
           server-ip = "58.179.210.39";
+          level-seed = 7644964991330705060;
+          difficulty = 3;
+          spawn-protection = 0;
+          white-list = true;
+          enforce-whitelist = true;
         };
 
         whitelist = {
