@@ -138,6 +138,19 @@
         operators = {
           dominic = "d61aa5e5-2697-4b02-bc0d-164176c9169e";
         };
+
+        symlinks = {
+          plugins = pkgs.linkFarmFromDrvs "plugins" (builtins.attrValues {
+            simple_voice_chat = pkgs.fetchurl {
+              url = "https://hangarcdn.papermc.io/plugins/henkelmax/SimpleVoiceChat/versions/bukkit-2.5.25/PAPER/voicechat-bukkit-2.5.25.jar";
+              sha256 = "1qb9818ra6fmzh84xk1zi62wi1wya8zdb84lxyk79n8cxxfcndrw";
+            };
+            death_chest = pkgs.fetchurl {
+              url = "https://hangarcdn.papermc.io/plugins/CyntrixAlgorithm/DeathChest/versions/2.2.7/PAPER/deathchest.jar";
+              sha256 = "0a2varl2zx7bkrchs8v09vpnjr29x80r7a22bi74dbz8prlvwbgk";
+            };
+          });
+        };
       };
     };
   };
