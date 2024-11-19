@@ -42,10 +42,6 @@
     # Prolog
     swi-prolog
 
-    # Git & GitHub
-    git
-    gh
-
     # Analysis Tools
     baobab
 
