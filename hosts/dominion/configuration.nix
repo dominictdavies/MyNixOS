@@ -64,6 +64,14 @@
     ];
   };
 
+  home-manager = {
+    # Also pass inputs to home-manager modules
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "dominictdavies" = import ./home.nix;
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
