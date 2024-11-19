@@ -75,11 +75,22 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Allow nh to find flake directory
+  environment.sessionVariables = {
+    FLAKE = "/home/dominictdavies/NixOS";
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # Git and GitHub
     git
     gh
+
+    # Prettier NixOS commands
+    nh
+    nix-output-monitor
+    nvd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
