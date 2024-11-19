@@ -117,6 +117,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # Git and GitHub
+    git
+    gh
+
     # Prettier NixOS commands
     nh
     nix-output-monitor
