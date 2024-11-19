@@ -95,10 +95,7 @@
     isNormalUser = true;
     description = "Dominic Davies";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
+    packages = with pkgs; [];
   };
 
   home-manager = {
