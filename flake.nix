@@ -1,5 +1,5 @@
 {
-  description = "Nixos config flake";
+  description = "NixOS configurations with Secure Boot";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -7,6 +7,11 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -30,6 +35,21 @@
           ./hosts/dominion/configuration.nix
           inputs.nixos-hardware.nixosModules.acer-aspire-4810t
           inputs.home-manager.nixosModules.default
+          lanzaboote.nixosModules.lanzaboote
+
+          ({ pkgs, lib, ... }: {
+            environment.systemPackages = [
+              # For debugging and troubleshooting Secure Boot
+              pkgs.sbctl
+            ];
+
+            # Replace systemd-boot with lanzaboote
+            boot.loader.systemd-boot.enable = lib.mkForce false;
+            boot.lanzaboote = {
+              enable = true;
+              pkiBundle = "/etc/secureboot";
+            };
+          })
         ];
       };
     };
