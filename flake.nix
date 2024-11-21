@@ -18,7 +18,7 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, lanzaboote, ... }@inputs: {
     nixosConfigurations = {
       domino = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
