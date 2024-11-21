@@ -83,6 +83,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # Modify EFI boot manager
+    efibootmgr
+
     # Git and GitHub
     git
     gh
