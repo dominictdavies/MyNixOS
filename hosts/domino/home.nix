@@ -54,7 +54,7 @@
 
     # Gaming
     steam
-    minecraft
+    modrinth-app
 
     # Custom Cursors
     posy-cursors
