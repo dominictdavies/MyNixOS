@@ -17,7 +17,6 @@
 
   # Allow unfree and broken packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowBroken = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
