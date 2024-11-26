@@ -27,39 +27,24 @@
     fzf
     zoxide
 
-    # URL grabber
-    wget
-
-    # Zip manager
+    # Tools
     unzip
-
-    # GNU Compiler Collection
-    gcc-unwrapped
-
-    # Python
-    python3
-
-    # Prolog
-    swi-prolog
-
-    # Analysis Tools
     baobab
 
-    # Android Tools
-    android-tools
-
-    # Notes
-    obsidian
+    # Programming Languages
+    gcc
+    python3
+    swi-prolog
 
     # Editors
+    obsidian
     notepadqq
-    libreoffice-fresh
+    libreoffice
     vscode
     inkscape
 
     # Web Browser
     google-chrome
-    chromedriver
 
     # Communication
     discord
@@ -68,7 +53,7 @@
     spotify
     vlc
 
-    # Games
+    # Gaming
     steam
     minecraft
 
