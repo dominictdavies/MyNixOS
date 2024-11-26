@@ -54,7 +54,7 @@
 
     # Gaming
     steam
-    modrinth-app
+    prismlauncher
 
     # Custom Cursors
     posy-cursors
