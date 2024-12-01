@@ -88,7 +88,7 @@
 
   # Enable touchpad support
   services.libinput.enable = true;
-  services.libinput.touchpad.naturalScrolling = true;
+  services.libinput.touchpad.naturalScrolling = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dominictdavies = {
