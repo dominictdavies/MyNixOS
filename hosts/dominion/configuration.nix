@@ -53,11 +53,14 @@
     variant = "";
   };
 
+  # Enable docker
+  virtualisation.docker.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dominictdavies = {
     isNormalUser = true;
     description = "Dominic Davies";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDfj/1jtBKFkTm8pvw9uIK70KxZqTIf+cTDBXgJdiyYJjSFcWuXIznFs63CdGCPBp5nDJHE2ka92I8eIzHC8k5/kv7pU4yRZW/3IIDai1AiD56vA1vDxBf75OeHIqrYs3WBT1IJvVl57+yerPKdE11rWaKqK+M59yfTzzzmBWT75j3wtw5oabuljw+NxVgVx4oH+xj0plshShj+TrQ7FaAAFIsxQK89FRIQU8v5sTh1BIY5jcFUWOv6S+lurqL//lVF4F3ulMn0Lp7rELP4/uZsMgm4EsZmWrdXzEx4HfCiyFdWIgNqkdVZQJaPqdvWF/DsHuh0spryC+zdLjILR8rov3tgJwvxLLruhraw0xZnIvJTZWi70SC9xjn0TVU2aWblQNmj92SIJ8AeXPJESwu/rr+F1PbVLdnZ+JI3tbTW7N8/mlMSMO5F0P4/9GmE6FtOUsBbX3BydXFPRDavc4vimQusdmfBEm2553sKISLWV3uS7KBf6lHxxqn9NupVIz8= dominictdavies@domino"
@@ -93,9 +96,6 @@
     # Git & GitHub
     git
     gh
-
-    # Docker
-    docker
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
