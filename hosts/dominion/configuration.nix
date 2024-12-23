@@ -87,14 +87,15 @@
     # Modify EFI boot manager
     efibootmgr
 
-    # Git and GitHub
+    # NixOS CLI Tool
+    nh
+
+    # Git & GitHub
     git
     gh
 
-    # Prettier NixOS commands
-    nh
-    nix-output-monitor
-    nvd
+    # Docker
+    docker
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
