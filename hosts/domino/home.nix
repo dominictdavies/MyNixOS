@@ -27,6 +27,7 @@
     zoxide
 
     # Tools
+    sdl
     unzip
     baobab
 
