@@ -132,7 +132,7 @@
     eula = true;
 
     servers = {
-      edgetable_vegetable = {
+      nick_server = {
         enable = true;
         package = pkgs.paperServers.paper;
 
