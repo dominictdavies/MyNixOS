@@ -140,7 +140,7 @@
           level-name = "nick_world";
           motd = "A Minecraft server";
           max-players = 2;
-          difficulty = 2;
+          difficulty = 3;
           spawn-protection = 0;
           simulation-distance = 16;
           view-distance = 16;
