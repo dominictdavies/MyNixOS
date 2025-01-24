@@ -155,6 +155,10 @@
           nick = "58e6164a-b8a9-4c5a-8775-06e89bef2c1c";
           friend = "67ca1be4-56ad-489b-88b4-61e7866b253f";
         };
+
+        operators = {
+          nick = "58e6164a-b8a9-4c5a-8775-06e89bef2c1c";
+        };
       };
     };
   };
