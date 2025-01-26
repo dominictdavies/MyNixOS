@@ -157,7 +157,7 @@
         };
 
         operators = {
-          nick = "58e6164a-b8a9-4c5a-8775-06e89bef2c1c";
+          dominic = "d61aa5e5-2697-4b02-bc0d-164176c9169e";
         };
       };
     };
