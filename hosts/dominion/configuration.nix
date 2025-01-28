@@ -170,10 +170,10 @@
   # Valheim server
   services.valheim = {
     enable = true;
-    serverName = "My server";
-    worldName = "Midgard";
+    serverName = "Davies World";
+    worldName = "DaviesWorld";
+    password = "18tecoma";
     openFirewall = true;
-    password = "secret";
   };
 
   # This value determines the NixOS release from which the default
