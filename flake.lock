@@ -295,7 +295,8 @@
         "lanzaboote": "lanzaboote",
         "nix-minecraft": "nix-minecraft",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "valheim-server": "valheim-server"
       }
     },
     "rust-overlay": {
@@ -320,6 +321,27 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "steam-fetcher": {
+      "inputs": {
+        "nixpkgs": [
+          "valheim-server",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1714795926,
+        "narHash": "sha256-PkgC9jqoN6cJ8XYzTA2PlrWs7aPJkM3BGiTxNqax0cA=",
+        "owner": "nix-community",
+        "repo": "steam-fetcher",
+        "rev": "12f66eafb7862d91b3e30c14035f96a21941bd9c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "steam-fetcher",
         "type": "github"
       }
     },
@@ -350,6 +372,27 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "valheim-server": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "steam-fetcher": "steam-fetcher"
+      },
+      "locked": {
+        "lastModified": 1733514114,
+        "narHash": "sha256-wkXCY1GFlmn0GCJFYma2cv7/xWlaw2iv4M3wayV/VtA=",
+        "owner": "aidalgol",
+        "repo": "valheim-server-flake",
+        "rev": "ef12d2c117789e10cd4f151502b05603812b99ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aidalgol",
+        "repo": "valheim-server-flake",
         "type": "github"
       }
     }
