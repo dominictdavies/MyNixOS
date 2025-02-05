@@ -109,7 +109,17 @@
 
   programs = {
     # Bash
-    bash.enable = true;
+    bash = {
+      enable = true;
+
+      shellAliases = {
+        switch = "nh os switch";
+        list = "ls -fl";
+        open = "xdg-open";
+        clr = "clear";
+        quit = "exit";
+      };
+    };
 
     # Command-line fuzzy finder
     fzf.enable = true;

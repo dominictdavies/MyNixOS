@@ -142,20 +142,6 @@
     gh
   ];
 
-  programs = {
-    bash = {
-      shellInit = "eval ''\"$(zoxide init --cmd cd bash)''\"";
-
-      shellAliases = {
-        switch = "nh os switch";
-        list = "ls -fl";
-        open = "xdg-open";
-        clr = "clear";
-        quit = "exit";
-      };
-    };
-  };
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
