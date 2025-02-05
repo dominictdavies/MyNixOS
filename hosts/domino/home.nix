@@ -108,6 +108,9 @@
   };
 
   programs = {
+    # Bash
+    bash.enable = true;
+
     # Command-line fuzzy finder
     fzf.enable = true;
 
