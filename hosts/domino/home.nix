@@ -23,8 +23,6 @@
   home.packages = with pkgs; [
     # Terminal
     alacritty
-    fzf
-    zoxide
 
     # Tools
     SDL_compat
@@ -109,6 +107,17 @@
     # EDITOR = "emacs";
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    # Command-line fuzzy finder
+    fzf.enable = true;
+
+    # Smarter `cd` command
+    zoxide = {
+      enable = true;
+      options = [ "--cmd cd" ];
+    };
+
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
+  };
 }
