@@ -60,6 +60,30 @@
     # EDITOR = "emacs";
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    # Bash
+    bash = {
+      enable = true;
+
+      shellAliases = {
+        switch = "nh os switch";
+        list = "ls -fl";
+        open = "xdg-open";
+        clr = "clear";
+        quit = "exit";
+      };
+    };
+
+    # Command-line fuzzy finder
+    fzf.enable = true;
+
+    # Smarter `cd` command
+    zoxide = {
+      enable = true;
+      options = [ "--cmd cd" ];
+    };
+
+    # Let Home Manager install and manage itself
+    home-manager.enable = true;
+  };
 }
