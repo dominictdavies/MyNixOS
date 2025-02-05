@@ -110,7 +110,7 @@
   services.openssh.settings.PasswordAuthentication = false;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 25565 ];
+  networking.firewall.allowedTCPPorts = [ 3000 25565 ];
   networking.firewall.allowedUDPPorts = [ 24454 25565 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
