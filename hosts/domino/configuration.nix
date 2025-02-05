@@ -142,13 +142,18 @@
     gh
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs = {
+    bash = {
+      shellInit = "eval ''\"$(zoxide init --cmd cd bash)''\"";
+
+      shellAliases = {
+        switch = "nh os switch";
+        open = "xdg-open";
+        clr = "clear";
+        quit = "exit";
+      };
+    };
+  };
 
   # List services that you want to enable:
 
