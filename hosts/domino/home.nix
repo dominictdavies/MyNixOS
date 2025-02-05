@@ -130,7 +130,7 @@
       options = [ "--cmd cd" ];
     };
 
-    # Let Home Manager install and manage itself.
+    # Let Home Manager install and manage itself
     home-manager.enable = true;
   };
 }
