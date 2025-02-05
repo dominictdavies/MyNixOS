@@ -127,7 +127,7 @@
             name = "Prometheus";
             type = "prometheus";
             access = "proxy";
-            url = "http://${config.services.prometheus.listenAddress}:${toString config.services.prometheus.port}";
+            url = "http://127.0.0.1:${toString config.services.prometheus.port}";
           }
         ];
       }; 
@@ -135,7 +135,7 @@
 
     prometheus = {
       enable = true;
-      listenAddress = "0.0.0.0";
+      listenAddress = "127.0.0.1";
       port = 9090;
     };
   };
