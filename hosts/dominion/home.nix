@@ -60,11 +60,6 @@
     # EDITOR = "emacs";
   };
 
-  # Add aliases
-  home.shellAliases = {
-    logs = "sudo tail -f /srv/minecraft/edgetable_vegetable/logs/latest.log";
-  };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
