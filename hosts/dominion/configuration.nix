@@ -137,13 +137,19 @@
       enable = true;
       listenAddress = "127.0.0.1";
       port = 9090;
-      exporters.node.enable = true;
+
+      exporters.node = {
+        enable = true;
+        listenAddress = "127.0.0.1";
+        port = 9100;
+      };
+
       scrapeConfigs = [
         {
-          job_name = "node_exporter";
+          job_name = "Node";
           scrape_interval = "10s";
           static_configs = [
-            { targets = [ "127.0.0.1:9100" ]; }
+            { targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ]; }
           ];
         }
       ];
