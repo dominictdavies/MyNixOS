@@ -116,7 +116,10 @@
   # networking.firewall.enable = false;
 
   # Grafana
-  services.grafana.enable = true;
+  services.grafana = {
+    enable = true;
+    settings.server.http_addr = "0.0.0.0";
+  };
 
   # Minecraft server
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
