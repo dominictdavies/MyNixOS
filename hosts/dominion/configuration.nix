@@ -115,10 +115,29 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Grafana
-  services.grafana = {
-    enable = true;
-    settings.server.http_addr = "0.0.0.0";
+  # Grafana & Prometheus
+  services = {
+    grafana = {
+      enable = true;
+      settings.server.http_addr = "0.0.0.0";
+      provision = {
+        enable = true;
+        datasources.settings.datasources = [
+          {
+            name = "Prometheus";
+            type = "prometheus";
+            access = "proxy";
+            url = "http://${config.services.prometheus.listenAddress}:${toString config.services.prometheus.port}";
+          }
+        ];
+      }; 
+    };
+
+    prometheus = {
+      enable = true;
+      listenAddress = "0.0.0.0";
+      port = 9090;
+    };
   };
 
   # Minecraft server
