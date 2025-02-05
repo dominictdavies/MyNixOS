@@ -137,6 +137,7 @@
       enable = true;
       listenAddress = "127.0.0.1";
       port = 9090;
+      exporters.node.enable = true;
       scrapeConfigs = [
         {
           job_name = "node_exporter";
@@ -147,8 +148,6 @@
         }
       ];
     };
-
-    node_exporter.enable = true;
   };
 
   # Minecraft server
