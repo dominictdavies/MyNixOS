@@ -148,6 +148,7 @@
 
       shellAliases = {
         switch = "nh os switch";
+        list = "ls -fl";
         open = "xdg-open";
         clr = "clear";
         quit = "exit";
