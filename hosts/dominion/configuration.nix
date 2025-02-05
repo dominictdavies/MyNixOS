@@ -115,6 +115,9 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  # Grafana
+  services.grafana.enable = true;
+
   # Minecraft server
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
   services.minecraft-servers = {
