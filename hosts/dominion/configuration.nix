@@ -110,10 +110,52 @@
   services.openssh.settings.PasswordAuthentication = false;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 25565 ];
+  networking.firewall.allowedTCPPorts = [ 9050 25565 ];
   networking.firewall.allowedUDPPorts = [ 24454 25565 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # Grafana & Prometheus
+  services = {
+    grafana = {
+      enable = true;
+      settings.server.http_addr = "0.0.0.0";
+      settings.server.http_port = 9050;
+      provision = {
+        enable = true;
+        datasources.settings.datasources = [
+          {
+            name = "Prometheus";
+            type = "prometheus";
+            access = "proxy";
+            url = "http://127.0.0.1:${toString config.services.prometheus.port}";
+          }
+        ];
+      }; 
+    };
+
+    prometheus = {
+      enable = true;
+      listenAddress = "127.0.0.1";
+      port = 9051;
+
+      exporters.node = {
+        enable = true;
+        listenAddress = "127.0.0.1";
+        port = 9060;
+      };
+
+      scrapeConfigs = [
+        {
+          job_name = "Node";
+          scrape_interval = "10s";
+          static_configs = [
+            { targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ]; }
+          ];
+        }
+      ];
+    };
+  };
 
   # Minecraft server
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
@@ -123,7 +165,7 @@
 
     servers = {
       edgetable_vegetable = {
-        enable = true;
+        enable = false;
         package = pkgs.paperServers.paper;
 
         serverProperties = {
@@ -131,7 +173,7 @@
           motd = "And by vegetables lets justr say edgetable";
           max-players = 7;
           level-seed = 7644964991330705060;
-          difficulty = 3;
+          difficulty = "hard";
           spawn-protection = 0;
           simulation-distance = 16;
           view-distance = 16;
@@ -148,6 +190,35 @@
           ethan = "98bf0aab-a174-4afe-bd90-8cb5dbbae867";
           mason = "91694e45-1090-46fb-b83b-db40db0d3f48";
           chris = "63899fa9-9e5a-4a33-9a72-7510d0a79d1a";
+        };
+
+        operators = {
+          dominic = "d61aa5e5-2697-4b02-bc0d-164176c9169e";
+        };
+      };
+
+      nick_server = {
+        enable = true;
+        package = pkgs.paperServers.paper;
+
+        serverProperties = {
+          level-name = "nick_world";
+          motd = "A Minecraft server";
+          max-players = 2;
+          difficulty = "hard";
+          spawn-protection = 0;
+          simulation-distance = 16;
+          view-distance = 16;
+          white-list = true;
+          enforce-whitelist = true;
+          enforce-secure-profile = false;
+          allow-cheats = true;
+        };
+
+        whitelist = {
+          dominic = "d61aa5e5-2697-4b02-bc0d-164176c9169e";
+          nick = "58e6164a-b8a9-4c5a-8775-06e89bef2c1c";
+          friend = "67ca1be4-56ad-489b-88b4-61e7866b253f";
         };
 
         operators = {
