@@ -136,12 +136,12 @@
     prometheus = {
       enable = true;
       listenAddress = "127.0.0.1";
-      port = 9090;
+      port = 9050;
 
       exporters.node = {
         enable = true;
         listenAddress = "127.0.0.1";
-        port = 9100;
+        port = 9060;
       };
 
       scrapeConfigs = [
