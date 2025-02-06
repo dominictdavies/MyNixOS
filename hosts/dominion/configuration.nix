@@ -120,7 +120,7 @@
     grafana = {
       enable = true;
       settings.server.http_addr = "0.0.0.0";
-      settings.server.port = 9050;
+      settings.server.http_port = 9050;
       provision = {
         enable = true;
         datasources.settings.datasources = [
