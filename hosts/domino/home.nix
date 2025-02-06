@@ -28,7 +28,6 @@
     SDL_compat
     unzip
     baobab
-    disko
 
     # Programming Languages
     gcc
