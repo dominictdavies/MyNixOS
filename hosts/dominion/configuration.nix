@@ -110,7 +110,7 @@
   services.openssh.settings.PasswordAuthentication = false;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 3000 25565 ];
+  networking.firewall.allowedTCPPorts = [ 9050 25565 ];
   networking.firewall.allowedUDPPorts = [ 24454 25565 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -120,6 +120,7 @@
     grafana = {
       enable = true;
       settings.server.http_addr = "0.0.0.0";
+      settings.server.port = 9050;
       provision = {
         enable = true;
         datasources.settings.datasources = [
@@ -136,7 +137,7 @@
     prometheus = {
       enable = true;
       listenAddress = "127.0.0.1";
-      port = 9050;
+      port = 9051;
 
       exporters.node = {
         enable = true;
