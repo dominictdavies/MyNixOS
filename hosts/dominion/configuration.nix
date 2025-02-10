@@ -128,7 +128,7 @@
         };
 
         "/prometheus/" = {
-          proxyPass = "http://10.1.1.2:9060";
+          proxyPass = "http://127.0.0.1:9051";
           extraConfig = ''
             proxy_set_header Host $host;
             add_header Access-Control-Allow-Origin "https://dominictdavies.dev";
