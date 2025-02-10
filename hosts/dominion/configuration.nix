@@ -167,7 +167,7 @@
           job_name = "Node";
           scrape_interval = "10s";
           static_configs = [
-            { targets = [ "http://localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
+            { targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
           ];
         }
       ];
