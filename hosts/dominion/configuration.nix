@@ -149,7 +149,7 @@
             name = "Prometheus";
             type = "prometheus";
             access = "proxy";
-            url = "https://dominictdavies.dev/prometheus";
+            url = "127.0.0.1:${toString config.services.prometheus.port}";
           }
         ];
       }; 
