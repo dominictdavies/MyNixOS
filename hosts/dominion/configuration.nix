@@ -123,30 +123,8 @@
       enableACME = true; # Auto-generate SSL with Let's Encrypt
       locations = {
         "/" = {
-          proxyPass = "http://10.1.1.2:9050";  # Proxy to Grafana
+          proxyPass = "http://127.0.0.1:9050";  # Proxy to Grafana
           proxyWebsockets = true;
-        };
-
-        "/prometheus/" = {
-          proxyPass = "http://10.1.1.2:9051";  # Proxy to Prometheus
-          extraConfig = ''
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-
-            rewrite ^/prometheus/(.*)$ /$1 break;
-
-            # Add CORS headers
-            add_header 'Access-Control-Allow-Origin' 'https://dominictdavies.dev' always;
-            add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
-            add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type' always;
-
-            # Handle preflight requests
-            if ($request_method = OPTIONS) {
-              return 204;
-            }
-          '';
         };
       };
     };
@@ -179,12 +157,12 @@
 
     prometheus = {
       enable = true;
-      listenAddress = "0.0.0.0";
+      listenAddress = "127.0.0.1";
       port = 9051;
 
       exporters.node = {
         enable = true;
-        listenAddress = "0.0.0.0";
+        listenAddress = "127.0.0.1";
         port = 9060;
       };
 
@@ -193,7 +171,7 @@
           job_name = "Node";
           scrape_interval = "10s";
           static_configs = [
-            { targets = [ "10.1.1.2:${toString config.services.prometheus.exporters.node.port}" ]; }
+            { targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ]; }
           ];
         }
       ];
