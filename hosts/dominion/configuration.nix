@@ -106,7 +106,7 @@
   services.openssh.settings.PasswordAuthentication = false;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 80 443 9050 25565 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 3000 25565 ];
   networking.firewall.allowedUDPPorts = [ 24454 25565 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -116,10 +116,10 @@
     enable = true;
     virtualHosts."dominictdavies.dev" = {
       forceSSL = true;  # Redirects HTTP to HTTPS
-      enableACME = true; # Auto-generate SSL with Let's Encrypt
+      enableACME = true;  # Auto-generate SSL with Let's Encrypt
       locations = {
         "/" = {
-          proxyPass = "http://localhost:9050";  # Proxy to Grafana
+          proxyPass = "http://localhost:${toString config.services.grafana.settings.server.http_port}";  # Proxy to Grafana
           proxyWebsockets = true;
         };
       };
@@ -137,7 +137,7 @@
     grafana = {
       enable = true;
       settings.server.http_addr = "0.0.0.0";
-      settings.server.http_port = 9050;
+      settings.server.http_port = 3000;
       provision = {
         enable = true;
         datasources.settings.datasources = [
@@ -154,12 +154,12 @@
     prometheus = {
       enable = true;
       listenAddress = "localhost";
-      port = 9051;
+      port = 9090;
 
       exporters.node = {
         enable = true;
         listenAddress = "localhost";
-        port = 9060;
+        port = 9100;
       };
 
       scrapeConfigs = [
