@@ -156,7 +156,7 @@
     prometheus = {
       enable = true;
       extraFlags = [
-        "--web.cors.origin=*"
+        "--web.cors.origin=https://dominictdavies.dev"
       ];
 
       listenAddress = "127.0.0.1";
