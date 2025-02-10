@@ -161,7 +161,7 @@
             name = "Prometheus";
             type = "prometheus";
             access = "proxy";
-            url = "http://10.1.1.2:${toString config.services.prometheus.port}";
+            url = "https://dominictdavies.dev/prometheus";
           }
         ];
       }; 
