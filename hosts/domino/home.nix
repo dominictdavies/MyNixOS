@@ -33,6 +33,7 @@
     gcc
     python3
     swi-prolog
+    nixfmt-rfc-style
 
     # Editors
     obsidian
