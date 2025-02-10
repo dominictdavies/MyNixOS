@@ -110,10 +110,29 @@
   services.openssh.settings.PasswordAuthentication = false;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 9050 25565 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 9050 25565 ];
   networking.firewall.allowedUDPPorts = [ 24454 25565 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # Nginx
+  services.nginx = {
+    enable = true;
+    virtualHosts."dominictdavies.dev" = {
+      forceSSL = true;  # Redirects HTTP to HTTPS
+      enableACME = true; # Auto-generate SSL with Let's Encrypt
+      locations."/" = {
+        proxyPass = "http://10.1.1.2:9050";  # Proxy to Grafana
+        proxyWebsockets = true;
+      };
+    };
+  };
+
+  # Let's Encrypt
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "your-email@example.com";  # Required for Let's Encrypt
+  };
 
   # Grafana & Prometheus
   services = {
