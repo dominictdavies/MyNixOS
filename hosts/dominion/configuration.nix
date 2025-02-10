@@ -155,6 +155,8 @@
 
     prometheus = {
       enable = true;
+      web.corsOrigin = "^https://dominictdavies\\.dev$";
+
       listenAddress = "127.0.0.1";
       port = 9051;
 
