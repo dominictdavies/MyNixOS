@@ -131,7 +131,7 @@
   # Let's Encrypt
   security.acme = {
     acceptTerms = true;
-    defaults.email = "your-email@example.com";  # Required for Let's Encrypt
+    defaults.email = "dominictdavies@gmail.com";  # Required for Let's Encrypt
   };
 
   # Grafana & Prometheus
