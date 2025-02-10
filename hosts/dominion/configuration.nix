@@ -121,9 +121,21 @@
     virtualHosts."dominictdavies.dev" = {
       forceSSL = true;  # Redirects HTTP to HTTPS
       enableACME = true; # Auto-generate SSL with Let's Encrypt
-      locations."/" = {
-        proxyPass = "http://10.1.1.2:9050";  # Proxy to Grafana
-        proxyWebsockets = true;
+      locations = {
+        "/" = {
+          proxyPass = "http://10.1.1.2:9050";  # Proxy to Grafana
+          proxyWebsockets = true;
+        };
+
+        "/prometheus/" = {
+          proxyPass = "http://10.1.1.2:9090";
+          proxySetHeaders = {
+            "Host" "\$http_host";  # Preserve original Host header (escaped `$`)
+            "Access-Control-Allow-Origin" "https://dominictdavies.dev";
+            "Access-Control-Allow-Methods" "GET, OPTIONS";
+            "Access-Control-Allow-Headers" "Authorization, Content-Type";
+          };
+        };
       };
     };
   };
