@@ -145,7 +145,7 @@
             name = "Prometheus";
             type = "prometheus";
             access = "proxy";
-            url = "localhost:${toString config.services.prometheus.port}";
+            url = "http://localhost:${toString config.services.prometheus.port}";
           }
         ];
       }; 
@@ -167,7 +167,7 @@
           job_name = "Node";
           scrape_interval = "10s";
           static_configs = [
-            { targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
+            { targets = [ "http://localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
           ];
         }
       ];
