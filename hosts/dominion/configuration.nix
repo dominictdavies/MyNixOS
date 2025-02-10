@@ -128,7 +128,7 @@
         };
 
         "/prometheus/" = {
-          proxyPass = "http://127.0.0.1:9060";
+          proxyPass = "http://10.1.1.2:9051";  # Proxy to Prometheus
           extraConfig = ''
             proxy_set_header Host $host;
             add_header Access-Control-Allow-Origin "https://dominictdavies.dev";
@@ -160,7 +160,7 @@
             name = "Prometheus";
             type = "prometheus";
             access = "proxy";
-            url = "http://127.0.0.1:${toString config.services.prometheus.port}";
+            url = "http://10.1.1.2:${toString config.services.prometheus.port}";
           }
         ];
       }; 
@@ -168,12 +168,12 @@
 
     prometheus = {
       enable = true;
-      listenAddress = "127.0.0.1";
+      listenAddress = "0.0.0.0";
       port = 9051;
 
       exporters.node = {
         enable = true;
-        listenAddress = "127.0.0.1";
+        listenAddress = "0.0.0.0";
         port = 9060;
       };
 
@@ -182,7 +182,7 @@
           job_name = "Node";
           scrape_interval = "10s";
           static_configs = [
-            { targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ]; }
+            { targets = [ "10.1.1.2:${toString config.services.prometheus.exporters.node.port}" ]; }
           ];
         }
       ];
