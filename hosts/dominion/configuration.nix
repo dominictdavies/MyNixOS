@@ -22,10 +22,6 @@
   networking.hostName = "dominion"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -123,7 +119,7 @@
       enableACME = true; # Auto-generate SSL with Let's Encrypt
       locations = {
         "/" = {
-          proxyPass = "http://127.0.0.1:9050";  # Proxy to Grafana
+          proxyPass = "http://localhost:9050";  # Proxy to Grafana
           proxyWebsockets = true;
         };
       };
@@ -149,7 +145,7 @@
             name = "Prometheus";
             type = "prometheus";
             access = "proxy";
-            url = "127.0.0.1:${toString config.services.prometheus.port}";
+            url = "localhost:${toString config.services.prometheus.port}";
           }
         ];
       }; 
@@ -157,12 +153,12 @@
 
     prometheus = {
       enable = true;
-      listenAddress = "127.0.0.1";
+      listenAddress = "localhost";
       port = 9051;
 
       exporters.node = {
         enable = true;
-        listenAddress = "127.0.0.1";
+        listenAddress = "localhost";
         port = 9060;
       };
 
@@ -171,7 +167,7 @@
           job_name = "Node";
           scrape_interval = "10s";
           static_configs = [
-            { targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ]; }
+            { targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
           ];
         }
       ];
