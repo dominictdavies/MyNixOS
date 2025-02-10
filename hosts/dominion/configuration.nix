@@ -136,6 +136,16 @@
             proxy_set_header X-Forwarded-Proto $scheme;
 
             rewrite ^/prometheus/(.*)$ /$1 break;
+
+            # Add CORS headers
+            add_header 'Access-Control-Allow-Origin' 'https://dominictdavies.dev' always;
+            add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type' always;
+
+            # Handle preflight requests
+            if ($request_method = OPTIONS) {
+              return 204;
+            }
           '';
         };
       };
