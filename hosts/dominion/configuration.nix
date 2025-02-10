@@ -131,9 +131,10 @@
           proxyPass = "http://10.1.1.2:9051";  # Proxy to Prometheus
           extraConfig = ''
             proxy_set_header Host $host;
-            add_header Access-Control-Allow-Origin "https://dominictdavies.dev";
-            add_header Access-Control-Allow-Methods "GET, OPTIONS";
-            add_header Access-Control-Allow-Headers "Authorization, Content-Type";
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+
             rewrite ^/prometheus/(.*)$ /$1 break;
           '';
         };
