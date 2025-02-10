@@ -122,7 +122,7 @@
           proxyPass = "http://localhost:${toString config.services.grafana.settings.server.http_port}";  # Proxy to Grafana
           proxyWebsockets = true;
           extraConfig = ''
-            proxy_set_header Host $http_host;
+            proxy_set_header Host $host;
           '';
         };
       };
