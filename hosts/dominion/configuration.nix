@@ -129,12 +129,13 @@
 
         "/prometheus/" = {
           proxyPass = "http://10.1.1.2:9090";
-          proxySetHeaders = {
-            Host = "$http_host";  # Preserve original Host header
-            "Access-Control-Allow-Origin" = "https://dominictdavies.dev";
-            "Access-Control-Allow-Methods" = "GET, OPTIONS";
-            "Access-Control-Allow-Headers" = "Authorization, Content-Type";
-          };
+          extraConfig = ''
+            proxy_set_header Host $http_host;
+            add_header Access-Control-Allow-Origin "https://dominictdavies.dev";
+            add_header Access-Control-Allow-Methods "GET, OPTIONS";
+            add_header Access-Control-Allow-Headers "Authorization, Content-Type";
+            rewrite ^/prometheus/(.*)$ /$1 break;
+          '';
         };
       };
     };
