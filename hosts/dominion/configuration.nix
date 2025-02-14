@@ -25,6 +25,12 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Static IP
+  networking.interfaces.eth0.ipv4.addresses = [ {
+    address = "10.1.1.202";
+    prefixLength = 24;
+  } ];
+
   # Set your time zone.
   time.timeZone = "Australia/Perth";
 
