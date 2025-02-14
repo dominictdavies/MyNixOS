@@ -19,11 +19,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "dominion"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Enable networking
+  # Networking
   networking.networkmanager.enable = true;
+  networking.wireless.enable = false;
+  networking.hostName = "dominion";
   networking.defaultGateway = "10.1.1.1";
   networking.nameservers = [ "8.8.8.8" ];
 
@@ -114,7 +113,7 @@
   services.openssh.settings.PasswordAuthentication = false;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 443 3000 25565 ];
+  networking.firewall.allowedTCPPorts = [ 443 25565 ];
   networking.firewall.allowedUDPPorts = [ 2456 2457 25565 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
