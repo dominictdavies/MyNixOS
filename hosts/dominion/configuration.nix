@@ -24,6 +24,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.defaultGateway = "10.1.1.1";
+  networking.nameservers = [ "8.8.8.8" ];
 
   # Static IP
   networking.interfaces.eth0.ipv4.addresses = [ {
