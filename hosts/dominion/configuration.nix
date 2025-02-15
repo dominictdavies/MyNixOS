@@ -264,7 +264,7 @@
 
   # Automated backups
   services.borgbackup.jobs = {
-    minecraft-servers = {
+    servers = {
       startAt = "daily";
       compression = "auto,zstd";
       paths = "/srv/minecraft";
