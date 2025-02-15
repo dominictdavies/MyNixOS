@@ -96,6 +96,9 @@
     # Git & GitHub
     git
     gh
+
+    # Deduplicating archiver with compression and encryption
+    borgbackup
   ];
 
   # Prevent laptop from sleeping on lid close
