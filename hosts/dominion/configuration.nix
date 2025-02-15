@@ -98,9 +98,6 @@
 
     # GitHub CLI tool
     gh
-
-    # Deduplicating archiver with compression and encryption
-    borgbackup
   ];
 
   # Prevent laptop from sleeping on lid close
@@ -263,6 +260,17 @@
     serverName = "Davies World";
     worldName = "DaviesWorld";
     password = "18tecoma";
+  };
+
+  # Automated backups
+  services.borgbackup.jobs = {
+    minecraft-servers = {
+      startAt = "daily";
+      compression = "auto,zstd";
+      paths = "/srv/minecraft";
+      environment.BORG_RSH = "ssh -i /home/dominictdavies/.ssh/id_ed25519";
+      repo = "ssh://ajzc3ma4@ajzc3ma4.repo.borgbase.com/./repo";
+    };
   };
 
   # This value determines the NixOS release from which the default
