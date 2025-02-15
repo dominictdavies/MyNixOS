@@ -87,14 +87,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # Modify EFI boot manager
+    # Modify the EFI Boot Manager
     efibootmgr
 
-    # NixOS CLI Tool
+    # Yet another nix cli helper
     nh
 
-    # Git & GitHub
+    # Distributed version control system
     git
+
+    # GitHub CLI tool
     gh
 
     # Deduplicating archiver with compression and encryption
