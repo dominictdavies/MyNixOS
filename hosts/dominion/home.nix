@@ -68,7 +68,8 @@
       shellAliases = {
         switch = "nh os switch";
         list = "ls -fl";
-        open = "xdg-open";
+        mount-borg = "mkdir -p ~/Borg && borg mount ssh://ajzc3ma4@ajzc3ma4.repo.borgbase.com/./repo ~/Borg";
+        unmount-borg = "borg umount ~/Borg && rm -rf ~/Borg";
         clr = "clear";
         quit = "exit";
       };
