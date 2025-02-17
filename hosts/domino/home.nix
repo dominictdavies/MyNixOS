@@ -29,11 +29,10 @@
     unzip
     baobab
 
-    # Programming Languages
+    # Programming Packages
     gcc
     python3
-    swi-prolog
-    nixfmt-rfc-style
+    dotnetCorePackages.dotnet_8.sdk
 
     # Editors
     obsidian
