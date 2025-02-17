@@ -32,7 +32,7 @@
     # Programming Packages
     gcc
     python3
-    dotnetCorePackages.dotnet_8.sdk
+    dotnet-sdk
 
     # Editors
     obsidian
