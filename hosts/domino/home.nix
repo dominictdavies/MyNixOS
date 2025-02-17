@@ -105,7 +105,7 @@
   #
   home.sessionVariables = {
     # SDK cannot be found without specifying dotnet root
-    DOTNET_ROOT = "/nix/store/9rm1rfc7llb95ss12vb7708ivmxwmpdl-dotnet-sdk-8.0.405/share/dotnet"
+    DOTNET_ROOT = "/nix/store/9rm1rfc7llb95ss12vb7708ivmxwmpdl-dotnet-sdk-8.0.405/share/dotnet";
   };
 
   programs = {
