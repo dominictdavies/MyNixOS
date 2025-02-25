@@ -33,6 +33,7 @@
     gcc
     python3
     dotnet-sdk
+    winetricks
 
     # Editors
     obsidian
