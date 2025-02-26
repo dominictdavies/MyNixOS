@@ -42,7 +42,6 @@
     inkscape
 
     # Web Browser
-    google-chrome
     firefox
 
     # Communication
