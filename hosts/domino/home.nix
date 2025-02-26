@@ -33,7 +33,6 @@
     gcc
     python3
     dotnet-sdk
-    winetricks
 
     # Editors
     obsidian
@@ -44,6 +43,7 @@
 
     # Web Browser
     google-chrome
+    firefox
 
     # Communication
     discord
