@@ -104,14 +104,11 @@
   services.libinput.enable = true;
   services.libinput.touchpad.naturalScrolling = false;
 
-  # Enable docker
-  virtualisation.docker.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dominictdavies = {
     isNormalUser = true;
     description = "Dominic Davies";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
 
