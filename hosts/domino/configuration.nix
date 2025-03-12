@@ -18,6 +18,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Attempt to fix random GPU crashes
+  boot.kernelParams = [ "amdgpu.runpm=1" ];
+
   networking.hostName = "domino"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
