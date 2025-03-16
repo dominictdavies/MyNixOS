@@ -40,6 +40,7 @@
     libreoffice
     vscode
     inkscape
+    gimp
 
     # Web Browser
     firefox
