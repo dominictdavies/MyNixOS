@@ -107,6 +107,9 @@
   services.libinput.enable = true;
   services.libinput.touchpad.naturalScrolling = false;
 
+  # Enable fingerprint sensor
+  services.fprintd.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dominictdavies = {
     isNormalUser = true;
