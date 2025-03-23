@@ -25,9 +25,9 @@
     alacritty
 
     # Tools
-    SDL_compat
     unzip
     baobab
+    qalculate-qt
 
     # Programming Packages
     gcc
