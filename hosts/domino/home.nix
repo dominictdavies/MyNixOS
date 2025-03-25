@@ -26,6 +26,7 @@
 
     # Tools
     unzip
+    ffmpeg
     baobab
     qalculate-qt
 
