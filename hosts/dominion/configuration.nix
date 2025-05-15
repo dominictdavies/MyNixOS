@@ -139,6 +139,11 @@
   security.acme = {
     acceptTerms = true;
     defaults.email = "dominictdavies@gmail.com";  # Required for Let's Encrypt
+    certs."dominictdavies.dev" = {
+      extraDomains = [ "www.dominictdavies.dev" ];
+      dnsProvider = "cloudflare";
+      credentialsFile = "/etc/nixos/cf-creds.env";
+    };
   };
 
   # Grafana & Prometheus
