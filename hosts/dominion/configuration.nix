@@ -122,7 +122,6 @@
     enable = true;
     virtualHosts."dominictdavies.dev" = {
       forceSSL = true;  # Redirects HTTP to HTTPS
-      enableACME = true;  # Auto-generate SSL with Let's Encrypt
       locations = {
         "/" = {
           proxyPass = "http://localhost:${toString config.services.grafana.settings.server.http_port}";  # Proxy to Grafana
