@@ -139,7 +139,7 @@
     acceptTerms = true;
     defaults.email = "dominictdavies@gmail.com";  # Required for Let's Encrypt
     certs."dominictdavies.dev" = {
-      extraDomains = [ "www.dominictdavies.dev" ];
+      extraDomainNames = [ "www.dominictdavies.dev" ];
       dnsProvider = "cloudflare";
       credentialsFile = "/etc/nixos/cf-creds.env";
     };
