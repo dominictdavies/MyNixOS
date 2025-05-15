@@ -137,7 +137,6 @@
 
   # Let's Encrypt
   security.acme = {
-    enable = true;
     acceptTerms = true;
     defaults.email = "dominictdavies@gmail.com";  # Required for Let's Encrypt
   };
