@@ -141,6 +141,12 @@
     defaults.email = "dominictdavies@gmail.com";  # Required for Let's Encrypt
   };
 
+  # Certbot for automated certificate renewal
+  services.certbot = {
+    enable = true;
+    agreeTerms = true;
+  };
+
   # Grafana & Prometheus
   services = {
     grafana = {
