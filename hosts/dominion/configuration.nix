@@ -141,11 +141,13 @@
     acceptTerms = true;
     defaults.email = "dominictdavies@gmail.com";  # Required for Let's Encrypt
     certs."dominictdavies.dev" = {
-      extraDomainNames = [ "www.dominictdavies.dev" ];
       dnsProvider = "cloudflare";
       credentialsFile = "/etc/nixos/cf-creds.env";
     };
   };
+
+  # Grant Nginx access to ACME certs
+  systemd.services.nginx.serviceConfig.SupplementaryGroups = [ "acme" ];
 
   # Grafana & Prometheus
   services = {
