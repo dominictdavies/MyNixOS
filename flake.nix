@@ -31,21 +31,6 @@
           ./hosts/domino/configuration.nix
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd
           inputs.home-manager.nixosModules.default
-          lanzaboote.nixosModules.lanzaboote
-
-          ({ pkgs, lib, ... }: {
-            environment.systemPackages = [
-              # For debugging and troubleshooting Secure Boot
-              pkgs.sbctl
-            ];
-
-            # Replace systemd-boot with lanzaboote
-            boot.loader.systemd-boot.enable = lib.mkForce false;
-            boot.lanzaboote = {
-              enable = true;
-              pkiBundle = "/etc/secureboot";
-            };
-          })
         ];
       };
 
@@ -80,21 +65,6 @@
           ./hosts/domicile/configuration.nix
           inputs.nixos-hardware.nixosModules.acer-aspire-4810t
           inputs.home-manager.nixosModules.default
-          lanzaboote.nixosModules.lanzaboote
-
-          ({ pkgs, lib, ... }: {
-            environment.systemPackages = [
-              # For debugging and troubleshooting Secure Boot
-              pkgs.sbctl
-            ];
-
-            # Replace systemd-boot with lanzaboote
-            boot.loader.systemd-boot.enable = lib.mkForce false;
-            boot.lanzaboote = {
-              enable = true;
-              pkiBundle = "/etc/secureboot";
-            };
-          })
         ];
       };
     };
