@@ -21,6 +21,7 @@
   # Boot initrd for encyption unlock
   boot.initrd.network.enable = true;
 
+  boot.initrd.kernelModules = [ "r8169" ];
   boot.initrd.secrets = {
     "/etc/secrets/initrd/ssh_host_rsa_key" = "/etc/secrets/initrd/ssh_host_rsa_key";
   };
