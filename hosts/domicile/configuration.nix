@@ -35,8 +35,11 @@
     address = "10.1.1.200";
     prefixLength = 24;
   } ];
-  boot.initrd.network.defaultGateway = "10.1.1.1";
-  boot.initrd.network.dns = [ "8.8.8.8" ];
+
+  boot.initrd.network.postCommands = ''
+    ip route add default via 10.1.1.1
+    echo "nameserver 8.8.8.8" > /etc/resolv.conf
+  '';
 
   # Networking
   networking.networkmanager.enable = true;
