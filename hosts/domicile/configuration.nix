@@ -23,13 +23,13 @@
 
   boot.initrd.kernelModules = [ "r8169" ];
   boot.initrd.secrets = {
-    "/etc/secrets/initrd/ssh_host_rsa_key" = "/etc/secrets/initrd/ssh_host_rsa_key";
+    "/etc/ssh/ssh_host_ed25519_key" = "/etc/ssh/ssh_host_ed25519_key";
   };
 
   boot.initrd.network.ssh = {
     enable = true;
     port = 22;
-    hostKeys = [ "/etc/secrets/initrd/ssh_host_rsa_key" ];
+    hostKeys = [ "/etc/ssh/ssh_host_ed25519_key" ];
     authorizedKeys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDfj/1jtBKFkTm8pvw9uIK70KxZqTIf+cTDBXgJdiyYJjSFcWuXIznFs63CdGCPBp5nDJHE2ka92I8eIzHC8k5/kv7pU4yRZW/3IIDai1AiD56vA1vDxBf75OeHIqrYs3WBT1IJvVl57+yerPKdE11rWaKqK+M59yfTzzzmBWT75j3wtw5oabuljw+NxVgVx4oH+xj0plshShj+TrQ7FaAAFIsxQK89FRIQU8v5sTh1BIY5jcFUWOv6S+lurqL//lVF4F3ulMn0Lp7rELP4/uZsMgm4EsZmWrdXzEx4HfCiyFdWIgNqkdVZQJaPqdvWF/DsHuh0spryC+zdLjILR8rov3tgJwvxLLruhraw0xZnIvJTZWi70SC9xjn0TVU2aWblQNmj92SIJ8AeXPJESwu/rr+F1PbVLdnZ+JI3tbTW7N8/mlMSMO5F0P4/9GmE6FtOUsBbX3BydXFPRDavc4vimQusdmfBEm2553sKISLWV3uS7KBf6lHxxqn9NupVIz8= dominictdavies@domino"
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDYWWLuj8iaTVE/2TQbXhosNCzQcRB+RhMvnPHcXfgxrH4XqpF0we5xF1tC94zFDzzn3VwYkQpL2kKSdtSVNCyGfywPIOZpSQc5zuiNfc50uajN+XBkECYdVgdiJLRPOwCIECyTllSyJUmA+KKjjNzKOGLCmBCkVhZ6XiJ1+ErxUzYy5PXYZip3N2OiIgS3nACtqpHe2Jo9bvP6kZi9QxpWa87C0M7zW65uHKDYusJxKlYe2fKBF6jfHniMN0ZuQvWaoZ3y4lGp5mlQf2QtUdNgm9197LpHsSWVAidbxVTa+2yDNpJv33rnOcAmhpSrfOrGNzOaqmObkCde8HCTsopg9YFT3ixmDRjMltd/+YfY+j/3BT331lRIBD1uDysQYb6+84LVdq9HnEQ6DzX69C2ZmX1koE9pCTq84KGzK6WReE6rf4AK0JXmnE23dTRV4GDnNIPW/y4nl+8XWRS6kusvVtACd6/shU48YjQke5Yxuf2JDMvUb2LMPUZQvRo4zgMd5Vmen9eutK599GrPbZsKh7Rm9jnSR+xHr7s7umYbPmTSe14t5Ka73uf80nj0SFRersKDxzZbPlIN9eUy8g6SajTXzGKiWdOBMP5hSCLpyOd26toWl3NW7hUrPrg4XTJbxxNKG33glYkrS6SAZF7mXrr3PLYavk/iwxPyVs8NOQ== dominictdavies@dominator"
