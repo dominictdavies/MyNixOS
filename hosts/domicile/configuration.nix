@@ -36,8 +36,8 @@
   };
 
   boot.initrd.network.postCommands = ''
-    ip link set eth0 up
-    ip addr add 10.1.1.200/24 dev eth0
+    ip link set enp3s0t1 up
+    ip addr add 10.1.1.200/24 dev enp3s0t1
     ip route add default via 10.1.1.1
     echo "nameserver 8.8.8.8" > /etc/resolv.conf
   '';
@@ -49,7 +49,7 @@
   networking.nameservers = [ "8.8.8.8" ];
 
   # Static IP
-  networking.interfaces.eth0.ipv4.addresses = [ {
+  networking.interfaces.enp3s0t1.ipv4.addresses = [ {
     address = "10.1.1.200";
     prefixLength = 24;
   } ];
