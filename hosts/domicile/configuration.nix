@@ -102,6 +102,11 @@
     };
   };
 
+  # Create borg group
+  users.groups.borg = {
+    members = [ "borg" ];
+  };
+
   home-manager = {
     # Also pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
