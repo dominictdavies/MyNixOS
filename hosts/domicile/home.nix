@@ -40,6 +40,7 @@
 
       shellAliases = {
         switch = "nh os switch";
+        update = "cd ~/NixOS && git pull && nh os switch";
         list = "ls -fl";
         clr = "clear";
         quit = "exit";
