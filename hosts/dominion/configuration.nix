@@ -119,8 +119,8 @@
   services.openssh.settings.PasswordAuthentication = false;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 443 7777 25565 ];
-  networking.firewall.allowedUDPPorts = [ 2456 2457 7777 25565 ];
+  networking.firewall.allowedTCPPorts = [ 443 25565 ];
+  networking.firewall.allowedUDPPorts = [ 2456 2457 25565 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -275,6 +275,8 @@
       third_calamity = {
         enable = true;
         install = [ 2824688072 2824688266 ];
+        openFirewall = true;
+        noupnp = true;
       };
     };
   };
