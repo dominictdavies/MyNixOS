@@ -277,7 +277,7 @@
         install = [ 2824688072 2824688266 ];
         openFirewall = true;
         noupnp = true;
-        world = "Winners_Only.wld";
+        world = "/var/lib/tmodloader/third_calamity/Worlds/Winners_Only.wld";
       };
     };
   };
