@@ -267,7 +267,7 @@
   services.tmodloader = {
     enable = true;
     servers = {
-      third_calamity_server = {
+      third_calamity = {
         enable = true;
       };
     };
