@@ -264,6 +264,7 @@
   };
 
   # tModLoader server
+  nixpkgs.overlays = [ inputs.nix-tmodloader.overlay ];
   services.tmodloader = {
     enable = true;
     servers = {
