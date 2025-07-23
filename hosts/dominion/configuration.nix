@@ -274,6 +274,8 @@
     servers = {
       third_calamity = {
         enable = true;
+        autoStart = true;
+        install = [ 2824688072 2824688266 ];
       };
     };
   };
