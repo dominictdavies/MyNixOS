@@ -17,6 +17,8 @@
 
     nix-minecraft.url = "github:infinidoge/nix-minecraft";
 
+    nix-tmodloader.url = "github:andOrlando/nix-tmodloader";
+
     valheim-server = {
       url = "github:aidalgol/valheim-server-flake";
       inputs.nixpkgs.follows = "nixpkgs";

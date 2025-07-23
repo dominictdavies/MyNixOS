@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-minecraft.nixosModules.minecraft-servers
+      inputs.nix-tmodloader.nixosModules.default
     ];
 
   # Enable flakes
@@ -112,8 +113,8 @@
   services.openssh.settings.PasswordAuthentication = false;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 443 25565 ];
-  networking.firewall.allowedUDPPorts = [ 2456 2457 25565 ];
+  networking.firewall.allowedTCPPorts = [ 443 7777 25565 ];
+  networking.firewall.allowedUDPPorts = [ 2456 2457 7777 25565 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -260,6 +261,16 @@
         };
       };
     };
+  };
+
+  # tModLoader server
+  services.tmodloader = {
+    enable = true;
+    servers = {
+      third_calamity_server = {
+        enable = true;
+      }
+    }
   };
 
   # Valheim server
