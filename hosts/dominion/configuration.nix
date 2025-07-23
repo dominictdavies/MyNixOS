@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-minecraft.nixosModules.minecraft-servers
-      inputs.tmodloader-server.nixosModules.tmodloader
+      inputs.nix-tmodloader.nixosModules.tmodloader
     ];
 
   # Enable flakes
