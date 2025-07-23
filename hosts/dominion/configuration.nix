@@ -269,8 +269,8 @@
     servers = {
       third_calamity_server = {
         enable = true;
-      }
-    }
+      };
+    };
   };
 
   # Valheim server
