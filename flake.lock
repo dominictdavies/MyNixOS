@@ -178,15 +178,15 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1734377184,
-        "narHash": "sha256-1Nz10m5qTsSXedAAl08cN/ama6lCDsM/WgdV5lb/9cQ=",
-        "owner": "andOrlando",
+        "lastModified": 1753295648,
+        "narHash": "sha256-JmQIchx26L5IwbkZbetiK0iQDSLnW5PcMpm6kfCDkBg=",
+        "owner": "dominictdavies",
         "repo": "nix-tmodloader",
-        "rev": "e29ca685ed7e59ef67c592030932ef17dbd8539c",
+        "rev": "d4e38437da7f48238b33a41edc6a8b0f484bbc88",
         "type": "github"
       },
       "original": {
-        "owner": "andOrlando",
+        "owner": "dominictdavies",
         "repo": "nix-tmodloader",
         "type": "github"
       }
