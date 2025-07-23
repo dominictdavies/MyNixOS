@@ -173,6 +173,24 @@
         "type": "github"
       }
     },
+    "nix-tmodloader": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1734377184,
+        "narHash": "sha256-1Nz10m5qTsSXedAAl08cN/ama6lCDsM/WgdV5lb/9cQ=",
+        "owner": "andOrlando",
+        "repo": "nix-tmodloader",
+        "rev": "e29ca685ed7e59ef67c592030932ef17dbd8539c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "andOrlando",
+        "repo": "nix-tmodloader",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1752666637,
@@ -205,6 +223,22 @@
       }
     },
     "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1752950548,
+        "narHash": "sha256-NS6BLD0lxOrnCiEOcvQCDVPXafX1/ek1dfJHX1nUIzc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c87b95e25065c028d31a94f06a62927d18763fdf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1752687322,
         "narHash": "sha256-RKwfXA4OZROjBTQAl9WOZQFm7L8Bo93FQwSJpAiSRvo=",
@@ -251,8 +285,9 @@
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "nix-minecraft": "nix-minecraft",
+        "nix-tmodloader": "nix-tmodloader",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "valheim-server": "valheim-server"
       }
     },
