@@ -271,10 +271,6 @@
   # tModLoader server
   services.tmodloader = {
     enable = true;
-    serviceConfig = {
-      TimeoutStartSec = "5min";
-    };
-
     servers = {
       third_calamity = {
         enable = true;
