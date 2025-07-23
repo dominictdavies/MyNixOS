@@ -13,6 +13,12 @@
       inputs.nix-tmodloader.nixosModules.tmodloader
     ];
 
+  # Overlays
+  nixpkgs.overlays = [ 
+    inputs.nix-minecraft.overlay 
+    inputs.nix-tmodloader.overlay
+  ];
+
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -193,7 +199,6 @@
   };
 
   # Minecraft server
-  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
   services.minecraft-servers = {
     enable = false;
     eula = true;
@@ -264,7 +269,6 @@
   };
 
   # tModLoader server
-  nixpkgs.overlays = [ inputs.nix-tmodloader.overlay ];
   services.tmodloader = {
     enable = true;
     servers = {
