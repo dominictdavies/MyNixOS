@@ -194,7 +194,7 @@
   # Minecraft server
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
   services.minecraft-servers = {
-    enable = true;
+    enable = false;
     eula = true;
 
     servers = {
@@ -264,23 +264,23 @@
 
   # Valheim server
   services.valheim = {
-    enable = true;
+    enable = false;
     serverName = "Davies World";
     worldName = "DaviesWorld";
     password = "18tecoma";
   };
 
   # Automated backups
-  services.borgbackup.jobs = {
-    servers = {
-      startAt = "daily";
-      compression = "auto,zstd";
-      encryption.mode = "none";
-      paths = [ "/srv/minecraft" "/var/lib/valheim/.config/unity3d/IronGate/Valheim" ];
-      environment.BORG_RSH = "ssh -i /home/dominictdavies/.ssh/id_ed25519";
-      repo = "ssh://ajzc3ma4@ajzc3ma4.repo.borgbase.com/./repo";
-    };
-  };
+  # services.borgbackup.jobs = {
+  #   servers = {
+  #     startAt = "daily";
+  #     compression = "auto,zstd";
+  #     encryption.mode = "none";
+  #     paths = [ "/srv/minecraft" "/var/lib/valheim/.config/unity3d/IronGate/Valheim" ];
+  #     environment.BORG_RSH = "ssh -i /home/dominictdavies/.ssh/id_ed25519";
+  #     repo = "ssh://ajzc3ma4@ajzc3ma4.repo.borgbase.com/./repo";
+  #   };
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
