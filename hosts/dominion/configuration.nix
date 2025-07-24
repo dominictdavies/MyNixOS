@@ -274,6 +274,11 @@
     servers = {
       third_calamity = {
         enable = true;
+        openFirewall = true;
+        noupnp = true;
+        players = 6;
+        world = "/var/lib/tmodloader/third_calamity/Worlds/Winners_Only.wld";
+        password = "afflicted wind parmesan";
         install = [
           2824688072 # Calamity Mod
           2824688266 # Calamity Mod Music
@@ -308,9 +313,6 @@
           3092612587 # Revive Mod
           3101940607 # Boss Leaderboards
         ];
-        openFirewall = true;
-        noupnp = true;
-        world = "/var/lib/tmodloader/third_calamity/Worlds/Winners_Only.wld";
       };
     };
   };
