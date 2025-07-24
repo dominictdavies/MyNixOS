@@ -312,6 +312,7 @@
           3499210528 # Calamity: Wrath of the Gods multiplayer fix
           3092612587 # Revive Mod
           3101940607 # Boss Leaderboards
+          2815010161 # Shared World Map
         ];
       };
     };
