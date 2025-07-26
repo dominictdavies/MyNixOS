@@ -297,7 +297,6 @@
           3222493606 # Luminance
           2815540735 # Fargo's Souls Mod
           2785100219 # Subworld Library
-          2995193002 # Calamity: Wrath of the Gods
           3044249615 # Calamity - Fargo's Souls DLC
           2782337219 # Fargo's Music Mod
           2670628346 # Lights And Shadows
@@ -309,7 +308,6 @@
           3172916251 # Realistic Sky
           2619954303 # Recipe Browser
           2597324266 # Wing Slot Extra
-          3499210528 # Calamity: Wrath of the Gods multiplayer fix
           3092612587 # Revive Mod
           3101940607 # Boss Leaderboards
           3098311063 # Projectiles Be Gone
