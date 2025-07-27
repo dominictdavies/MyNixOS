@@ -116,12 +116,31 @@
       enable = true;
 
       shellAliases = {
-        switch = "nh os switch";
-        update = "cd ~/NixOS && git pull && nh os switch";
+        # General
         list = "ls -fl";
-        open = "xdg-open";
         clr = "clear";
         quit = "exit";
+
+        # NixOS
+        anix-switch = "nh os switch";
+        anix-git-switch = "(cd ~/NixOS && git pull && nh os switch)";
+        anix-flake-switch = "(cd ~/NixOS && nix flake update && nh os switch)";
+        anix-full-switch = "(cd ~/NixOS && git pull && nix flake update && nh os switch)";
+
+        # Borg
+        borg-mount = "mkdir -p ~/Borg && borg mount ssh://ajzc3ma4@ajzc3ma4.repo.borgbase.com/./repo ~/Borg";
+        borg-unmount = "borg umount ~/Borg && rm -rf ~/Borg";
+
+        # tModLoader
+        tmod-start = "sudo systemctl start tmodloader-server-third_calamity";
+        tmod-stop = "sudo systemctl stop tmodloader-server-third_calamity";
+        tmod-restart = "sudo systemctl restart tmodloader-server-third_calamity";
+        tmod-status = "sudo systemctl status tmodloader-server-third_calamity";
+        tmod-logs = "sudo journalctl -u tmodloader-server-third_calamity -f";
+        tmod-run = "tmod-start && tmod-logs && tmod-stop";
+
+        # Domino
+        open = "xdg-open";
       };
     };
 
