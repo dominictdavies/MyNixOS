@@ -72,10 +72,10 @@
         quit = "exit";
 
         # NixOS
-        nix-switch = "nh os switch";
-        nix-git-switch = "(cd ~/NixOS && git pull && nh os switch)";
-        nix-flake-switch = "(cd ~/NixOS && nix flake update && nh os switch)";
-        nix-full-switch = "(cd ~/NixOS && git pull && nix flake update && nh os switch)";
+        anix-switch = "nh os switch";
+        anix-git-switch = "(cd ~/NixOS && git pull && nh os switch)";
+        anix-flake-switch = "(cd ~/NixOS && nix flake update && nh os switch)";
+        anix-full-switch = "(cd ~/NixOS && git pull && nix flake update && nh os switch)";
 
         # Borg
         borg-mount = "mkdir -p ~/Borg && borg mount ssh://ajzc3ma4@ajzc3ma4.repo.borgbase.com/./repo ~/Borg";
