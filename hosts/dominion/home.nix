@@ -72,15 +72,17 @@
         quit = "exit";
 
         # NixOS
-        switch = "nh os switch";
-        update = "cd ~/NixOS && git pull && nh os switch";
+        nix-switch = "nh os switch";
+        nix-git-switch = "(cd ~/NixOS && git pull && nh os switch)";
+        nix-flake-switch = "(cd ~/NixOS && nix flake update && nh os switch)";
+        nix-full-switch = "(cd ~/NixOS && git pull && nix flake update && nh os switch)";
 
         # Borg
-        mount-borg = "mkdir -p ~/Borg && borg mount ssh://ajzc3ma4@ajzc3ma4.repo.borgbase.com/./repo ~/Borg";
-        unmount-borg = "borg umount ~/Borg && rm -rf ~/Borg";
+        borg-mount = "mkdir -p ~/Borg && borg mount ssh://ajzc3ma4@ajzc3ma4.repo.borgbase.com/./repo ~/Borg";
+        borg-unmount = "borg umount ~/Borg && rm -rf ~/Borg";
 
         # tModLoader
-        trer-logs = "sudo journalctl -u tmodloader-server-third_calamity -f";
+        tmod-logs = "sudo journalctl -u tmodloader-server-third_calamity -f";
       };
     };
 
