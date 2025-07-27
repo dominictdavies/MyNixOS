@@ -85,6 +85,7 @@
         tmod-start = "sudo systemctl start tmodloader-server-third_calamity";
         tmod-stop = "sudo systemctl stop tmodloader-server-third_calamity";
         tmod-restart = "sudo systemctl restart tmodloader-server-third_calamity";
+        tmod-status = "sudo systemctl status tmodloader-server-third_calamity";
         tmod-logs = "sudo journalctl -u tmodloader-server-third_calamity -f";
         tmod-run = "tmod-start && tmod-logs && tmod-stop";
       };
