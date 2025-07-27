@@ -308,6 +308,7 @@
           3172916251 # Realistic Sky
           2619954303 # Recipe Browser
           2597324266 # Wing Slot Extra
+          3454473356 # Synced Map
           3092612587 # Revive Mod
           3101940607 # Boss Leaderboards
           3098311063 # Projectiles Be Gone
