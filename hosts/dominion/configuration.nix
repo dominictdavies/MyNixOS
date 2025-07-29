@@ -55,22 +55,6 @@
     ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    # Modify the EFI Boot Manager
-    efibootmgr
-
-    # Yet another nix cli helper
-    nh
-
-    # Distributed version control system
-    git
-
-    # GitHub CLI tool
-    gh
-  ];
-
   # Prevent laptop from sleeping on lid close
   services.logind = {
     lidSwitch = "ignore";
