@@ -7,7 +7,10 @@
 {
   imports =
     [
+      ../../common/environment.nix
+      ../../common/home-manager.nix
       ../../common/locale.nix
+      ../../common/nixpkgs.nix
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -83,22 +86,6 @@
   # Create borg group
   users.groups.borg = {
     members = [ "borg" ];
-  };
-
-  home-manager = {
-    # Also pass inputs to home-manager modules
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "dominictdavies" = import ./home.nix;
-    };
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # Allow nh to find flake directory
-  environment.sessionVariables = {
-    NH_FLAKE = "/home/dominictdavies/MyNixOS";
   };
 
   # List packages installed in system profile. To search, run:
