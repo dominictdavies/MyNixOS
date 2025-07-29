@@ -88,7 +88,7 @@
 
   # Allow nh to find flake directory
   environment.sessionVariables = {
-    NH_FLAKE = "/home/dominictdavies/NixOS";
+    NH_FLAKE = "/home/dominictdavies/MyNixOS";
   };
 
   # List packages installed in system profile. To search, run:
