@@ -9,12 +9,18 @@
     [
       ../../common/boot-loader.nix
       ../../common/environment.nix
-      ../../common/home-manager.nix
       ../../common/locale.nix
       ../../common/nix-settings.nix
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "dominictdavies" = import ./home.nix;
+    };
+  };
 
   # Attempt to fix random GPU crashes
   boot.kernelParams = [ "amdgpu.runpm=1" ];

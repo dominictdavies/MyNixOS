@@ -9,7 +9,6 @@
     [
       ../../common/boot-loader.nix
       ../../common/environment.nix
-      ../../common/home-manager.nix
       ../../common/locale.nix
       ../../common/nix-settings.nix
       ./hardware-configuration.nix
@@ -17,6 +16,13 @@
       inputs.nix-minecraft.nixosModules.minecraft-servers
       inputs.nix-tmodloader.nixosModules.tmodloader
     ];
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "dominictdavies" = import ./home.nix;
+    };
+  };
 
   # Overlays
   nixpkgs.overlays = [ 
