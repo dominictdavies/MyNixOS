@@ -7,10 +7,11 @@
 {
   imports =
     [
+      ../../common/boot-loader.nix
       ../../common/environment.nix
       ../../common/home-manager.nix
       ../../common/locale.nix
-      ../../common/nixpkgs.nix
+      ../../common/nix-settings.nix
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-minecraft.nixosModules.minecraft-servers
@@ -22,13 +23,6 @@
     inputs.nix-minecraft.overlay 
     inputs.nix-tmodloader.overlay
   ];
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Networking
   networking.networkmanager.enable = true;

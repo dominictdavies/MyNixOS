@@ -7,20 +7,14 @@
 {
   imports =
     [
+      ../../common/boot-loader.nix
       ../../common/environment.nix
       ../../common/home-manager.nix
       ../../common/locale.nix
-      ../../common/nixpkgs.nix
+      ../../common/nix-settings.nix
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Attempt to fix random GPU crashes
   boot.kernelParams = [ "amdgpu.runpm=1" ];
