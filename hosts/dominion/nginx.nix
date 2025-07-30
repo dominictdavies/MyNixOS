@@ -20,6 +20,16 @@
     };
   };
 
+  # Let's Encrypt
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "dominictdavies@gmail.com";
+    certs."dominictdavies.dev" = {
+      dnsProvider = "cloudflare";
+      credentialsFile = "/etc/nixos/cf-creds.env";
+    };
+  };
+
   # Grant Nginx access to ACME certs
   systemd.services.nginx.serviceConfig.SupplementaryGroups = [ "acme" ];
 }

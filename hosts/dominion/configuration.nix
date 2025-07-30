@@ -53,16 +53,6 @@
   networking.firewall.allowedTCPPorts = [ 443 25565 ];
   networking.firewall.allowedUDPPorts = [ 2456 2457 25565 ];
 
-  # Let's Encrypt
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "dominictdavies@gmail.com";
-    certs."dominictdavies.dev" = {
-      dnsProvider = "cloudflare";
-      credentialsFile = "/etc/nixos/cf-creds.env";
-    };
-  };
-
   # Before changing this value read the documentation (https://nixos.org/nixos/options.html)
   system.stateVersion = "24.05";
 }
