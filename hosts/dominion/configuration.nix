@@ -8,6 +8,7 @@
       ../../common/locale.nix
       ../../common/nix-settings.nix
       ./hardware-configuration.nix
+      ./overlays.nix
       ./minecraft-servers.nix
       inputs.home-manager.nixosModules.default
       inputs.nix-tmodloader.nixosModules.tmodloader
@@ -19,12 +20,6 @@
       "dominictdavies" = import ./home.nix;
     };
   };
-
-  # Overlays
-  nixpkgs.overlays = [ 
-    inputs.nix-minecraft.overlay 
-    inputs.nix-tmodloader.overlay
-  ];
 
   # Networking
   networking.networkmanager.enable = true;
