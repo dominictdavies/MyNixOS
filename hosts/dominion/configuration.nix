@@ -7,16 +7,16 @@
     ../../common/laptop-server.nix
     ../../common/locale.nix
     ../../common/nix-settings.nix
+    ./backups.nix
+    ./grafana-and-prometheus.nix
     ./hardware-configuration.nix
-    ./overlays.nix
-    ./users.nix
     ./networking.nix
     ./nginx.nix
-    ./grafana-and-prometheus.nix
-    ./server-minecraft.nix
-    ./server-tmodloader.nix
-    ./server-valheim.nix
-    ./backups.nix
+    ./overlays.nix
+    ./users.nix
+    ./servers/minecraft.nix
+    ./servers/tmodloader.nix
+    ./servers/valheim.nix
     inputs.home-manager.nixosModules.default
   ];
 
