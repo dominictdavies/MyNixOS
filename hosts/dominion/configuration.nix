@@ -1,24 +1,23 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [
-      ../../common/boot-loader.nix
-      ../../common/environment.nix
-      ../../common/locale.nix
-      ../../common/nix-settings.nix
-      ../../common/laptop-server.nix
-      ./hardware-configuration.nix
-      ./overlays.nix
-      ./networking.nix
-      ./nginx.nix
-      ./grafana-and-prometheus.nix
-      ./server-minecraft.nix
-      ./server-tmodloader.nix
-      ./server-valheim.nix
-      ./backups.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [
+    ../../common/boot-loader.nix
+    ../../common/environment.nix
+    ../../common/locale.nix
+    ../../common/nix-settings.nix
+    ../../common/laptop-server.nix
+    ./hardware-configuration.nix
+    ./overlays.nix
+    ./networking.nix
+    ./nginx.nix
+    ./grafana-and-prometheus.nix
+    ./server-minecraft.nix
+    ./server-tmodloader.nix
+    ./server-valheim.nix
+    ./backups.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };

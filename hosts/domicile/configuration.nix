@@ -1,16 +1,15 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [
-      ../../common/boot-loader.nix
-      ../../common/environment.nix
-      ../../common/locale.nix
-      ../../common/nix-settings.nix
-      ../../common/laptop-server.nix
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [
+    ../../common/boot-loader.nix
+    ../../common/environment.nix
+    ../../common/locale.nix
+    ../../common/nix-settings.nix
+    ../../common/laptop-server.nix
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
