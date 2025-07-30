@@ -11,6 +11,7 @@
     ./hardware-configuration.nix
     ./networking.nix
     ./users.nix
+    ./utilities.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -20,9 +21,6 @@
       "dominictdavies" = import ./home.nix;
     };
   };
-
-  # Enable docker
-  virtualisation.docker.enable = true;
 
   # Before changing this value read the documentation (https://nixos.org/nixos/options.html)
   system.stateVersion = "24.05";
