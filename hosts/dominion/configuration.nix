@@ -4,9 +4,9 @@
   imports = [
     ../../common/boot-loader.nix
     ../../common/environment.nix
+    ../../common/laptop-server.nix
     ../../common/locale.nix
     ../../common/nix-settings.nix
-    ../../common/laptop-server.nix
     ./hardware-configuration.nix
     ./overlays.nix
     ./users.nix
