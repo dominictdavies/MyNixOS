@@ -7,6 +7,7 @@
     ../../common/locale.nix
     ../../common/nix-settings.nix
     ../../common/laptop-server.nix
+    ./boot-initrd.nix
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
