@@ -8,6 +8,7 @@
     ../../common/nix-settings.nix
     ./hardware-configuration.nix
     ./networking.nix
+    ./users.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -56,15 +57,6 @@
 
   # Enable docker
   virtualisation.docker.enable = true;
-
-  # Define a user account
-  users.users.dominictdavies = {
-    isNormalUser = true;
-    description = "Dominic Davies";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    # hashedPassword = "*";
-    packages = with pkgs; [];
-  };
 
   # Before changing this value read the documentation (https://nixos.org/nixos/options.html)
   system.stateVersion = "24.05";
