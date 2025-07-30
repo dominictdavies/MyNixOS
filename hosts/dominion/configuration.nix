@@ -12,9 +12,9 @@
       ./overlays.nix
       ./nginx.nix
       ./grafana-and-prometheus.nix
-      ./minecraft-servers.nix
-      ./tmodloader-servers.nix
-      ./valheim-server.nix
+      ./server-minecraft.nix
+      ./server-tmodloader.nix
+      ./server-valheim.nix
       ./backups.nix
       inputs.home-manager.nixosModules.default
     ];
