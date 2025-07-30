@@ -7,6 +7,7 @@
       ../../common/environment.nix
       ../../common/locale.nix
       ../../common/nix-settings.nix
+      ../../common/server-networking.nix
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -44,10 +45,8 @@
   '';
 
   # Networking
-  networking.networkmanager.enable = true;
   networking.hostName = "domicile";
   networking.defaultGateway = "10.1.1.1";
-  networking.nameservers = [ "8.8.8.8" ];
 
   # Static IP
   networking.interfaces.enp2s0f1.ipv4.addresses = [ {
