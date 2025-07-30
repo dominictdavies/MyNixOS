@@ -85,17 +85,6 @@
     members = [ "borg" ];
   };
 
-  # Prevent laptop from sleeping on lid close
-  services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "ignore";
-  };
-
-  # Enable the OpenSSH daemon
-  services.openssh.enable = true;
-  services.openssh.settings.PasswordAuthentication = false;
-
   # Open ports in the firewall
   networking.firewall.allowedTCPPorts = [ 22 ];
 

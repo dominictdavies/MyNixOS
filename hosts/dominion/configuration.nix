@@ -48,17 +48,6 @@
     packages = with pkgs; [];
   };
 
-  # Prevent laptop from sleeping on lid close
-  services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "ignore";
-  };
-
-  # Enable the OpenSSH daemon
-  services.openssh.enable = true;
-  services.openssh.settings.PasswordAuthentication = false;
-
   # Open ports in the firewall
   networking.firewall.allowedTCPPorts = [ 443 25565 ];
   networking.firewall.allowedUDPPorts = [ 2456 2457 25565 ];
