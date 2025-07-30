@@ -7,6 +7,7 @@
     ../../common/locale.nix
     ../../common/nix-settings.nix
     ./hardware-configuration.nix
+    ./networking.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -19,26 +20,6 @@
 
   # Attempt to fix random GPU crashes
   boot.kernelParams = [ "amdgpu.runpm=1" ];
-
-  # Define your hostname
-  networking.hostName = "domino";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Enable special name resolution
-  services.avahi = {
-      enable = true;
-      nssmdns4 = true;
-      publish = {
-        enable = true;
-        addresses = true;
-        domain = true;
-        hinfo = true;
-        userServices = true;
-        workstation = true;
-      };
-  };
 
   # Framework recommendations (https://wiki.nixos.org/wiki/Hardware/Framework/Laptop_13)
   services.fwupd.enable = true;
