@@ -10,6 +10,7 @@
       ../../common/laptop-server.nix
       ./hardware-configuration.nix
       ./overlays.nix
+      ./networking.nix
       ./nginx.nix
       ./grafana-and-prometheus.nix
       ./server-minecraft.nix
@@ -26,16 +27,6 @@
     };
   };
 
-  # Networking
-  networking.hostName = "dominion";
-  networking.defaultGateway = "10.1.1.1";
-
-  # Static IP
-  networking.interfaces.eth0.ipv4.addresses = [ {
-    address = "10.1.1.202";
-    prefixLength = 24;
-  } ];
-
   # Define a user account
   users.users.dominictdavies = {
     isNormalUser = true;
@@ -48,10 +39,6 @@
     ];
     packages = with pkgs; [];
   };
-
-  # Open ports in the firewall
-  networking.firewall.allowedTCPPorts = [ 443 25565 ];
-  networking.firewall.allowedUDPPorts = [ 2456 2457 25565 ];
 
   # Before changing this value read the documentation (https://nixos.org/nixos/options.html)
   system.stateVersion = "24.05";
