@@ -9,6 +9,7 @@
     ../../common/laptop-server.nix
     ./boot-initrd.nix
     ./hardware-configuration.nix
+    ./networking.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -18,16 +19,6 @@
       "dominictdavies" = import ./home.nix;
     };
   };
-
-  # Networking
-  networking.hostName = "domicile";
-  networking.defaultGateway = "10.1.1.1";
-
-  # Static IP
-  networking.interfaces.enp2s0f1.ipv4.addresses = [ {
-    address = "10.1.1.200";
-    prefixLength = 24;
-  } ];
 
   # Define a user account
   users.users = {
@@ -59,9 +50,6 @@
   users.groups.borg = {
     members = [ "borg" ];
   };
-
-  # Open ports in the firewall
-  networking.firewall.allowedTCPPorts = [ 22 ];
 
   # Before changing this value read the documentation (https://nixos.org/nixos/options.html)
   system.stateVersion = "24.05";
