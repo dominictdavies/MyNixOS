@@ -19,4 +19,7 @@
       };
     };
   };
+
+  # Grant Nginx access to ACME certs
+  systemd.services.nginx.serviceConfig.SupplementaryGroups = [ "acme" ];
 }

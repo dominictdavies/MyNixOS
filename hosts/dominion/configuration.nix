@@ -63,9 +63,6 @@
     };
   };
 
-  # Grant Nginx access to ACME certs
-  systemd.services.nginx.serviceConfig.SupplementaryGroups = [ "acme" ];
-
   # Before changing this value read the documentation (https://nixos.org/nixos/options.html)
   system.stateVersion = "24.05";
 }
