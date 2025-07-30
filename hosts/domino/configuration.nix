@@ -6,6 +6,7 @@
     ../../common/environment.nix
     ../../common/locale.nix
     ../../common/nix-settings.nix
+    ./framework.nix
     ./hardware-configuration.nix
     ./networking.nix
     ./users.nix
@@ -18,10 +19,6 @@
       "dominictdavies" = import ./home.nix;
     };
   };
-
-  # Framework recommendations (https://wiki.nixos.org/wiki/Hardware/Framework/Laptop_13)
-  services.fwupd.enable = true;
-  services.power-profiles-daemon.enable = true;
 
   # Enable the X11 windowing system
   services.xserver.enable = true;
