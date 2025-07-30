@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
 
 {
@@ -43,16 +39,17 @@
     prefixLength = 24;
   } ];
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account
   users.users.dominictdavies = {
     isNormalUser = true;
     description = "Dominic Davies";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    # hashedPassword = "*";
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMbpqoIuCOeH2FjQmCdiqWsHAwKarHLW3JUIZMKsWLLB dominictdavies@gmail.com"
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDYWWLuj8iaTVE/2TQbXhosNCzQcRB+RhMvnPHcXfgxrH4XqpF0we5xF1tC94zFDzzn3VwYkQpL2kKSdtSVNCyGfywPIOZpSQc5zuiNfc50uajN+XBkECYdVgdiJLRPOwCIECyTllSyJUmA+KKjjNzKOGLCmBCkVhZ6XiJ1+ErxUzYy5PXYZip3N2OiIgS3nACtqpHe2Jo9bvP6kZi9QxpWa87C0M7zW65uHKDYusJxKlYe2fKBF6jfHniMN0ZuQvWaoZ3y4lGp5mlQf2QtUdNgm9197LpHsSWVAidbxVTa+2yDNpJv33rnOcAmhpSrfOrGNzOaqmObkCde8HCTsopg9YFT3ixmDRjMltd/+YfY+j/3BT331lRIBD1uDysQYb6+84LVdq9HnEQ6DzX69C2ZmX1koE9pCTq84KGzK6WReE6rf4AK0JXmnE23dTRV4GDnNIPW/y4nl+8XWRS6kusvVtACd6/shU48YjQke5Yxuf2JDMvUb2LMPUZQvRo4zgMd5Vmen9eutK599GrPbZsKh7Rm9jnSR+xHr7s7umYbPmTSe14t5Ka73uf80nj0SFRersKDxzZbPlIN9eUy8g6SajTXzGKiWdOBMP5hSCLpyOd26toWl3NW7hUrPrg4XTJbxxNKG33glYkrS6SAZF7mXrr3PLYavk/iwxPyVs8NOQ== dominictdavies@dominator"
     ];
+    packages = with pkgs; [];
   };
 
   # Prevent laptop from sleeping on lid close
@@ -62,15 +59,13 @@
     lidSwitchExternalPower = "ignore";
   };
 
-  # Enable the OpenSSH daemon.
+  # Enable the OpenSSH daemon
   services.openssh.enable = true;
   services.openssh.settings.PasswordAuthentication = false;
 
-  # Open ports in the firewall.
+  # Open ports in the firewall
   networking.firewall.allowedTCPPorts = [ 443 25565 ];
   networking.firewall.allowedUDPPorts = [ 2456 2457 25565 ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Nginx
   services.nginx = {
@@ -81,7 +76,8 @@
       sslCertificateKey = "/var/lib/acme/dominictdavies.dev/key.pem";
       locations = {
         "/" = {
-          proxyPass = "http://localhost:${toString config.services.grafana.settings.server.http_port}";  # Proxy to Grafana
+          # Proxy to Grafana
+          proxyPass = "http://localhost:${toString config.services.grafana.settings.server.http_port}";
           proxyWebsockets = true;
           extraConfig = ''
             proxy_set_header Host $host;
@@ -94,7 +90,7 @@
   # Let's Encrypt
   security.acme = {
     acceptTerms = true;
-    defaults.email = "dominictdavies@gmail.com";  # Required for Let's Encrypt
+    defaults.email = "dominictdavies@gmail.com";
     certs."dominictdavies.dev" = {
       dnsProvider = "cloudflare";
       credentialsFile = "/etc/nixos/cf-creds.env";
@@ -284,11 +280,6 @@
   #   };
   # };
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  # Before changing this value read the documentation (https://nixos.org/nixos/options.html)
+  system.stateVersion = "24.05";
 }
