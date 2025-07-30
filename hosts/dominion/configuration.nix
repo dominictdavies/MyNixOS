@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       ./overlays.nix
       ./nginx.nix
+      ./grafana-and-prometheus.nix
       ./minecraft-servers.nix
       ./tmodloader-servers.nix
       ./valheim-server.nix
@@ -64,48 +65,6 @@
 
   # Grant Nginx access to ACME certs
   systemd.services.nginx.serviceConfig.SupplementaryGroups = [ "acme" ];
-
-  # Grafana & Prometheus
-  services = {
-    grafana = {
-      enable = true;
-      settings.server.http_addr = "0.0.0.0";
-      settings.server.http_port = 3000;
-      provision = {
-        enable = true;
-        datasources.settings.datasources = [
-          {
-            name = "Prometheus";
-            type = "prometheus";
-            access = "proxy";
-            url = "http://localhost:${toString config.services.prometheus.port}";
-          }
-        ];
-      }; 
-    };
-
-    prometheus = {
-      enable = true;
-      listenAddress = "localhost";
-      port = 9090;
-
-      exporters.node = {
-        enable = true;
-        listenAddress = "localhost";
-        port = 9100;
-      };
-
-      scrapeConfigs = [
-        {
-          job_name = "Node";
-          scrape_interval = "10s";
-          static_configs = [
-            { targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
-          ];
-        }
-      ];
-    };
-  };
 
   # Before changing this value read the documentation (https://nixos.org/nixos/options.html)
   system.stateVersion = "24.05";
