@@ -12,6 +12,7 @@
       ./overlays.nix
       ./minecraft-servers.nix
       ./tmodloader-servers.nix
+      ./valheim-server.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -133,14 +134,6 @@
         }
       ];
     };
-  };
-
-  # Valheim server
-  services.valheim = {
-    enable = false;
-    serverName = "Davies World";
-    worldName = "DaviesWorld";
-    password = "18tecoma";
   };
 
   # Automated backups
