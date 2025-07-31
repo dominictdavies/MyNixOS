@@ -1,40 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "dominictdavies";
   home.homeDirectory = "/home/dominictdavies";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  # Make sure to check the Home Manager release notes if you want to change this value
+  home.stateVersion = "24.05";
 
   # Allow unfree and broken packages
   nixpkgs.config.allowUnfree = true;
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
-
   programs = {
-    # Bash
     bash = {
       enable = true;
 
@@ -53,14 +29,6 @@
         # Borg
         borg-mount = "mkdir -p ~/Borg && borg mount ssh://ajzc3ma4@ajzc3ma4.repo.borgbase.com/./repo ~/Borg";
         borg-unmount = "borg umount ~/Borg && rm -rf ~/Borg";
-
-        # tModLoader
-        tmod-start = "sudo systemctl start tmodloader-server-third_calamity";
-        tmod-stop = "sudo systemctl stop tmodloader-server-third_calamity";
-        tmod-restart = "sudo systemctl restart tmodloader-server-third_calamity";
-        tmod-status = "sudo systemctl status tmodloader-server-third_calamity";
-        tmod-logs = "sudo journalctl -u tmodloader-server-third_calamity -f";
-        tmod-run = "tmod-start && tmod-logs && tmod-stop";
       };
     };
 
