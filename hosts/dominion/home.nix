@@ -9,7 +9,6 @@
 
   # Allow unfree and broken packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowBroken = true;
 
   home.packages = with pkgs; [
     steamcmd
@@ -30,10 +29,6 @@
         anix-git-switch = "(cd ~/MyNixOS && git pull && nh os switch)";
         anix-flake-switch = "(cd ~/MyNixOS && nix flake update && nh os switch)";
         anix-full-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch)";
-
-        # Borg
-        borg-mount = "mkdir -p ~/Borg && borg mount ssh://ajzc3ma4@ajzc3ma4.repo.borgbase.com/./repo ~/Borg";
-        borg-unmount = "borg umount ~/Borg && rm -rf ~/Borg";
 
         # tModLoader
         tmod-start = "sudo systemctl start tmodloader-server-third_calamity";
