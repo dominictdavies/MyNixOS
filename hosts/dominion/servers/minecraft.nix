@@ -4,7 +4,7 @@
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
 
   services.minecraft-servers = {
-    enable = false;
+    enable = true;
     eula = true;
 
     servers = {
