@@ -16,13 +16,7 @@
     };
 
     nix-minecraft.url = "github:infinidoge/nix-minecraft";
-
     nix-tmodloader.url = "github:dominictdavies/nix-tmodloader";
-
-    valheim-server = {
-      url = "github:aidalgol/valheim-server-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, lanzaboote, ... }@inputs: {
@@ -43,7 +37,6 @@
           inputs.nixos-hardware.nixosModules.acer-aspire-4810t
           inputs.home-manager.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
-          inputs.valheim-server.nixosModules.default
 
           ({ pkgs, lib, ... }: {
             environment.systemPackages = [

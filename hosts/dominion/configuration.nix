@@ -16,7 +16,6 @@
     ./users.nix
     ./servers/minecraft.nix
     ./servers/tmodloader.nix
-    ./servers/valheim.nix
     inputs.home-manager.nixosModules.default
   ];
 
