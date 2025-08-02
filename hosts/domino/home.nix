@@ -19,6 +19,7 @@
     ffmpeg
     baobab
     qalculate-qt
+    tigervnc
 
     # Programming Packages
     gcc
