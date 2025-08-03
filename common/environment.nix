@@ -2,6 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # Secrets
+    sops
+
     # NixOS CLI Tool
     nh
 
