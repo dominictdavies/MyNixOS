@@ -75,26 +75,8 @@
 
         # Domino
         open = "xdg-open";
+        deltarune = "steam steam://rungameid/1671210 && exit";
       };
-
-      # Play games through Steam
-      initExtra = ''
-        play() {
-          declare -A game_ids=(
-            ["deltarune"]="1671210"
-          )
-
-          game_name=$1
-          game_id="${game_ids[game_name]}"
-
-          if [[ -n "${game_id}" ]]; then
-            steam "steam://rungameid/${game_id}" && exit
-          else
-            echo "Unknown game: $game_name"
-            echo "Available: ${!game_ids[@]}"
-          fi
-        }
-      '';
     };
 
     # Command-line fuzzy finder
