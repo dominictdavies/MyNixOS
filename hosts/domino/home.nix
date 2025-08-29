@@ -85,7 +85,7 @@
           )
 
           game_name=$1
-          game_id="${game_ids[$game_name]}"
+          game_id="${game_ids[game_name]}"
 
           if [[ -n "${game_id}" ]]; then
             steam "steam://rungameid/${game_id}" && exit
