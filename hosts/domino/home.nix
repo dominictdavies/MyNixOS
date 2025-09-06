@@ -25,6 +25,7 @@
     gcc
     python3
     dotnet-sdk
+    clang-tools
 
     # Editors
     obsidian
