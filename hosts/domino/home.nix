@@ -29,7 +29,6 @@
 
     # Editors
     obsidian
-    notepadqq
     libreoffice
     vscode
     inkscape
