@@ -15,6 +15,7 @@
     alacritty
 
     # Tools
+    devenv
     unzip
     ffmpeg
     baobab
@@ -23,7 +24,6 @@
 
     # Programming Packages
     gcc
-    python3
     dotnet-sdk
     clang-tools
 
