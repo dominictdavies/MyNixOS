@@ -20,7 +20,7 @@
     ffmpeg
     baobab
     qalculate-qt
-    tigervnc
+    remmina
 
     # Programming Packages
     gcc
