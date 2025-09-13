@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     # Terminal
     alacritty
+    starship
 
     # Tools
     devenv
