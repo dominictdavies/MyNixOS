@@ -79,6 +79,9 @@
       };
     };
 
+    # Environment management depending on current directory
+    direnv.enable = true;
+
     # Command-line fuzzy finder
     fzf.enable = true;
 
