@@ -13,7 +13,6 @@
   home.packages = with pkgs; [
     # Terminal
     alacritty
-    starship
 
     # Tools
     devenv
@@ -91,6 +90,9 @@
       enable = true;
       options = [ "--cmd cd" ];
     };
+
+    # Customisable shell prompt
+    starship.enable = true;
 
     # Let Home Manager install and manage itself
     home-manager.enable = true;
