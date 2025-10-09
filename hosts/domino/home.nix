@@ -11,9 +11,6 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    # Terminal
-    alacritty
-
     # Tools
     devenv
     unzip
