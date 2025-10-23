@@ -74,6 +74,15 @@
         open = "xdg-open";
         deltarune = "steam steam://rungameid/1671210 && exit";
       };
+
+      bashrcExtra = ''
+        cpprun() {
+          local name="$1"
+          shift
+          g++ "''${name}.cpp" -o "''${name}.o" &&
+          ./"''${name}.o" "$@"
+        }
+      '';
     };
 
     # Environment management depending on current directory
