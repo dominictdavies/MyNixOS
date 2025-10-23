@@ -16,7 +16,7 @@
 
       shellAliases = {
         # General
-        list = "ls -fl";
+        list = "ls -flA";
         clr = "clear";
         quit = "exit";
 
