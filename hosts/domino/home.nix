@@ -79,7 +79,7 @@
         cpprun() {
           local name="$1"
           shift
-          g++ "''${name}.cpp" -o "''${name}.out" &&
+          g++ "''${name}.cpp" -o "''${name}.out" -lSDL2 &&
           ./"''${name}.out" "$@"
         }
       '';
