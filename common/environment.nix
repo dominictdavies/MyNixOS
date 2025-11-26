@@ -7,6 +7,7 @@
 
     # Git & GitHub
     git
+    git-lfs
     gh
   ];
 
