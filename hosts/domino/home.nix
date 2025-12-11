@@ -20,6 +20,7 @@
     remmina
 
     # Programming Packages
+    rustup
     gcc
     dotnet-sdk
     clang-tools
