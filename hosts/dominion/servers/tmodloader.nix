@@ -4,7 +4,7 @@
   imports = [ inputs.nix-tmodloader.nixosModules.tmodloader ];
 
   services.tmodloader = {
-    enable = true;
+    enable = false;
 
     servers = {
       third_calamity = {
