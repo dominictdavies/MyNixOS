@@ -10,7 +10,7 @@
     servers = {
       edgetable_vegetable = {
         enable = true;
-        package = pkgs.fabricServers.fabric-1_21_11;
+        package = pkgs.quiltServers.quilt-1_21_11;
 
         serverProperties = {
           level-name = "december_2025";
