@@ -4,12 +4,12 @@
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
 
   services.minecraft-servers = {
-    enable = true;
+    enable = false;
     eula = true;
 
     servers = {
       edgetable_vegetable = {
-        enable = true;
+        enable = false;
         package = pkgs.quiltServers.quilt-1_21_11;
 
         serverProperties = {
