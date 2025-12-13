@@ -14,8 +14,8 @@
 
         serverProperties = {
           level-name = "edgetable_vegetable";
-          motd = "Under construction rn now";
-          max-players = 1;
+          motd = "And by vegetables lets justr say edgetable";
+          max-players = 7;
           level-seed = 7644964991330705060;
           difficulty = "hard";
           spawn-protection = 0;
