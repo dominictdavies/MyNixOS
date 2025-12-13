@@ -10,13 +10,13 @@
     servers = {
       edgetable_vegetable = {
         enable = true;
-        package = pkgs.paperServers.paper;
+        package = pkgs.fabricServers.fabric-1_21_11;
 
         serverProperties = {
-          level-name = "edgetable_vegetable";
+          level-name = "december_2025";
           motd = "Under construction rn now";
           max-players = 1;
-          level-seed = 7644964991330705060;
+          # level-seed = 7644964991330705060;
           difficulty = "hard";
           spawn-protection = 0;
           simulation-distance = 16;
@@ -62,7 +62,7 @@
         whitelist = {
           dominic = "d61aa5e5-2697-4b02-bc0d-164176c9169e";
           nick = "58e6164a-b8a9-4c5a-8775-06e89bef2c1c";
-          friend = "67ca1be4-56ad-489b-88b4-61e7866b253f";
+          steph = "67ca1be4-56ad-489b-88b4-61e7866b253f";
         };
 
         operators = {
