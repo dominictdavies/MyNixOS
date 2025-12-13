@@ -38,6 +38,12 @@
         tmod-logs = "sudo journalctl -u tmodloader-server-third_calamity -f";
         tmod-run = "tmod-start && tmod-logs && tmod-stop";
       };
+
+      # Needed for NeoForge
+      java = {
+        enable = true;
+        package = pkgs.jdk21;
+      };
     };
 
     # Command-line fuzzy finder
