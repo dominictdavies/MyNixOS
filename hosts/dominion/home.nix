@@ -49,12 +49,6 @@
       options = [ "--cmd cd" ];
     };
 
-    # Needed for NeoForge
-    java = {
-      enable = true;
-      package = pkgs.jdk21;
-    };
-
     # Let Home Manager install and manage itself
     home-manager.enable = true;
   };

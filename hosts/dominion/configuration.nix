@@ -13,6 +13,7 @@
     ./networking.nix
     ./nginx.nix
     ./overlays.nix
+    ./packages.nix
     ./users.nix
     ./servers/minecraft.nix
     ./servers/tmodloader.nix
