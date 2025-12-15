@@ -9,7 +9,7 @@
       Type = "exec";
       User = "dominictdavies";
       WorkingDirectory = "/home/dominictdavies/NeoForge";
-      ExecStart = "/home/dominictdavies/NeoForge/run.sh";
+      ExecStart = "/bin/bash /home/dominictdavies/NeoForge/run.sh";
       Restart = "on-failure";
       TimeoutStopSec=60;
     };
