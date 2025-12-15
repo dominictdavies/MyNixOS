@@ -8,8 +8,9 @@
     serviceConfig = {
       Type = "exec";
       User = "dominictdavies";
-      WorkingDirectory = "/home/dominictdavies/NeoForge";
+      Environment = "PATH=/run/current-system/sw/bin";
       ExecStart = "/bin/sh /home/dominictdavies/NeoForge/run.sh";
+      WorkingDirectory = "/home/dominictdavies/NeoForge";
       Restart = "on-failure";
       TimeoutStopSec=60;
     };
