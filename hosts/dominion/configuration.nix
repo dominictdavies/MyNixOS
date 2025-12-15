@@ -16,6 +16,7 @@
     ./users.nix
     ./servers/minecraft.nix
     ./servers/tmodloader.nix
+    ./services.nix
     inputs.home-manager.nixosModules.default
   ];
 
