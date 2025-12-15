@@ -14,5 +14,5 @@
       TimeoutStopSec=60;
     };
     wantedBy = [ "multi-user.target" ];
-  }
+  };
 }
