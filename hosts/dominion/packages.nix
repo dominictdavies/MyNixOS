@@ -2,7 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # Needed for NeoForge
+    # NeoForge Server
     jdk21
+    git-filter-repo
   ];
 }
