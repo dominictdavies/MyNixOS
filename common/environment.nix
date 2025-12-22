@@ -5,9 +5,10 @@
     # NixOS CLI Tool
     nh
 
-    # Git & GitHub
+    # Git
     git
     git-lfs
+    git-filter-repo
     gh
   ];
 
