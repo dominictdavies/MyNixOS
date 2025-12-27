@@ -1,5 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 
+let
+  backupScript = pkgs.writeShellScript "backup-world" (builtins.readFile ./scripts/backup-neoforge-server.sh);
+in
 {
   systemd = {
     services = {
@@ -20,14 +23,13 @@
       };
 
       neoforge-server-backup = {
-        enable = true;
         description = "NeoForge Server Backup and Restart";
         after = [ "neoforge-server.service" ];
         serviceConfig = {
           Type = "oneshot";
           User = "root";
           Environment = "PATH=/run/current-system/sw/bin";
-          ExecStart = "/bin/sh -c 'systemctl stop neoforge-server && tar -czf /home/dominictdavies/Backups/world-ours/world-ours_$(date +\\%Y-\\%m-\\%d).tar.gz /home/dominictdavies/NeoForge/world-ours/ && chown dominictdavies:dominictdavies /home/dominictdavies/Backups/world-ours/world-ours_$(date +\\%Y-\\%m-\\%d).tar.gz; systemctl start neoforge-server'";
+          ExecStart = "${backupScript}";
         };
       };
     };
