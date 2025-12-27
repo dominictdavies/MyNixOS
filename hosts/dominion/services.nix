@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  backupScript = pkgs.writeShellScript "backup-world" (builtins.readFile ./scripts/backup-neoforge-server.sh);
+  backupScript = pkgs.writeShellScript "backup-neoforge-server" (builtins.readFile ./scripts/backup-neoforge-server.sh);
 in
 {
   systemd = {
