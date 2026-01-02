@@ -16,7 +16,7 @@ in
           Environment = "PATH=/run/current-system/sw/bin";
           ExecStart = "/bin/sh /home/dominictdavies/NeoForge/run.sh";
           WorkingDirectory = "/home/dominictdavies/NeoForge";
-          Restart = "on-failure";
+          Restart = "always";
           TimeoutStopSec=60;
         };
         wantedBy = [ "multi-user.target" ];
