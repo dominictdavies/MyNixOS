@@ -11,4 +11,9 @@
     nssmdns4 = true;
     openFirewall = true;
   };
+
+  # Local network file sharing
+  services.samba = {
+    enable = true;
+  };
 }
