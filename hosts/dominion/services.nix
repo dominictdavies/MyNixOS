@@ -38,7 +38,7 @@ in
       neoforge-server-backup = {
         timerConfig = {
           Persistent = true;
-          OnCalendar = "*-*-* 22:00:00";
+          OnCalendar = "*-*-* 20:00:00";
         };
         wantedBy = [ "timers.target" ];
       };
