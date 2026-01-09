@@ -4,4 +4,4 @@ BACKUP_FILE="/home/dominictdavies/Backups/world-ours/world-ours_$(date +%Y-%m-%d
 systemctl stop neoforge-server
 tar -czf "$BACKUP_FILE" -C /home/dominictdavies/NeoForge world-ours/
 chown dominictdavies:users "$BACKUP_FILE"
-systemctl start neoforge-server
+systemctl reboot
