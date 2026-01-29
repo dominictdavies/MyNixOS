@@ -7,7 +7,7 @@ in
   systemd = {
     services = {
       neoforge-server = {
-        enable = true;
+        enable = false;
         description = "NeoForge Server";
         after = [ "network.target" ];
         serviceConfig = {
@@ -36,6 +36,7 @@ in
 
     timers = {
       neoforge-server-backup = {
+        enable = false;
         timerConfig = {
           Persistent = true;
           OnCalendar = "*-*-* 20:00:00";
