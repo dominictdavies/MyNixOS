@@ -74,6 +74,7 @@
 
         # Domino
         open = "xdg-open";
+        help-vagrant = "open https://cheatography.com/davbfr/cheat-sheets/vagrant-cheat-sheet/";
         deltarune = "steam steam://rungameid/1671210 && exit";
       };
 
