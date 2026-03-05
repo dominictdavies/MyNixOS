@@ -18,6 +18,7 @@
     baobab
     qalculate-qt
     remmina
+    vagrant
 
     # Programming Packages
     rustup
