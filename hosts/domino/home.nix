@@ -68,9 +68,9 @@
 
         # NixOS
         mynix-switch = "nh os switch";
-        mynix-git-switch = "(cd ~/MyNixOS && git pull && nh os switch)";
-        mynix-flake-switch = "(cd ~/MyNixOS && nix flake update && nh os switch)";
-        mynix-full-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch)";
+        mynix-sync-switch = "(cd ~/MyNixOS && git pull && nh os switch)";
+        mynix-flake-switch = "(cd ~/MyNixOS && nix flake update && nh os switch && git add flake.lock && git commit -m \"Update flake\" && git push)";
+        mynix-full-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch && git add flake.lock && git commit -m \"Update flake\" && git push)";
 
         # Domino
         open = "xdg-open";
