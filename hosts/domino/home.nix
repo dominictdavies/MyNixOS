@@ -19,6 +19,7 @@
     qalculate-qt
     remmina
     vagrant
+    cgdb
 
     # Programming Packages
     rustup
