@@ -9,7 +9,6 @@
     git
     git-lfs
     git-filter-repo
-    gh
   ];
 
   environment.sessionVariables = {
