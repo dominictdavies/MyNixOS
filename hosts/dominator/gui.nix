@@ -1,10 +1,15 @@
 { ... }:
 
 {
-  # X11 windowing system with NVIDIA card
-  services.xserver = {
-    enable = true;
-    videoDrivers = ["nvidia"];
+  # NVIDIA Graphics (https://wiki.nixos.org/wiki/NVIDIA)
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware = {
+    graphics.enable = true;
+
+    nvidia = {
+      open = true;
+      modesetting.enable = true;
+    };
   };
 
   # KDE Plasma Desktop Environment
