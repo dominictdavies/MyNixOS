@@ -35,7 +35,6 @@
     vlc
 
     # Gaming
-    steam
     prismlauncher
 
     # Custom Cursors
@@ -62,6 +61,13 @@
         open = "xdg-open";
         deltarune = "steam steam://rungameid/1671210 && exit";
       };
+    };
+
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
 
     # Command-line fuzzy finder
