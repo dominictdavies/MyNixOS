@@ -21,6 +21,14 @@
 
   outputs = { self, nixpkgs, lanzaboote, ... }@inputs: {
     nixosConfigurations = {
+      dominator = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/dominator/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+
       domino = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
