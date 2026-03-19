@@ -25,7 +25,6 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/dominator/configuration.nix
-          inputs.home-manager.nixosModules.default
         ];
       };
 
