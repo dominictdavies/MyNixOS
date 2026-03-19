@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ./networking.nix
     ./nvidia.nix
+    ./programs.nix
     ./users.nix
     ./utilities.nix
     inputs.home-manager.nixosModules.default
