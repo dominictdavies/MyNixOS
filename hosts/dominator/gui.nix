@@ -1,8 +1,11 @@
 { ... }:
 
 {
-  # X11 windowing system
-  services.xserver.enable = true;
+  # X11 windowing system with NVIDIA card
+  services.xserver = {
+    enable = true;
+    videoDrivers = ["nvidia"];
+  };
 
   # KDE Plasma Desktop Environment
   services.displayManager.sddm.enable = true;
