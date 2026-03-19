@@ -32,12 +32,12 @@
     };
 
     # Command-line fuzzy finder
-    fzf.enable = true;
+    fzf.fuzzyCompletion = true;
 
     # Smarter `cd` command
     zoxide = {
       enable = true;
-      options = [ "--cmd cd" ];
+      flags = [ "--cmd cd" ];
     };
 
     # Customisable shell prompt
