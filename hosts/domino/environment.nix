@@ -36,7 +36,6 @@
     vlc
 
     # Gaming
-    steam
     prismlauncher
 
     # Custom Cursors
