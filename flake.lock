@@ -69,26 +69,6 @@
         "type": "github"
       }
     },
-    "home-manager": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1773935367,
-        "narHash": "sha256-+RjULqqbCYmOJG+99pNqEGRJV7bX8DYPbxKUhKWFKsI=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "a7ec5440474cdcc9939cc67c320f01aea0a2f195",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
     "lanzaboote": {
       "inputs": {
         "crane": "crane",
@@ -119,11 +99,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1773802295,
-        "narHash": "sha256-luPLLgS8VR2fHo3xT04KbJm0RU2wep6SDh3smwF8e5E=",
+        "lastModified": 1773974647,
+        "narHash": "sha256-+45LBSG4u7GBpPAMzH1aijYPXfF1gh5dNslGOQIIzDQ=",
         "owner": "infinidoge",
         "repo": "nix-minecraft",
-        "rev": "41870283e080c46a6d33b6c3b3923e90348254c3",
+        "rev": "9486e94feb2e6263fa2aa67cbfe39c5a95853bdf",
         "type": "github"
       },
       "original": {
@@ -238,7 +218,6 @@
     },
     "root": {
       "inputs": {
-        "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "nix-minecraft": "nix-minecraft",
         "nix-tmodloader": "nix-tmodloader",
