@@ -14,53 +14,63 @@
     nix-tmodloader.url = "github:dominictdavies/nix-tmodloader";
   };
 
-  outputs = { self, nixpkgs, lanzaboote, ... }@inputs: {
-    nixosConfigurations = {
-      dominator = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/dominator/configuration.nix
-        ];
-      };
+  outputs =
+    {
+      self,
+      nixpkgs,
+      lanzaboote,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
+        dominator = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/dominator/configuration.nix
+          ];
+        };
 
-      domino = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/domino/configuration.nix
-          inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-        ];
-      };
+        domino = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/domino/configuration.nix
+            inputs.nixos-hardware.nixosModules.framework-13-7040-amd
+          ];
+        };
 
-      dominion = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/dominion/configuration.nix
-          inputs.nixos-hardware.nixosModules.acer-aspire-4810t
-          lanzaboote.nixosModules.lanzaboote
+        dominion = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/dominion/configuration.nix
+            inputs.nixos-hardware.nixosModules.acer-aspire-4810t
+            lanzaboote.nixosModules.lanzaboote
 
-          ({ pkgs, lib, ... }: {
-            environment.systemPackages = [
-              # For debugging and troubleshooting Secure Boot
-              pkgs.sbctl
-            ];
+            (
+              { pkgs, lib, ... }:
+              {
+                environment.systemPackages = [
+                  # For debugging and troubleshooting Secure Boot
+                  pkgs.sbctl
+                ];
 
-            # Replace systemd-boot with lanzaboote
-            boot.loader.systemd-boot.enable = lib.mkForce false;
-            boot.lanzaboote = {
-              enable = true;
-              pkiBundle = "/etc/secureboot";
-            };
-          })
-        ];
-      };
+                # Replace systemd-boot with lanzaboote
+                boot.loader.systemd-boot.enable = lib.mkForce false;
+                boot.lanzaboote = {
+                  enable = true;
+                  pkiBundle = "/etc/secureboot";
+                };
+              }
+            )
+          ];
+        };
 
-      domicile = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/domicile/configuration.nix
-          inputs.nixos-hardware.nixosModules.acer-aspire-4810t
-        ];
+        domicile = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/domicile/configuration.nix
+            inputs.nixos-hardware.nixosModules.acer-aspire-4810t
+          ];
+        };
       };
     };
-  };
 }

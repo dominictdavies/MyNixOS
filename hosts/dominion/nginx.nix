@@ -4,7 +4,7 @@
   services.nginx = {
     enable = true;
     virtualHosts."dominictdavies.dev" = {
-      forceSSL = true;  # Redirects HTTP to HTTPS
+      forceSSL = true; # Redirects HTTP to HTTPS
       sslCertificate = "/var/lib/acme/dominictdavies.dev/fullchain.pem";
       sslCertificateKey = "/var/lib/acme/dominictdavies.dev/key.pem";
       locations = {

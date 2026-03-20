@@ -16,7 +16,7 @@
           url = "http://localhost:${toString config.services.prometheus.port}";
         }
       ];
-    }; 
+    };
   };
 
   services.prometheus = {

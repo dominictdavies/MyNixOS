@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 let
-  backupScript = pkgs.writeShellScript "backup-neoforge-server" (builtins.readFile ./scripts/backup-neoforge-server.sh);
+  backupScript = pkgs.writeShellScript "backup-neoforge-server" (
+    builtins.readFile ./scripts/backup-neoforge-server.sh
+  );
 in
 {
   systemd = {
@@ -17,7 +19,7 @@ in
           ExecStart = "/bin/sh /home/dominictdavies/NeoForge/run.sh";
           WorkingDirectory = "/home/dominictdavies/NeoForge";
           Restart = "always";
-          TimeoutStopSec=60;
+          TimeoutStopSec = 60;
         };
         wantedBy = [ "multi-user.target" ];
       };
