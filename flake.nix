@@ -33,7 +33,6 @@
         modules = [
           ./hosts/domino/configuration.nix
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-          inputs.home-manager.nixosModules.default
         ];
       };
 

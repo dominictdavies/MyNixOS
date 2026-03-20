@@ -1,0 +1,45 @@
+{ pkgs, ... }:
+
+{
+  environment.systemPackages = with pkgs; [
+    # Tools
+    devenv
+    unzip
+    ffmpeg
+    baobab
+    qalculate-qt
+    remmina
+    vagrant
+    cgdb
+
+    # Programming Packages
+    rustup
+    gcc
+    dotnet-sdk
+    clang-tools
+
+    # Editors
+    obsidian
+    libreoffice
+    vscode
+    inkscape
+    gimp
+
+    # Web Browser
+    firefox
+
+    # Communication
+    discord
+
+    # Music & Video
+    spotify
+    vlc
+
+    # Gaming
+    steam
+    prismlauncher
+
+    # Custom Cursors
+    posy-cursors
+  ];
+}
