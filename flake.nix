@@ -41,7 +41,6 @@
         modules = [
           ./hosts/dominion/configuration.nix
           inputs.nixos-hardware.nixosModules.acer-aspire-4810t
-          inputs.home-manager.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
 
           ({ pkgs, lib, ... }: {
