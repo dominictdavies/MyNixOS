@@ -2,6 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # Hardware
+    piper
+
     # Tools
     unzip
     ffmpeg
