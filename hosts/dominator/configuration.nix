@@ -6,10 +6,10 @@
     ../../common/environment.nix
     ../../common/locale.nix
     ../../common/nix-settings.nix
+    ./environment.nix
     ./gui.nix
     ./hardware-configuration.nix
     ./networking.nix
-    ./packages.nix
     ./programs.nix
     ./users.nix
     ./utilities.nix
