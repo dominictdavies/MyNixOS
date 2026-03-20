@@ -5,11 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -64,7 +59,6 @@
         modules = [
           ./hosts/domicile/configuration.nix
           inputs.nixos-hardware.nixosModules.acer-aspire-4810t
-          inputs.home-manager.nixosModules.default
         ];
       };
     };

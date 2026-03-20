@@ -1,15 +1,6 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
-  home.username = "dominictdavies";
-  home.homeDirectory = "/home/dominictdavies";
-
-  # Make sure to check the Home Manager release notes if you want to change this value
-  home.stateVersion = "24.05";
-
-  # Allow unfree and broken packages
-  nixpkgs.config.allowUnfree = true;
-
   programs = {
     bash = {
       enable = true;
@@ -33,15 +24,15 @@
     };
 
     # Command-line fuzzy finder
-    fzf.enable = true;
+    fzf.fuzzyCompletion = true;
 
     # Smarter `cd` command
     zoxide = {
       enable = true;
-      options = [ "--cmd cd" ];
+      flags = [ "--cmd cd" ];
     };
 
-    # Let Home Manager install and manage itself
-    home-manager.enable = true;
+    # Customisable shell prompt
+    starship.enable = true;
   };
 }

@@ -10,16 +10,9 @@
     ./boot-initrd.nix
     ./hardware-configuration.nix
     ./networking.nix
+    ./programs.nix
     ./users.nix
-    inputs.home-manager.nixosModules.default
   ];
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "dominictdavies" = import ./home.nix;
-    };
-  };
 
   # Before changing this value read the documentation (https://nixos.org/nixos/options.html)
   system.stateVersion = "24.05";
