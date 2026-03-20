@@ -7,6 +7,7 @@
     ffmpeg
     baobab
     qalculate-qt
+    gpu-screen-recorder-gtk
 
     # Programming Packages
     nixfmt
