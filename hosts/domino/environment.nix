@@ -13,6 +13,7 @@
     cgdb
 
     # Programming Packages
+    nixfmt
     rustup
     gcc
     dotnet-sdk

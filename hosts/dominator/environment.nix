@@ -8,6 +8,9 @@
     baobab
     qalculate-qt
 
+    # Programming Packages
+    nixfmt
+
     # Editors
     obsidian
     libreoffice
