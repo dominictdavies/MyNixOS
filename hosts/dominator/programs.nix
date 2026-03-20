@@ -35,6 +35,9 @@
     # Customisable shell prompt
     starship.enable = true;
 
+    # Clipping software
+    gpu-screen-recorder.enable = true;
+
     # Steam
     steam = {
       enable = true;
