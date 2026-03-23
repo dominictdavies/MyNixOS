@@ -11,6 +11,7 @@
     remmina
     vagrant
     cgdb
+    proton-vpn-cli
 
     # Programming Packages
     nixfmt

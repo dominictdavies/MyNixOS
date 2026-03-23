@@ -11,6 +11,7 @@
     baobab
     qalculate-qt
     gpu-screen-recorder-gtk
+    proton-vpn-cli
 
     # Programming Packages
     nixfmt
