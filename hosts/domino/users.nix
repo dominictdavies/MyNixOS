@@ -9,6 +9,5 @@
       "networkmanager"
       "docker" # Allows running docker without sudo
     ];
-    # hashedPassword = "*";
   };
 }

@@ -8,6 +8,5 @@
       "wheel"
       "networkmanager"
     ];
-    # hashedPassword = "*";
   };
 }
