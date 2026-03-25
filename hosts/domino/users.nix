@@ -7,7 +7,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
-      "docker"
+      "docker" # Allows running docker without sudo
     ];
     # hashedPassword = "*";
   };
