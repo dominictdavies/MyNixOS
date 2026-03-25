@@ -19,6 +19,7 @@
 
         # Domino
         open = "xdg-open";
+        help-keyboard = "open ~/Pictures/Saved/Information/keyboard_layout.png";
         help-vagrant = "open https://cheatography.com/davbfr/cheat-sheets/vagrant-cheat-sheet/";
         help-gdb = "open https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf";
         deltarune = "steam steam://rungameid/1671210 && exit";
