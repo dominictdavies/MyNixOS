@@ -12,23 +12,21 @@
 
         # Interface
         self.nixosModules.bash
-        self.nixosModules.desktop
+        self.nixosModules.niri
 
         # Extras
+        self.nixosModules.lanFileSharing
         self.nixosModules.gaming
       ];
 
       environment.systemPackages = with pkgs; [
-        # Nix
-        nh
-        nixfmt
-
         # Git
         git
         git-lfs
         git-filter-repo
 
         # Tools
+        nixfmt
         unzip
         baobab
         gpu-screen-recorder
@@ -50,10 +48,9 @@
         spotify
       ];
 
-      # TODO: Make `nh` into a feature
-      environment.sessionVariables = {
-        # Allow `nh` to find flake directory
-        NH_FLAKE = "/home/dominictdavies/MyNixOS";
+      hardware = {
+        enableAllFirmware = true;
+        bluetooth.enable = true;
       };
 
       services = {
@@ -65,16 +62,6 @@
       networking = {
         hostName = "dominator";
         networkmanager.enable = true;
-      };
-
-      # Local network file sharing
-      services.avahi = {
-        enable = true;
-        nssmdns4 = true;
-        openFirewall = true;
-      };
-      services.samba = {
-        enable = true;
       };
 
       # See `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion

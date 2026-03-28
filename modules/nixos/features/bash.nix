@@ -3,6 +3,10 @@
   flake.nixosModules.bash =
     { ... }:
     {
+      imports = [
+        self.nixosModules.nh
+      ];
+
       programs = {
         bash = {
           enable = true;
