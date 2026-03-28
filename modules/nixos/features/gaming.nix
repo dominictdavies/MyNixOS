@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.gaming =
-    { ... }:
+    { pkgs, ... }:
     {
       steam = {
         enable = true;
