@@ -33,14 +33,14 @@
           outputs = {
             HDMI-A-1 = {
               mode = "2560x1080@60.000";
-              position = {
+              position._attrs = {
                 x = 0;
                 y = 360;
               };
             };
             DP-1 = {
               mode = "2560x1440@143.972";
-              position = {
+              position._attrs = {
                 x = 2560;
                 y = 0;
               };
