@@ -13,6 +13,7 @@
         # Interface
         self.nixosModules.bash
         self.nixosModules.niri
+        self.nixosModules.gtk
 
         # Extras
         self.nixosModules.lanFileSharing
