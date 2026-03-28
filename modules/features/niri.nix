@@ -10,6 +10,8 @@
       packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
         inherit pkgs;
         settings = {
+          xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+
           input.keyboard.xkb.layout = "us,ua";
 
           layout.gaps = 5;
