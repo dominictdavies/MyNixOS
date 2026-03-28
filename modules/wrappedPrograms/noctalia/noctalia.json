@@ -170,6 +170,27 @@
             "useDistroLogo": false
           },
           {
+            "defaultSettings": {
+              "audioCodec": "opus",
+              "audioSource": "default_output",
+              "colorRange": "limited",
+              "copyToClipboard": false,
+              "customReplayDuration": "30",
+              "directory": "",
+              "filenamePattern": "recording_yyyyMMdd_HHmmss",
+              "frameRate": "60",
+              "hideInactive": false,
+              "iconColor": "none",
+              "quality": "very_high",
+              "replayDuration": "30",
+              "replayEnabled": false,
+              "replayStorage": "ram",
+              "resolution": "original",
+              "restorePortalSession": false,
+              "showCursor": true,
+              "videoCodec": "h264",
+              "videoSource": "portal"
+            },
             "id": "plugin:screen-recorder"
           }
         ]
@@ -263,7 +284,7 @@
       "settingsPanelSideBarCardStyle": false
     },
     "location": {
-      "name": "Perth, Australia",
+      "name": "Duncraig, Australia",
       "weatherEnabled": true,
       "weatherShowEffects": true,
       "useFahrenheit": false,
@@ -680,31 +701,16 @@
   },
   "state": {
     "doNotDisturb": false,
-    "noctaliaPerformanceMode": false,
+    "noctaliaPerformanceMode": true,
     "barVisible": true,
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-2": "/home/dominictdavies/Pictures/Wallpapers/Stanley Parable.jpg",
-      "HDMI-A-1": "/home/dominictdavies/Pictures/Wallpapers/Stanley Parable.jpg"
+      "DP-2": "/home/dominictdavies/Pictures/Wallpapers/Skip Button Stanley Parable.png",
+      "HDMI-A-1": "/home/dominictdavies/Pictures/Wallpapers/Skip Button Stanley Parable.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "DP-2": {
-        "name": "DP-2",
-        "connected": true,
-        "scale": 1,
-        "width": 2560,
-        "height": 1440,
-        "x": 0,
-        "y": 0,
-        "physical_width": 600,
-        "physical_height": 340,
-        "refresh_rate": 59951,
-        "vrr_supported": true,
-        "vrr_enabled": false,
-        "transform": "Normal"
-      },
       "HDMI-A-1": {
         "name": "HDMI-A-1",
         "connected": true,
@@ -719,10 +725,25 @@
         "vrr_supported": false,
         "vrr_enabled": false,
         "transform": "Normal"
+      },
+      "DP-2": {
+        "name": "DP-2",
+        "connected": true,
+        "scale": 1,
+        "width": 2560,
+        "height": 1440,
+        "x": 0,
+        "y": 0,
+        "physical_width": 600,
+        "physical_height": 340,
+        "refresh_rate": 59951,
+        "vrr_supported": true,
+        "vrr_enabled": false,
+        "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1774692377000
+      "lastSeenTs": 1774699705000
     },
     "changelogState": {
       "lastSeenVersion": "v4.6.7"
