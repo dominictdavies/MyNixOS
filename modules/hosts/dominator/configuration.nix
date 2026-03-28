@@ -5,6 +5,8 @@
     {
       imports = [
         self.nixosModules.dominatorHardware
+        self.nixosModules.nvidia
+
         self.nixosModules.niri
       ];
 
