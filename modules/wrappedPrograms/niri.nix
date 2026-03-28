@@ -30,6 +30,19 @@
 
           layout.gaps = 5;
 
+          outputs = {
+            HDMI-A-1 = {
+              mode = "2560x1080@60.000";
+              position.x = 0;
+              position.y = 360;
+            };
+            DP-1 = {
+              mode = "2560x1440@143.972";
+              position.x = 2560;
+              position.y = 0;
+            };
+          };
+
           binds = {
             "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
             "Mod+Q".close-window = null;
