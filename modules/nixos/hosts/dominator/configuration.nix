@@ -11,6 +11,7 @@
         self.nixosModules.nvidia
 
         # Interface
+        self.nixosModules.bash
         self.nixosModules.desktop
 
         # Extras

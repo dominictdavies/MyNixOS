@@ -4,7 +4,6 @@
     { ... }:
     {
       imports = [
-        self.nixosModules.bash
         self.nixosModules.niri
       ];
 
