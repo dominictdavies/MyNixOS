@@ -40,9 +40,6 @@
         inkscape
         vscode
 
-        # Cursors
-        posy-cursors
-
         # Media
         vlc
         firefox
