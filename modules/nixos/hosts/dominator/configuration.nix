@@ -11,7 +11,7 @@
         self.nixosModules.nvidia
 
         # Desktop
-        self.nixosModules.niri
+        self.nixosModules.desktop
       ];
 
       environment.systemPackages = with pkgs; [
@@ -49,9 +49,16 @@
         prismlauncher
       ];
 
+      # TODO: Make `nh` into a feature
       environment.sessionVariables = {
         # Allow `nh` to find flake directory
         NH_FLAKE = "/home/dominictdavies/MyNixOS";
+      };
+
+      services = {
+        fwupd.enable = true;
+        ratbagd.enable = true;
+        printing.enable = true;
       };
 
       # See `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion
