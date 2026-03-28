@@ -30,7 +30,7 @@
         # Tools
         unzip
         baobab
-        gpu-screen-recorder-gtk
+        gpu-screen-recorder
         proton-vpn-cli
 
         # Editors
