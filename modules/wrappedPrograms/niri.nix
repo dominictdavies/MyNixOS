@@ -101,6 +101,11 @@
 
             "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+";
             "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-";
+            "XF86AudioMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+            "XF86AudioNext".spawn-sh = "playerctl next";
+            "XF86AudioPrev".spawn-sh = "playerctl previous";
+            "XF86AudioPlay".spawn-sh = "playerctl play-pause";
+            "XF86AudioStop".spawn-sh = "playerctl stop";
           };
         };
       };
