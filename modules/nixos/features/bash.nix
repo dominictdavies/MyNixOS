@@ -1,7 +1,6 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.bash =
-    { ... }:
     {
       imports = [
         self.nixosModules.nh

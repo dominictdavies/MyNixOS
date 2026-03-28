@@ -1,7 +1,6 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.common =
-    { ... }:
     {
       boot.loader.systemd-boot = {
         enable = true;

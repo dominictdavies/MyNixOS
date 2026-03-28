@@ -1,7 +1,6 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.nvidia =
-    { ... }:
     {
       # See https://wiki.nixos.org/wiki/NVIDIA
       services.xserver.videoDrivers = [ "nvidia" ];
