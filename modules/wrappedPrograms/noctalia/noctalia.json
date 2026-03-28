@@ -706,26 +706,11 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-2": "/home/dominictdavies/Pictures/Wallpapers/Skip Button Stanley Parable.png",
-      "HDMI-A-1": "/home/dominictdavies/Pictures/Wallpapers/Skip Button Stanley Parable.png"
+      "DP-2": "/home/dominictdavies/Pictures/Wallpapers/Stanley Parable.jpg",
+      "HDMI-A-1": "/home/dominictdavies/Pictures/Wallpapers/Stanley Parable.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "HDMI-A-1": {
-        "name": "HDMI-A-1",
-        "connected": true,
-        "scale": 1,
-        "width": 2560,
-        "height": 1080,
-        "x": 2560,
-        "y": 0,
-        "physical_width": 670,
-        "physical_height": 280,
-        "refresh_rate": 60000,
-        "vrr_supported": false,
-        "vrr_enabled": false,
-        "transform": "Normal"
-      },
       "DP-2": {
         "name": "DP-2",
         "connected": true,
@@ -738,6 +723,21 @@
         "physical_height": 340,
         "refresh_rate": 59951,
         "vrr_supported": true,
+        "vrr_enabled": false,
+        "transform": "Normal"
+      },
+      "HDMI-A-1": {
+        "name": "HDMI-A-1",
+        "connected": true,
+        "scale": 1,
+        "width": 2560,
+        "height": 1080,
+        "x": 2560,
+        "y": 0,
+        "physical_width": 670,
+        "physical_height": 280,
+        "refresh_rate": 60000,
+        "vrr_supported": false,
         "vrr_enabled": false,
         "transform": "Normal"
       }
