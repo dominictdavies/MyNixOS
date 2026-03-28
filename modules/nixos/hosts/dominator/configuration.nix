@@ -10,8 +10,11 @@
         self.nixosModules.dominatorHardware
         self.nixosModules.nvidia
 
-        # Desktop
+        # Interface
         self.nixosModules.desktop
+
+        # Extras
+        self.nixosModules.gaming
       ];
 
       environment.systemPackages = with pkgs; [
@@ -44,9 +47,6 @@
         firefox
         discord
         spotify
-
-        # Gaming
-        prismlauncher
       ];
 
       # TODO: Make `nh` into a feature
