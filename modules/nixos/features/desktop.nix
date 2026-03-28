@@ -11,7 +11,6 @@
       hardware = {
         enableAllFirmware = true;
         bluetooth.enable = true;
-        opengl.enable = true;
       };
     };
 }
