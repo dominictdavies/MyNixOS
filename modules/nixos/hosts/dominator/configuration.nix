@@ -61,6 +61,21 @@
         printing.enable = true;
       };
 
+      networking = {
+        hostName = "dominator";
+        networkmanager.enable = true;
+      };
+
+      # Local network file sharing
+      services.avahi = {
+        enable = true;
+        nssmdns4 = true;
+        openFirewall = true;
+      };
+      services.samba = {
+        enable = true;
+      };
+
       # See `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion
       system.stateVersion = "26.05"; # Did you read the comment?
     };
