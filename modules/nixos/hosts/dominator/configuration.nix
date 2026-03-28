@@ -28,7 +28,7 @@
 
         # Tools
         nixfmt
-        neofetch
+        fastfetch
         unzip
         baobab
         gpu-screen-recorder
