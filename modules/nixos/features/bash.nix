@@ -17,11 +17,11 @@
           open = "xdg-open";
 
           # MyNixOS
-          mynix-push-noctalia = "(cd ~/MyNixOS/modules/wrappedPrograms/noctalia && nix run nixpkgs#noctalia-shell ipc call state all > noctalia.json && git add noctalia.json && git commit -m \"Update noctalia settings\" && git push)";
+          mynix-noctalia-push = "(cd ~/MyNixOS/modules/wrappedPrograms/noctalia && nix run nixpkgs#noctalia-shell ipc call state all > noctalia.json && git add noctalia.json && git commit -m \"Update noctalia settings\" && git push)";
           mynix-switch = "nh os switch";
           mynix-pull-switch = "(cd ~/MyNixOS && git pull && nh os switch)";
           mynix-flake-switch = "(cd ~/MyNixOS && nix flake update && nh os switch && git add flake.lock && git commit -m \"Update flake\" && git push)";
-          mynix-full-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch && git add flake.lock && git commit -m \"Update flake\" && git push)";
+          mynix-all-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch && git add flake.lock && git commit -m \"Update flake\" && git push)";
 
           # Other
           help-keyboard = "open ~/Pictures/Saved/Information/keyboard_layout.png";
