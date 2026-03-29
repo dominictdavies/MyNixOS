@@ -125,8 +125,14 @@
           };
 
           # Layout (https://github.com/niri-wm/niri/wiki/Configuration:-Layout)
-          # TODO: Change focus colour
-          layout.gaps = 8;
+          layout = {
+            gaps = 8;
+            focus-ring.active-gradient = {
+              from = "#37f499";
+              to = "#04d1f9";
+              angle = 45;
+            };
+          };
 
           # Miscellaneous (https://github.com/niri-wm/niri/wiki/Configuration:-Miscellaneous)
           cursor = {
