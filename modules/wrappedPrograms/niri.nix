@@ -127,12 +127,17 @@
           # Layout (https://github.com/niri-wm/niri/wiki/Configuration:-Layout)
           layout = {
             gaps = 16;
-            border.off = null;
             focus-ring = {
               width = 8;
               active-gradient._attrs = {
                 from = "#37f499";
                 to = "#04d1f9";
+                angle = 45;
+              };
+
+              inactive-gradient._attrs = {
+                from = "#37f499";
+                to = "#808080";
                 angle = 45;
               };
             };
