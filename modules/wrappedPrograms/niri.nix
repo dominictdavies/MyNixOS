@@ -103,7 +103,7 @@
 
             "XF86Explorer".spawn-sh = lib.getExe pkgs.nautilus;
             "XF86Search".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
-            "XF86Calculator".spawn-sh = lib.getExe pkgs.galculator;
+            "XF86Calculator".spawn-sh = lib.getExe pkgs.qalculate-gtk;
             "XF86Tools".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call controlCenter toggle";
 
             "XF86AudioMute".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call volume muteOutput";
