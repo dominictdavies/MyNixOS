@@ -125,6 +125,7 @@
           };
 
           # Layout (https://github.com/niri-wm/niri/wiki/Configuration:-Layout)
+          # TODO: Change focus colour
           layout.gaps = 8;
 
           # Miscellaneous (https://github.com/niri-wm/niri/wiki/Configuration:-Miscellaneous)
