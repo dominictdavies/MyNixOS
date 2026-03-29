@@ -48,7 +48,7 @@
           };
 
           binds = {
-            "Mod+Shift+/".hotkey-overlay-title = null;
+            "Mod+O".hotkey-overlay-title = null;
 
             "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
             "Mod+P".spawn-sh = lib.getExe pkgs.scrcpy;
