@@ -61,6 +61,7 @@
             "Mod+Shift+Slash".show-hotkey-overlay = null;
 
             "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
+            "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
             "Mod+P".spawn-sh = lib.getExe pkgs.scrcpy;
 
             "Mod+Q".close-window = null;
@@ -147,7 +148,7 @@
           # Miscellaneous (https://github.com/niri-wm/niri/wiki/Configuration:-Miscellaneous)
           cursor = {
             xcursor-theme = "Posy_Cursor_Black";
-            xcursor-size = 48;
+            xcursor-size = 32;
           };
           hotkey-overlay = { # TODO: Remove unbound binds from overlay
             skip-at-startup = null;
