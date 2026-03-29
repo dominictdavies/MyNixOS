@@ -1,18 +1,17 @@
 { self, inputs, ... }:
 {
-  flake.nixosModules.common =
-    {
-      nix.settings.experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
+  flake.nixosModules.common = {
+    nix.settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
-      nix.gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 30d";
-      };
-
-      nixpkgs.config.allowUnfree = true;
+    nix.gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
     };
+
+    nixpkgs.config.allowUnfree = true;
+  };
 }
