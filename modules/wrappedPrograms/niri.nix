@@ -125,7 +125,7 @@
           };
 
           # Layout (https://github.com/niri-wm/niri/wiki/Configuration:-Layout)
-          layout.gaps = 4;
+          layout.gaps = 8;
 
           # Miscellaneous (https://github.com/niri-wm/niri/wiki/Configuration:-Miscellaneous)
           cursor = {
