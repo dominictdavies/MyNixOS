@@ -117,9 +117,7 @@
               "${lib.getExe self'.packages.myNoctalia} ipc call volume increase";
           };
 
-          cursor = {
-            xcursor-size = 128;
-          };
+          # TODO: Use posy-cursors
         };
       };
     };
