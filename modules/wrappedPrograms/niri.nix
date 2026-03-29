@@ -12,8 +12,7 @@
         kitty
         scrcpy
         nautilus
-        qalculate-gtk
-
+        qalculate-gtk  # TODO: Get qalculate to find dark mode
         posy-cursors
       ];
     };
@@ -90,6 +89,7 @@
             "Mod+Ctrl+K".set-window-height = "-5%";
             "Mod+Ctrl+L".set-window-height = "+5%";
 
+            # TODO: Fix workspace keybinds (not working currently)
             "Mod+1".focus-workspace = "w0";
             "Mod+2".focus-workspace = "w1";
             "Mod+3".focus-workspace = "w2";
@@ -112,6 +112,7 @@
             "Mod+Shift+9".move-column-to-workspace = "w8";
             "Mod+Shift+0".move-column-to-workspace = "w9";
 
+            # TODO: Shorten ${lib.getExe self'.packages.myNoctalia}
             "XF86Explorer".spawn-sh = lib.getExe pkgs.nautilus;
             "XF86Search".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
             "XF86Calculator".spawn-sh = lib.getExe pkgs.qalculate-gtk;
@@ -148,7 +149,7 @@
             xcursor-theme = "Posy_Cursor_Black";
             xcursor-size = 48;
           };
-          hotkey-overlay = {
+          hotkey-overlay = { # TODO: Remove unbound binds from overlay
             skip-at-startup = null;
           };
 
