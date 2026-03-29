@@ -58,6 +58,11 @@
         printing.enable = true;
       };
 
+      xdg.portal = {
+        enable = true;
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      };
+
       networking = {
         hostName = "dominator";
         networkmanager.enable = true;
