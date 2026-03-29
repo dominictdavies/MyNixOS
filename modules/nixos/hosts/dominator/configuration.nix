@@ -12,8 +12,7 @@
 
         # Interface
         self.nixosModules.bash
-        self.nixosModules.niri
-        self.nixosModules.gtk
+        self.nixosModules.desktop
 
         # Extras
         self.nixosModules.lanFileSharing
@@ -56,11 +55,6 @@
         fwupd.enable = true;
         ratbagd.enable = true;
         printing.enable = true;
-      };
-
-      xdg.portal = {
-        enable = true;
-        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
       };
 
       networking = {
