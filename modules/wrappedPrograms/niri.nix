@@ -29,16 +29,17 @@
       packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
         inherit pkgs;
         settings = {
+
+          # Important Software (https://github.com/niri-wm/niri/wiki/Important-Software)
+          xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
           spawn-at-startup = [
             (lib.getExe self'.packages.myNoctalia)
           ];
 
-          xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+          # Input (https://github.com/niri-wm/niri/wiki/Configuration:-Input)
+          input.keyboard.xkb.layout = "au";
 
-          input.keyboard.xkb.layout = "us,ua";
-
-          layout.gaps = 5;
-
+          # Outputs (https://github.com/niri-wm/niri/wiki/Configuration:-Outputs)
           outputs = {
             HDMI-A-1 = {
               mode = "2560x1080@60.000";
@@ -56,10 +57,7 @@
             };
           };
 
-          hotkey-overlay = {
-            skip-at-startup = null;
-          };
-
+          # Key Bindings (https://github.com/niri-wm/niri/wiki/Configuration:-Key-Bindings)
           binds = {
             "Mod+Shift+Slash".show-hotkey-overlay = null;
 
@@ -126,12 +124,18 @@
               "${lib.getExe self'.packages.myNoctalia} ipc call volume increase";
           };
 
+          # Layout (https://github.com/niri-wm/niri/wiki/Configuration:-Layout)
+          layout.gaps = 4;
+
+          # Miscellaneous (https://github.com/niri-wm/niri/wiki/Configuration:-Miscellaneous)
           cursor = {
-            theme = "Posy_Cursor";
-            size = 48;
-            xcursor-theme = "Posy_Cursor";
+            xcursor-theme = "Posy_Cursor_Black";
             xcursor-size = 48;
           };
+          hotkey-overlay = {
+            skip-at-startup = null;
+          };
+
         };
       };
     };
