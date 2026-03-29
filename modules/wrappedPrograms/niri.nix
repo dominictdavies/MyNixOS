@@ -47,8 +47,12 @@
             };
           };
 
+          hotkey-overlay = {
+            skip-at-startup = null;
+          };
+
           binds = {
-            "Mod+O".hotkey-overlay-title = null;
+            "Mod+Shift+Slash".show-hotkey-overlay = null;
 
             "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
             "Mod+P".spawn-sh = lib.getExe pkgs.scrcpy;
@@ -107,8 +111,14 @@
             "XF86Tools".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call controlCenter toggle";
 
             "XF86AudioMute".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call volume muteOutput";
-            "XF86AudioLowerVolume".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call volume decrease";
-            "XF86AudioRaiseVolume".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call volume increase";
+            "XF86AudioLowerVolume".spawn-sh =
+              "${lib.getExe self'.packages.myNoctalia} ipc call volume decrease";
+            "XF86AudioRaiseVolume".spawn-sh =
+              "${lib.getExe self'.packages.myNoctalia} ipc call volume increase";
+          };
+
+          cursor = {
+            xcursor-size = 128;
           };
         };
       };
