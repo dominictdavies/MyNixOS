@@ -74,10 +74,10 @@
             "Mod+Shift+Up".move-window-up = null;
             "Mod+Shift+Down".move-window-down = null;
 
-            "Mod+Ctrl+J".set-column-width = "-5%";
-            "Mod+Ctrl+K".set-column-width = "+5%";
-            "Mod+Ctrl+L".set-window-height = "-5%";
-            "Mod+Ctrl+;".set-window-height = "+5%";
+            "Mod+Ctrl+H".set-column-width = "-5%";
+            "Mod+Ctrl+J".set-column-width = "+5%";
+            "Mod+Ctrl+K".set-window-height = "-5%";
+            "Mod+Ctrl+L".set-window-height = "+5%";
 
             "Mod+1".focus-workspace = "w0";
             "Mod+2".focus-workspace = "w1";
