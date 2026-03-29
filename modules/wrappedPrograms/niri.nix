@@ -7,6 +7,13 @@
         enable = true;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
       };
+
+      environment.systemPackages = with pkgs; [
+        kitty
+        scrcpy
+        nautilus
+        qalculate-gtk
+      ]
     };
 
   perSystem =
