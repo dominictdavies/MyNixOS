@@ -60,6 +60,7 @@
       services = {
         fwupd.enable = true;
         printing.enable = true;
+        gnome.gnome-keyring.enable = true;
       };
 
       networking = {
