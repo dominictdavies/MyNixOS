@@ -127,7 +127,7 @@
           # Layout (https://github.com/niri-wm/niri/wiki/Configuration:-Layout)
           layout = {
             gaps = 8;
-            focus-ring.active-gradient = {
+            focus-ring.active-gradient._attrs = {
               from = "#37f499";
               to = "#04d1f9";
               angle = 45;
