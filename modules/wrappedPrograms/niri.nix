@@ -13,6 +13,8 @@
         scrcpy
         nautilus
         qalculate-gtk
+
+        posy-cursors
       ];
     };
 
@@ -124,7 +126,12 @@
               "${lib.getExe self'.packages.myNoctalia} ipc call volume increase";
           };
 
-          # TODO: Use posy-cursors
+          cursor = {
+            theme = "Posy_Cursor";
+            size = 48;
+            xcursor-theme = "Posy_Cursor";
+            xcursor-size = 48;
+          };
         };
       };
     };
