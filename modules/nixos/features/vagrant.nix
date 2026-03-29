@@ -1,10 +1,12 @@
 { self, inputs, ... }:
 {
-  flake.nixosModules.vagrant = {
-    environment.systemPackages = with pkgs; [
-      vagrant
-    ];
+  flake.nixosModules.vagrant =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = with pkgs; [
+        vagrant
+      ];
 
-    virtualisation.virtualbox.host.enable = true;
-  };
+      virtualisation.virtualbox.host.enable = true;
+    };
 }
