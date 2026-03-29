@@ -5,7 +5,6 @@
       ...
     }:
     {
-      # TODO: Fix missing icons
       environment.systemPackages = with pkgs; [
         gruvbox-plus-icons
       ];
