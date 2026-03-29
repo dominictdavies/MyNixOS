@@ -52,7 +52,6 @@
 
             "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
             "Mod+P".spawn-sh = lib.getExe pkgs.scrcpy;
-            "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
 
             "Mod+Q".close-window = null;
             "Mod+F".maximize-column = null;
@@ -102,9 +101,14 @@
             "Mod+Shift+9".move-column-to-workspace = "w8";
             "Mod+Shift+0".move-column-to-workspace = "w9";
 
-            "XF86AudioMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-            "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 2%+";
-            "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 2%-";
+            "XF86Explorer".spawn-sh = lib.getExe pkgs.nautilus;
+            "XF86Search".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+            "XF86Calculator".spawn-sh = lib.getExe pkgs.galculator;
+            "XF86Tools".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call controlCenter toggle";
+
+            "XF86AudioMute".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call volume muteOutput";
+            "XF86AudioLowerVolume".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call volume decrease";
+            "XF86AudioRaiseVolume".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call volume increase";
           };
         };
       };
