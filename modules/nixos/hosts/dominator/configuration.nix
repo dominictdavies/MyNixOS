@@ -20,12 +20,6 @@
       ];
 
       environment.systemPackages = with pkgs; [
-        # TODO: Turn git into a common module
-        # Git
-        git
-        git-lfs
-        git-filter-repo
-
         # Tools
         nixfmt
         fastfetch
