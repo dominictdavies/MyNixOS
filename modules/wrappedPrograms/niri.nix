@@ -13,7 +13,7 @@
         scrcpy
         nautilus
         qalculate-gtk
-      ]
+      ];
     };
 
   perSystem =
