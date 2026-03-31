@@ -10,7 +10,7 @@
 
       environment.systemPackages = with pkgs; [
         # Viewers
-        xed
+        mousepad
         eog
         vlc
       ];
