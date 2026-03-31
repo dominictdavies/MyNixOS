@@ -38,59 +38,63 @@
           # Input (https://github.com/niri-wm/niri/wiki/Configuration:-Input)
           input.keyboard.xkb.layout = "au";
           input.touchpad = {
-            tap = null;
+            tap = _: { };
             tap-button-map = "left-right-middle";
             click-method = "clickfinger";
-            natural-scroll = null;
+            natural-scroll = _: { };
             scroll-method = "two-finger";
           };
 
           # Outputs (https://github.com/niri-wm/niri/wiki/Configuration:-Outputs)
           outputs = {
-            HDMI-A-1 = {
+            "HDMI-A-1" = {
               mode = "2560x1080@60.000";
-              position._attrs = {
-                x = 0;
-                y = 360;
+              position = _: {
+                props = {
+                  x = 0;
+                  y = 360;
+                };
               };
             };
-            DP-1 = {
+            "DP-1" = {
               mode = "2560x1440@143.972";
-              position._attrs = {
-                x = 2560;
-                y = 0;
+              position = _: {
+                props = {
+                  x = 2560;
+                  y = 0;
+                };
               };
             };
           };
 
           # Key Bindings (https://github.com/niri-wm/niri/wiki/Configuration:-Key-Bindings)
           binds = {
-            "Mod+Shift+Slash".show-hotkey-overlay = null;
+            "Mod+Shift+Slash".show-hotkey-overlay = _: { };
 
             "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
             "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
             "Mod+P".spawn-sh = lib.getExe pkgs.scrcpy;
 
-            "Mod+Q".close-window = null;
-            "Mod+F".maximize-column = null;
-            "Mod+Shift+F".toggle-window-floating = null;
-            "Mod+G".fullscreen-window = null;
-            "Mod+C".center-column = null;
+            "Mod+Q".close-window = _: { };
+            "Mod+F".maximize-column = _: { };
+            "Mod+Shift+F".toggle-window-floating = _: { };
+            "Mod+G".fullscreen-window = _: { };
+            "Mod+C".center-column = _: { };
 
-            "Mod+Left".focus-column-left = null;
-            "Mod+Right".focus-column-right = null;
-            "Mod+Up".focus-window-up = null;
-            "Mod+Down".focus-window-down = null;
+            "Mod+Left".focus-column-left = _: { };
+            "Mod+Right".focus-column-right = _: { };
+            "Mod+Up".focus-window-up = _: { };
+            "Mod+Down".focus-window-down = _: { };
 
-            "Mod+WheelScrollDown".focus-column-left = null;
-            "Mod+WheelScrollUp".focus-column-right = null;
-            "Mod+Ctrl+WheelScrollDown".focus-workspace-down = null;
-            "Mod+Ctrl+WheelScrollUp".focus-workspace-up = null;
+            "Mod+WheelScrollDown".focus-column-left = _: { };
+            "Mod+WheelScrollUp".focus-column-right = _: { };
+            "Mod+Ctrl+WheelScrollDown".focus-workspace-down = _: { };
+            "Mod+Ctrl+WheelScrollUp".focus-workspace-up = _: { };
 
-            "Mod+Shift+Left".move-column-left = null;
-            "Mod+Shift+Right".move-column-right = null;
-            "Mod+Shift+Up".move-window-up = null;
-            "Mod+Shift+Down".move-window-down = null;
+            "Mod+Shift+Left".move-column-left = _: { };
+            "Mod+Shift+Right".move-column-right = _: { };
+            "Mod+Shift+Up".move-window-up = _: { };
+            "Mod+Shift+Down".move-window-down = _: { };
 
             "Mod+Ctrl+H".set-column-width = "-5%";
             "Mod+Ctrl+J".set-column-width = "+5%";
@@ -98,27 +102,27 @@
             "Mod+Ctrl+L".set-window-height = "+5%";
 
             # TODO: Fix workspace keybinds (not working currently)
-            "Mod+1".focus-workspace = "w0";
-            "Mod+2".focus-workspace = "w1";
-            "Mod+3".focus-workspace = "w2";
-            "Mod+4".focus-workspace = "w3";
-            "Mod+5".focus-workspace = "w4";
-            "Mod+6".focus-workspace = "w5";
-            "Mod+7".focus-workspace = "w6";
-            "Mod+8".focus-workspace = "w7";
-            "Mod+9".focus-workspace = "w8";
-            "Mod+0".focus-workspace = "w9";
+            "Mod+1".focus-workspace = 0;
+            "Mod+2".focus-workspace = 1;
+            "Mod+3".focus-workspace = 2;
+            "Mod+4".focus-workspace = 3;
+            "Mod+5".focus-workspace = 4;
+            "Mod+6".focus-workspace = 5;
+            "Mod+7".focus-workspace = 6;
+            "Mod+8".focus-workspace = 7;
+            "Mod+9".focus-workspace = 8;
+            "Mod+0".focus-workspace = 9;
 
-            "Mod+Shift+1".move-column-to-workspace = "w0";
-            "Mod+Shift+2".move-column-to-workspace = "w1";
-            "Mod+Shift+3".move-column-to-workspace = "w2";
-            "Mod+Shift+4".move-column-to-workspace = "w3";
-            "Mod+Shift+5".move-column-to-workspace = "w4";
-            "Mod+Shift+6".move-column-to-workspace = "w5";
-            "Mod+Shift+7".move-column-to-workspace = "w6";
-            "Mod+Shift+8".move-column-to-workspace = "w7";
-            "Mod+Shift+9".move-column-to-workspace = "w8";
-            "Mod+Shift+0".move-column-to-workspace = "w9";
+            "Mod+Shift+1".move-column-to-workspace = 0;
+            "Mod+Shift+2".move-column-to-workspace = 1;
+            "Mod+Shift+3".move-column-to-workspace = 2;
+            "Mod+Shift+4".move-column-to-workspace = 3;
+            "Mod+Shift+5".move-column-to-workspace = 4;
+            "Mod+Shift+6".move-column-to-workspace = 5;
+            "Mod+Shift+7".move-column-to-workspace = 6;
+            "Mod+Shift+8".move-column-to-workspace = 7;
+            "Mod+Shift+9".move-column-to-workspace = 8;
+            "Mod+Shift+0".move-column-to-workspace = 9;
 
             # TODO: Shorten ${lib.getExe self'.packages.myNoctalia}
             "XF86Explorer".spawn-sh = lib.getExe pkgs.nautilus;
@@ -138,16 +142,20 @@
             gaps = 16;
             focus-ring = {
               width = 8;
-              active-gradient._attrs = {
-                from = "#37f499";
-                to = "#04d1f9";
-                angle = 45;
+              active-gradient = _: {
+                props = {
+                  from = "#37f499";
+                  to = "#04d1f9";
+                  angle = 45;
+                };
               };
 
-              inactive-gradient._attrs = {
-                from = "#37f499";
-                to = "#808080";
-                angle = 45;
+              inactive-gradient = _: {
+                props = {
+                  from = "#37f499";
+                  to = "#808080";
+                  angle = 45;
+                };
               };
             };
           };
@@ -159,7 +167,7 @@
           };
           hotkey-overlay = {
             # TODO: Remove unbound binds from overlay
-            skip-at-startup = null;
+            skip-at-startup = _: { };
           };
 
         };
