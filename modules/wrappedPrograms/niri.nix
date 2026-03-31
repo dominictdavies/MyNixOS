@@ -188,7 +188,7 @@
 
             # Noctalia
             "Ctrl+Alt+Delete".spawn-sh = "noctalia-shell ipc call launcher command";
-            "Ctrl+Alt+/".spawn-sh = "noctalia-shell ipc call launcher toggle";
+            "Ctrl+Alt+Slash".spawn-sh = "noctalia-shell ipc call launcher toggle";
 
             "XF86AudioPlay".spawn-sh = "noctalia-shell ipc call media toggle";
             "XF86AudioStop".spawn-sh = "noctalia-shell ipc call media stop";
