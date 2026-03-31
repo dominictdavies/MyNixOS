@@ -15,7 +15,5 @@
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       SDL_VIDEODRIVER = "wayland,x11";
     };
-
-    # TODO: Add a greeting service that starts niri
   };
 }
