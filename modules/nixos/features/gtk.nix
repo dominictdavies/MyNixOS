@@ -9,6 +9,9 @@
         gruvbox-plus-icons
       ];
 
+      # Greeter
+      programs.regreet.enable = true;
+
       programs.dconf = {
         enable = true;
         profiles.user.databases = [
