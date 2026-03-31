@@ -12,7 +12,7 @@
         kitty
         scrcpy
         nautilus
-        qalculate-gtk  # TODO: Get qalculate to find dark mode
+        qalculate-gtk # TODO: Get qalculate to find dark mode
         posy-cursors
       ];
     };
@@ -37,6 +37,13 @@
 
           # Input (https://github.com/niri-wm/niri/wiki/Configuration:-Input)
           input.keyboard.xkb.layout = "au";
+          input.touchpad = {
+            tap = null;
+            tap-button-map = "left-right-middle";
+            click-method = "clickfinger";
+            natural-scroll = null;
+            scroll-method = "two-finger";
+          };
 
           # Outputs (https://github.com/niri-wm/niri/wiki/Configuration:-Outputs)
           outputs = {
@@ -150,7 +157,8 @@
             xcursor-theme = "Posy_Cursor_Black";
             xcursor-size = 32;
           };
-          hotkey-overlay = { # TODO: Remove unbound binds from overlay
+          hotkey-overlay = {
+            # TODO: Remove unbound binds from overlay
             skip-at-startup = null;
           };
 
