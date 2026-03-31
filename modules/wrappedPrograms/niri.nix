@@ -3,6 +3,10 @@
   flake.nixosModules.niri =
     { pkgs, ... }:
     {
+      imports = [
+        self.nixosModules.noctalia
+      ];
+
       programs.niri = {
         enable = true;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
@@ -42,6 +46,7 @@
             tap-button-map = "left-right-middle";
             click-method = "clickfinger";
             natural-scroll = _: { };
+            scroll-factor = 0.5;
             scroll-method = "two-finger";
           };
 
@@ -101,40 +106,36 @@
             "Mod+Ctrl+K".set-window-height = "-5%";
             "Mod+Ctrl+L".set-window-height = "+5%";
 
-            # TODO: Fix workspace keybinds (not working currently)
-            "Mod+1".focus-workspace = 0;
-            "Mod+2".focus-workspace = 1;
-            "Mod+3".focus-workspace = 2;
-            "Mod+4".focus-workspace = 3;
-            "Mod+5".focus-workspace = 4;
-            "Mod+6".focus-workspace = 5;
-            "Mod+7".focus-workspace = 6;
-            "Mod+8".focus-workspace = 7;
-            "Mod+9".focus-workspace = 8;
-            "Mod+0".focus-workspace = 9;
+            "Mod+1".focus-workspace = 1;
+            "Mod+2".focus-workspace = 2;
+            "Mod+3".focus-workspace = 3;
+            "Mod+4".focus-workspace = 4;
+            "Mod+5".focus-workspace = 5;
+            "Mod+6".focus-workspace = 6;
+            "Mod+7".focus-workspace = 7;
+            "Mod+8".focus-workspace = 8;
+            "Mod+9".focus-workspace = 9;
+            "Mod+0".focus-workspace = 10;
 
-            "Mod+Shift+1".move-column-to-workspace = 0;
-            "Mod+Shift+2".move-column-to-workspace = 1;
-            "Mod+Shift+3".move-column-to-workspace = 2;
-            "Mod+Shift+4".move-column-to-workspace = 3;
-            "Mod+Shift+5".move-column-to-workspace = 4;
-            "Mod+Shift+6".move-column-to-workspace = 5;
-            "Mod+Shift+7".move-column-to-workspace = 6;
-            "Mod+Shift+8".move-column-to-workspace = 7;
-            "Mod+Shift+9".move-column-to-workspace = 8;
-            "Mod+Shift+0".move-column-to-workspace = 9;
+            "Mod+Shift+1".move-column-to-workspace = 1;
+            "Mod+Shift+2".move-column-to-workspace = 2;
+            "Mod+Shift+3".move-column-to-workspace = 3;
+            "Mod+Shift+4".move-column-to-workspace = 4;
+            "Mod+Shift+5".move-column-to-workspace = 5;
+            "Mod+Shift+6".move-column-to-workspace = 6;
+            "Mod+Shift+7".move-column-to-workspace = 7;
+            "Mod+Shift+8".move-column-to-workspace = 8;
+            "Mod+Shift+9".move-column-to-workspace = 9;
+            "Mod+Shift+0".move-column-to-workspace = 10;
 
-            # TODO: Shorten ${lib.getExe self'.packages.myNoctalia}
-            "XF86Explorer".spawn-sh = lib.getExe pkgs.nautilus;
-            "XF86Search".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
-            "XF86Calculator".spawn-sh = lib.getExe pkgs.qalculate-gtk;
-            "XF86Tools".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call controlCenter toggle";
+            "XF86Explorer".spawn-sh = "nautilus";
+            "XF86Search".spawn-sh = "noctalia-shell ipc call launcher toggle";
+            "XF86Calculator".spawn-sh = "qalculate-gtk";
+            "XF86Tools".spawn-sh = "noctalia-shell ipc call controlCenter toggle";
 
-            "XF86AudioMute".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call volume muteOutput";
-            "XF86AudioLowerVolume".spawn-sh =
-              "${lib.getExe self'.packages.myNoctalia} ipc call volume decrease";
-            "XF86AudioRaiseVolume".spawn-sh =
-              "${lib.getExe self'.packages.myNoctalia} ipc call volume increase";
+            "XF86AudioMute".spawn-sh = "noctalia-shell ipc call volume muteOutput";
+            "XF86AudioLowerVolume".spawn-sh = "noctalia-shell ipc call volume decrease";
+            "XF86AudioRaiseVolume".spawn-sh = "noctalia-shell ipc call volume increase";
           };
 
           # Layout (https://github.com/niri-wm/niri/wiki/Configuration:-Layout)

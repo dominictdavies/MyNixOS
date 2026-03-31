@@ -60,7 +60,7 @@
       services = {
         fwupd.enable = true;
         printing.enable = true;
-        gnome.gnome-keyring.enable = true;
+        gnome.gnome-keyring.enable = true; # TODO: Fix keyring for VSC
       };
 
       networking = {
