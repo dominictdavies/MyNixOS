@@ -222,7 +222,7 @@
               inactive-gradient = _: {
                 props = {
                   from = "#808080";
-                  to = "#000000";
+                  to = "#404040";
                   angle = 45;
                 };
               };
