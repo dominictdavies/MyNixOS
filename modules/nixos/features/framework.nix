@@ -1,29 +1,24 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.framework = {
-    # Framework Laptop 13 (https://wiki.nixos.org/wiki/Hardware/Framework/Laptop_13)
-    services.fwupd.enable = true;
-    services.power-profiles-daemon.enable = true;
+    imports = [
+      # Framework Laptop 13 (https://wiki.nixos.org/wiki/Hardware/Framework/Laptop_13)
+      inputs.nixosModules.framework-13-7040-amd
+    ];
 
-    # Touchpad support
-    services.libinput = {
-      enable = true;
-      touchpad = {
-        naturalScrolling = true;
-        tappingButtonMap = "lrm";
-      };
+    # Laptop (https://wiki.nixos.org/wiki/Laptop)
+
+    ## Closing the lid
+    services.logind.settings.Login = {
+      HandleLidSwitch = "suspend";
+      HandleLidSwitchExternalPower = "lock";
+      HandleLidSwitchDocked = "ignore";
     };
 
-    # Fingerprint sensor
-    services.fprintd.enable = true;
+    ## Power management
+    powerManagement.enable = true;
 
-    # Sound with PipeWire
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
+    ### CPU performance scaling
+    services.tlp.enable = true;
   };
 }
