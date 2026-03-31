@@ -32,10 +32,10 @@
         vscode
 
         # Media
-        vlc
         firefox
         discord
         spotify
+        steam
 
         # Cursor
         posy-cursors
@@ -164,30 +164,32 @@
             "Mod+Ctrl+Alt+WheelScrollUp".set-window-height = "-5%";
             "Mod+Ctrl+Alt+WheelScrollDown".set-window-height = "+5%";
 
-            # Apps (AEKLQTUXYZ remain)
+            # Apps (AEKQUVXYZ remain)
             "Mod+Alt+Return".spawn-sh = "kitty";
             "Mod+Alt+F".spawn-sh = "kitty --hold fastfetch";
-            "Mod+Alt+H".spawn-sh = "kitty --hold protonvpn connect";
-            "Mod+Alt+J".spawn-sh = "kitty --hold protonvpn disconnect";
+            "Mod+Alt+H".spawn-sh = "kitty protonvpn connect";
+            "Mod+Alt+J".spawn-sh = "kitty protonvpn disconnect";
 
             "Mod+Alt+N".spawn-sh = "nautilus";
             "Mod+Alt+W".spawn-sh = "baobab";
             "Mod+Alt+R".spawn-sh = "remmina";
             "Mod+Alt+P".spawn-sh = "scrcpy";
             "Mod+Alt+M".spawn-sh = "qalculate-gtk";
+            "XF86Calculator".spawn-sh = "qalculate-gtk";
 
             "Mod+Alt+O".spawn-sh = "obsidian";
             "Mod+Alt+G".spawn-sh = "gimp";
             "Mod+Alt+I".spawn-sh = "inkscape";
             "Mod+Alt+C".spawn-sh = "code";
 
-            "Mod+Alt+V".spawn-sh = "vlc";
             "Mod+Alt+B".spawn-sh = "firefox";
             "Mod+Alt+D".spawn-sh = "discord";
-            "Mod+Alt+S".spawn-sh = "spotify";
+            "Mod+Alt+L".spawn-sh = "spotify";
+            "Mod+Alt+S".spawn-sh = "steam";
+            "Mod+Alt+T".spawn-sh = "deltarune";
 
             # Noctalia
-            "Ctrl+Alt+Delete".spawn-sh = "noctalia-shell ipc call launcher command";
+            "Ctrl+Alt+Delete".spawn-sh = "noctalia-shell ipc call sessionMenu toggle";
             "Ctrl+Alt+Slash".spawn-sh = "noctalia-shell ipc call launcher toggle";
 
             "XF86AudioPlay".spawn-sh = "noctalia-shell ipc call media toggle";
@@ -200,7 +202,6 @@
 
             "XF86Explorer".spawn-sh = "noctalia-shell ipc call systemMonitor toggle";
             "XF86Search".spawn-sh = "noctalia-shell ipc call launcher toggle";
-            "XF86Calculator".spawn-sh = "noctalia-shell ipc call launcher clipboard";
             "XF86Tools".spawn-sh = "noctalia-shell ipc call controlCenter toggle";
 
           };
@@ -220,8 +221,8 @@
 
               inactive-gradient = _: {
                 props = {
-                  from = "#37f499";
-                  to = "#808080";
+                  from = "#808080";
+                  to = "#000000";
                   angle = 45;
                 };
               };
