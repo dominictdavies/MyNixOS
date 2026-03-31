@@ -140,8 +140,8 @@
             "Mod+Shift+Alt+WheelScrollUp".move-window-up-or-to-workspace-up = _: { };
             "Mod+Shift+Alt+WheelScrollDown".move-window-down-or-to-workspace-down = _: { };
 
-            "Mod+Comma".consume-or-expel-window-left = _: { };
-            "Mod+Period".consume-or-expel-window-right = _: { };
+            "Mod+Shift+Comma".consume-or-expel-window-left = _: { };
+            "Mod+Shift+Period".consume-or-expel-window-right = _: { };
 
             "Mod+Shift+1".move-column-to-workspace = 1;
             "Mod+Shift+2".move-column-to-workspace = 2;
