@@ -13,10 +13,31 @@
       };
 
       environment.systemPackages = with pkgs; [
+        # Shell
         kitty
-        scrcpy
+        fastfetch
+        proton-vpn-cli
+
+        # Tools
         nautilus
+        baobab
+        remmina
+        scrcpy
         qalculate-gtk # TODO: Get qalculate to find dark mode
+
+        # Editors
+        obsidian
+        gimp
+        inkscape
+        vscode
+
+        # Media
+        vlc
+        firefox
+        discord
+        spotify
+
+        # Cursor
         posy-cursors
       ];
     };
@@ -74,37 +95,29 @@
 
           # Key Bindings (https://github.com/niri-wm/niri/wiki/Configuration:-Key-Bindings)
           binds = {
-            "Mod+Shift+Slash".show-hotkey-overlay = _: { };
 
-            "Mod+Return".spawn-sh = lib.getExe pkgs.kitty;
-            "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
-            "Mod+P".spawn-sh = lib.getExe pkgs.scrcpy;
+            # Niri
+            "Mod+Ctrl+Alt+Slash".show-hotkey-overlay = _: { };
+            "Mod+Ctrl+Alt+Q".quit = _: { };
 
             "Mod+Q".close-window = _: { };
-            "Mod+F".maximize-column = _: { };
-            "Mod+Shift+F".toggle-window-floating = _: { };
-            "Mod+G".fullscreen-window = _: { };
             "Mod+C".center-column = _: { };
+            "Mod+D".maximize-column = _: { };
+            "Mod+F".fullscreen-window = _: { };
+            "Mod+G".toggle-windowed-fullscreen = _: { };
+            "Mod+V".toggle-window-floating = _: { };
+            "Mod+O".toggle-overview = _: { };
+            "Mod+S".screenshot = _: { };
 
-            "Mod+Left".focus-column-left = _: { };
-            "Mod+Right".focus-column-right = _: { };
-            "Mod+Up".focus-window-up = _: { };
-            "Mod+Down".focus-window-down = _: { };
+            "Mod+Left".focus-column-or-monitor-left = _: { };
+            "Mod+Right".focus-column-or-monitor-right = _: { };
+            "Mod+Up".focus-window-or-workspace-up = _: { };
+            "Mod+Down".focus-window-or-workspace-down = _: { };
 
-            "Mod+WheelScrollDown".focus-column-left = _: { };
-            "Mod+WheelScrollUp".focus-column-right = _: { };
-            "Mod+Ctrl+WheelScrollDown".focus-workspace-down = _: { };
-            "Mod+Ctrl+WheelScrollUp".focus-workspace-up = _: { };
-
-            "Mod+Shift+Left".move-column-left = _: { };
-            "Mod+Shift+Right".move-column-right = _: { };
-            "Mod+Shift+Up".move-window-up = _: { };
-            "Mod+Shift+Down".move-window-down = _: { };
-
-            "Mod+Ctrl+H".set-column-width = "-5%";
-            "Mod+Ctrl+J".set-column-width = "+5%";
-            "Mod+Ctrl+K".set-window-height = "-5%";
-            "Mod+Ctrl+L".set-window-height = "+5%";
+            "Mod+WheelScrollUp".focus-column-or-monitor-left = _: { };
+            "Mod+WheelScrollDown".focus-column-or-monitor-right = _: { };
+            "Mod+Alt+WheelScrollUp".focus-window-or-workspace-up = _: { };
+            "Mod+Alt+WheelScrollDown".focus-window-or-workspace-down = _: { };
 
             "Mod+1".focus-workspace = 1;
             "Mod+2".focus-workspace = 2;
@@ -117,6 +130,19 @@
             "Mod+9".focus-workspace = 9;
             "Mod+0".focus-workspace = 10;
 
+            "Mod+Shift+Left".move-column-left-or-to-monitor-left = _: { };
+            "Mod+Shift+Right".move-column-right-or-to-monitor-right = _: { };
+            "Mod+Shift+Up".move-window-up-or-to-workspace-up = _: { };
+            "Mod+Shift+Down".move-window-down-or-to-workspace-down = _: { };
+
+            "Mod+Shift+WheelScrollUp".move-column-left-or-to-monitor-left = _: { };
+            "Mod+Shift+WheelScrollDown".move-column-right-or-to-monitor-right = _: { };
+            "Mod+Shift+Alt+WheelScrollUp".move-window-up-or-to-workspace-up = _: { };
+            "Mod+Shift+Alt+WheelScrollDown".move-window-down-or-to-workspace-down = _: { };
+
+            "Mod+Comma".consume-or-expel-window-left = _: { };
+            "Mod+Period".consume-or-expel-window-right = _: { };
+
             "Mod+Shift+1".move-column-to-workspace = 1;
             "Mod+Shift+2".move-column-to-workspace = 2;
             "Mod+Shift+3".move-column-to-workspace = 3;
@@ -128,14 +154,55 @@
             "Mod+Shift+9".move-column-to-workspace = 9;
             "Mod+Shift+0".move-column-to-workspace = 10;
 
-            "XF86Explorer".spawn-sh = "nautilus";
-            "XF86Search".spawn-sh = "noctalia-shell ipc call launcher toggle";
-            "XF86Calculator".spawn-sh = "qalculate-gtk";
-            "XF86Tools".spawn-sh = "noctalia-shell ipc call controlCenter toggle";
+            "Mod+Ctrl+Left".set-column-width = "-5%";
+            "Mod+Ctrl+Right".set-column-width = "+5%";
+            "Mod+Ctrl+Up".set-window-height = "-5%";
+            "Mod+Ctrl+Down".set-window-height = "+5%";
 
+            "Mod+Ctrl+WheelScrollUp".set-column-width = "-5%";
+            "Mod+Ctrl+WheelScrollDown".set-column-width = "+5%";
+            "Mod+Ctrl+Alt+WheelScrollUp".set-window-height = "-5%";
+            "Mod+Ctrl+Alt+WheelScrollDown".set-window-height = "+5%";
+
+            # Apps (AEKLQTUXYZ remain)
+            "Mod+Alt+Return".spawn-sh = "kitty";
+            "Mod+Alt+F".spawn-sh = "kitty --hold fastfetch";
+            "Mod+Alt+H".spawn-sh = "kitty --hold protonvpn connect";
+            "Mod+Alt+J".spawn-sh = "kitty --hold protonvpn disconnect";
+
+            "Mod+Alt+N".spawn-sh = "nautilus";
+            "Mod+Alt+W".spawn-sh = "baobab";
+            "Mod+Alt+R".spawn-sh = "remmina";
+            "Mod+Alt+P".spawn-sh = "scrcpy";
+            "Mod+Alt+M".spawn-sh = "qalculate-gtk";
+
+            "Mod+Alt+O".spawn-sh = "obsidian";
+            "Mod+Alt+G".spawn-sh = "gimp";
+            "Mod+Alt+I".spawn-sh = "inkscape";
+            "Mod+Alt+C".spawn-sh = "code";
+
+            "Mod+Alt+V".spawn-sh = "vlc";
+            "Mod+Alt+B".spawn-sh = "firefox";
+            "Mod+Alt+D".spawn-sh = "discord";
+            "Mod+Alt+S".spawn-sh = "spotify";
+
+            # Noctalia
+            "Ctrl+Alt+Delete".spawn-sh = "noctalia-shell ipc call launcher command";
+            "Ctrl+Alt+/".spawn-sh = "noctalia-shell ipc call launcher toggle";
+
+            "XF86AudioPlay".spawn-sh = "noctalia-shell ipc call media toggle";
+            "XF86AudioStop".spawn-sh = "noctalia-shell ipc call media stop";
+            "XF86AudioPrev".spawn-sh = "noctalia-shell ipc call media previous";
+            "XF86AudioNext".spawn-sh = "noctalia-shell ipc call media next";
             "XF86AudioMute".spawn-sh = "noctalia-shell ipc call volume muteOutput";
             "XF86AudioLowerVolume".spawn-sh = "noctalia-shell ipc call volume decrease";
             "XF86AudioRaiseVolume".spawn-sh = "noctalia-shell ipc call volume increase";
+
+            "XF86Explorer".spawn-sh = "noctalia-shell ipc call systemMonitor toggle";
+            "XF86Search".spawn-sh = "noctalia-shell ipc call launcher toggle";
+            "XF86Calculator".spawn-sh = "noctalia-shell ipc call launcher clipboard";
+            "XF86Tools".spawn-sh = "noctalia-shell ipc call controlCenter toggle";
+
           };
 
           # Layout (https://github.com/niri-wm/niri/wiki/Configuration:-Layout)

@@ -22,23 +22,8 @@
       environment.systemPackages = with pkgs; [
         # Tools
         nixfmt
-        fastfetch
         unzip
-        baobab
         gpu-screen-recorder
-        proton-vpn-cli
-
-        # Editors
-        obsidian
-        gimp
-        inkscape
-        vscode
-
-        # Media
-        vlc
-        firefox
-        discord
-        spotify
       ];
 
       hardware = {
