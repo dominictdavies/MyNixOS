@@ -1,4 +1,3 @@
-{ self, inputs, ... }:
 {
   flake.nixosModules.common = {
     time.timeZone = "Australia/Perth";

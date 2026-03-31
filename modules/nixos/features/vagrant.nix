@@ -1,4 +1,3 @@
-{ self, inputs, ... }:
 {
   flake.nixosModules.vagrant =
     { pkgs, ... }:
