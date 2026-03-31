@@ -9,6 +9,7 @@
         # Hardware
         self.nixosModules.dominoHardware
         self.nixosModules.framework
+        inputs.nixosModules.framework-13-7040-amd
 
         # Interface
         self.nixosModules.bash
