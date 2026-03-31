@@ -3,7 +3,7 @@
   flake.nixosModules.framework = {
     imports = [
       # Framework Laptop 13 (https://wiki.nixos.org/wiki/Hardware/Framework/Laptop_13)
-      inputs.nixosModules.framework-13-7040-amd
+      inputs.nixos-hardware.nixosModules.framework-13-7040-amd
     ];
 
     # Laptop (https://wiki.nixos.org/wiki/Laptop)
@@ -17,8 +17,5 @@
 
     ## Power management
     powerManagement.enable = true;
-
-    ### CPU performance scaling
-    services.tlp.enable = true;
   };
 }
