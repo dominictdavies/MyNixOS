@@ -15,6 +15,10 @@
         vlc
       ];
 
+      # Keyring
+      services.gnome.gnome-keyring.enable = true;
+      security.pam.services.login.fprintAuth = false;
+
       # Make apps try to use Wayland
       environment.sessionVariables = {
         WLR_NO_HARDWARE_CURSORS = 1;

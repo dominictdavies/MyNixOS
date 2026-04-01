@@ -12,13 +12,6 @@
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
       };
 
-      # Launch niri on login
-      programs.bash.loginShellInit = ''
-        if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-          exec niri --session
-        fi
-      '';
-
       environment.systemPackages = with pkgs; [
         # Shell
         kitty
@@ -47,6 +40,13 @@
         # Cursor
         posy-cursors
       ];
+
+      # Launch niri on login
+      programs.bash.loginShellInit = ''
+        if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+          exec niri --session
+        fi
+      '';
     };
 
   perSystem =
