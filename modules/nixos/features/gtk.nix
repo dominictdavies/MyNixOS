@@ -10,7 +10,7 @@
       ];
 
       # Greeter
-      programs.regreet.enable = true;
+      programs.greetd.enable = true;
 
       programs.dconf = {
         enable = true;
