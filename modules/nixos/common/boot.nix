@@ -1,10 +1,13 @@
 {
   flake.nixosModules.common = {
-    boot.loader.systemd-boot = {
-      enable = true;
-      configurationLimit = 10;
-    };
+    boot.loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 10;
+      };
 
-    boot.loader.efi.canTouchEfiVariables = true;
+      timeout = 1;
+    };
   };
 }
