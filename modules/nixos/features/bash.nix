@@ -9,6 +9,16 @@
       bash = {
         enable = true;
 
+        # Functions
+        interactiveShellInit = ''
+          cpprun() {
+            local name="$1"
+            shift
+            g++ -std=c++23 "''${name}.cpp" -o "''${name}" -lSDL3 &&
+            ./"''${name}" "$@"
+          }
+        '';
+
         shellAliases = {
           # General
           list = "ls -flA";
@@ -29,15 +39,6 @@
           help-gdb = "open https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf";
           deltarune = "steam steam://rungameid/1671210 && exit";
         };
-
-        interactiveShellInit = ''
-          cpprun() {
-            local name="$1"
-            shift
-            g++ -std=c++23 "''${name}.cpp" -o "''${name}" -lSDL3 &&
-            ./"''${name}" "$@"
-          }
-        '';
       };
 
       # Environment management depending on current directory
