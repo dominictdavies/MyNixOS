@@ -7,7 +7,7 @@
         configurationLimit = 10;
       };
 
-      timeout = 1;
+      timeout = 3;
     };
   };
 }
