@@ -15,6 +15,9 @@
         vlc
       ];
 
+      # Greeter
+      services.greetd.enable = true;
+
       # Make apps try to use Wayland
       environment.sessionVariables = {
         WLR_NO_HARDWARE_CURSORS = 1;
