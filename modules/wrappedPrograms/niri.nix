@@ -15,7 +15,7 @@
       # Launch niri on login
       programs.bash.loginShellInit = ''
         if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-          exec niri-session
+          exec niri --session
         fi
       '';
 
