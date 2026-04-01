@@ -25,7 +25,7 @@
       xdg.portal = {
         enable = true;
         extraPortals = [
-          pkgs.xdg-desktop-portal-gtk
+          pkgs.xdg-desktop-portal-gtk # TODO: Fix gtk app opening speed
           pkgs.xdg-desktop-portal-gnome
         ];
       };
