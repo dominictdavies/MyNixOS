@@ -11,7 +11,7 @@
         };
 
         mime.defaultApplications = {
-          "image/png" = "eog.desktop"
+          "image/png" = "eog.desktop";
         };
       };
     };
