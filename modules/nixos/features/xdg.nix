@@ -11,7 +11,8 @@
         };
 
         mime.defaultApplications = {
-          "image/png" = "eog.desktop";
+          "image/png" = "org.gnome.eog.desktop";
+          "image/jpeg" = "org.gnome.eog.desktop";
         };
       };
     };
