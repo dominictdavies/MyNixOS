@@ -48,6 +48,7 @@
         fi
       '';
 
+      # TODO: Avoid hard coding niri portals config
       environment.etc."xdg/xdg-desktop-portal/niri-portals.conf".text = ''
         [preferred]
         default=gtk
