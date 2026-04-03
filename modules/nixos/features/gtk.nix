@@ -1,10 +1,12 @@
+{ self, ... }:
 {
   flake.nixosModules.gtk =
+    { pkgs, ... }:
     {
-      pkgs,
-      ...
-    }:
-    {
+      imports = [
+        self.nixosModules.xdg
+      ];
+
       environment.systemPackages = with pkgs; [
         gruvbox-plus-icons
       ];
@@ -19,14 +21,6 @@
               color-scheme = "prefer-dark";
             };
           }
-        ];
-      };
-
-      xdg.portal = {
-        enable = true;
-        extraPortals = [
-          pkgs.xdg-desktop-portal-gtk # TODO: Fix gtk app opening speed
-          pkgs.xdg-desktop-portal-gnome
         ];
       };
     };
