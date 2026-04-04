@@ -9,24 +9,27 @@
       ];
 
       environment.systemPackages = with pkgs; [
+        # Locker
+        swaylock
+        swayidle
+
         # Viewers
         mousepad
         eog
         vlc
       ];
 
-      # Keyring
+      # Security
+      security = {
+        polkit.enable = true;
+        pam.services = {
+          swaylock = { };
+          login.fprintAuth = false;
+        };
+      };
       services.gnome.gnome-keyring.enable = true;
-      security.pam.services.login.fprintAuth = false;
 
       # Make apps try to use Wayland
-      environment.sessionVariables = {
-        WLR_NO_HARDWARE_CURSORS = 1;
-        NIXOS_OZONE_WL = 1;
-        MOZ_ENABLE_WAYLAND = 1;
-        GDK_BACKEND = "wayland,x11";
-        ELECTRON_OZONE_PLATFORM_HINT = "auto";
-        SDL_VIDEODRIVER = "wayland,x11";
-      };
+      environment.sessionVariables.NIXOS_OZONE_WL = 1;
     };
 }

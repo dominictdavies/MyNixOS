@@ -24,6 +24,9 @@
       };
 
       environment.systemPackages = with pkgs; [
+        # Important
+        xwayland-satellite
+
         # Shell
         kitty
         fastfetch
@@ -66,7 +69,6 @@
         settings = {
 
           # Important Software (https://github.com/niri-wm/niri/wiki/Important-Software)
-          xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
           spawn-at-startup = [
             (lib.getExe self'.packages.myNoctalia)
           ];
