@@ -23,6 +23,7 @@
         };
       };
 
+      # TODO: Move non-essential packeges out of wrappped niri
       environment.systemPackages = with pkgs; [
         # Important
         xwayland-satellite
@@ -121,6 +122,7 @@
             "Mod+V".toggle-window-floating = _: { };
             "Mod+O".toggle-overview = _: { };
             "Mod+S".screenshot = _: { };
+            "Mod+L".spawn-sh = "swaylock";
 
             "Mod+Left".focus-column-or-monitor-left = _: { };
             "Mod+Right".focus-column-or-monitor-right = _: { };
