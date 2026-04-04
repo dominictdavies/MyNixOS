@@ -24,6 +24,7 @@
           mynix-all-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch && git add flake.lock && git commit -m \"Update flake\" && git push)";
 
           # Other
+          # TODO: Put common pictures into NixOS configuration
           help-keyboard = "open ~/Pictures/Information/keyboard_layout.png";
           help-vagrant = "open https://cheatography.com/davbfr/cheat-sheets/vagrant-cheat-sheet/";
           help-gdb = "open https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf";
