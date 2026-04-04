@@ -32,7 +32,7 @@
         ];
       };
 
-      # TODO: Move non-essential packeges out of wrappped niri
+      # TODO: Move non-essential packages out of wrappped niri
       environment.systemPackages = with pkgs; [
         # Important
         xwayland-satellite
@@ -47,7 +47,7 @@
         baobab
         remmina
         scrcpy
-        qalculate-gtk # TODO: Get qalculate to find dark mode
+        qalculate-gtk
 
         # Editors
         obsidian
