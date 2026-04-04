@@ -5,7 +5,6 @@
     {
       imports = [
         self.nixosModules.niri
-        self.nixosModules.swaylock
       ];
 
       environment.systemPackages = with pkgs; [

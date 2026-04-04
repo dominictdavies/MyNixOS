@@ -14,12 +14,7 @@
       packages.mySwaylock = inputs.wrapper-modules.wrappers.swaylock.wrap {
         inherit pkgs;
         settings = {
-          color = "00ff00";
-          font-size = 24;
-          indicator-idle-visible = false;
-          indicator-radius = 100;
-          line-color = "ffffff";
-          show-failed-attempts = true;
+          image = "/home/dominictdavies/Pictures/Wallpapers/Lined Desk Stanley Parable.png";
         };
       };
     };

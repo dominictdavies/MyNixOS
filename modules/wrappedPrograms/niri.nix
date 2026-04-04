@@ -4,6 +4,7 @@
     { pkgs, ... }:
     {
       imports = [
+        self.nixosModules.swaylock
         self.nixosModules.noctalia
       ];
 
@@ -79,6 +80,7 @@
 
           # Important Software (https://github.com/niri-wm/niri/wiki/Important-Software)
           spawn-at-startup = [
+            (lib.getExe self'.packages.mySwaylock)
             (lib.getExe self'.packages.myNoctalia)
           ];
 
