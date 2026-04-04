@@ -7,6 +7,7 @@
         self.nixosModules.noctalia
       ];
 
+      # niri (https://wiki.nixos.org/wiki/Niri)
       programs.niri = {
         enable = true;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
