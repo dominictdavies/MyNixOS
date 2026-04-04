@@ -168,7 +168,7 @@
       "screenRadiusRatio": 1,
       "animationSpeed": 1,
       "animationDisabled": false,
-      "compactLockScreen": false,
+      "compactLockScreen": true,
       "lockScreenAnimations": false,
       "lockOnSuspend": true,
       "showSessionButtonsOnLockScreen": true,
@@ -190,7 +190,9 @@
       "clockStyle": "custom",
       "clockFormat": "hh\\nmm",
       "passwordChars": false,
-      "lockScreenMonitors": [],
+      "lockScreenMonitors": [
+        "DP-1"
+      ],
       "lockScreenBlur": 0,
       "lockScreenTint": 0,
       "keybinds": {
@@ -584,7 +586,7 @@
       "monitors": []
     },
     "audio": {
-      "volumeStep": 2,
+      "volumeStep": 4,
       "volumeOverdrive": false,
       "spectrumFrameRate": 30,
       "visualizerType": "linear",
@@ -595,7 +597,7 @@
       "volumeFeedbackSoundFile": ""
     },
     "brightness": {
-      "brightnessStep": 5,
+      "brightnessStep": 4,
       "enforceMinimum": true,
       "enableDdcSupport": false,
       "backlightDeviceMappings": []
@@ -640,7 +642,7 @@
       "notifyUpdates": true
     },
     "idle": {
-      "enabled": false,
+      "enabled": true,
       "screenOffTimeout": 600,
       "lockTimeout": 660,
       "suspendTimeout": 1800,
@@ -674,21 +676,6 @@
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "HDMI-A-1": {
-        "name": "HDMI-A-1",
-        "connected": true,
-        "scale": 1,
-        "width": 2560,
-        "height": 1080,
-        "x": 0,
-        "y": 360,
-        "physical_width": 670,
-        "physical_height": 280,
-        "refresh_rate": 60000,
-        "vrr_supported": false,
-        "vrr_enabled": false,
-        "transform": "Normal"
-      },
       "DP-1": {
         "name": "DP-1",
         "connected": true,
@@ -703,10 +690,25 @@
         "vrr_supported": true,
         "vrr_enabled": false,
         "transform": "Normal"
+      },
+      "HDMI-A-1": {
+        "name": "HDMI-A-1",
+        "connected": true,
+        "scale": 1,
+        "width": 2560,
+        "height": 1080,
+        "x": 0,
+        "y": 360,
+        "physical_width": 670,
+        "physical_height": 280,
+        "refresh_rate": 60000,
+        "vrr_supported": false,
+        "vrr_enabled": false,
+        "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1775299648000
+      "lastSeenTs": 1775305812000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.1"
