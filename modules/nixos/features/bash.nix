@@ -24,7 +24,7 @@
           mynix-all-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch && git add flake.lock && git commit -m \"Update flake\" && git push)";
 
           # Other
-          help-keyboard = "open ~/Pictures/Saved/Information/keyboard_layout.png";
+          help-keyboard = "open ~/Pictures/Information/keyboard_layout.png";
           help-vagrant = "open https://cheatography.com/davbfr/cheat-sheets/vagrant-cheat-sheet/";
           help-gdb = "open https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf";
           deltarune = "steam steam://rungameid/1671210 && exit";
