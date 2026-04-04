@@ -80,6 +80,11 @@
           # Important Software (https://github.com/niri-wm/niri/wiki/Important-Software)
           spawn-at-startup = [
             (lib.getExe self'.packages.myNoctalia)
+            [
+              "bash"
+              "-c"
+              "sleep 1 && noctalia-shell ipc call lockScreen lock"
+            ]
           ];
 
           # Input (https://github.com/niri-wm/niri/wiki/Configuration:-Input)
