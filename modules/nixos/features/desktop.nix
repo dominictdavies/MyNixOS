@@ -5,12 +5,10 @@
     {
       imports = [
         self.nixosModules.niri
-        self.nixosModules.gtk
+        self.nixosModules.swaylock
       ];
 
       environment.systemPackages = with pkgs; [
-        # Locker
-        swaylock
         swayidle
 
         # Viewers
@@ -19,7 +17,12 @@
         vlc
       ];
 
-      # Security
+      xdg.mime.defaultApplications = {
+        "image/png" = "org.gnome.eog.desktop";
+        "image/jpeg" = "org.gnome.eog.desktop";
+      };
+
+      services.gnome.gnome-keyring.enable = true;
       security = {
         polkit.enable = true;
         pam.services = {
@@ -27,7 +30,6 @@
           login.fprintAuth = false;
         };
       };
-      services.gnome.gnome-keyring.enable = true;
 
       # Make apps try to use Wayland
       environment.sessionVariables.NIXOS_OZONE_WL = 1;
