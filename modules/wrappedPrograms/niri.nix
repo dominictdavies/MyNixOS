@@ -12,6 +12,16 @@
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
       };
 
+      services.greetd = {
+        enable = true;
+        settings = {
+          default_session = {
+            command = "niri-session";
+            user = "dominictdavies";
+          };
+        };
+      };
+
       environment.systemPackages = with pkgs; [
         # Shell
         kitty
@@ -40,22 +50,6 @@
         # Cursor
         posy-cursors
       ];
-
-      # Launch niri on login
-      programs.bash.loginShellInit = ''
-        if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-          exec niri --session
-        fi
-      '';
-
-      # TODO: Avoid hard coding niri portals config
-      environment.etc."xdg/xdg-desktop-portal/niri-portals.conf".text = ''
-        [preferred]
-        default=gtk
-        org.freedesktop.impl.portal.Access=gtk
-        org.freedesktop.impl.portal.Notification=gtk
-        org.freedesktop.impl.portal.Secret=gnome-keyring
-      '';
     };
 
   perSystem =
