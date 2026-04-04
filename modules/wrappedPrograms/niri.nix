@@ -4,7 +4,6 @@
     { pkgs, ... }:
     {
       imports = [
-        self.nixosModules.swaylock
         self.nixosModules.noctalia
       ];
 
@@ -80,7 +79,6 @@
 
           # Important Software (https://github.com/niri-wm/niri/wiki/Important-Software)
           spawn-at-startup = [
-            (lib.getExe self'.packages.mySwaylock)
             (lib.getExe self'.packages.myNoctalia)
           ];
 
@@ -132,7 +130,6 @@
             "Mod+V".toggle-window-floating = _: { };
             "Mod+O".toggle-overview = _: { };
             "Mod+S".screenshot = _: { };
-            "Mod+L".spawn-sh = "swaylock";
 
             "Mod+Left".focus-column-or-monitor-left = _: { };
             "Mod+Right".focus-column-or-monitor-right = _: { };
@@ -216,6 +213,7 @@
             # Noctalia
             "Ctrl+Alt+Delete".spawn-sh = "noctalia-shell ipc call sessionMenu toggle";
             "Ctrl+Alt+Slash".spawn-sh = "noctalia-shell ipc call launcher toggle";
+            "Ctrl+Alt+L".spawn-sh = "noctalia-shell ipc call lockScreen lock";
 
             "XF86AudioPlay".spawn-sh = "noctalia-shell ipc call media toggle";
             "XF86AudioStop".spawn-sh = "noctalia-shell ipc call media stop";

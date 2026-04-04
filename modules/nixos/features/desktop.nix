@@ -8,8 +8,6 @@
       ];
 
       environment.systemPackages = with pkgs; [
-        swayidle
-
         # Viewers
         mousepad
         eog
@@ -24,10 +22,7 @@
       services.gnome.gnome-keyring.enable = true;
       security = {
         polkit.enable = true;
-        pam.services = {
-          swaylock = { };
-          login.fprintAuth = false;
-        };
+        pam.services.login.fprintAuth = false;
       };
 
       # Make apps try to use Wayland
