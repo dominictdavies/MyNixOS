@@ -22,6 +22,7 @@
       environment.systemPackages = with pkgs; [
         # Tools
         nixfmt
+        winetricks
         unzip
         gpu-screen-recorder
       ];
