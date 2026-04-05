@@ -232,7 +232,7 @@
           # Miscellaneous (https://github.com/niri-wm/niri/wiki/Configuration:-Miscellaneous)
           cursor = {
             xcursor-theme = "Posy_Cursor_Black";
-            xcursor-size = 32;
+            xcursor-size = 40;
           };
           hotkey-overlay = {
             # TODO: Remove unbound binds from overlay
