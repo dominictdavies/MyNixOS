@@ -5,23 +5,11 @@
     {
       imports = with self.nixosModules; [
         common
-
-        # Hardware
         dominoHardware
-        framework
-
-        # Interface
         desktop
-
-        # Development
         coding
         docker
         vagrant
-
-        # Extras
-        printing
-        compatibility
-        fileSharing
         gaming
       ];
 

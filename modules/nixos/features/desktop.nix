@@ -3,8 +3,11 @@
   flake.nixosModules.desktop =
     { pkgs, ... }:
     {
-      imports = [
-        self.nixosModules.niri
+      imports = with self.nixosModules; [
+        niri
+        compatibility
+        printing
+        fileSharing
       ];
 
       environment.systemPackages = with pkgs; [

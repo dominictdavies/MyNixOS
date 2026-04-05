@@ -5,21 +5,9 @@
     {
       imports = with self.nixosModules; [
         common
-
-        # Hardware
         dominatorHardware
-        nvidia
-
-        # Interface
         desktop
-
-        # Development
         coding
-
-        # Extras
-        printing
-        compatibility
-        fileSharing
         gaming
       ];
 
