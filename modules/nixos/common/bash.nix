@@ -6,6 +6,7 @@
     ];
 
     programs = {
+      # TODO: Simplify
       bash = {
         enable = true;
 
