@@ -15,28 +15,14 @@
         self.nixosModules.desktop
 
         # Development
+        self.nixosModules.coding
         self.nixosModules.docker
         self.nixosModules.vagrant
 
         # Extras
         self.nixosModules.lanFileSharing
+        self.nixosModules.compatibility
         self.nixosModules.gaming
-      ];
-
-      environment.systemPackages = with pkgs; [
-        # Tools
-        nixfmt
-        wineWow64Packages.stable
-        winetricks
-        unzip
-        gpu-screen-recorder
-
-        # Programming Packages
-        devenv
-        rustup
-        gcc
-        cgdb
-        clang-tools
       ];
 
       hardware = {

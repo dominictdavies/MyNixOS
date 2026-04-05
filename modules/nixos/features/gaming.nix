@@ -2,6 +2,11 @@
   flake.nixosModules.gaming =
     { pkgs, ... }:
     {
+      environment.systemPackages = with pkgs; [
+        prismlauncher
+        gpu-screen-recorder
+      ];
+
       programs.steam = {
         enable = true;
 
@@ -14,9 +19,5 @@
         # Open ports in the firewall for Steam Local Network Game Transfers
         localNetworkGameTransfers.openFirewall = true;
       };
-
-      environment.systemPackages = with pkgs; [
-        prismlauncher
-      ];
     };
 }

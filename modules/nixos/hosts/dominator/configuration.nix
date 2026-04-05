@@ -15,18 +15,13 @@
         self.nixosModules.bash
         self.nixosModules.desktop
 
+        # Development
+        self.nixosModules.coding
+
         # Extras
         self.nixosModules.lanFileSharing
+        self.nixosModules.compatibility
         self.nixosModules.gaming
-      ];
-
-      environment.systemPackages = with pkgs; [
-        # Tools
-        nixfmt
-        wineWow64Packages.stable
-        winetricks
-        unzip
-        gpu-screen-recorder
       ];
 
       hardware = {
