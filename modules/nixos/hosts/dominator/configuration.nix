@@ -34,12 +34,9 @@
         printing.enable = true;
       };
 
-      networking = {
-        hostName = "dominator";
-        networkmanager.enable = true;
-      };
+      networking.hostName = "dominator";
 
-      # See `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion
-      system.stateVersion = "26.05"; # Did you read the comment?
+      # Do not modify! (https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion)
+      system.stateVersion = "26.05";
     };
 }
