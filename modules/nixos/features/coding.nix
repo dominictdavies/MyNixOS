@@ -9,6 +9,7 @@
         cgdb
         clang-tools
         devenv
+        vscode
       ];
     };
 }

@@ -31,36 +31,8 @@
         ];
       };
 
-      # TODO: Move non-essential packages out of wrappped niri
       environment.systemPackages = with pkgs; [
-        # Important
         xwayland-satellite
-
-        # Shell
-        kitty
-        fastfetch
-        proton-vpn-cli
-
-        # Tools
-        nautilus
-        baobab
-        remmina
-        scrcpy
-        qalculate-gtk
-
-        # Editors
-        obsidian
-        gimp
-        inkscape
-        vscode
-
-        # Media
-        firefox
-        discord
-        spotify
-        steam
-
-        # Cursor
         posy-cursors
       ];
     };

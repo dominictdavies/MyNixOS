@@ -10,6 +10,28 @@
       ];
 
       environment.systemPackages = with pkgs; [
+        # Shell
+        kitty
+        proton-vpn-cli
+
+        # Tools
+        nautilus
+        baobab
+        remmina
+        scrcpy
+        qalculate-gtk
+
+        # Editors
+        obsidian
+        gimp
+        inkscape
+
+        # Media
+        firefox
+        discord
+        spotify
+
+        # Viewers
         mousepad
         eog
         vlc
