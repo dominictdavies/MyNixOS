@@ -1,5 +1,4 @@
 {
-  # TODO: Rename to fileSharing.nix
   flake.nixosModules.lanFileSharing = {
     services.avahi = {
       enable = true;
