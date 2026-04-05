@@ -3,25 +3,24 @@
   flake.nixosModules.dominatorConfiguration =
     { pkgs, lib, ... }:
     {
-      imports = [
-        # TODO: With self
-        self.nixosModules.common
+      imports = with self.nixosModules; [
+        common
 
         # Hardware
-        self.nixosModules.dominatorHardware
-        self.nixosModules.nvidia
+        dominatorHardware
+        nvidia
 
         # Interface
-        self.nixosModules.bash
-        self.nixosModules.desktop
+        bash
+        desktop
 
         # Development
-        self.nixosModules.coding
+        coding
 
         # Extras
-        self.nixosModules.lanFileSharing
-        self.nixosModules.compatibility
-        self.nixosModules.gaming
+        lanFileSharing
+        compatibility
+        gaming
       ];
 
       hardware = {

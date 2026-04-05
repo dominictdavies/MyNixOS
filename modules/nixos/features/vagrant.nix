@@ -2,8 +2,8 @@
   flake.nixosModules.vagrant =
     { pkgs, ... }:
     {
-      environment.systemPackages = with pkgs; [
-        vagrant
+      environment.systemPackages = [
+        pkgs.vagrant
       ];
 
       virtualisation.virtualbox.host.enable = true;

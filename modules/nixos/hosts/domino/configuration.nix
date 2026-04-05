@@ -3,26 +3,26 @@
   flake.nixosModules.dominoConfiguration =
     { pkgs, lib, ... }:
     {
-      imports = [
-        self.nixosModules.common
+      imports = with self.nixosModules; [
+        common
 
         # Hardware
-        self.nixosModules.dominoHardware
-        self.nixosModules.framework
+        dominoHardware
+        framework
 
         # Interface
-        self.nixosModules.bash
-        self.nixosModules.desktop
+        bash
+        desktop
 
         # Development
-        self.nixosModules.coding
-        self.nixosModules.docker
-        self.nixosModules.vagrant
+        coding
+        docker
+        vagrant
 
         # Extras
-        self.nixosModules.lanFileSharing
-        self.nixosModules.compatibility
-        self.nixosModules.gaming
+        lanFileSharing
+        compatibility
+        gaming
       ];
 
       hardware = {
