@@ -20,8 +20,8 @@
         vagrant
 
         # Extras
-        lanFileSharing
         compatibility
+        fileSharing
         gaming
       ];
 

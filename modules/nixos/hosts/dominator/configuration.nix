@@ -18,8 +18,8 @@
         coding
 
         # Extras
-        lanFileSharing
         compatibility
+        fileSharing
         gaming
       ];
 

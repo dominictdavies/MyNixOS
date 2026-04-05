@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.lanFileSharing = {
+  flake.nixosModules.fileSharing = {
     services.avahi = {
       enable = true;
       nssmdns4 = true;
