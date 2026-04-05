@@ -48,7 +48,6 @@
       packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
         inherit pkgs;
         settings = {
-
           # Important Software (https://github.com/niri-wm/niri/wiki/Important-Software)
           spawn-at-startup = [
             (lib.getExe self'.packages.myNoctalia)
@@ -81,6 +80,7 @@
                 };
               };
             };
+
             "DP-1" = {
               mode = "2560x1440@143.972";
               position = _: {
@@ -202,7 +202,6 @@
             "XF86Explorer".spawn-sh = "noctalia-shell ipc call systemMonitor toggle";
             "XF86Search".spawn-sh = "noctalia-shell ipc call launcher toggle";
             "XF86Tools".spawn-sh = "noctalia-shell ipc call controlCenter toggle";
-
           };
 
           # Layout (https://github.com/niri-wm/niri/wiki/Configuration:-Layout)
@@ -233,6 +232,7 @@
             xcursor-theme = "Posy_Cursor_Black";
             xcursor-size = 48;
           };
+
           hotkey-overlay = {
             # TODO: Remove unbound binds from overlay
             skip-at-startup = _: { };
