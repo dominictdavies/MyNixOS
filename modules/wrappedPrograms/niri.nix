@@ -94,7 +94,6 @@
 
           # Key Bindings (https://github.com/niri-wm/niri/wiki/Configuration:-Key-Bindings)
           binds = {
-
             # Niri
             "Mod+Ctrl+Alt+Slash".show-hotkey-overlay = _: { };
             "Mod+Ctrl+Alt+Q".quit = _: { };
@@ -232,13 +231,12 @@
           # Miscellaneous (https://github.com/niri-wm/niri/wiki/Configuration:-Miscellaneous)
           cursor = {
             xcursor-theme = "Posy_Cursor_Black";
-            xcursor-size = 40;
+            xcursor-size = 48;
           };
           hotkey-overlay = {
             # TODO: Remove unbound binds from overlay
             skip-at-startup = _: { };
           };
-
         };
       };
     };
