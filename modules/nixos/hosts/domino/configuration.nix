@@ -11,7 +11,6 @@
         framework
 
         # Interface
-        bash
         desktop
 
         # Development

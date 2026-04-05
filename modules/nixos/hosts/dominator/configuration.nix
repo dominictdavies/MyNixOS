@@ -11,7 +11,6 @@
         nvidia
 
         # Interface
-        bash
         desktop
 
         # Development

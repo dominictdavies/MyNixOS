@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  flake.nixosModules.bash = {
+  flake.nixosModules.common = {
     imports = [
       self.nixosModules.nh
     ];
