@@ -11,7 +11,6 @@
       ];
 
       environment.systemPackages = with pkgs; [
-        # Viewers
         mousepad
         eog
         vlc
@@ -21,6 +20,8 @@
         "image/png" = "org.gnome.eog.desktop";
         "image/jpeg" = "org.gnome.eog.desktop";
       };
+
+      hardware.bluetooth.enable = true;
 
       services.gnome.gnome-keyring.enable = true;
       security = {
