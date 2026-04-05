@@ -6,7 +6,6 @@
       imports = with self.nixosModules; [
         niri
         compatibility
-        printing
         fileSharing
       ];
 
@@ -23,7 +22,11 @@
 
       hardware.bluetooth.enable = true;
 
-      services.gnome.gnome-keyring.enable = true;
+      services = {
+        gnome.gnome-keyring.enable = true;
+        printing.enable = true;
+      };
+
       security = {
         polkit.enable = true;
         pam.services.login.fprintAuth = false;
