@@ -4,6 +4,7 @@
     { pkgs, lib, ... }:
     {
       imports = [
+        # TODO: With self
         self.nixosModules.common
 
         # Hardware
