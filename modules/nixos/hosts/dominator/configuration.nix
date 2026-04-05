@@ -18,6 +18,7 @@
         coding
 
         # Extras
+        printing
         compatibility
         fileSharing
         gaming
@@ -26,12 +27,6 @@
       hardware = {
         enableAllFirmware = true;
         bluetooth.enable = true;
-      };
-
-      services = {
-        fwupd.enable = true;
-        ratbagd.enable = true;
-        printing.enable = true;
       };
 
       networking.hostName = "dominator";
