@@ -14,7 +14,6 @@
           # General
           list = "ls -flA";
           clr = "clear";
-          quit = "exit";
           open = "xdg-open";
 
           # MyNixOS
