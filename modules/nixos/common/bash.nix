@@ -6,7 +6,6 @@
     ];
 
     programs = {
-      # TODO: Simplify
       bash = {
         enable = true;
 
@@ -14,32 +13,13 @@
           # General
           list = "ls -flA";
           clr = "clear";
-          open = "xdg-open";
 
           # MyNixOS
-          mynix-noctalia-push = "(cd ~/MyNixOS/modules/wrappedPrograms/noctalia && nix run nixpkgs#noctalia-shell ipc call state all > noctalia.json && git add noctalia.json && git commit -m \"Update noctalia settings\" && git push)";
           mynix-switch = "nh os switch";
           mynix-pull-switch = "(cd ~/MyNixOS && git pull && nh os switch)";
           mynix-flake-switch = "(cd ~/MyNixOS && nix flake update && nh os switch && git add flake.lock && git commit -m \"Update flake\" && git push)";
           mynix-all-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch && git add flake.lock && git commit -m \"Update flake\" && git push)";
-
-          # Other
-          # TODO: Put common pictures into NixOS configuration
-          help-keyboard = "open ~/Pictures/Information/keyboard_layout.png";
-          help-vagrant = "open https://cheatography.com/davbfr/cheat-sheets/vagrant-cheat-sheet/";
-          help-gdb = "open https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf";
-          deltarune = "steam steam://rungameid/1671210 && exit";
         };
-
-        # Functions
-        interactiveShellInit = ''
-          cpprun() {
-            local name="$1"
-            shift
-            g++ -std=c++23 "''${name}.cpp" -o "''${name}" -lSDL3 &&
-            ./"''${name}" "$@"
-          }
-        '';
       };
 
       # Environment management depending on current directory
