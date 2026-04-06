@@ -1,32 +1,32 @@
-spawn-at-startup noctalia-shell
-spawn-at-startup bash -c "sleep 1 && noctalia-shell ipc call lockScreen lock"
+spawn-at-startup "noctalia-shell"
+spawn-at-startup "bash" "-c" "sleep" "1" "&&" "noctalia-shell" "ipc" "call" "lockScreen" "lock"
 hotkey-overlay {
     skip-at-startup
 }
 input {
     keyboard {
         xkb {
-            layout au
+            layout "au"
         }
     }
     touchpad {
-        click-method clickfinger
+        click-method "clickfinger"
         natural-scroll
         scroll-factor 0.5
-        scroll-method two-finger
+        scroll-method "two-finger"
         tap
-        tap-button-map left-right-middle
+        tap-button-map "left-right-middle"
     }
 }
 cursor {
     xcursor-size 48
-    xcursor-theme Posy_Cursor_Black
+    xcursor-theme "Posy_Cursor_Black"
 }
-output DP-1 {
+output "DP-1" {
     mode "2560x1440@143.972"
     position x=2560 y=0
 }
-output HDMI-A-1 {
+output "HDMI-A-1" {
     mode "2560x1080@60.000"
     position x=0 y=360
 }
@@ -200,58 +200,58 @@ binds {
         set-window-height "+5%"
     }
     Mod+Alt+Return {
-        spawn-sh kitty
+        spawn-sh "kitty"
     }
     Mod+Alt+B {
-        spawn-sh firefox
+        spawn-sh "firefox"
     }
     Mod+Alt+C {
-        spawn-sh code
+        spawn-sh "code"
     }
     Mod+Alt+D {
-        spawn-sh discord
+        spawn-sh "discord"
     }
     Mod+Alt+F {
         spawn-sh "kitty --hold fastfetch"
     }
     Mod+Alt+G {
-        spawn-sh gimp
+        spawn-sh "gimp"
     }
     Mod+Alt+H {
         spawn-sh "kitty protonvpn connect"
     }
     Mod+Alt+I {
-        spawn-sh inkscape
+        spawn-sh "inkscape"
     }
     Mod+Alt+J {
         spawn-sh "kitty protonvpn disconnect"
     }
     Mod+Alt+L {
-        spawn-sh spotify
+        spawn-sh "spotify"
     }
     Mod+Alt+M {
-        spawn-sh qalculate-gtk
+        spawn-sh "qalculate-gtk"
     }
     Mod+Alt+N {
-        spawn-sh nautilus
+        spawn-sh "nautilus"
     }
     Mod+Alt+O {
-        spawn-sh obsidian
+        spawn-sh "obsidian"
     }
     Mod+Alt+P {
-        spawn-sh scrcpy
+        spawn-sh "scrcpy"
     }
     Mod+Alt+R {
-        spawn-sh remmina
+        spawn-sh "remmina"
     }
     Mod+Alt+S {
-        spawn-sh steam
+        spawn-sh "steam"
     }
     Mod+Alt+T {
-        spawn-sh deltarune
+        spawn-sh "deltarune"
     }
     Mod+Alt+W {
-        spawn-sh baobab
+        spawn-sh "baobab"
     }
     Ctrl+Alt+Delete {
         spawn-sh "noctalia-shell ipc call sessionMenu toggle"
@@ -290,7 +290,7 @@ binds {
         spawn-sh "noctalia-shell ipc call launcher toggle"
     }
     XF86Calculator {
-        spawn-sh qalculate-gtk
+        spawn-sh "qalculate-gtk"
     }
     XF86Tools {
         spawn-sh "noctalia-shell ipc call controlCenter toggle"
