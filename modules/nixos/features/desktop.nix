@@ -55,9 +55,9 @@
       };
 
       programs.bash.shellAliases = {
-        # TODO: Put common pictures into NixOS configuration
         open = "xdg-open";
-        help-keyboard = "open ~/Pictures/Information/keyboard_layout.png";
+        help-keyboard = "open ~/MyNixOS/assets/information/keyboard_layout.png";
+        help-cards = "open ~/MyNixOS/assets/information/card_functionality.png";
         help-vagrant = "open https://cheatography.com/davbfr/cheat-sheets/vagrant-cheat-sheet/";
         help-gdb = "open https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf";
       };
