@@ -1,8 +1,5 @@
 spawn-at-startup "noctalia-shell"
 spawn-at-startup "bash" "-c" "sleep" "1" "&&" "noctalia-shell" "ipc" "call" "lockScreen" "lock"
-hotkey-overlay {
-    skip-at-startup
-}
 input {
     keyboard {
         xkb {
@@ -295,6 +292,10 @@ binds {
     XF86Tools {
         spawn-sh "noctalia-shell ipc call controlCenter toggle"
     }
+}
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
 }
 layout {
     focus-ring {
