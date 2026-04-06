@@ -1,5 +1,27 @@
-spawn-at-startup "/nix/store/ddiv42nlrd1nbp0kgmgqrrvdycx6d13j-noctalia-shell-4.7.1/bin/noctalia-shell"
+spawn-at-startup noctalia-shell
 spawn-at-startup bash -c "sleep 1 && noctalia-shell ipc call lockScreen lock"
+hotkey-overlay {
+    skip-at-startup
+}
+input {
+    keyboard {
+        xkb {
+            layout au
+        }
+    }
+    touchpad {
+        click-method clickfinger
+        natural-scroll
+        scroll-factor 0.5
+        scroll-method two-finger
+        tap
+        tap-button-map left-right-middle
+    }
+}
+cursor {
+    xcursor-size 48
+    xcursor-theme Posy_Cursor_Black
+}
 output DP-1 {
     mode "2560x1440@143.972"
     position x=2560 y=0
@@ -9,17 +31,59 @@ output HDMI-A-1 {
     position x=0 y=360
 }
 binds {
-    Ctrl+Alt+Delete {
-        spawn-sh "noctalia-shell ipc call sessionMenu toggle"
+    Mod+Ctrl+Alt+Q {
+        quit
     }
-    Ctrl+Alt+L {
-        spawn-sh "noctalia-shell ipc call lockScreen lock"
+    Mod+Ctrl+Alt+Slash {
+        show-hotkey-overlay
     }
-    Ctrl+Alt+Slash {
-        spawn-sh "noctalia-shell ipc call launcher toggle"
+    Mod+Q {
+        close-window
     }
-    Mod+0 {
-        focus-workspace 10
+    Mod+C {
+        center-column
+    }
+    Mod+D {
+        maximize-column
+    }
+    Mod+F {
+        fullscreen-window
+    }
+    Mod+G {
+        toggle-windowed-fullscreen
+    }
+    Mod+V {
+        toggle-window-floating
+    }
+    Mod+O {
+        toggle-overview
+    }
+    Mod+S {
+        screenshot
+    }
+    Mod+Left {
+        focus-column-or-monitor-left
+    }
+    Mod+Right {
+        focus-column-or-monitor-right
+    }
+    Mod+Up {
+        focus-window-or-workspace-up
+    }
+    Mod+Down {
+        focus-window-or-workspace-down
+    }
+    Mod+WheelScrollUp {
+        focus-column-or-monitor-left
+    }
+    Mod+WheelScrollDown {
+        focus-column-or-monitor-right
+    }
+    Mod+Alt+WheelScrollUp {
+        focus-window-or-workspace-up
+    }
+    Mod+Alt+WheelScrollDown {
+        focus-window-or-workspace-down
     }
     Mod+1 {
         focus-workspace 1
@@ -47,6 +111,96 @@ binds {
     }
     Mod+9 {
         focus-workspace 9
+    }
+    Mod+0 {
+        focus-workspace 10
+    }
+    Mod+Shift+Left {
+        move-column-left-or-to-monitor-left
+    }
+    Mod+Shift+Right {
+        move-column-right-or-to-monitor-right
+    }
+    Mod+Shift+Up {
+        move-window-up-or-to-workspace-up
+    }
+    Mod+Shift+Down {
+        move-window-down-or-to-workspace-down
+    }
+    Mod+Shift+WheelScrollUp {
+        move-column-left-or-to-monitor-left
+    }
+    Mod+Shift+WheelScrollDown {
+        move-column-right-or-to-monitor-right
+    }
+    Mod+Shift+Alt+WheelScrollUp {
+        move-window-up-or-to-workspace-up
+    }
+    Mod+Shift+Alt+WheelScrollDown {
+        move-window-down-or-to-workspace-down
+    }
+    Mod+Shift+Comma {
+        consume-or-expel-window-left
+    }
+    Mod+Shift+Period {
+        consume-or-expel-window-right
+    }
+    Mod+Shift+1 {
+        move-column-to-workspace 1
+    }
+    Mod+Shift+2 {
+        move-column-to-workspace 2
+    }
+    Mod+Shift+3 {
+        move-column-to-workspace 3
+    }
+    Mod+Shift+4 {
+        move-column-to-workspace 4
+    }
+    Mod+Shift+5 {
+        move-column-to-workspace 5
+    }
+    Mod+Shift+6 {
+        move-column-to-workspace 6
+    }
+    Mod+Shift+7 {
+        move-column-to-workspace 7
+    }
+    Mod+Shift+8 {
+        move-column-to-workspace 8
+    }
+    Mod+Shift+9 {
+        move-column-to-workspace 9
+    }
+    Mod+Shift+0 {
+        move-column-to-workspace 10
+    }
+    Mod+Ctrl+Left {
+        set-column-width "-5%"
+    }
+    Mod+Ctrl+Right {
+        set-column-width "+5%"
+    }
+    Mod+Ctrl+Up {
+        set-window-height "-5%"
+    }
+    Mod+Ctrl+Down {
+        set-window-height "+5%"
+    }
+    Mod+Ctrl+WheelScrollUp {
+        set-column-width "-5%"
+    }
+    Mod+Ctrl+WheelScrollDown {
+        set-column-width "+5%"
+    }
+    Mod+Ctrl+Alt+WheelScrollUp {
+        set-window-height "-5%"
+    }
+    Mod+Ctrl+Alt+WheelScrollDown {
+        set-window-height "+5%"
+    }
+    Mod+Alt+Return {
+        spawn-sh kitty
     }
     Mod+Alt+B {
         spawn-sh firefox
@@ -90,9 +244,6 @@ binds {
     Mod+Alt+R {
         spawn-sh remmina
     }
-    Mod+Alt+Return {
-        spawn-sh kitty
-    }
     Mod+Alt+S {
         spawn-sh steam
     }
@@ -102,167 +253,35 @@ binds {
     Mod+Alt+W {
         spawn-sh baobab
     }
-    Mod+Alt+WheelScrollDown {
-        focus-window-or-workspace-down
+    Ctrl+Alt+Delete {
+        spawn-sh "noctalia-shell ipc call sessionMenu toggle"
     }
-    Mod+Alt+WheelScrollUp {
-        focus-window-or-workspace-up
+    Ctrl+Alt+Slash {
+        spawn-sh "noctalia-shell ipc call launcher toggle"
     }
-    Mod+C {
-        center-column
-    }
-    Mod+Ctrl+Alt+Q {
-        quit
-    }
-    Mod+Ctrl+Alt+Slash {
-        show-hotkey-overlay
-    }
-    Mod+Ctrl+Alt+WheelScrollDown {
-        set-window-height "+5%"
-    }
-    Mod+Ctrl+Alt+WheelScrollUp {
-        set-window-height "-5%"
-    }
-    Mod+Ctrl+Down {
-        set-window-height "+5%"
-    }
-    Mod+Ctrl+Left {
-        set-column-width "-5%"
-    }
-    Mod+Ctrl+Right {
-        set-column-width "+5%"
-    }
-    Mod+Ctrl+Up {
-        set-window-height "-5%"
-    }
-    Mod+Ctrl+WheelScrollDown {
-        set-column-width "+5%"
-    }
-    Mod+Ctrl+WheelScrollUp {
-        set-column-width "-5%"
-    }
-    Mod+D {
-        maximize-column
-    }
-    Mod+Down {
-        focus-window-or-workspace-down
-    }
-    Mod+F {
-        fullscreen-window
-    }
-    Mod+G {
-        toggle-windowed-fullscreen
-    }
-    Mod+Left {
-        focus-column-or-monitor-left
-    }
-    Mod+O {
-        toggle-overview
-    }
-    Mod+Q {
-        close-window
-    }
-    Mod+Right {
-        focus-column-or-monitor-right
-    }
-    Mod+S {
-        screenshot
-    }
-    Mod+Shift+0 {
-        move-column-to-workspace 10
-    }
-    Mod+Shift+1 {
-        move-column-to-workspace 1
-    }
-    Mod+Shift+2 {
-        move-column-to-workspace 2
-    }
-    Mod+Shift+3 {
-        move-column-to-workspace 3
-    }
-    Mod+Shift+4 {
-        move-column-to-workspace 4
-    }
-    Mod+Shift+5 {
-        move-column-to-workspace 5
-    }
-    Mod+Shift+6 {
-        move-column-to-workspace 6
-    }
-    Mod+Shift+7 {
-        move-column-to-workspace 7
-    }
-    Mod+Shift+8 {
-        move-column-to-workspace 8
-    }
-    Mod+Shift+9 {
-        move-column-to-workspace 9
-    }
-    Mod+Shift+Alt+WheelScrollDown {
-        move-window-down-or-to-workspace-down
-    }
-    Mod+Shift+Alt+WheelScrollUp {
-        move-window-up-or-to-workspace-up
-    }
-    Mod+Shift+Comma {
-        consume-or-expel-window-left
-    }
-    Mod+Shift+Down {
-        move-window-down-or-to-workspace-down
-    }
-    Mod+Shift+Left {
-        move-column-left-or-to-monitor-left
-    }
-    Mod+Shift+Period {
-        consume-or-expel-window-right
-    }
-    Mod+Shift+Right {
-        move-column-right-or-to-monitor-right
-    }
-    Mod+Shift+Up {
-        move-window-up-or-to-workspace-up
-    }
-    Mod+Shift+WheelScrollDown {
-        move-column-right-or-to-monitor-right
-    }
-    Mod+Shift+WheelScrollUp {
-        move-column-left-or-to-monitor-left
-    }
-    Mod+Up {
-        focus-window-or-workspace-up
-    }
-    Mod+V {
-        toggle-window-floating
-    }
-    Mod+WheelScrollDown {
-        focus-column-or-monitor-right
-    }
-    Mod+WheelScrollUp {
-        focus-column-or-monitor-left
-    }
-    XF86AudioLowerVolume {
-        spawn-sh "noctalia-shell ipc call volume decrease"
-    }
-    XF86AudioMute {
-        spawn-sh "noctalia-shell ipc call volume muteOutput"
-    }
-    XF86AudioNext {
-        spawn-sh "noctalia-shell ipc call media next"
+    Ctrl+Alt+L {
+        spawn-sh "noctalia-shell ipc call lockScreen lock"
     }
     XF86AudioPlay {
-        spawn-sh "noctalia-shell ipc call media toggle"
-    }
-    XF86AudioPrev {
-        spawn-sh "noctalia-shell ipc call media previous"
-    }
-    XF86AudioRaiseVolume {
-        spawn-sh "noctalia-shell ipc call volume increase"
+        spawn-sh "noctalia-shell ipc call media playPause"
     }
     XF86AudioStop {
         spawn-sh "noctalia-shell ipc call media stop"
     }
-    XF86Calculator {
-        spawn-sh qalculate-gtk
+    XF86AudioPrev {
+        spawn-sh "noctalia-shell ipc call media previous"
+    }
+    XF86AudioNext {
+        spawn-sh "noctalia-shell ipc call media next"
+    }
+    XF86AudioMute {
+        spawn-sh "noctalia-shell ipc call volume muteOutput"
+    }
+    XF86AudioLowerVolume {
+        spawn-sh "noctalia-shell ipc call volume decrease"
+    }
+    XF86AudioRaiseVolume {
+        spawn-sh "noctalia-shell ipc call volume increase"
     }
     XF86Explorer {
         spawn-sh "noctalia-shell ipc call systemMonitor toggle"
@@ -270,30 +289,11 @@ binds {
     XF86Search {
         spawn-sh "noctalia-shell ipc call launcher toggle"
     }
+    XF86Calculator {
+        spawn-sh qalculate-gtk
+    }
     XF86Tools {
         spawn-sh "noctalia-shell ipc call controlCenter toggle"
-    }
-}
-cursor {
-    xcursor-size 48
-    xcursor-theme Posy_Cursor_Black
-}
-hotkey-overlay {
-    skip-at-startup
-}
-input {
-    keyboard {
-        xkb {
-            layout au
-        }
-    }
-    touchpad {
-        click-method clickfinger
-        natural-scroll
-        scroll-factor 0.5
-        scroll-method two-finger
-        tap
-        tap-button-map left-right-middle
     }
 }
 layout {
