@@ -3,12 +3,20 @@
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        nixfmt
+        # Languages
         rustup
         gcc
+
+        # Tools
         cgdb
         clang-tools
         devenv
+
+        # Formatters
+        nixfmt
+        kdlfmt
+
+        # Editors
         vscode
       ];
     };
