@@ -3,6 +3,8 @@
   flake.nixosModules.niri =
     { pkgs, ... }:
     {
+      # TODO: Switch to an actual greeter
+      # TODO: Fix arrow binds for different output arrangements
       imports = [
         self.nixosModules.noctalia
       ];
