@@ -16,7 +16,7 @@ input {
     }
 }
 cursor {
-    xcursor-size 48
+    xcursor-size 40
     xcursor-theme "Posy_Cursor_Black"
 }
 output "DP-1" {

@@ -4,7 +4,6 @@
     { pkgs, ... }:
     {
       # TODO: Switch to an actual greeter
-      # TODO: Shrink cursor a bit
       # TODO: Fix arrow binds for different output arrangements
       imports = [
         self.nixosModules.noctalia
