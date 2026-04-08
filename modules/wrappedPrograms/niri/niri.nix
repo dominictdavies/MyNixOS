@@ -5,6 +5,7 @@
     {
       # TODO: Switch to an actual greeter
       # TODO: Fix arrow binds for different output arrangements
+      # TODO: Add domino function key binds
       imports = [
         self.nixosModules.noctalia
       ];

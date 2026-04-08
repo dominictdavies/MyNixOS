@@ -37,6 +37,7 @@
         vlc
       ];
 
+      # TODO: Fix viewer warnings
       xdg.mime.defaultApplications = {
         "image/png" = "org.gnome.eog.desktop";
         "image/jpeg" = "org.gnome.eog.desktop";
