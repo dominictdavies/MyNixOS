@@ -288,6 +288,15 @@ binds {
     XF86AudioRaiseVolume {
         spawn-sh "noctalia-shell ipc call volume increase"
     }
+    XF86MonBrightnessDown {
+        spawn-sh "noctalia-shell ipc call brightness decrease"
+    }
+    XF86MonBrightnessUp {
+        spawn-sh "noctalia-shell ipc call brightness increase"
+    }
+    XF86AudioMedia {
+        spawn-sh "noctalia-shell ipc call media toggle"
+    }
     XF86Explorer {
         spawn-sh "noctalia-shell ipc call systemMonitor toggle"
     }
