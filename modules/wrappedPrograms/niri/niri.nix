@@ -14,6 +14,8 @@
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
       };
 
+      # TODO: Ask for password rather than fingerprint
+      # TODO: Add background
       programs.regreet.enable = true;
 
       xdg.portal = {
