@@ -1,5 +1,6 @@
 { self, inputs, ... }:
 {
+  # TODO: Fix sessionMenu stretching too far on domino
   flake.nixosModules.noctalia =
     { pkgs, ... }:
     {
