@@ -1,5 +1,5 @@
 spawn-at-startup "noctalia-shell"
-spawn-at-startup "bash" "-c" "sleep" "1" "&&" "noctalia-shell" "ipc" "call" "lockScreen" "lock"
+spawn-at-startup "bash" "-c" "sleep" "2" "&&" "noctalia-shell" "ipc" "call" "lockScreen" "lock"
 input {
     keyboard {
         xkb {
