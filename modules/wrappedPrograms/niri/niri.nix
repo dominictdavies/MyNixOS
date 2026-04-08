@@ -18,7 +18,15 @@
 
       # TODO: Ask for password rather than fingerprint
       # TODO: Add background
-      programs.regreet.enable = true;
+      programs.regreet = {
+        enable = true;
+        cageArgs = [
+          "-s" # Allow virtual terminal switching.
+          "-d" # Don't draw client side decorations when possible.
+          "-m" # Set the multi-monitor behavior.
+          "last" # Cage uses only the last connected monitor.
+        ];
+      };
 
       xdg.portal = {
         enable = true;
