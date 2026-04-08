@@ -4,6 +4,8 @@
     { pkgs, ... }:
     {
       # TODO: Fix arrow binds for different output arrangements
+      # TODO: Hide niri cursor by default in screenshots
+      # TODO: Flip a coin bind
       imports = [
         self.nixosModules.noctalia
       ];
