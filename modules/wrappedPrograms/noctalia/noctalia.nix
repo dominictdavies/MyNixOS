@@ -3,7 +3,6 @@
   flake.nixosModules.noctalia =
     { pkgs, ... }:
     {
-      # TODO: Show battery on bar
       environment.systemPackages = [
         self.packages.${pkgs.stdenv.hostPlatform.system}.myNoctalia
       ];
