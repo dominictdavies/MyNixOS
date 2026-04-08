@@ -3,7 +3,6 @@
   flake.nixosModules.niri =
     { pkgs, ... }:
     {
-      # TODO: Switch to an actual greeter
       # TODO: Fix arrow binds for different output arrangements
       imports = [
         self.nixosModules.noctalia
@@ -15,15 +14,7 @@
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
       };
 
-      services.greetd = {
-        enable = true;
-        settings = {
-          default_session = {
-            command = "niri-session";
-            user = "dominictdavies";
-          };
-        };
-      };
+      programs.regreet.enable = true;
 
       xdg.portal = {
         enable = true;
