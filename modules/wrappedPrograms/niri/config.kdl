@@ -248,7 +248,7 @@ binds {
         spawn-sh "scrcpy"
     }
     Mod+Alt+Q {
-        spawn-sh "bash -c '(( RANDOM % 2 == 0 )) && echo Heads || echo Tails'"
+        spawn-sh "~/MyNixOS/scripts/flip_coin.sh"
     }
     Mod+Alt+R {
         spawn-sh "remmina"
