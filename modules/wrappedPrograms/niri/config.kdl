@@ -65,7 +65,7 @@ binds {
         toggle-overview
     }
     Mod+S {
-        screenshot
+        screenshot show-pointer=false;
     }
     Mod+Left {
         focus-column-or-monitor-left
@@ -246,6 +246,9 @@ binds {
     }
     Mod+Alt+P {
         spawn-sh "scrcpy"
+    }
+    Mod+Alt+Q {
+        spawn-sh "bash -c '(( RANDOM % 2 == 0 )) && echo Heads || echo Tails'"
     }
     Mod+Alt+R {
         spawn-sh "remmina"
