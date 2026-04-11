@@ -20,6 +20,7 @@
         remmina
         scrcpy
         qalculate-gtk
+        super-productivity
 
         # Editors
         obsidian
