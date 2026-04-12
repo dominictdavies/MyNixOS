@@ -262,6 +262,9 @@ binds {
     Mod+Alt+W {
         spawn-sh "baobab"
     }
+    Mod+Alt+Z {
+        spawn-sh "super-productivity"
+    }
     Ctrl+Alt+Delete {
         spawn-sh "noctalia-shell ipc call sessionMenu toggle"
     }
