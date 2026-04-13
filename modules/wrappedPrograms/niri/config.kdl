@@ -66,285 +66,99 @@ output "HDMI-A-1" {
     scale 1
 }
 binds {
-    Mod+Ctrl+Alt+Q {
-        quit
-    }
-    Mod+Ctrl+Alt+Slash {
-        show-hotkey-overlay
-    }
-    Mod+Q {
-        close-window
-    }
-    Mod+C {
-        center-column
-    }
-    Mod+D {
-        maximize-column
-    }
-    Mod+F {
-        fullscreen-window
-    }
-    Mod+G {
-        toggle-windowed-fullscreen
-    }
-    Mod+V {
-        toggle-window-floating
-    }
-    Mod+O {
-        toggle-overview
-    }
-    Mod+S {
-        screenshot show-pointer=false;
-    }
-    Mod+Left {
-        focus-column-or-monitor-left
-    }
-    Mod+Right {
-        focus-column-or-monitor-right
-    }
-    Mod+Up {
-        focus-window-or-monitor-up
-    }
-    Mod+Down {
-        focus-window-or-monitor-down
-    }
-    Mod+WheelScrollUp {
-        focus-column-or-monitor-left
-    }
-    Mod+WheelScrollDown {
-        focus-column-or-monitor-right
-    }
-    Mod+Alt+WheelScrollUp {
-        focus-window-or-monitor-up
-    }
-    Mod+Alt+WheelScrollDown {
-        focus-window-or-monitor-down
-    }
-    Mod+1 {
-        focus-workspace 1
-    }
-    Mod+2 {
-        focus-workspace 2
-    }
-    Mod+3 {
-        focus-workspace 3
-    }
-    Mod+4 {
-        focus-workspace 4
-    }
-    Mod+5 {
-        focus-workspace 5
-    }
-    Mod+6 {
-        focus-workspace 6
-    }
-    Mod+7 {
-        focus-workspace 7
-    }
-    Mod+8 {
-        focus-workspace 8
-    }
-    Mod+9 {
-        focus-workspace 9
-    }
-    Mod+0 {
-        focus-workspace 10
-    }
-    Mod+Shift+Left {
-        move-column-left-or-to-monitor-left
-    }
-    Mod+Shift+Right {
-        move-column-right-or-to-monitor-right
-    }
-    Mod+Shift+Up {
-        move-column-to-monitor-up
-    }
-    Mod+Shift+Down {
-        move-column-to-monitor-down
-    }
-    Mod+Shift+WheelScrollUp {
-        move-column-left-or-to-monitor-left
-    }
-    Mod+Shift+WheelScrollDown {
-        move-column-right-or-to-monitor-right
-    }
-    Mod+Shift+Alt+WheelScrollUp {
-        move-column-to-monitor-up
-    }
-    Mod+Shift+Alt+WheelScrollDown {
-        move-column-to-monitor-down
-    }
-    Mod+Shift+Comma {
-        consume-or-expel-window-left
-    }
-    Mod+Shift+Period {
-        consume-or-expel-window-right
-    }
-    Mod+Shift+1 {
-        move-column-to-workspace 1
-    }
-    Mod+Shift+2 {
-        move-column-to-workspace 2
-    }
-    Mod+Shift+3 {
-        move-column-to-workspace 3
-    }
-    Mod+Shift+4 {
-        move-column-to-workspace 4
-    }
-    Mod+Shift+5 {
-        move-column-to-workspace 5
-    }
-    Mod+Shift+6 {
-        move-column-to-workspace 6
-    }
-    Mod+Shift+7 {
-        move-column-to-workspace 7
-    }
-    Mod+Shift+8 {
-        move-column-to-workspace 8
-    }
-    Mod+Shift+9 {
-        move-column-to-workspace 9
-    }
-    Mod+Shift+0 {
-        move-column-to-workspace 10
-    }
-    Mod+Ctrl+Left {
-        set-column-width "-5%"
-    }
-    Mod+Ctrl+Right {
-        set-column-width "+5%"
-    }
-    Mod+Ctrl+Up {
-        set-window-height "-5%"
-    }
-    Mod+Ctrl+Down {
-        set-window-height "+5%"
-    }
-    Mod+Ctrl+WheelScrollUp {
-        set-column-width "-5%"
-    }
-    Mod+Ctrl+WheelScrollDown {
-        set-column-width "+5%"
-    }
-    Mod+Ctrl+Alt+WheelScrollUp {
-        set-window-height "-5%"
-    }
-    Mod+Ctrl+Alt+WheelScrollDown {
-        set-window-height "+5%"
-    }
-    Mod+Alt+Return {
-        spawn-sh "kitty"
-    }
-    Mod+Alt+B {
-        spawn-sh "firefox"
-    }
-    Mod+Alt+C {
-        spawn-sh "code"
-    }
-    Mod+Alt+D {
-        spawn-sh "discord"
-    }
-    Mod+Alt+F {
-        spawn-sh "kitty --hold fastfetch"
-    }
-    Mod+Alt+G {
-        spawn-sh "gimp"
-    }
-    Mod+Alt+H {
-        spawn-sh "kitty protonvpn connect"
-    }
-    Mod+Alt+I {
-        spawn-sh "inkscape"
-    }
-    Mod+Alt+J {
-        spawn-sh "kitty protonvpn disconnect"
-    }
-    Mod+Alt+L {
-        spawn-sh "spotify"
-    }
-    Mod+Alt+M {
-        spawn-sh "qalculate-gtk"
-    }
-    Mod+Alt+N {
-        spawn-sh "nautilus"
-    }
-    Mod+Alt+O {
-        spawn-sh "obsidian"
-    }
-    Mod+Alt+P {
-        spawn-sh "scrcpy"
-    }
-    Mod+Alt+Q {
-        spawn-sh "~/MyNixOS/scripts/flip_coin.sh"
-    }
-    Mod+Alt+R {
-        spawn-sh "remmina"
-    }
-    Mod+Alt+S {
-        spawn-sh "steam"
-    }
-    Mod+Alt+T {
-        spawn-sh "deltarune"
-    }
-    Mod+Alt+W {
-        spawn-sh "baobab"
-    }
-    Mod+Alt+Z {
-        spawn-sh "super-productivity"
-    }
-    Ctrl+Alt+Delete {
-        spawn-sh "noctalia-shell ipc call sessionMenu toggle"
-    }
-    Ctrl+Alt+Slash {
-        spawn-sh "noctalia-shell ipc call launcher toggle"
-    }
-    Ctrl+Alt+L {
-        spawn-sh "noctalia-shell ipc call lockScreen lock"
-    }
-    XF86AudioPlay {
-        spawn-sh "noctalia-shell ipc call media playPause"
-    }
-    XF86AudioStop {
-        spawn-sh "noctalia-shell ipc call media stop"
-    }
-    XF86AudioPrev {
-        spawn-sh "noctalia-shell ipc call media previous"
-    }
-    XF86AudioNext {
-        spawn-sh "noctalia-shell ipc call media next"
-    }
-    XF86AudioMute {
-        spawn-sh "noctalia-shell ipc call volume muteOutput"
-    }
-    XF86AudioLowerVolume {
-        spawn-sh "noctalia-shell ipc call volume decrease"
-    }
-    XF86AudioRaiseVolume {
-        spawn-sh "noctalia-shell ipc call volume increase"
-    }
-    XF86MonBrightnessDown {
-        spawn-sh "noctalia-shell ipc call brightness decrease"
-    }
-    XF86MonBrightnessUp {
-        spawn-sh "noctalia-shell ipc call brightness increase"
-    }
-    XF86AudioMedia {
-        spawn-sh "noctalia-shell ipc call media toggle"
-    }
-    XF86Explorer {
-        spawn-sh "noctalia-shell ipc call systemMonitor toggle"
-    }
-    XF86Search {
-        spawn-sh "noctalia-shell ipc call launcher toggle"
-    }
-    XF86Calculator {
-        spawn-sh "qalculate-gtk"
-    }
-    XF86Tools {
-        spawn-sh "noctalia-shell ipc call controlCenter toggle"
-    }
+    Mod+Ctrl+Alt+Q { quit }
+    Mod+Ctrl+Alt+Slash { show-hotkey-overlay }
+    Mod+Q { close-window }
+    Mod+C { center-column }
+    Mod+D { maximize-column }
+    Mod+F { fullscreen-window }
+    Mod+G { toggle-windowed-fullscreen }
+    Mod+V { toggle-window-floating }
+    Mod+O { toggle-overview }
+    Mod+S { screenshot show-pointer=false; }
+    Mod+Left { focus-column-or-monitor-left }
+    Mod+Right { focus-column-or-monitor-right }
+    Mod+Up { focus-window-or-monitor-up }
+    Mod+Down { focus-window-or-monitor-down }
+    Mod+WheelScrollUp { focus-column-or-monitor-left }
+    Mod+WheelScrollDown { focus-column-or-monitor-right }
+    Mod+Alt+WheelScrollUp { focus-window-or-monitor-up }
+    Mod+Alt+WheelScrollDown { focus-window-or-monitor-down }
+    Mod+1 { focus-workspace 1 }
+    Mod+2 { focus-workspace 2 }
+    Mod+3 { focus-workspace 3 }
+    Mod+4 { focus-workspace 4 }
+    Mod+5 { focus-workspace 5 }
+    Mod+6 { focus-workspace 6 }
+    Mod+7 { focus-workspace 7 }
+    Mod+8 { focus-workspace 8 }
+    Mod+9 { focus-workspace 9 }
+    Mod+0 { focus-workspace 10 }
+    Mod+Shift+Left { move-column-left-or-to-monitor-left }
+    Mod+Shift+Right { move-column-right-or-to-monitor-right }
+    Mod+Shift+Up { move-column-to-monitor-up }
+    Mod+Shift+Down { move-column-to-monitor-down }
+    Mod+Shift+WheelScrollUp { move-column-left-or-to-monitor-left }
+    Mod+Shift+WheelScrollDown { move-column-right-or-to-monitor-right }
+    Mod+Shift+Alt+WheelScrollUp { move-column-to-monitor-up }
+    Mod+Shift+Alt+WheelScrollDown { move-column-to-monitor-down }
+    Mod+Shift+Comma { consume-or-expel-window-left }
+    Mod+Shift+Period { consume-or-expel-window-right }
+    Mod+Shift+1 { move-column-to-workspace 1 }
+    Mod+Shift+2 { move-column-to-workspace 2 }
+    Mod+Shift+3 { move-column-to-workspace 3 }
+    Mod+Shift+4 { move-column-to-workspace 4 }
+    Mod+Shift+5 { move-column-to-workspace 5 }
+    Mod+Shift+6 { move-column-to-workspace 6 }
+    Mod+Shift+7 { move-column-to-workspace 7 }
+    Mod+Shift+8 { move-column-to-workspace 8 }
+    Mod+Shift+9 { move-column-to-workspace 9 }
+    Mod+Shift+0 { move-column-to-workspace 10 }
+    Mod+Ctrl+Left { set-column-width "-5%" }
+    Mod+Ctrl+Right { set-column-width "+5%" }
+    Mod+Ctrl+Up { set-window-height "-5%" }
+    Mod+Ctrl+Down { set-window-height "+5%" }
+    Mod+Ctrl+WheelScrollUp { set-column-width "-5%" }
+    Mod+Ctrl+WheelScrollDown { set-column-width "+5%" }
+    Mod+Ctrl+Alt+WheelScrollUp { set-window-height "-5%" }
+    Mod+Ctrl+Alt+WheelScrollDown { set-window-height "+5%" }
+    Mod+Alt+Return { spawn-sh "kitty" }
+    Mod+Alt+B { spawn-sh "firefox" }
+    Mod+Alt+C { spawn-sh "code" }
+    Mod+Alt+D { spawn-sh "discord" }
+    Mod+Alt+F { spawn-sh "kitty --hold fastfetch" }
+    Mod+Alt+G { spawn-sh "gimp" }
+    Mod+Alt+H { spawn-sh "kitty protonvpn connect" }
+    Mod+Alt+I { spawn-sh "inkscape" }
+    Mod+Alt+J { spawn-sh "kitty protonvpn disconnect" }
+    Mod+Alt+L { spawn-sh "spotify" }
+    Mod+Alt+M { spawn-sh "qalculate-gtk" }
+    Mod+Alt+N { spawn-sh "nautilus" }
+    Mod+Alt+O { spawn-sh "obsidian" }
+    Mod+Alt+P { spawn-sh "scrcpy" }
+    Mod+Alt+Q { spawn-sh "~/MyNixOS/scripts/flip_coin.sh" }
+    Mod+Alt+R { spawn-sh "remmina" }
+    Mod+Alt+S { spawn-sh "steam" }
+    Mod+Alt+T { spawn-sh "deltarune" }
+    Mod+Alt+W { spawn-sh "baobab" }
+    Mod+Alt+Z { spawn-sh "super-productivity" }
+    Ctrl+Alt+Delete { spawn-sh "noctalia-shell ipc call sessionMenu toggle" }
+    Ctrl+Alt+Slash { spawn-sh "noctalia-shell ipc call launcher toggle" }
+    Ctrl+Alt+L { spawn-sh "noctalia-shell ipc call lockScreen lock" }
+    XF86AudioPlay { spawn-sh "noctalia-shell ipc call media playPause" }
+    XF86AudioStop { spawn-sh "noctalia-shell ipc call media stop" }
+    XF86AudioPrev { spawn-sh "noctalia-shell ipc call media previous" }
+    XF86AudioNext { spawn-sh "noctalia-shell ipc call media next" }
+    XF86AudioMute { spawn-sh "noctalia-shell ipc call volume muteOutput" }
+    XF86AudioLowerVolume { spawn-sh "noctalia-shell ipc call volume decrease" }
+    XF86AudioRaiseVolume { spawn-sh "noctalia-shell ipc call volume increase" }
+    XF86MonBrightnessDown { spawn-sh "noctalia-shell ipc call brightness decrease" }
+    XF86MonBrightnessUp { spawn-sh "noctalia-shell ipc call brightness increase" }
+    XF86AudioMedia { spawn-sh "noctalia-shell ipc call media toggle" }
+    XF86Explorer { spawn-sh "noctalia-shell ipc call systemMonitor toggle" }
+    XF86Search { spawn-sh "noctalia-shell ipc call launcher toggle" }
+    XF86Calculator { spawn-sh "qalculate-gtk" }
+    XF86Tools { spawn-sh "noctalia-shell ipc call controlCenter toggle" }
 }
 hotkey-overlay {
     skip-at-startup
