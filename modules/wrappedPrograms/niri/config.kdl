@@ -1,7 +1,7 @@
 // Noctalia Setup (https://docs.noctalia.dev/getting-started/compositor-settings/niri/)
 window-rule {
   // Rounded corners for a modern look.
-  geometry-corner-radius 20
+  geometry-corner-radius 16
 
   // Clips window contents to the rounded corner boundaries.
   clip-to-geometry true
@@ -103,10 +103,10 @@ binds {
         focus-column-or-monitor-right
     }
     Mod+Up {
-        focus-window-or-workspace-up
+        focus-window-or-monitor-up
     }
     Mod+Down {
-        focus-window-or-workspace-down
+        focus-window-or-monitor-down
     }
     Mod+WheelScrollUp {
         focus-column-or-monitor-left
@@ -115,10 +115,10 @@ binds {
         focus-column-or-monitor-right
     }
     Mod+Alt+WheelScrollUp {
-        focus-window-or-workspace-up
+        focus-window-or-monitor-up
     }
     Mod+Alt+WheelScrollDown {
-        focus-window-or-workspace-down
+        focus-window-or-monitor-down
     }
     Mod+1 {
         focus-workspace 1
@@ -157,10 +157,10 @@ binds {
         move-column-right-or-to-monitor-right
     }
     Mod+Shift+Up {
-        move-window-up-or-to-workspace-up
+        move-column-to-monitor-up
     }
     Mod+Shift+Down {
-        move-window-down-or-to-workspace-down
+        move-column-to-monitor-down
     }
     Mod+Shift+WheelScrollUp {
         move-column-left-or-to-monitor-left
@@ -169,10 +169,10 @@ binds {
         move-column-right-or-to-monitor-right
     }
     Mod+Shift+Alt+WheelScrollUp {
-        move-window-up-or-to-workspace-up
+        move-column-to-monitor-up
     }
     Mod+Shift+Alt+WheelScrollDown {
-        move-window-down-or-to-workspace-down
+        move-column-to-monitor-down
     }
     Mod+Shift+Comma {
         consume-or-expel-window-left
@@ -356,5 +356,5 @@ layout {
         inactive-gradient angle=45 from="#808080" to="#404040"
         width 8
     }
-    gaps 16
+    gaps 8
 }

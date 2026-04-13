@@ -13,15 +13,15 @@
       "widgetSpacing": 6,
       "contentPadding": 2,
       "fontScale": 1,
-      "enableExclusionZoneInset": true,
+      "enableExclusionZoneInset": false,
       "backgroundOpacity": 0.93,
       "useSeparateOpacity": false,
       "marginVertical": 4,
       "marginHorizontal": 4,
       "frameThickness": 8,
       "frameRadius": 12,
-      "outerCorners": false,
-      "hideOnOverview": false,
+      "outerCorners": true,
+      "hideOnOverview": true,
       "displayMode": "always_visible",
       "autoHideDelay": 500,
       "autoShowDelay": 150,
@@ -692,8 +692,8 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png",
-      "DP-8": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
+      "eDP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png",
+      "DP-8": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
