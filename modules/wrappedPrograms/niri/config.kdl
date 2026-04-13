@@ -27,7 +27,7 @@ output "DP-3" {
     mode "1920x1080@60.000"
     position x=0 y=0
 }
-output "DP-7" {
+output "Dell Inc. DELL U3425WE FQJX3Z3" {
     mode "3440x1440@120.000"
     position x=0 y=0
 }
