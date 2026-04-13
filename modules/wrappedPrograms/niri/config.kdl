@@ -21,29 +21,29 @@ cursor {
 output "eDP-1" {
     focus-at-startup
     mode "2880x1920@120.000"
-    position x=0 y=1440
-    scale 1.125
+    position x=0 y=1080
+    scale 1.5
 }
 output "DP-3" {
     mode "1920x1080@60.000"
     position x=0 y=0
-    scale 0.75
+    scale 1
 }
 output "Dell Inc. DELL U3425WE FQJX3Z3" {
     mode "3440x1440@120.000"
     position x=0 y=0
-    scale 1.34375
+    scale 1.79
 }
 output "DP-1" {
     focus-at-startup
     mode "2560x1440@143.972"
     position x=2560 y=0
-    scale 1
+    scale 1.33
 }
 output "HDMI-A-1" {
     mode "2560x1080@60.000"
     position x=0 y=360
-    scale 1
+    scale 1.33
 }
 binds {
     Mod+Ctrl+Alt+Q {
