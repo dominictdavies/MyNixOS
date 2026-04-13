@@ -6,12 +6,10 @@ window-rule {
   // Clips window contents to the rounded corner boundaries.
   clip-to-geometry true
 }
-
 debug {
   // Allows notification actions and window activation from Noctalia.
   honor-xdg-activation-with-invalid-serial
 }
-
 layer-rule {
   // Set the overview wallpaper on the backdrop.
   match namespace="^noctalia-overview*"
@@ -19,6 +17,7 @@ layer-rule {
 }
 
 spawn-at-startup "noctalia-shell"
+
 input {
     keyboard {
         xkb {
@@ -34,6 +33,7 @@ input {
         tap-button-map "left-right-middle"
     }
 }
+
 cursor {
     xcursor-size 40
     xcursor-theme "Posy_Cursor_Black"
@@ -165,15 +165,17 @@ binds {
     XF86Calculator { spawn-sh "qalculate-gtk"; }
     XF86Tools { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
 }
+
 hotkey-overlay {
     skip-at-startup
     hide-not-bound
 }
+
 layout {
+    gaps 8
     focus-ring {
+        width 8
         active-gradient angle=45 from="#37f499" to="#04d1f9"
         inactive-gradient angle=45 from="#808080" to="#404040"
-        width 8
     }
-    gaps 8
 }
