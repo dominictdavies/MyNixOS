@@ -57,6 +57,7 @@
             "maxWidth": 145,
             "scrollingMode": "hover",
             "showIcon": true,
+            "showText": true,
             "textColor": "none",
             "useFixedWidth": false
           },
@@ -225,7 +226,8 @@
           "Del"
         ]
       },
-      "reverseScroll": false
+      "reverseScroll": false,
+      "smoothScrollEnabled": true
     },
     "ui": {
       "fontDefault": "Sans Serif",
@@ -245,6 +247,7 @@
       "name": "Perth, Australia",
       "weatherEnabled": true,
       "weatherShowEffects": true,
+      "weatherTaliaMascotAlways": false,
       "useFahrenheit": false,
       "use12hourFormat": false,
       "showWeekNumberInCalendar": false,
@@ -253,7 +256,8 @@
       "analogClockInCalendar": false,
       "firstDayOfWeek": -1,
       "hideWeatherTimezone": false,
-      "hideWeatherCityName": false
+      "hideWeatherCityName": false,
+      "autoLocate": false
     },
     "calendar": {
       "cards": [
@@ -273,7 +277,7 @@
     },
     "wallpaper": {
       "enabled": true,
-      "overviewEnabled": false,
+      "overviewEnabled": true,
       "directory": "/home/dominictdavies/MyNixOS/assets/wallpapers",
       "monitorDirectories": [
         {
@@ -291,6 +295,7 @@
       "showHiddenFiles": false,
       "viewMode": "single",
       "setWallpaperOnAllMonitors": true,
+      "linkLightAndDarkWallpapers": true,
       "fillMode": "crop",
       "fillColor": "#000000",
       "useSolidColor": false,
@@ -481,7 +486,6 @@
       "indicatorOpacity": 0.6
     },
     "network": {
-      "airplaneModeEnabled": false,
       "bluetoothRssiPollingEnabled": false,
       "bluetoothRssiPollIntervalMs": 60000,
       "networkPanelView": "wifi",
@@ -627,7 +631,8 @@
       "manualSunrise": "06:30",
       "manualSunset": "18:30",
       "generationMethod": "tonal-spot",
-      "monitorForColors": ""
+      "monitorForColors": "",
+      "syncGsettings": true
     },
     "templates": {
       "activeTemplates": [],
@@ -687,47 +692,32 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-3": "/home/dominictdavies/MyNixOS/assets/wallpapers/subnautica_lost_river.png",
-      "eDP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/subnautica_lost_river.png"
+      "eDP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png",
+      "DP-8": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
       "eDP-1": {
-        "name": "eDP-1",
         "connected": true,
-        "scale": 2,
-        "width": 1440,
         "height": 960,
-        "x": 240,
-        "y": 1080,
-        "physical_width": 290,
+        "name": "eDP-1",
         "physical_height": 190,
+        "physical_width": 290,
         "refresh_rate": 120000,
+        "scale": 2,
+        "transform": "Normal",
+        "vrr_enabled": false,
         "vrr_supported": true,
-        "vrr_enabled": false,
-        "transform": "Normal"
-      },
-      "DP-3": {
-        "name": "DP-3",
-        "connected": true,
-        "scale": 1,
-        "width": 1920,
-        "height": 1080,
-        "x": 0,
-        "y": 0,
-        "physical_width": 530,
-        "physical_height": 300,
-        "refresh_rate": 60000,
-        "vrr_supported": false,
-        "vrr_enabled": false,
-        "transform": "Normal"
+        "width": 1440,
+        "x": 240,
+        "y": 1080
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1775553149000
+      "lastSeenTs": 1776056686000
     },
     "changelogState": {
-      "lastSeenVersion": "v4.7.1"
+      "lastSeenVersion": "v4.7.5"
     },
     "colorSchemesList": {
       "schemes": [],
