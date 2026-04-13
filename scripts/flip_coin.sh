@@ -4,8 +4,12 @@ toast() {
     noctalia-shell ipc call toast send "{\"title\": \"$1\"}"
 }
 
-if (( RANDOM % 2 == 0 )); then
-    toast "Heads"
+if (( RANDOM % 100 == 0)); then
+    toast "Side"
 else
-    toast "Tails"
+    if (( RANDOM % 2 == 0 )); then
+        toast "Heads"
+    else
+        toast "Tails"
+    fi
 fi
