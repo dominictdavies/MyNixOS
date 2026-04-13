@@ -3,7 +3,6 @@
   flake.nixosModules.niri =
     { pkgs, ... }:
     {
-      # TODO: Fix arrow binds for different output arrangements
       imports = [
         self.nixosModules.noctalia
       ];
