@@ -127,17 +127,17 @@ binds {
     Mod+Ctrl+WheelScrollDown { set-column-width "+5%"; }
     Mod+Ctrl+Alt+WheelScrollUp { set-window-height "-5%"; }
     Mod+Ctrl+Alt+WheelScrollDown { set-window-height "+5%"; }
-    Mod+Alt+Return { spawn-sh "kitty"; }
+    Mod+Alt+Return { spawn-sh "gnome-console"; }
     Mod+Alt+B { spawn-sh "firefox"; }
     Mod+Alt+C { spawn-sh "code"; }
     Mod+Alt+D { spawn-sh "discord"; }
-    Mod+Alt+F { spawn-sh "kitty --hold fastfetch"; }
+    Mod+Alt+F { spawn-sh "gnome-console --hold fastfetch"; }
     Mod+Alt+G { spawn-sh "gimp"; }
-    Mod+Alt+H { spawn-sh "kitty protonvpn connect"; }
+    Mod+Alt+H { spawn-sh "gnome-console protonvpn connect"; }
     Mod+Alt+I { spawn-sh "inkscape"; }
-    Mod+Alt+J { spawn-sh "kitty protonvpn disconnect"; }
+    Mod+Alt+J { spawn-sh "gnome-console protonvpn disconnect"; }
     Mod+Alt+L { spawn-sh "spotify"; }
-    Mod+Alt+M { spawn-sh "qalculate-gtk"; }
+    Mod+Alt+M { spawn-sh "gnome-calculator"; }
     Mod+Alt+N { spawn-sh "nautilus"; }
     Mod+Alt+O { spawn-sh "obsidian"; }
     Mod+Alt+P { spawn-sh "scrcpy"; }
@@ -162,7 +162,7 @@ binds {
     XF86AudioMedia { spawn-sh "noctalia-shell ipc call media toggle"; }
     XF86Explorer { spawn-sh "noctalia-shell ipc call systemMonitor toggle"; }
     XF86Search { spawn-sh "noctalia-shell ipc call launcher toggle"; }
-    XF86Calculator { spawn-sh "qalculate-gtk"; }
+    XF86Calculator { spawn-sh "gnome-calculator"; }
     XF86Tools { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
 }
 

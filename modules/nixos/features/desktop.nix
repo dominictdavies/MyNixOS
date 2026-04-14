@@ -10,40 +10,44 @@
       ];
 
       environment.systemPackages = with pkgs; [
-        # Shell
-        kitty
-        proton-vpn-cli
+        # GNOME (https://apps.gnome.org/en/)
+        baobab
+        blanket
+        gnome-calculator
+        gnome-characters
+        gnome-clocks
+        gnome-connections
+        gnome-console
+        decibels
+        gnome-disk-utility
+        gnome-font-viewer
+        gnome-logs
+        loupe
+        gnome-music
+        nautilus
+        papers
+        seahorse
+        showtime
+        snapshot
+        gnome-system-monitor
+        gnome-text-editor
 
         # Tools
-        seahorse
-        nautilus
-        baobab
+        proton-vpn-cli
         remmina
         scrcpy
-        qalculate-gtk
         super-productivity
 
         # Editors
-        obsidian
         gimp
         inkscape
+        obsidian
 
         # Media
-        firefox
         discord
+        firefox
         spotify
-
-        # Viewers
-        mousepad
-        eog
-        vlc
       ];
-
-      # TODO: Fix viewer warnings
-      xdg.mime.defaultApplications = {
-        "image/png" = "org.gnome.eog.desktop";
-        "image/jpeg" = "org.gnome.eog.desktop";
-      };
 
       hardware.bluetooth.enable = true;
 
