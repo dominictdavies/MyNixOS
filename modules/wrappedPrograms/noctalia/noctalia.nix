@@ -9,7 +9,7 @@
       ];
 
       programs.bash.shellAliases = {
-        mynix-noctalia-stage = "(cd ~/MyNixOS/modules/wrappedPrograms/noctalia && nix run nixpkgs#noctalia-shell ipc call state all > config.json && git add config.json)";
+        mynix-noctalia-config = "(cd ~/MyNixOS/modules/wrappedPrograms/noctalia && nix run nixpkgs#noctalia-shell ipc call state all > config.json)";
       };
     };
 

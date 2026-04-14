@@ -17,8 +17,8 @@
           # MyNixOS
           mynix-switch = "nh os switch";
           mynix-pull-switch = "(cd ~/MyNixOS && git pull && nh os switch)";
-          mynix-flake-switch = "(cd ~/MyNixOS && nix flake update && nh os switch && git add flake.lock)";
-          mynix-all-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch && git add flake.lock)";
+          mynix-flake-switch = "(cd ~/MyNixOS && nix flake update && nh os switch)";
+          mynix-all-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch)";
         };
       };
 
