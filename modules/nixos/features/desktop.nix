@@ -17,7 +17,6 @@
         gnome-characters
         gnome-clocks
         gnome-connections
-        gnome-console
         decibels
         gnome-disk-utility
         gnome-font-viewer
@@ -33,6 +32,7 @@
         gnome-text-editor
 
         # Tools
+        kitty
         proton-vpn-cli
         remmina
         scrcpy
