@@ -196,7 +196,7 @@
       "allowPasswordWithFprintd": false,
       "clockStyle": "custom",
       "clockFormat": "hh\\nmm",
-      "passwordChars": false,
+      "passwordChars": true,
       "lockScreenMonitors": [
         "DP-1"
       ],
