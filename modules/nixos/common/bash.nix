@@ -36,6 +36,9 @@
         ];
       };
 
+      # Prevent zoxide warning
+      environment.sessionVariables._ZO_DOCTOR = 0;
+
       # Customisable shell prompt
       starship.enable = true;
     };
