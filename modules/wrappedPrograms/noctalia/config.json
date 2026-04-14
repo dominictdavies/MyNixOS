@@ -3,9 +3,9 @@
     "settingsVersion": 59,
     "bar": {
       "barType": "simple",
-      "position": "bottom",
+      "position": "right",
       "monitors": [],
-      "density": "default",
+      "density": "comfortable",
       "showOutline": false,
       "showCapsule": true,
       "capsuleOpacity": 1,
@@ -697,23 +697,23 @@
     "desktopWidgetsEditMode": false,
     "display": {
       "eDP-1": {
-        "name": "eDP-1",
         "connected": true,
-        "scale": 2,
-        "width": 1440,
         "height": 960,
-        "x": 1000,
-        "y": 1440,
-        "physical_width": 290,
+        "name": "eDP-1",
         "physical_height": 190,
+        "physical_width": 290,
         "refresh_rate": 120000,
-        "vrr_supported": true,
+        "scale": 2,
+        "transform": "Normal",
         "vrr_enabled": false,
-        "transform": "Normal"
+        "vrr_supported": true,
+        "width": 1440,
+        "x": 1000,
+        "y": 1440
       }
     },
     "notificationsState": {
-      "lastSeenTs": 0
+      "lastSeenTs": 1776172788000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"
