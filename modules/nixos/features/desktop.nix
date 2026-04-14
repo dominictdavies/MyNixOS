@@ -57,12 +57,20 @@
         pam.services.login.fprintAuth = false;
       };
 
-      programs.bash.shellAliases = {
-        open = "xdg-open";
-        help-keyboard = "open ~/MyNixOS/assets/information/keyboard_layout.png";
-        help-cards = "open ~/MyNixOS/assets/information/card_functionality.png";
-        help-vagrant = "open https://cheatography.com/davbfr/cheat-sheets/vagrant-cheat-sheet/";
-        help-gdb = "open https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf";
+      programs = {
+        dconf.profiles.user.databases = [
+          {
+            settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+          }
+        ];
+
+        bash.shellAliases = {
+          open = "xdg-open";
+          help-keyboard = "open ~/MyNixOS/assets/information/keyboard_layout.png";
+          help-cards = "open ~/MyNixOS/assets/information/card_functionality.png";
+          help-vagrant = "open https://cheatography.com/davbfr/cheat-sheets/vagrant-cheat-sheet/";
+          help-gdb = "open https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf";
+        };
       };
 
       # Make apps try to use Wayland
