@@ -14,7 +14,6 @@
 
         # Formatters
         nixfmt
-        kdlfmt
 
         # Editors
         vscode
