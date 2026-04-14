@@ -7,6 +7,7 @@
         git
         git-lfs
         git-filter-repo
+        stress-ng
       ];
     };
 }
