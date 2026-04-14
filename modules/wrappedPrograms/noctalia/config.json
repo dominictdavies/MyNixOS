@@ -456,7 +456,7 @@
     },
     "dock": {
       "enabled": true,
-      "position": "bottom",
+      "position": "right",
       "displayMode": "auto_hide",
       "dockType": "floating",
       "backgroundOpacity": 1,
@@ -567,7 +567,7 @@
       "enableMarkdown": false,
       "density": "default",
       "monitors": [],
-      "location": "top_right",
+      "location": "top_left",
       "overlayLayer": true,
       "backgroundOpacity": 1,
       "respectExpireTimeout": false,
@@ -595,7 +595,7 @@
     },
     "osd": {
       "enabled": true,
-      "location": "top_right",
+      "location": "top_left",
       "autoHideMs": 2000,
       "overlayLayer": true,
       "backgroundOpacity": 1,
@@ -713,7 +713,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1776172788000
+      "lastSeenTs": 1776173748000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"
