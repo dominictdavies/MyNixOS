@@ -1,6 +1,10 @@
 { self, ... }:
 {
   flake.nixosModules.common = {
+    imports = [
+      self.nixosModules.nh
+    ];
+
     programs = {
       bash = {
         enable = true;
@@ -18,11 +22,8 @@
         };
       };
 
-      # NixOS CLI helper
-      nh = {
-        enable = true;
-        flake = "/etc/nixos";
-      };
+      # Environment management depending on current directory
+      direnv.enable = true;
 
       # Command-line fuzzy finder
       fzf.fuzzyCompletion = true;
@@ -38,9 +39,6 @@
 
       # Customisable shell prompt
       starship.enable = true;
-
-      # Environment management depending on current directory
-      direnv.enable = true;
     };
   };
 }
