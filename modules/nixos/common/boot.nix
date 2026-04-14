@@ -8,5 +8,10 @@
         configurationLimit = 10;
       };
     };
+
+    # TODO: Find a more versatile way to set up link
+    systemd.tmpfiles.rules = [
+      "L /etc/nixos - - - - /home/dominictdavies/MyNixOS"
+    ];
   };
 }

@@ -16,7 +16,7 @@
         inherit pkgs;
         package = pkgs.nh;
         env = {
-          "NH_FLAKE" = "/home/dominictdavies/MyNixOS";
+          "NH_FLAKE" = "/etc/nixos";
         };
       };
     };

@@ -164,7 +164,7 @@
       "screenOverrides": []
     },
     "general": {
-      "avatarImage": "/home/dominictdavies/MyNixOS/assets/profile.png",
+      "avatarImage": "/etc/nixos/assets/profile.png",
       "dimmerOpacity": 0.33,
       "showScreenCorners": false,
       "forceBlackScreenCorners": false,
@@ -278,15 +278,15 @@
     "wallpaper": {
       "enabled": true,
       "overviewEnabled": true,
-      "directory": "/home/dominictdavies/MyNixOS/assets/wallpapers",
+      "directory": "/etc/nixos/assets/wallpapers",
       "monitorDirectories": [
         {
-          "directory": "/home/dominictdavies/MyNixOS/assets/wallpapers",
+          "directory": "/etc/nixos/assets/wallpapers",
           "name": "DP-1",
           "wallpaper": ""
         },
         {
-          "directory": "/home/dominictdavies/MyNixOS/assets/wallpapers",
+          "directory": "/etc/nixos/assets/wallpapers",
           "name": "HDMI-A-1",
           "wallpaper": ""
         }
@@ -692,7 +692,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
+      "eDP-1": "/etc/nixos/assets/wallpapers/stanley_parable_desk.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
