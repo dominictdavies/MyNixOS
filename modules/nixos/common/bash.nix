@@ -31,8 +31,8 @@
       zoxide = {
         enable = true;
         flags = [
+          "--no-cmd"
           "--cmd cd"
-          "--no-doctor"
         ];
       };
 
