@@ -30,7 +30,10 @@
       # Smarter `cd` command
       zoxide = {
         enable = true;
-        flags = [ "--cmd cd" ];
+        flags = [
+          "--cmd cd"
+          "--no-doctor"
+        ];
       };
 
       # Customisable shell prompt
