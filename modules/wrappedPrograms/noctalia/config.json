@@ -614,7 +614,7 @@
       "spectrumMirrored": true,
       "mprisBlacklist": [],
       "preferredPlayer": "",
-      "volumeFeedback": false,
+      "volumeFeedback": true,
       "volumeFeedbackSoundFile": ""
     },
     "brightness": {
@@ -692,8 +692,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png",
-      "DP-8": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+      "eDP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
