@@ -278,7 +278,7 @@
     "wallpaper": {
       "enabled": true,
       "overviewEnabled": true,
-      "directory": "/etc/nixos/assets/wallpapers/stanley_parable_desk.png",
+      "directory": "/etc/nixos/assets/wallpapers",
       "monitorDirectories": [
         {
           "directory": "/etc/nixos/assets/wallpapers",
