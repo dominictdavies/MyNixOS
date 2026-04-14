@@ -278,7 +278,7 @@
     "wallpaper": {
       "enabled": true,
       "overviewEnabled": true,
-      "directory": "/etc/nixos/assets/wallpapers",
+      "directory": "/home/dominictdavies/Pictures/Wallpapers",
       "monitorDirectories": [
         {
           "directory": "/etc/nixos/assets/wallpapers",
@@ -692,28 +692,28 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/etc/nixos/assets/wallpapers/stanley_parable_desk.png"
+      "eDP-1": "/nix/store/7j4a02nkk4ilda585jbjgg9f9i9b4ibb-noctalia-shell-4.7.5/share/noctalia-shell/Assets/Wallpaper/noctalia.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
       "eDP-1": {
-        "connected": true,
-        "height": 960,
         "name": "eDP-1",
-        "physical_height": 190,
-        "physical_width": 290,
-        "refresh_rate": 120000,
+        "connected": true,
         "scale": 2,
-        "transform": "Normal",
-        "vrr_enabled": false,
-        "vrr_supported": true,
         "width": 1440,
-        "x": 240,
-        "y": 1080
+        "height": 960,
+        "x": 1000,
+        "y": 1440,
+        "physical_width": 290,
+        "physical_height": 190,
+        "refresh_rate": 120000,
+        "vrr_supported": true,
+        "vrr_enabled": false,
+        "transform": "Normal"
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1776056686000
+      "lastSeenTs": 0
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"
