@@ -607,7 +607,7 @@
       "monitors": []
     },
     "audio": {
-      "volumeStep": 4,
+      "volumeStep": 2,
       "volumeOverdrive": false,
       "spectrumFrameRate": 30,
       "visualizerType": "linear",
@@ -618,7 +618,7 @@
       "volumeFeedbackSoundFile": ""
     },
     "brightness": {
-      "brightnessStep": 4,
+      "brightnessStep": 2,
       "enforceMinimum": true,
       "enableDdcSupport": false,
       "backlightDeviceMappings": []
