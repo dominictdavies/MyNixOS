@@ -15,6 +15,7 @@
         proton-vpn-cli
 
         # Tools
+        seahorse
         nautilus
         baobab
         remmina
