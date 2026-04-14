@@ -12,7 +12,6 @@
       environment.systemPackages = with pkgs; [
         # GNOME (https://apps.gnome.org/en/)
         baobab
-        blanket
         gnome-calculator
         gnome-characters
         gnome-clocks
@@ -48,6 +47,11 @@
         firefox
         spotify
       ];
+
+      xdg.mime.defaultApplications = {
+        "image/png" = "org.gnome.Loupe.desktop";
+        "image/jpeg" = "org.gnome.Loupe.desktop";
+      };
 
       hardware.bluetooth.enable = true;
 
