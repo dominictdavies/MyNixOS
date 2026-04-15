@@ -179,3 +179,7 @@ layout {
         inactive-gradient angle=45 from="#808080" to="#404040"
     }
 }
+
+window-rule {
+  open-maximized true
+}

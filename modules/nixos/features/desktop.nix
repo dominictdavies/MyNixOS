@@ -24,7 +24,6 @@
         gnome-music
         nautilus
         papers
-        seahorse
         showtime
         snapshot
         gnome-system-monitor
@@ -66,6 +65,8 @@
       };
 
       programs = {
+        seahorse.enable = true;
+
         dconf.profiles.user.databases = [
           {
             settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
