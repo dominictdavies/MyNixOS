@@ -11,7 +11,6 @@
     ## Closing the lid
     services.logind.settings.Login = {
       HandleLidSwitch = "suspend";
-      # TODO: Fix lock
       HandleLidSwitchExternalPower = "lock";
       HandleLidSwitchDocked = "ignore";
     };

@@ -18,6 +18,12 @@ layer-rule {
 
 spawn-at-startup "noctalia-shell"
 
+switch-events {
+    lid-close {
+        spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"
+    }
+}
+
 input {
     keyboard {
         xkb {
