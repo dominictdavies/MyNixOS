@@ -8,17 +8,12 @@
 
     # Laptop (https://wiki.nixos.org/wiki/Laptop)
 
-    services = {
-      ## Closing the lid
-      logind.settings.Login = {
-        HandleLidSwitch = "suspend";
-        # TODO: Fix lock
-        HandleLidSwitchExternalPower = "lock";
-        HandleLidSwitchDocked = "ignore";
-      };
-
-      ## Enable fingerprint sensor
-      fprintd.enable = true;
+    ## Closing the lid
+    services.logind.settings.Login = {
+      HandleLidSwitch = "suspend";
+      # TODO: Fix lock
+      HandleLidSwitchExternalPower = "lock";
+      HandleLidSwitchDocked = "ignore";
     };
 
     ## Power management
