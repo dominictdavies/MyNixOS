@@ -189,3 +189,16 @@ layout {
 window-rule {
   open-maximized true
 }
+
+window-rule {
+  match app-id="kitty"
+  open-maximized false
+}
+
+window-rule {
+  match app-id="org.gnome.Calculator"
+  open-maximized false
+  open-floating true
+  default-column-width { fixed 480; }
+  default-window-height { fixed 320; }
+}
