@@ -164,7 +164,7 @@
       "screenOverrides": []
     },
     "general": {
-      "avatarImage": "/etc/nixos/assets/profile.png",
+      "avatarImage": "~/MyNixOS/assets/profile.png",
       "dimmerOpacity": 0.33,
       "showScreenCorners": false,
       "forceBlackScreenCorners": false,
@@ -278,15 +278,15 @@
     "wallpaper": {
       "enabled": true,
       "overviewEnabled": true,
-      "directory": "/etc/nixos/assets/wallpapers",
+      "directory": "~/MyNixOS/assets/wallpapers",
       "monitorDirectories": [
         {
-          "directory": "/etc/nixos/assets/wallpapers",
+          "directory": "~/MyNixOS/assets/wallpapers",
           "name": "DP-1",
           "wallpaper": ""
         },
         {
-          "directory": "/etc/nixos/assets/wallpapers",
+          "directory": "~/MyNixOS/assets/wallpapers",
           "name": "HDMI-A-1",
           "wallpaper": ""
         }
@@ -692,7 +692,7 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/etc/nixos/assets/wallpapers/stanley_parable_desk.png"
+      "eDP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -713,7 +713,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1776181339000
+      "lastSeenTs": 1776232623000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.5"

@@ -8,9 +8,5 @@
         configurationLimit = 10;
       };
     };
-
-    systemd.tmpfiles.rules = [
-      "L /etc/nixos - - - - /home/dominictdavies/MyNixOS"
-    ];
   };
 }
