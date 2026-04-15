@@ -62,7 +62,10 @@
 
       security = {
         polkit.enable = true;
-        pam.services.login.fprintAuth = false;
+        pam.services = {
+          login.fprintAuth = false;
+          greetd.fprintAuth = false;
+        };
       };
 
       programs = {
