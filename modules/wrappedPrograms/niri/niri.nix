@@ -13,8 +13,6 @@
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
       };
 
-      # TODO: Ask for password rather than fingerprint
-      # TODO: Add background
       programs.regreet = {
         enable = true;
         cageArgs = [
@@ -23,6 +21,10 @@
           "-m" # Set the multi-monitor behavior.
           "last" # Cage uses only the last connected monitor.
         ];
+        settings.background = {
+          path = self + "/assets/wallpapers/stanley_parable_desk_lined.png";
+          fit = "Cover";
+        };
       };
 
       xdg.portal = {
