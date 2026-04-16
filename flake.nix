@@ -1,76 +1,15 @@
 {
-  description = "My NixOS Configurations";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:nixos/nixos-hardware";
 
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
-    nix-minecraft.url = "github:infinidoge/nix-minecraft";
-    nix-tmodloader.url = "github:dominictdavies/nix-tmodloader";
+    wrappers.url = "github:Lassulus/wrappers";
+    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      lanzaboote,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations = {
-        dominator = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/dominator/configuration.nix
-          ];
-        };
-
-        domino = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/domino/configuration.nix
-            inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-          ];
-        };
-
-        dominion = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/dominion/configuration.nix
-            inputs.nixos-hardware.nixosModules.acer-aspire-4810t
-            lanzaboote.nixosModules.lanzaboote
-
-            (
-              { pkgs, lib, ... }:
-              {
-                environment.systemPackages = [
-                  # For debugging and troubleshooting Secure Boot
-                  pkgs.sbctl
-                ];
-
-                # Replace systemd-boot with lanzaboote
-                boot.loader.systemd-boot.enable = lib.mkForce false;
-                boot.lanzaboote = {
-                  enable = true;
-                  pkiBundle = "/etc/secureboot";
-                };
-              }
-            )
-          ];
-        };
-
-        domicile = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/domicile/configuration.nix
-            inputs.nixos-hardware.nixosModules.acer-aspire-4810t
-          ];
-        };
-      };
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }
