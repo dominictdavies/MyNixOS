@@ -14,7 +14,7 @@
         ];
 
         # Do not modify! (https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion)
-        system.stateVersion = "26.05";
+        system.stateVersion = "25.11";
       }
     ];
   };
