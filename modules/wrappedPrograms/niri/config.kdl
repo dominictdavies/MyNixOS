@@ -1,21 +1,3 @@
-// Noctalia Setup (https://docs.noctalia.dev/getting-started/compositor-settings/niri/)
-window-rule {
-  // Rounded corners for a modern look.
-  geometry-corner-radius 10
-
-  // Clips window contents to the rounded corner boundaries.
-  clip-to-geometry true
-}
-debug {
-  // Allows notification actions and window activation from Noctalia.
-  honor-xdg-activation-with-invalid-serial
-}
-layer-rule {
-  // Set the overview wallpaper on the backdrop.
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
-}
-
 spawn-at-startup "noctalia-shell"
 
 switch-events {
@@ -79,6 +61,7 @@ output "LG Electronics LG ULTRAWIDE 0x000221D3" {
 binds {
     Mod+Ctrl+Alt+Q { quit; }
     Mod+Ctrl+Alt+Slash { show-hotkey-overlay; }
+
     Mod+Q { close-window; }
     Mod+C { center-column; }
     Mod+D { maximize-column; }
@@ -87,6 +70,7 @@ binds {
     Mod+V { switch-focus-between-floating-and-tiling; }
     Mod+O { toggle-overview; }
     Mod+S { screenshot show-pointer=false; }
+
     Mod+Left { focus-column-or-monitor-left; }
     Mod+Right { focus-column-or-monitor-right; }
     Mod+Up { focus-window-or-monitor-up; }
@@ -95,6 +79,7 @@ binds {
     Mod+WheelScrollDown { focus-column-or-monitor-right; }
     Mod+Alt+WheelScrollUp { focus-window-or-monitor-up; }
     Mod+Alt+WheelScrollDown { focus-window-or-monitor-down; }
+
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
@@ -105,6 +90,7 @@ binds {
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
     Mod+0 { focus-workspace 10; }
+
     Mod+Shift+Left { move-column-left; }
     Mod+Shift+Right { move-column-right; }
     Mod+Shift+Up { move-window-up; }
@@ -113,13 +99,16 @@ binds {
     Mod+Shift+WheelScrollDown { move-column-right; }
     Mod+Shift+Alt+WheelScrollUp { move-window-up; }
     Mod+Shift+Alt+WheelScrollDown { move-window-down; }
+
     Mod+Shift+Alt+Left { move-column-to-monitor-left; }
     Mod+Shift+Alt+Right { move-column-to-monitor-right; }
     Mod+Shift+Alt+Up { move-column-to-monitor-up; }
     Mod+Shift+Alt+Down { move-column-to-monitor-down; }
+
     Mod+Shift+Comma { consume-or-expel-window-left; }
     Mod+Shift+Period { consume-or-expel-window-right; }
     Mod+Shift+V { toggle-window-floating; }
+
     Mod+Shift+1 { move-column-to-workspace 1; }
     Mod+Shift+2 { move-column-to-workspace 2; }
     Mod+Shift+3 { move-column-to-workspace 3; }
@@ -130,6 +119,7 @@ binds {
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
     Mod+Shift+0 { move-column-to-workspace 10; }
+
     Mod+Ctrl+Left { set-column-width "-5%"; }
     Mod+Ctrl+Right { set-column-width "+5%"; }
     Mod+Ctrl+Up { set-window-height "-5%"; }
@@ -138,6 +128,7 @@ binds {
     Mod+Ctrl+WheelScrollDown { set-column-width "+5%"; }
     Mod+Ctrl+Alt+WheelScrollUp { set-window-height "-5%"; }
     Mod+Ctrl+Alt+WheelScrollDown { set-window-height "+5%"; }
+
     Mod+Alt+Return { spawn-sh "kitty"; }
     Mod+Alt+B { spawn-sh "firefox"; }
     Mod+Alt+C { spawn-sh "code"; }
@@ -158,9 +149,11 @@ binds {
     Mod+Alt+T { spawn-sh "deltarune"; }
     Mod+Alt+W { spawn-sh "baobab"; }
     Mod+Alt+Z { spawn-sh "super-productivity"; }
+
     Ctrl+Alt+Delete { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
     Ctrl+Alt+Slash { spawn-sh "noctalia-shell ipc call launcher toggle"; }
     Ctrl+Alt+L { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
+
     XF86AudioPlay { spawn-sh "noctalia-shell ipc call media playPause"; }
     XF86AudioStop { spawn-sh "noctalia-shell ipc call media stop"; }
     XF86AudioPrev { spawn-sh "noctalia-shell ipc call media previous"; }
@@ -189,6 +182,26 @@ layout {
         active-gradient angle=45 from="#37f499" to="#04d1f9"
         inactive-gradient angle=45 from="#808080" to="#404040"
     }
+}
+
+// Noctalia Setup (https://docs.noctalia.dev/getting-started/compositor-settings/niri/)
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
+
+layer-rule {
+  // Set the overview wallpaper on the backdrop.
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}
+
+window-rule {
+  // Rounded corners for a modern look.
+  geometry-corner-radius 10
+
+  // Clips window contents to the rounded corner boundaries.
+  clip-to-geometry true
 }
 
 window-rule {
