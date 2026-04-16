@@ -28,12 +28,12 @@
       boot.extraModulePackages = [ ];
 
       fileSystems."/" = {
-        device = "/dev/mapper/luks-c815ffaf-184c-4b0e-5a1d9adc5c62";
+        device = "/dev/mapper/luks-c815ffaf-184c-4b0e-8e67-5a1d9adc5c62";
         fsType = "ext4";
       };
 
-      boot.initrd.luks.devices."luks-c815ffaf-184c-4b0e-5a1d9adc5c62".device =
-        "/dev/disk/by-uuid/c815ffaf-184c-4b0e-5a1d9adc5c62";
+      boot.initrd.luks.devices."luks-c815ffaf-184c-4b0e-8e67-5a1d9adc5c62".device =
+        "/dev/disk/by-uuid/c815ffaf-184c-4b0e-8e67-5a1d9adc5c62";
 
       fileSystems."/boot" = {
         device = "/dev/disk/by-uuid/0866-205D";
