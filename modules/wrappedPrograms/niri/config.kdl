@@ -84,7 +84,7 @@ binds {
     Mod+D { maximize-column; }
     Mod+F { fullscreen-window; }
     Mod+G { toggle-windowed-fullscreen; }
-    Mod+V { toggle-window-floating; }
+    Mod+V { switch-focus-between-floating-and-tiling; }
     Mod+O { toggle-overview; }
     Mod+S { screenshot show-pointer=false; }
     Mod+Left { focus-column-or-monitor-left; }
@@ -119,6 +119,7 @@ binds {
     Mod+Shift+Alt+Down { move-column-to-monitor-down; }
     Mod+Shift+Comma { consume-or-expel-window-left; }
     Mod+Shift+Period { consume-or-expel-window-right; }
+    Mod+Shift+V { toggle-window-floating; }
     Mod+Shift+1 { move-column-to-workspace 1; }
     Mod+Shift+2 { move-column-to-workspace 2; }
     Mod+Shift+3 { move-column-to-workspace 3; }
