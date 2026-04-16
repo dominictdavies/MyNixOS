@@ -1,7 +1,6 @@
 { self, inputs, ... }:
 {
   # TODO: Add dominion and domicile
-  # TODO: Make repo public
   flake.nixosConfigurations.dominator = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       {
