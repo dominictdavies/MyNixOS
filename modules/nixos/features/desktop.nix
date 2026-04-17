@@ -87,6 +87,7 @@
       };
 
       # Make apps try to use Wayland
+      # TODO: Fix Steam not running Wayland
       environment.sessionVariables.NIXOS_OZONE_WL = 1;
     };
 }
