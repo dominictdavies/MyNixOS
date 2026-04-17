@@ -15,10 +15,12 @@
           clr = "clear";
 
           # MyNixOS
+          mynix-pull = "(cd ~/MyNixOS && git pull --rebase)";
           mynix-switch = "nh os switch";
-          mynix-pull-switch = "(cd ~/MyNixOS && git pull && nh os switch)";
-          mynix-flake-switch = "(cd ~/MyNixOS && nix flake update && nh os switch)";
-          mynix-all-switch = "(cd ~/MyNixOS && git pull && nix flake update && nh os switch)";
+          mynix-pull-switch = "mynix-pull && mynix-switch";
+          mynix-update = "(cd ~/MyNixOS && git pull --rebase && nix flake update && git add flake.lock && git commit -m \"Update flake\" && git push)";
+          mynix-update-switch = "mynix-update && mynix-switch";
+          mynix-all-switch = "mynix-pull && mynix-update && mynix-switch";
         };
       };
 
