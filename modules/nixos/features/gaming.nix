@@ -8,6 +8,7 @@
       ];
 
       programs = {
+        # TODO: Fix cursor theme for Steam
         steam = {
           enable = true;
 
