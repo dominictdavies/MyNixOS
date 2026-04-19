@@ -25,6 +25,7 @@ input {
 cursor {
     xcursor-size 40
     xcursor-theme "Posy_Cursor_Black"
+    hide-after-inactive-ms 2000
 }
 
 // Domino
