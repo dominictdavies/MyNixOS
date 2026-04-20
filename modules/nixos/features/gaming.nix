@@ -8,7 +8,7 @@
       ];
 
       programs = {
-        # TODO: Fix cursor theme for Steam
+        # TODO: Fix cursor theme for Steam (switch to home manager)
         steam = {
           enable = true;
 
