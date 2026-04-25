@@ -10,7 +10,6 @@
         # Tools
         cgdb
         clang-tools
-        gnumake
         devenv
 
         # Formatters
