@@ -11,6 +11,7 @@
         cgdb
         clang-tools
         gnumake
+        check
         devenv
 
         # Formatters
