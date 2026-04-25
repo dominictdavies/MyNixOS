@@ -40,6 +40,7 @@
         gimp
         inkscape
         obsidian
+        vscode
 
         # Media
         discord

@@ -9,7 +9,6 @@
           common
           dominatorHardware
           desktop
-          coding
           gaming
         ];
 

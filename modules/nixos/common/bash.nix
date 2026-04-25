@@ -14,6 +14,10 @@
           list = "ls -flA";
           clr = "clear";
 
+          # Languages
+          rust = "nix-shell -p rustup";
+          cpp = "nix-shell -p gcc cgdb";
+
           # MyNixOS
           mynix-pull = "(cd ~/MyNixOS && git pull --rebase)";
           mynix-switch = "nh os switch";
