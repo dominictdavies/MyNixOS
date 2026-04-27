@@ -1,6 +1,7 @@
 import kagglehub
 import torch
-from transformers import AutoProcessor, AutoModelForCausalLM
+import threading
+from transformers import AutoProcessor, AutoModelForCausalLM, TextIteratorStreamer
 
 MODEL_PATH = kagglehub.model_download("google/gemma-4/transformers/gemma-4-26b-a4b-it")
 
@@ -15,12 +16,14 @@ model = AutoModelForCausalLM.from_pretrained(
 # Prompt
 messages = [
     {"role": "system", "content": "You are Gemma, a helpful assistant that answers all messages concisely."},
-    {"role": "user", "content": "Hello! Introduce yourself please."},
 ]
 
 if __name__ == "__main__":
     while True:
         try:
+            user_input = input("You: ")
+            messages.append({"role": "user", "content": user_input})
+
             # Process input
             text = processor.apply_chat_template(
                 messages, 
@@ -31,17 +34,31 @@ if __name__ == "__main__":
             inputs = processor(text=text, return_tensors="pt").to(model.device)
             input_len = inputs["input_ids"].shape[-1]
 
-            # Generate output
-            outputs = model.generate(**inputs, max_new_tokens=1024)
-            response = processor.decode(outputs[0][input_len:], skip_special_tokens=True)
+            # Setup streamer
+            streamer = TextIteratorStreamer(processor.tokenizer, skip_prompt=True, skip_special_tokens=True)
 
-            # Parse thinking
-            processor.parse_response(response)
-            print(f"Gemma: {response}")
+            # Define generation arguments
+            generation_kwargs = dict(
+                **inputs,
+                streamer=streamer,
+                max_new_tokens=1024,
+            )
 
-            # Next message
-            messages.append({"role": "user", "content": input("Message: ")})
+            # Run generation in a separate thread
+            thread = threading.Thread(target=model.generate, kwargs=generation_kwargs)
+            thread.start()
+
+            # Print tokens as they arrive
+            print("Gemma: ", end="", flush=True)
+            full_response = ""
+            for new_text in streamer:
+                print(new_text, end="", flush=True)
+                full_response += new_text
+            print()
+
+            # Update messages (using the full response)
+            messages.append({"role": "assistant", "content": full_response})
 
         except KeyboardInterrupt:
-            print("Goodbye...")
+            print("\nGoodbye...")
             break
