@@ -11,7 +11,7 @@ pkgs.mkShell {
       python-pkgs: with python-pkgs; [
         kagglehub
         transformers
-        torch
+        torchvision
         accelerate
       ]
     ))
