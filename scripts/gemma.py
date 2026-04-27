@@ -28,11 +28,9 @@ if __name__ == "__main__":
             text = processor.apply_chat_template(
                 messages, 
                 tokenize=False, 
-                add_generation_prompt=True, 
-                enable_thinking=False
+                add_generation_prompt=True
             )
             inputs = processor(text=text, return_tensors="pt").to(model.device)
-            input_len = inputs["input_ids"].shape[-1]
 
             # Setup streamer
             streamer = TextIteratorStreamer(processor.tokenizer, skip_prompt=True, skip_special_tokens=True)
@@ -56,9 +54,13 @@ if __name__ == "__main__":
                 full_response += new_text
             print()
 
-            # Update messages (using the full response)
+            # Update history with response
             messages.append({"role": "assistant", "content": full_response})
 
         except KeyboardInterrupt:
             print("\nGoodbye...")
+            break
+
+        except Exception as e:
+            print(f"\nAn error occurred: {e}")
             break
