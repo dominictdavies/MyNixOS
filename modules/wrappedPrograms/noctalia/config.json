@@ -667,7 +667,7 @@
       "enabled": true,
       "screenOffTimeout": 600,
       "lockTimeout": 660,
-      "suspendTimeout": 1800,
+      "suspendTimeout": 0,
       "fadeDuration": 5,
       "screenOffCommand": "",
       "lockCommand": "",
@@ -692,31 +692,47 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
+      "DP-2": "/home/dominictdavies/MyNixOS/assets/wallpapers/subnautica_lost_river.png",
+      "HDMI-A-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/subnautica_lost_river.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "eDP-1": {
-        "name": "eDP-1",
+      "DP-1": {
         "connected": true,
-        "scale": 2,
-        "width": 1440,
-        "height": 960,
-        "x": 1000,
-        "y": 1440,
-        "physical_width": 290,
-        "physical_height": 190,
-        "refresh_rate": 120000,
-        "vrr_supported": true,
+        "height": 1440,
+        "name": "DP-1",
+        "physical_height": 340,
+        "physical_width": 600,
+        "refresh_rate": 143972,
+        "scale": 1,
+        "transform": "Normal",
         "vrr_enabled": false,
-        "transform": "Normal"
+        "vrr_supported": true,
+        "width": 2560,
+        "x": 2560,
+        "y": 0
+      },
+      "HDMI-A-1": {
+        "connected": true,
+        "height": 1080,
+        "name": "HDMI-A-1",
+        "physical_height": 280,
+        "physical_width": 670,
+        "refresh_rate": 60000,
+        "scale": 1,
+        "transform": "Normal",
+        "vrr_enabled": false,
+        "vrr_supported": false,
+        "width": 2560,
+        "x": 0,
+        "y": 360
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1776232623000
+      "lastSeenTs": 1777221947000
     },
     "changelogState": {
-      "lastSeenVersion": "v4.7.5"
+      "lastSeenVersion": "v4.7.6"
     },
     "colorSchemesList": {
       "schemes": [],
