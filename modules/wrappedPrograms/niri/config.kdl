@@ -215,7 +215,7 @@ window-rule {
 }
 
 window-rule {
-  match app-id="kitty"
+  match app-id="^(kitty|org.gnome.clocks)$"
   open-maximized false
 }
 
