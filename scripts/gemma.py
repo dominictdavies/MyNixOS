@@ -10,7 +10,7 @@ processor = AutoProcessor.from_pretrained(MODEL_PATH)
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_PATH,
     dtype=torch.bfloat16,
-    device_map="auto"
+    device_map={"": "cpu"},
 )
 
 # Prompt

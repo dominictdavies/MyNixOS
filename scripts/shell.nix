@@ -3,16 +3,19 @@ let
   pkgs =
     import
       (fetchTarball "https://github.com/NixOS/nixpkgs/archive/01fbdeef22b76df85ea168fbfe1bfd9e63681b30.tar.gz")
-      { };
+      {
+        config.allowUnfree = true;
+      };
 in
 pkgs.mkShell {
   packages = [
     (pkgs.python3.withPackages (
       python-pkgs: with python-pkgs; [
         kagglehub
+        torch-bin
+        torchvision-bin
         transformers
-        torchvision
-        accelerate
+        (accelerate.override { torch = torch-bin; })
       ]
     ))
   ];
