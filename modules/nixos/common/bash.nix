@@ -10,14 +10,6 @@
         enable = true;
 
         shellAliases = {
-          # General
-          list = "ls -flA";
-          clr = "clear";
-
-          # Languages
-          rust = "nix-shell -p rustup";
-          cpp = "nix-shell -p gcc cgdb";
-
           # MyNixOS
           mynix-pull = "(cd ~/MyNixOS && git pull --rebase)";
           mynix-switch = "nh os switch";
@@ -25,6 +17,13 @@
           mynix-update = "(cd ~/MyNixOS && git pull --rebase && nix flake update && git add flake.lock && git commit -m \"Update flake\" && git push)";
           mynix-update-switch = "mynix-update && mynix-switch";
           mynix-all-switch = "mynix-pull && mynix-update && mynix-switch";
+
+          # Shells
+          init_python = "cp ~/MyNixOS/shells/python.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
+
+          # General
+          list = "ls -lA";
+          clr = "clear";
         };
       };
 
