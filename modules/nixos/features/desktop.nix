@@ -31,6 +31,7 @@
 
         # Tools
         kitty
+        ollama
         proton-vpn-cli
         remmina
         scrcpy
