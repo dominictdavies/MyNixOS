@@ -59,6 +59,7 @@ output "LG Electronics LG ULTRAWIDE 0x000221D3" {
     scale 1
 }
 
+// Use `nix-shell -p wev --command wev` to find key names
 binds {
     // General
 
@@ -70,7 +71,6 @@ binds {
     Mod+D { maximize-column; }
     Mod+F { fullscreen-window; }
     Mod+G { toggle-windowed-fullscreen; }
-    Mod+V { switch-focus-between-floating-and-tiling; }
     Mod+O { toggle-overview; }
     Mod+S { screenshot show-pointer=false; }
 
@@ -85,6 +85,9 @@ binds {
     Mod+Alt+WheelScrollUp { focus-window-up; }
     Mod+Alt+WheelScrollDown { focus-window-down; }
 
+    Mod+V { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+V { toggle-window-floating; }
+
     Mod+Shift+Left { move-column-left; }
     Mod+Shift+Right { move-column-right; }
     Mod+Shift+Up { move-window-up; }
@@ -96,7 +99,6 @@ binds {
 
     Mod+Shift+Comma { consume-or-expel-window-left; }
     Mod+Shift+Period { consume-or-expel-window-right; }
-    Mod+Shift+V { toggle-window-floating; }
 
     Mod+Ctrl+Left { set-column-width "-5%"; }
     Mod+Ctrl+Right { set-column-width "+5%"; }
@@ -131,6 +133,8 @@ binds {
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
     Mod+0 { focus-workspace 10; }
+    Mod+Apostrophe { focus-workspace-up; }
+    Mod+Slash { focus-workspace-down; }
 
     Mod+Shift+1 { move-column-to-workspace 1; }
     Mod+Shift+2 { move-column-to-workspace 2; }
@@ -142,6 +146,8 @@ binds {
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
     Mod+Shift+0 { move-column-to-workspace 10; }
+    Mod+Shift+Apostrophe { move-window-to-workspace-up; }
+    Mod+Shift+Slash { move-window-to-workspace-down; }
 
     // Apps
 
