@@ -158,9 +158,8 @@ binds {
     Mod+Alt+D { spawn-sh "discord"; }
     Mod+Alt+F { spawn-sh "kitty --hold fastfetch"; }
     Mod+Alt+G { spawn-sh "gimp"; }
-    Mod+Alt+H { spawn-sh "kitty protonvpn connect"; }
+    Mod+Alt+H { spawn-sh "open https://home.google.com/u/0/home/1"; }
     Mod+Alt+I { spawn-sh "inkscape"; }
-    Mod+Alt+J { spawn-sh "kitty protonvpn disconnect"; }
     Mod+Alt+L { spawn-sh "spotify"; }
     Mod+Alt+M { spawn-sh "gnome-calculator"; }
     Mod+Alt+N { spawn-sh "nautilus"; }
@@ -170,7 +169,9 @@ binds {
     Mod+Alt+R { spawn-sh "remmina"; }
     Mod+Alt+S { spawn-sh "steam"; }
     Mod+Alt+T { spawn-sh "deltarune"; }
+    Mod+Alt+V { spawn-sh "kitty protonvpn connect"; }
     Mod+Alt+W { spawn-sh "baobab"; }
+    Mod+Alt+X { spawn-sh "kitty protonvpn disconnect"; }
     Mod+Alt+Z { spawn-sh "super-productivity"; }
 
     // Noctalia
