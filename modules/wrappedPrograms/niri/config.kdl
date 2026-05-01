@@ -65,6 +65,10 @@ binds {
 
     Mod+Ctrl+Alt+Q { quit; }
     Mod+Ctrl+Alt+Slash { show-hotkey-overlay; }
+    Mod+Ctrl+Alt+S { spawn-sh "kitty --hold bash -ci mynix-switch"; }
+    Mod+Ctrl+Alt+P { spawn-sh "kitty --hold bash -ci mynix-pull-switch"; }
+    Mod+Ctrl+Alt+U { spawn-sh "kitty --hold bash -ci mynix-update-switch"; }
+    Mod+Ctrl+Alt+A { spawn-sh "kitty --hold bash -ci mynix-all-switch"; }
 
     Mod+Q { close-window; }
     Mod+C { center-column; }
