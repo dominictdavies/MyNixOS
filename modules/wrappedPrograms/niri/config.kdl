@@ -168,10 +168,10 @@ binds {
     Mod+Alt+Q { spawn-sh "~/MyNixOS/scripts/flip_coin.sh"; }
     Mod+Alt+R { spawn-sh "remmina"; }
     Mod+Alt+S { spawn-sh "steam"; }
-    Mod+Alt+T { spawn-sh "deltarune"; }
-    Mod+Alt+V { spawn-sh "kitty protonvpn connect"; }
+    Mod+Alt+T { spawn-sh "bash -ci deltarune"; }
+    Mod+Alt+V { spawn-sh "kitty --hold protonvpn connect"; }
     Mod+Alt+W { spawn-sh "baobab"; }
-    Mod+Alt+X { spawn-sh "kitty protonvpn disconnect"; }
+    Mod+Alt+X { spawn-sh "kitty --hold protonvpn disconnect"; }
     Mod+Alt+Z { spawn-sh "super-productivity"; }
 
     // Noctalia
