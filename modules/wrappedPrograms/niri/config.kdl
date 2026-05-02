@@ -158,7 +158,7 @@ binds {
     Mod+Alt+D { spawn-sh "discord"; }
     Mod+Alt+F { spawn-sh "kitty --hold fastfetch"; }
     Mod+Alt+G { spawn-sh "gimp"; }
-    Mod+Alt+H { spawn-sh "firefox https://home.google.com/u/0/home/1"; }
+    Mod+Alt+H { spawn-sh "bash -ci open https://home.google.com/u/0/home/1"; }
     Mod+Alt+I { spawn-sh "inkscape"; }
     Mod+Alt+L { spawn-sh "spotify"; }
     Mod+Alt+M { spawn-sh "gnome-calculator"; }
