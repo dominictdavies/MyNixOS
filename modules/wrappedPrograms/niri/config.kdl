@@ -120,11 +120,15 @@ binds {
     Mod+Alt+Right { focus-monitor-right; }
     Mod+Alt+Up { focus-monitor-up; }
     Mod+Alt+Down { focus-monitor-down; }
+    Mod+Alt+Apostrophe { focus-monitor-previous; }
+    Mod+Alt+Slash { focus-monitor-next; }
 
     Mod+Shift+Alt+Left { move-column-to-monitor-left; }
     Mod+Shift+Alt+Right { move-column-to-monitor-right; }
     Mod+Shift+Alt+Up { move-column-to-monitor-up; }
     Mod+Shift+Alt+Down { move-column-to-monitor-down; }
+    Mod+Shift+Alt+Apostrophe { move-column-to-monitor-previous; }
+    Mod+Shift+Alt+Slash { move-column-to-monitor-next; }
 
     // Workspaces
 
