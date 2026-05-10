@@ -3,9 +3,9 @@
     boot.loader = {
       timeout = 2;
       efi.canTouchEfiVariables = true;
-      systemd-boot = {
+      limine = {
         enable = true;
-        configurationLimit = 10;
+        maxGenerations = 10;
       };
     };
   };
