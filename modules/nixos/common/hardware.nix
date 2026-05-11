@@ -1,5 +1,8 @@
 {
   flake.nixosModules.common = {
-    hardware.enableAllFirmware = true;
+    hardware = {
+      enableAllFirmware = true;
+      steam-hardware.enable = true;
+    };
   };
 }
