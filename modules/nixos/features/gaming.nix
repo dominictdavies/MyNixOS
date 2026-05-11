@@ -26,7 +26,5 @@
           deltarune = "steam steam://rungameid/1671210 && exit";
         };
       };
-
-      hardware.steam-hardware.enable = true;
     };
 }
