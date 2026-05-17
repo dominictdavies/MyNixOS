@@ -214,8 +214,8 @@ layout {
     gaps 8
     focus-ring {
         width 8
-        active-gradient angle=45 from="#37f499" to="#04d1f9"
-        inactive-gradient angle=45 from="#808080" to="#404040"
+        active-gradient angle=45 from="#37f49980" to="#04d1f980"
+        inactive-gradient angle=45 from="#80808080" to="#40404080"
     }
 }
 
