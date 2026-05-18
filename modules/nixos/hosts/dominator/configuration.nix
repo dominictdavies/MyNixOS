@@ -9,6 +9,7 @@
           common
           dominatorHardware
           desktop
+          vagrant
           gaming
         ];
 
