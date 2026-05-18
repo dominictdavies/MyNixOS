@@ -13,8 +13,13 @@
     };
 
   perSystem =
-    { pkgs, ... }:
+    { pkgs, system, ... }:
     {
+      _module.args.pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
       packages.myNoctalia = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
         inherit pkgs;
         settings = (builtins.fromJSON (builtins.readFile ./config.json)).settings;
