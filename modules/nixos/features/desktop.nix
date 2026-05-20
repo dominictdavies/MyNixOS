@@ -36,6 +36,7 @@
         remmina
         scrcpy
         super-productivity
+        poppler-utils
 
         # Editors
         gimp
