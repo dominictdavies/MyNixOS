@@ -39,6 +39,7 @@
         poppler-utils
 
         # Editors
+        audacity
         gimp
         inkscape
         obsidian
