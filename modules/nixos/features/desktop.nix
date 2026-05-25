@@ -43,6 +43,7 @@
         audacity
         gimp
         inkscape
+        shotcut
         obsidian
         vscode
 
