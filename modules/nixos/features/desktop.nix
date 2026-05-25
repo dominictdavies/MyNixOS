@@ -32,6 +32,7 @@
         # Tools
         kitty
         ollama
+        obs-studio
         proton-vpn-cli
         remmina
         scrcpy
