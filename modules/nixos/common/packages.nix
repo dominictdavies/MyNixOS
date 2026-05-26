@@ -4,7 +4,6 @@
     {
       environment.systemPackages = with pkgs; [
         fastfetch
-        stress-ng
       ];
     };
 }

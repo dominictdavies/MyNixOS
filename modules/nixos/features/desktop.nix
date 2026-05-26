@@ -5,46 +5,29 @@
     {
       imports = with self.nixosModules; [
         niri
+        gnome
         compatibility
         fileSharing
       ];
 
       environment.systemPackages = with pkgs; [
-        # GNOME (https://apps.gnome.org/en/)
-        baobab
-        gnome-calculator
-        gnome-characters
-        gnome-clocks
-        gnome-connections
-        decibels
-        gnome-disk-utility
-        gnome-font-viewer
-        gnome-logs
-        loupe
-        gnome-music
-        nautilus
-        papers
-        showtime
-        snapshot
-        gnome-system-monitor
-        gnome-text-editor
-
-        # Tools
+        # Terminal
         kitty
         ollama
-        obs-studio
         proton-vpn-cli
-        remmina
+
+        # Tools
+        obs-studio
+        obsidian
         scrcpy
         super-productivity
-        poppler-utils
 
         # Editors
         audacity
         gimp
         inkscape
+        poppler-utils
         shotcut
-        obsidian
         vscode
 
         # Media

@@ -20,7 +20,7 @@
 
           # Shells
           shell = "cp ~/MyNixOS/shells/shell.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
-          shell_python = "cp ~/MyNixOS/shells/python.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
+          shell-python = "cp ~/MyNixOS/shells/python.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
 
           # General
           list = "ls -lA";
