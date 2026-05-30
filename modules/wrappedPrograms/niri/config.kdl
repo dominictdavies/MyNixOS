@@ -232,14 +232,13 @@ layer-rule {
 }
 
 window-rule {
-  // Rounded corners for a modern look.
+  // Rounded corners for a modern look
   geometry-corner-radius 10
 
-  // Clips window contents to the rounded corner boundaries.
+  // Clips window contents to the rounded corner boundaries
   clip-to-geometry true
-}
 
-window-rule {
+  // Maximise windows by default
   open-maximized true
 }
 
@@ -260,5 +259,14 @@ window-rule {
   open-maximized false
   open-floating true
   default-column-width { fixed 360; }
-  default-window-height { fixed 616; }
+  default-window-height { fixed 720; }
+}
+
+window-rule {
+    match app-id="steam"
+    match title="Friends List"
+    open-maximised false
+    open-floating true
+    default-column-width { fixed 360; }
+    default-column-height { fixed 900; }
 }
