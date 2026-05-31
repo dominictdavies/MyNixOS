@@ -238,7 +238,7 @@ window-rule {
 
 // Unmaximised
 window-rule {
-  match app-id="^(kitty|org.gnome.clocks|org.gnome.Papers|org.gnome.TextEditor)$"
+  match app-id="^(kitty|org.gnome.Nautilus|org.gnome.TextEditor|org.gnome.Papers|org.gnome.clocks)$"
   open-maximized false
 }
 
