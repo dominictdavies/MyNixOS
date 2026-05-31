@@ -67,7 +67,6 @@ output "LG Electronics LG ULTRAWIDE 0x000221D3" {
 // Use `nix-shell -p wev --command wev` to find key names
 binds {
     // General
-
     Mod+Ctrl+Alt+Q { quit; }
     Mod+Ctrl+Alt+Slash { show-hotkey-overlay; }
 
@@ -80,7 +79,6 @@ binds {
     Mod+S { screenshot show-pointer=false; }
 
     // Columns & Windows
-
     Mod+Left { focus-column-left; }
     Mod+Right { focus-column-right; }
     Mod+Up { focus-window-up; }
@@ -115,7 +113,6 @@ binds {
     Mod+Ctrl+Alt+WheelScrollDown { set-window-height "+5%"; }
 
     // Monitors
-
     Mod+Alt+Left { focus-monitor-left; }
     Mod+Alt+Right { focus-monitor-right; }
     Mod+Alt+Up { focus-monitor-up; }
@@ -131,7 +128,6 @@ binds {
     Mod+Shift+Alt+Slash { move-column-to-monitor-next; }
 
     // Workspaces
-
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
@@ -159,7 +155,6 @@ binds {
     Mod+Shift+Slash { move-window-to-workspace-down; }
 
     // Apps
-
     Mod+Alt+Return { spawn-sh "kitty"; }
     Mod+Alt+A { spawn-sh "kitty ollama"; }
     Mod+Alt+B { spawn-sh "firefox"; }
@@ -184,7 +179,6 @@ binds {
     Mod+Alt+Z { spawn-sh "super-productivity"; }
 
     // Noctalia
-
     Ctrl+Alt+Delete { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
     Ctrl+Alt+Slash { spawn-sh "noctalia-shell ipc call launcher toggle"; }
     Ctrl+Alt+L { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
@@ -242,11 +236,13 @@ window-rule {
   open-maximized true
 }
 
+// Unmaximised
 window-rule {
   match app-id="^(kitty|org.gnome.clocks|org.gnome.Papers|org.gnome.TextEditor)$"
   open-maximized false
 }
 
+// Phone Dimensions
 window-rule {
   match app-id=".scrcpy-wrapped"
   open-maximized false
@@ -254,19 +250,12 @@ window-rule {
   default-window-height { fixed 1424; }
 }
 
+// Floating Tall Rectangle
 window-rule {
   match app-id="org.gnome.Calculator"
+  match title="Friends List"
   open-maximized false
   open-floating true
   default-column-width { fixed 360; }
   default-window-height { fixed 720; }
-}
-
-window-rule {
-    match app-id="steam"
-    match title="Friends List"
-    open-maximized false
-    open-floating true
-    default-column-width { fixed 360; }
-    default-window-height { fixed 900; }
 }
