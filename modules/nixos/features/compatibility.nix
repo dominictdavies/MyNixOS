@@ -5,7 +5,6 @@
       environment.systemPackages = with pkgs; [
         zip
         unzip
-        wineWow64Packages.stable
         quickemu
       ];
     };

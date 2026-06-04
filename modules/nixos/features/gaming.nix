@@ -4,7 +4,6 @@
     {
       environment.systemPackages = with pkgs; [
         prismlauncher
-        gpu-screen-recorder
       ];
 
       programs = {

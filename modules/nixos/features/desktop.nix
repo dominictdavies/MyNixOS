@@ -4,10 +4,9 @@
     { pkgs, ... }:
     {
       imports = with self.nixosModules; [
-        niri
-        gnome
         compatibility
-        fileSharing
+        gnome
+        niri
       ];
 
       environment.systemPackages = with pkgs; [

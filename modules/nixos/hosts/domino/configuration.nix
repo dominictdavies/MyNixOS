@@ -8,7 +8,6 @@
           common
           dominoHardware
           desktop
-          docker
           gaming
         ];
 
