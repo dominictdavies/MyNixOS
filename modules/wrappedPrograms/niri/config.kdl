@@ -156,7 +156,6 @@ binds {
 
     // Apps
     Mod+Alt+Return { spawn-sh "kitty"; }
-    Mod+Alt+A { spawn-sh "kitty ollama"; }
     Mod+Alt+B { spawn-sh "firefox"; }
     Mod+Alt+C { spawn-sh "code"; }
     Mod+Alt+D { spawn-sh "discord"; }

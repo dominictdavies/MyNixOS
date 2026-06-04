@@ -13,7 +13,6 @@
       environment.systemPackages = with pkgs; [
         # Terminal
         kitty
-        ollama
         proton-vpn-cli
 
         # Tools
