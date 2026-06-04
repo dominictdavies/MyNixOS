@@ -172,8 +172,9 @@ binds {
     Mod+Alt+R { spawn-sh "remmina"; }
     Mod+Alt+S { spawn-sh "steam"; }
     Mod+Alt+T { spawn-sh "bash -ci deltarune"; }
+    Mod+Alt+U { spawn-sh "baobab"; }
     Mod+Alt+V { spawn-sh "kitty --hold protonvpn connect"; }
-    Mod+Alt+W { spawn-sh "baobab"; }
+    Mod+Alt+W { spawn-sh "quickemu --vm ~/Machines/windows-11.conf"; }
     Mod+Alt+X { spawn-sh "kitty --hold protonvpn disconnect"; }
     Mod+Alt+Z { spawn-sh "super-productivity"; }
 
