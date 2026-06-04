@@ -6,7 +6,7 @@
         zip
         unzip
         wineWow64Packages.stable
-        quickemu
+        quickgui
       ];
     };
 }
