@@ -9,7 +9,6 @@
           dominoHardware
           desktop
           docker
-          vagrant
           gaming
         ];
 
