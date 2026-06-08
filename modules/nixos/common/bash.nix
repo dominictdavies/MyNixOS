@@ -21,6 +21,7 @@
           # Shells
           shell = "cp ~/MyNixOS/shells/shell.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
           shell-python = "cp ~/MyNixOS/shells/python.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
+          shell-rust = "cp ~/MyNixOS/shells/rust.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
         };
       };
 
