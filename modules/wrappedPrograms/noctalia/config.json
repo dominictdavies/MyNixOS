@@ -20,7 +20,7 @@
       "marginHorizontal": 4,
       "frameThickness": 8,
       "frameRadius": 12,
-      "outerCorners": true,
+      "outerCorners": false,
       "hideOnOverview": true,
       "displayMode": "always_visible",
       "autoHideDelay": 500,
