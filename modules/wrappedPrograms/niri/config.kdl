@@ -267,7 +267,7 @@ window-rule {
   baba-is-float true
 
   focus-ring {
-    active-color "#ff0000"
+    active-color "#00c000"
     inactive-color "#666666"
   }
 }
