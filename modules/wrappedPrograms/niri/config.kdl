@@ -263,6 +263,7 @@ window-rule {
 }
 window-rule {
   match title="^DELTARUNE$"
+  default-floating-position x=621 y=228 relative-to="top-left"
 
   focus-ring {
     active-color "#00c000"
