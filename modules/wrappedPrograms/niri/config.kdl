@@ -225,33 +225,15 @@ layer-rule {
   place-within-backdrop true
 }
 
-window-rule {
-  // Rounded corners for a modern look
-  geometry-corner-radius 10
-
-  // Clips window contents to the rounded corner boundaries
-  clip-to-geometry true
-
-  // Maximise windows by default
-  open-maximized true
-}
-
 // Fullscreen
 window-rule {
   match app-id="qemu"
   open-fullscreen true
 }
 
-// Unmaximised
-window-rule {
-  match app-id="^(kitty|org.gnome.Nautilus|org.gnome.TextEditor|org.gnome.Papers|org.gnome.clocks)$"
-  open-maximized false
-}
-
 // Phone Dimensions
 window-rule {
   match app-id=".scrcpy-wrapped"
-  open-maximized false
   default-column-width { fixed 630; }
   default-window-height { fixed 1424; }
 }
@@ -260,7 +242,6 @@ window-rule {
 window-rule {
   match app-id="org.gnome.Calculator"
   match title="Friends List"
-  open-maximized false
   open-floating true
   default-column-width { fixed 360; }
   default-window-height { fixed 720; }
