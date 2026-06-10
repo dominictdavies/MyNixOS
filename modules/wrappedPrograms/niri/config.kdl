@@ -264,8 +264,6 @@ window-rule {
 window-rule {
   match title="^DELTARUNE$"
 
-  baba-is-float true
-
   focus-ring {
     active-color "#00c000"
     inactive-color "#666666"
