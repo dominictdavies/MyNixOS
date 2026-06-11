@@ -251,19 +251,16 @@ window-rule {
 window-rule {
   match app-id="steam_app_1671210"
 
+  open-floating true
   open-focused true
+  default-floating-position x=621 y=228 relative-to="top-left"
 
   shadow {
     on
   }
-
-  focus-ring {
-    urgent-color "#ffffff"
-  }
 }
 window-rule {
   match title="^DELTARUNE$"
-  default-floating-position x=621 y=228 relative-to="top-left"
 
   focus-ring {
     active-color "#00c000"
