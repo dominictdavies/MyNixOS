@@ -4,7 +4,6 @@
     { pkgs, ... }:
     {
       imports = with self.nixosModules; [
-        compatibility
         gnome
         niri
       ];

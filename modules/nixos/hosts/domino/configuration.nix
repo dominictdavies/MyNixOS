@@ -6,6 +6,7 @@
         networking.hostName = "domino";
         imports = with self.nixosModules; [
           common
+          compatibility
           dominoHardware
           desktop
           gaming
