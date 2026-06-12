@@ -23,15 +23,8 @@
         "usb_storage"
         "sd_mod"
       ];
-      boot.initrd.kernelModules = [
-        "vfio_pci"
-        "vfio"
-        "vfio_iommu_type1"
-      ];
+      boot.initrd.kernelModules = [ ];
       boot.kernelModules = [ ];
-      boot.kernelParams = [
-        "amd_iommu=on"
-      ];
       boot.extraModulePackages = [ ];
 
       fileSystems."/" = {
