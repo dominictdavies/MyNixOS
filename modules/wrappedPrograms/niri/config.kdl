@@ -225,6 +225,12 @@ layer-rule {
   place-within-backdrop true
 }
 
+// First 60 seconds
+window-rule {
+  match at-startup=true
+  open-maximized true
+}
+
 // Fullscreen
 window-rule {
   match app-id="qemu"
