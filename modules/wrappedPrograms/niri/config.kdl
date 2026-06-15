@@ -253,7 +253,6 @@ window-rule {
 
   open-floating true
   open-focused true
-  default-floating-position x=621 y=228 relative-to="top-left"
 
   shadow {
     on
