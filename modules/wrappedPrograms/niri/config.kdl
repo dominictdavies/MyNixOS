@@ -284,7 +284,7 @@ window-rule {
   match title="^DELTARUNE Chapter 2$"
 
   focus-ring {
-    active-gradient angle=300 from="#32d989" to="#00a2e8"
+    active-gradient angle=300 from="#31d989" to="#00a2e8"
     inactive-color "#666666"
   }
 }
