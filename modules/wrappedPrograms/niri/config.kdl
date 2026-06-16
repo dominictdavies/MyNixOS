@@ -277,7 +277,7 @@ window-rule {
 
   focus-ring {
     active-gradient angle=270 from="#e02040" to="#6c06c1"
-    inactive-gradient angle=270 from="#e0204080" to="#6c06c180"
+    inactive-color "#666666"
   }
 }
 window-rule {
@@ -285,7 +285,7 @@ window-rule {
 
   focus-ring {
     active-gradient angle=300 from="#32d989" to="#00a2e8"
-    inactive-gradient angle=300 from="#32d98980" to="#00a2e880"
+    inactive-color "#666666"
   }
 }
 window-rule {
@@ -293,7 +293,7 @@ window-rule {
 
   focus-ring {
     active-gradient angle=330 from="#ff2d39" to="#db7727"
-    inactive-gradient angle=330 from="#ff2d3980" to="#db772780"
+    inactive-color "#666666"
   }
 }
 window-rule {
@@ -301,7 +301,7 @@ window-rule {
 
   focus-ring {
     active-gradient angle=0 from="#122cf1" to="#77ffff"
-    inactive-gradient angle=0 from="#122cf180" to="#77ffff80"
+    inactive-color "#666666"
   }
 }
 window-rule {
@@ -309,7 +309,7 @@ window-rule {
 
   focus-ring {
     active-gradient angle=30 from="#82af86" to="#5060eb"
-    inactive-gradient angle=30 from="#82af8680" to="#5060eb80"
+    inactive-color "#666666"
   }
 }
 window-rule {
@@ -317,7 +317,7 @@ window-rule {
 
   focus-ring {
     active-gradient angle=60 from="#ff0000" to="#660000"
-    inactive-gradient angle=60 from="#ff000080" to="#66000080"
+    inactive-color "#666666"
   }
 }
 window-rule {
@@ -325,6 +325,6 @@ window-rule {
 
   focus-ring {
     active-gradient angle=90 from="#ff0000" to="#660000"
-    inactive-gradient angle=90 from="#ff000080" to="#66000080"
+    inactive-color "#666666"
   }
 }
