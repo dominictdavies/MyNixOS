@@ -12,6 +12,7 @@
         shellAliases = {
           # MyNixOS
           mynix-pull = "(cd ~/MyNixOS && git pull --rebase)";
+          mynix-boot = "nh os boot";
           mynix-switch = "nh os switch";
           mynix-pull-switch = "mynix-pull && mynix-switch";
           mynix-update = "(cd ~/MyNixOS && git pull --rebase && nix flake update && git add flake.lock && git commit -m \"Update flake\" && git push)";
