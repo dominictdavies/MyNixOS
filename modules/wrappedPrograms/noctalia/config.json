@@ -3,7 +3,7 @@
     "settingsVersion": 59,
     "bar": {
       "barType": "simple",
-      "position": "right",
+      "position": "bottom",
       "monitors": [],
       "density": "comfortable",
       "showOutline": false,
@@ -567,7 +567,7 @@
       "enableMarkdown": false,
       "density": "default",
       "monitors": [],
-      "location": "top_left",
+      "location": "top_right",
       "overlayLayer": true,
       "backgroundOpacity": 1,
       "respectExpireTimeout": false,
@@ -692,8 +692,8 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png",
-      "HDMI-A-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+      "DP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png",
+      "HDMI-A-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -729,7 +729,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1781634230000
+      "lastSeenTs": 1781889765000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
