@@ -456,7 +456,7 @@
     },
     "dock": {
       "enabled": true,
-      "position": "right",
+      "position": "bottom",
       "displayMode": "auto_hide",
       "dockType": "floating",
       "backgroundOpacity": 1,
