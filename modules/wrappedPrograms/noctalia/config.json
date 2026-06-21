@@ -300,7 +300,7 @@
       "fillColor": "#000000",
       "useSolidColor": false,
       "solidColor": "#1a1a2e",
-      "automationEnabled": true,
+      "automationEnabled": false,
       "wallpaperChangeMode": "random",
       "randomIntervalSec": 600,
       "transitionDuration": 1500,
@@ -692,8 +692,8 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png",
-      "HDMI-A-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
+      "DP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png",
+      "HDMI-A-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -729,7 +729,7 @@
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1781889765000
+      "lastSeenTs": 1782062305000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
