@@ -64,9 +64,9 @@ output "LG Electronics LG ULTRAWIDE 0x000221D3" {
     scale 1
 }
 output "Technical Concepts Ltd Beyond TV 0x00010000" {
-    mode "2560x1440@119.998"
+    mode "3840x2160@120.000"
     position x=0 y=0
-    scale 1
+    scale 2
 }
 
 // Use `nix-shell -p wev --command wev` to find key names
