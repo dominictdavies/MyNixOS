@@ -63,7 +63,7 @@ output "LG Electronics LG ULTRAWIDE 0x000221D3" {
     position x=0 y=360
     scale 1
 }
-outputs "Technical Concepts Ltd Beyond TV 0x00010000" {
+output "Technical Concepts Ltd Beyond TV 0x00010000" {
     mode "2560x1440@119.998"
     position x=0 y=0
     scale 1
