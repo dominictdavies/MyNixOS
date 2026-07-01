@@ -300,7 +300,7 @@
       "fillColor": "#000000",
       "useSolidColor": false,
       "solidColor": "#1a1a2e",
-      "automationEnabled": false,
+      "automationEnabled": true,
       "wallpaperChangeMode": "random",
       "randomIntervalSec": 600,
       "transitionDuration": 1500,
