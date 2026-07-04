@@ -22,6 +22,7 @@
         # Editors
         audacity
         gimp
+        godot
         inkscape
         poppler-utils
         shotcut
