@@ -14,6 +14,7 @@
         proton-vpn-cli
 
         # Tools
+        claude-code
         obs-studio
         obsidian
         scrcpy
