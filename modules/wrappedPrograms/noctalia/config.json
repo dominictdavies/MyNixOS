@@ -22,7 +22,7 @@
       "frameRadius": 12,
       "outerCorners": false,
       "hideOnOverview": true,
-      "displayMode": "auto_hide",
+      "displayMode": "always_visible",
       "autoHideDelay": 500,
       "autoShowDelay": 150,
       "showOnWorkspaceSwitch": true,
@@ -692,44 +692,29 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "DP-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png",
+      "DP-2": "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png",
       "HDMI-A-1": "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
     },
     "desktopWidgetsEditMode": false,
     "display": {
-      "DP-1": {
-        "name": "DP-1",
-        "connected": true,
-        "scale": 1,
-        "width": 2560,
-        "height": 1440,
-        "x": 2560,
-        "y": 0,
-        "physical_width": 600,
-        "physical_height": 340,
-        "refresh_rate": 143972,
-        "vrr_supported": true,
-        "vrr_enabled": false,
-        "transform": "Normal"
-      },
       "HDMI-A-1": {
-        "name": "HDMI-A-1",
         "connected": true,
-        "scale": 1,
-        "width": 2560,
-        "height": 1080,
-        "x": 0,
-        "y": 360,
-        "physical_width": 670,
-        "physical_height": 280,
-        "refresh_rate": 60000,
-        "vrr_supported": false,
+        "height": 1440,
+        "name": "HDMI-A-1",
+        "physical_height": 680,
+        "physical_width": 1210,
+        "refresh_rate": 120000,
+        "scale": 1.5,
+        "transform": "Normal",
         "vrr_enabled": false,
-        "transform": "Normal"
+        "vrr_supported": false,
+        "width": 2560,
+        "x": 0,
+        "y": 0
       }
     },
     "notificationsState": {
-      "lastSeenTs": 1782062305000
+      "lastSeenTs": 1783883137000
     },
     "changelogState": {
       "lastSeenVersion": "v4.7.7"
