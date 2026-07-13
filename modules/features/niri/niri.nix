@@ -9,7 +9,7 @@
 
       # niri (https://wiki.nixos.org/wiki/Niri)
       programs.niri.enable = true;
-      environment.variables.NIRI_CONFIG = self + "/modules/wrappedPrograms/niri/config.kdl";
+      environment.variables.NIRI_CONFIG = self + "/modules/features/niri/config.kdl";
 
       programs.regreet = {
         enable = true;
