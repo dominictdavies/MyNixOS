@@ -11,21 +11,6 @@
       programs.niri.enable = true;
       environment.variables.NIRI_CONFIG = self + "/modules/features/niri/config.kdl";
 
-      # ReGreet (https://github.com/rharish101/regreet)
-      programs.regreet = {
-        enable = true;
-        cageArgs = [
-          "-s" # Allow virtual terminal switching.
-          "-d" # Don't draw client side decorations when possible.
-          "-m" # Set the multi-monitor behavior.
-          "last" # Cage uses only the last connected monitor.
-        ];
-        settings.background = {
-          path = self + "/assets/wallpapers/stanley_parable_desk_lined.png";
-          fit = "Cover";
-        };
-      };
-
       xdg.portal = {
         enable = true;
         extraPortals = with pkgs; [

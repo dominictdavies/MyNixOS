@@ -50,14 +50,6 @@
         printing.enable = true;
       };
 
-      security = {
-        polkit.enable = true;
-        pam.services = {
-          login.fprintAuth = false;
-          greetd.fprintAuth = false;
-        };
-      };
-
       programs = {
         seahorse.enable = true;
 
