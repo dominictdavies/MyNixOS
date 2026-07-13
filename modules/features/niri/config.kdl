@@ -2,7 +2,7 @@ spawn-at-startup "noctalia"
 
 switch-events {
     lid-close {
-        spawn "noctalia" "ipc" "call" "lockScreen" "lock"
+        spawn "noctalia" "msg" "session" "lock"
     }
 }
 
@@ -184,24 +184,23 @@ binds {
     Mod+Alt+3 { spawn-sh "bash -ci deltarune"; }
 
     // Noctalia
-    Ctrl+Alt+Delete { spawn-sh "noctalia ipc call sessionMenu toggle"; }
-    Ctrl+Alt+Slash { spawn-sh "noctalia ipc call launcher toggle"; }
-    Ctrl+Alt+L { spawn-sh "noctalia ipc call lockScreen lock"; }
+    Ctrl+Alt+Delete { spawn-sh "noctalia msg panel-open session"; }
+    Ctrl+Alt+Slash { spawn-sh "noctalia msg panel-open launcher"; }
+    Ctrl+Alt+L { spawn-sh "noctalia msg session lock"; }
 
-    XF86AudioPlay { spawn-sh "noctalia ipc call media playPause"; }
-    XF86AudioStop { spawn-sh "noctalia ipc call media stop"; }
-    XF86AudioPrev { spawn-sh "noctalia ipc call media previous"; }
-    XF86AudioNext { spawn-sh "noctalia ipc call media next"; }
-    XF86AudioMute { spawn-sh "noctalia ipc call volume muteOutput"; }
-    XF86AudioLowerVolume { spawn-sh "noctalia ipc call volume decrease"; }
-    XF86AudioRaiseVolume { spawn-sh "noctalia ipc call volume increase"; }
-    XF86MonBrightnessDown { spawn-sh "noctalia ipc call brightness decrease"; }
-    XF86MonBrightnessUp { spawn-sh "noctalia ipc call brightness increase"; }
-    XF86AudioMedia { spawn-sh "noctalia ipc call media toggle"; }
-    XF86Explorer { spawn-sh "noctalia ipc call systemMonitor toggle"; }
-    XF86Search { spawn-sh "noctalia ipc call launcher toggle"; }
+    XF86AudioPlay { spawn-sh "noctalia msg media toggle"; }
+    XF86AudioStop { spawn-sh "noctalia msg media stop"; }
+    XF86AudioPrev { spawn-sh "noctalia msg media previous"; }
+    XF86AudioNext { spawn-sh "noctalia msg media next"; }
+    XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
+    XF86AudioLowerVolume { spawn-sh "noctalia msg volume-down 2"; }
+    XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up 2"; }
+    XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down all 2"; }
+    XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up all 2"; }
+    XF86Explorer { spawn-sh "noctalia msg dpms-off"; }
+    XF86Search { spawn-sh "noctalia msg panel-open launcher"; }
     XF86Calculator { spawn-sh "gnome-calculator"; }
-    XF86Tools { spawn-sh "noctalia ipc call controlCenter toggle"; }
+    XF86Tools { spawn-sh "noctalia msg panel-open control-center"; }
 }
 
 hotkey-overlay {
@@ -214,18 +213,6 @@ layout {
     focus-ring {
         width 8
     }
-}
-
-// Noctalia Setup (https://docs.noctalia.dev/getting-started/compositor-settings/niri/)
-debug {
-  // Allows notification actions and window activation from Noctalia.
-  honor-xdg-activation-with-invalid-serial
-}
-
-layer-rule {
-  // Set the overview wallpaper on the backdrop.
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
 }
 
 // First 60 seconds
