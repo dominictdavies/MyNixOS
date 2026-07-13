@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 toast() {
-    noctalia-shell ipc call toast send "{\"title\": \"$1\"}"
+    noctalia ipc call toast send "{\"title\": \"$1\"}"
 }
 
 if (( RANDOM % 100 == 0)); then

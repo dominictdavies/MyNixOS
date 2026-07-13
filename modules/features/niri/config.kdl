@@ -1,8 +1,8 @@
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 
 switch-events {
     lid-close {
-        spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"
+        spawn "noctalia" "ipc" "call" "lockScreen" "lock"
     }
 }
 
@@ -184,24 +184,24 @@ binds {
     Mod+Alt+3 { spawn-sh "bash -ci deltarune"; }
 
     // Noctalia
-    Ctrl+Alt+Delete { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
-    Ctrl+Alt+Slash { spawn-sh "noctalia-shell ipc call launcher toggle"; }
-    Ctrl+Alt+L { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
+    Ctrl+Alt+Delete { spawn-sh "noctalia ipc call sessionMenu toggle"; }
+    Ctrl+Alt+Slash { spawn-sh "noctalia ipc call launcher toggle"; }
+    Ctrl+Alt+L { spawn-sh "noctalia ipc call lockScreen lock"; }
 
-    XF86AudioPlay { spawn-sh "noctalia-shell ipc call media playPause"; }
-    XF86AudioStop { spawn-sh "noctalia-shell ipc call media stop"; }
-    XF86AudioPrev { spawn-sh "noctalia-shell ipc call media previous"; }
-    XF86AudioNext { spawn-sh "noctalia-shell ipc call media next"; }
-    XF86AudioMute { spawn-sh "noctalia-shell ipc call volume muteOutput"; }
-    XF86AudioLowerVolume { spawn-sh "noctalia-shell ipc call volume decrease"; }
-    XF86AudioRaiseVolume { spawn-sh "noctalia-shell ipc call volume increase"; }
-    XF86MonBrightnessDown { spawn-sh "noctalia-shell ipc call brightness decrease"; }
-    XF86MonBrightnessUp { spawn-sh "noctalia-shell ipc call brightness increase"; }
-    XF86AudioMedia { spawn-sh "noctalia-shell ipc call media toggle"; }
-    XF86Explorer { spawn-sh "noctalia-shell ipc call systemMonitor toggle"; }
-    XF86Search { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    XF86AudioPlay { spawn-sh "noctalia ipc call media playPause"; }
+    XF86AudioStop { spawn-sh "noctalia ipc call media stop"; }
+    XF86AudioPrev { spawn-sh "noctalia ipc call media previous"; }
+    XF86AudioNext { spawn-sh "noctalia ipc call media next"; }
+    XF86AudioMute { spawn-sh "noctalia ipc call volume muteOutput"; }
+    XF86AudioLowerVolume { spawn-sh "noctalia ipc call volume decrease"; }
+    XF86AudioRaiseVolume { spawn-sh "noctalia ipc call volume increase"; }
+    XF86MonBrightnessDown { spawn-sh "noctalia ipc call brightness decrease"; }
+    XF86MonBrightnessUp { spawn-sh "noctalia ipc call brightness increase"; }
+    XF86AudioMedia { spawn-sh "noctalia ipc call media toggle"; }
+    XF86Explorer { spawn-sh "noctalia ipc call systemMonitor toggle"; }
+    XF86Search { spawn-sh "noctalia ipc call launcher toggle"; }
     XF86Calculator { spawn-sh "gnome-calculator"; }
-    XF86Tools { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
+    XF86Tools { spawn-sh "noctalia ipc call controlCenter toggle"; }
 }
 
 hotkey-overlay {

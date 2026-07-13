@@ -11,9 +11,6 @@
       programs.niri.enable = true;
       environment.variables.NIRI_CONFIG = self + "/modules/features/niri/config.kdl";
 
-      # Noctalia (https://noctalia.dev)
-      programs.noctalia.enable = true;
-
       # ReGreet (https://github.com/rharish101/regreet)
       programs.regreet = {
         enable = true;
