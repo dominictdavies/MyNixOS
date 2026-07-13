@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ self, ... }:
 {
   flake.nixosModules.niri =
     { pkgs, ... }:
@@ -8,10 +8,8 @@
       ];
 
       # niri (https://wiki.nixos.org/wiki/Niri)
-      programs.niri = {
-        enable = true;
-        package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
-      };
+      programs.niri.enable = true;
+      environment.variables.NIRI_CONFIG = self + "/modules/wrappedPrograms/niri/config.kdl";
 
       programs.regreet = {
         enable = true;
@@ -47,14 +45,5 @@
         "d /home/dominictdavies/.icons 0755 dominictdavies users -"
         "L+ /home/dominictdavies/.icons/default - - - - ${pkgs.posy-cursors}/share/icons/Posy_Cursor_Black"
       ];
-    };
-
-  perSystem =
-    { pkgs, ... }:
-    {
-      packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
-        inherit pkgs;
-        "config.kdl".content = (builtins.readFile ./config.kdl);
-      };
     };
 }
