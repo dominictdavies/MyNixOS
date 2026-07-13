@@ -1,13 +1,10 @@
-{ self, ... }:
+{ inputs, ... }:
 {
   flake.nixosModules.noctalia =
     { pkgs, ... }:
     {
-      environment.systemPackages = [ pkgs.noctalia-shell ];
-      environment.variables.NOCTALIA_SETTINGS_FILE = self + "/modules/features/noctalia/config.json";
-
-      programs.bash.shellAliases = {
-        mynix-noctalia-config = "(cd ~/MyNixOS/modules/features/noctalia && nix run nixpkgs#noctalia-shell ipc call state all > config.json)";
-      };
+      environment.systemPackages = [
+        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+      ];
     };
 }
