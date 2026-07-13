@@ -14,9 +14,5 @@
       HandleLidSwitchExternalPower = "lock";
       HandleLidSwitchDocked = "ignore";
     };
-
-    ## Power management
-    powerManagement.enable = true;
-    services.upower.enable = true;
   };
 }
