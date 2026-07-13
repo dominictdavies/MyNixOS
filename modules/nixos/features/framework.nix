@@ -14,5 +14,8 @@
       HandleLidSwitchExternalPower = "lock";
       HandleLidSwitchDocked = "ignore";
     };
+
+    ## Disable tlp as tuned is enabled
+    services.tlp.enable = false;
   };
 }
