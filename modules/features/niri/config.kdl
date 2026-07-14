@@ -236,6 +236,8 @@ layout {
   gaps 8
   focus-ring {
     width 8
+    active-color "#ffffff66"
+    inactive-color "#ffffff00"
   }
 }
 

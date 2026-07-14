@@ -1,10 +1,7 @@
-[backdrop]
-enabled = true
-
 [bar.default]
 center = [ "workspaces" ]
 contact_shadow = true
-end = [ "notifications", "volume", "brightness", "battery", "clock", "control-center" ]
+end = [ "notifications", "volume", "brightness", "battery", "clock" ]
 margin_ends = 0
 radius = 0
 shadow = false
@@ -165,13 +162,13 @@ directory = "/home/dominictdavies/MyNixOS/assets/wallpapers"
     enabled = true
 
     [wallpaper.default]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/terraria_king_slime.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
 
     [wallpaper.last]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/terraria_king_slime.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/terraria_king_slime.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/terraria_king_slime.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
