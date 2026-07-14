@@ -208,13 +208,6 @@ hotkey-overlay {
     hide-not-bound
 }
 
-layout {
-    gaps 8
-    focus-ring {
-        width 8
-    }
-}
-
 
 // Noctalia Settings (https://docs.noctalia.dev/v5/compositor-settings/niri/)
 
@@ -240,6 +233,10 @@ layer-rule {
 // Set transparent workspace background color so the backdrop is visible at all times
 layout {
   background-color "transparent"
+  gaps 8
+  focus-ring {
+    width 8
+  }
 }
 
 // Disable workspace shadows in the overview
