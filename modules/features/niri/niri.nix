@@ -7,9 +7,14 @@
         self.nixosModules.noctalia
       ];
 
-      # niri (https://wiki.nixos.org/wiki/Niri)
+      # niri (https://wiki.nixos.org/wiki/niri)
       programs.niri.enable = true;
       environment.variables.NIRI_CONFIG = self + "/modules/features/niri/config.kdl";
+
+      environment.systemPackages = with pkgs; [
+        xwayland-satellite
+        posy-cursors
+      ];
 
       xdg.portal = {
         enable = true;
@@ -18,11 +23,6 @@
           xdg-desktop-portal-gnome
         ];
       };
-
-      environment.systemPackages = with pkgs; [
-        xwayland-satellite
-        posy-cursors
-      ];
 
       # GTK/Chromium apps (e.g. Steam's CEF-based UI) resolve the cursor
       # theme via GtkSettings, which without an XSETTINGS daemon falls back

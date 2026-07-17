@@ -5,7 +5,7 @@ end = [ "notifications", "volume", "brightness", "battery", "clock" ]
 margin_ends = 0
 radius = 0
 shadow = false
-start = [ "network", "bluetooth", "clipboard", "media" ]
+start = [ "network", "bluetooth", "clipboard", "taskbar", "media" ]
 
 [battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_0"]
 warning_threshold = 10
