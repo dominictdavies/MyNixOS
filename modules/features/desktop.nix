@@ -30,7 +30,7 @@
         vscode
 
         # Media
-        discord
+        (discord.override { commandLineArgs = "--ozone-platform=x11"; }) # Fix keybinds
         firefox
         spotify
       ];
