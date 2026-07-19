@@ -1,11 +1,11 @@
 [bar.default]
 center = [ "workspaces" ]
 contact_shadow = true
-end = [ "notifications", "volume", "brightness", "battery", "clock" ]
+end = [ "notifications", "bluetooth", "network", "volume", "brightness", "battery", "clock" ]
 margin_ends = 0
 radius = 0
 shadow = false
-start = [ "network", "bluetooth", "clipboard", "taskbar", "media" ]
+start = [ "clipboard", "taskbar", "media" ]
 
 [battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_0"]
 warning_threshold = 10
@@ -162,13 +162,16 @@ directory = "/home/dominictdavies/MyNixOS/assets/wallpapers"
     enabled = true
 
     [wallpaper.default]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
 
     [wallpaper.last]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
+
+[widget.clock]
+format = "{:%H:%M %d/%m/%Y}"
