@@ -8,6 +8,6 @@
         inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 
-      environment.variables.NOCTALIA_CONFIG_HOME = self + "/modules/features/noctalia";
+      environment.variables.NOCTALIA_CONFIG_HOME = self + "/modules/features/";
     };
 }
