@@ -14,20 +14,9 @@
         proton-vpn-cli
 
         # Tools
-        claude-code
-        obs-studio
         obsidian
         scrcpy
         super-productivity
-
-        # Editors
-        audacity
-        gimp
-        godot
-        inkscape
-        poppler-utils
-        shotcut
-        vscode
 
         # Media
         (discord.override { commandLineArgs = "--ozone-platform=x11"; }) # Fix keybinds

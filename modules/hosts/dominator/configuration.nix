@@ -7,6 +7,7 @@
         networking.hostName = "dominator";
         imports = with self.nixosModules; [
           common
+          development
           dominatorHardware
           desktop
           gaming

@@ -7,6 +7,7 @@
         imports = with self.nixosModules; [
           common
           compatibility
+          development
           dominoHardware
           desktop
           gaming
