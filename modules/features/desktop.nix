@@ -33,7 +33,7 @@
       hardware.bluetooth.enable = true;
 
       services = {
-        tuned.enable = true;
+        power-profiles-daemon.enable = true;
         upower.enable = true;
         gnome.gnome-keyring.enable = true;
         printing.enable = true;
