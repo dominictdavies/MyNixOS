@@ -235,9 +235,9 @@ layout {
   background-color "transparent"
   gaps 8
   focus-ring {
-    width 8
-    active-color "#88888888"
-    inactive-color "#00000000"
+    width 4
+    active-color "#ffffff"
+    inactive-color "#666666"
   }
 }
 
