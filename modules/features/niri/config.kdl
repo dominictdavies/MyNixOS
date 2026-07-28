@@ -40,6 +40,11 @@ output "DP-3" {
     position x=760 y=360
     scale 1
 }
+output "DP-4" {
+    mode "3840x2160@30.000"
+    position x=2440 y=1320
+    scale 2
+}
 output "DP-5" {
     mode "3440x1440@120.000"
     position x=0 y=0
