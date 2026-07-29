@@ -31,6 +31,4 @@
 
 ## Known Issues
 
-- Screen remains off after resuming from suspend (on Dominator)
-- Occasionally workspace icons will duplicate on switching monitor focus
 - VSCode requires manually specifying keyring
