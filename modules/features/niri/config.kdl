@@ -222,47 +222,6 @@ binds {
     XF86Tools { spawn-sh "noctalia msg panel-open control-center"; }
 }
 
-// * Noctalia (https://docs.noctalia.dev/v5/compositor-settings/niri/)
-
-spawn-at-startup "noctalia"
-
-// Floating Noctalia settings window
-window-rule {
-  match app-id="dev.noctalia.Noctalia"
-  open-floating true
-  default-column-width { fixed 1080; }
-  default-window-height { fixed 920; }
-}
-
-// Allow notification actions and window activation from Noctalia
-debug {
-  honor-xdg-activation-with-invalid-serial
-}
-
-// Place the regular wallpaper on the backdrop
-layer-rule {
-  match namespace="^noctalia-wallpaper"
-  place-within-backdrop true
-}
-
-// Set transparent workspace background color so the backdrop is visible at all times
-layout {
-  background-color "transparent"
-  gaps 12
-  focus-ring {
-    width 4
-    active-color "#ffffff"
-    inactive-color "#666666"
-  }
-}
-
-// Disable workspace shadows in the overview
-overview {
-  workspace-shadow {
-    off
-  }
-}
-
 // * Rules
 
 // First 60 seconds
@@ -374,5 +333,46 @@ window-rule {
   focus-ring {
     active-gradient angle=90 from="#ff0000" to="#660000"
     inactive-color "#666666"
+  }
+}
+
+// * Noctalia (https://docs.noctalia.dev/v5/compositor-settings/niri/)
+
+spawn-at-startup "noctalia"
+
+// Floating Noctalia settings window
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+// Allow notification actions and window activation from Noctalia
+debug {
+  honor-xdg-activation-with-invalid-serial
+}
+
+// Place the regular wallpaper on the backdrop
+layer-rule {
+  match namespace="^noctalia-wallpaper"
+  place-within-backdrop true
+}
+
+// Set transparent workspace background color so the backdrop is visible at all times
+layout {
+  background-color "transparent"
+  gaps 12
+  focus-ring {
+    width 4
+    active-color "#ffffff"
+    inactive-color "#666666"
+  }
+}
+
+// Disable workspace shadows in the overview
+overview {
+  workspace-shadow {
+    off
   }
 }
