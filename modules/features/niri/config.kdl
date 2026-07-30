@@ -1,10 +1,4 @@
-spawn-at-startup "noctalia"
-
-switch-events {
-    lid-close {
-        spawn "noctalia" "msg" "session" "lock"
-    }
-}
+// * Inputs
 
 input {
     keyboard {
@@ -28,6 +22,8 @@ cursor {
     hide-after-inactive-ms 2000
 }
 
+// * Outputs
+
 // Domino
 output "eDP-1" {
     focus-at-startup
@@ -35,21 +31,25 @@ output "eDP-1" {
     position x=1000 y=1440
     scale 2
 }
+
 output "DP-3" {
     mode "1920x1080@60.000"
     position x=760 y=360
     scale 1
 }
+
 output "DP-4" {
     mode "3840x2160@30.000"
     position x=2440 y=1320
     scale 2
 }
+
 output "DP-5" {
     mode "3440x1440@120.000"
     position x=0 y=0
     scale 1
 }
+
 output "DP-7" {
     mode "3440x1440@120.000"
     position x=0 y=0
@@ -63,18 +63,33 @@ output "ASUSTek COMPUTER INC VG27A N5LMQS090248" {
     position x=2560 y=0
     scale 1
 }
+
 output "LG Electronics LG ULTRAWIDE 0x000221D3" {
     mode "2560x1080@60.000"
     position x=0 y=360
     scale 1
 }
+
 output "Technical Concepts Ltd Beyond TV 0x00010000" {
     mode "3840x2160@120.000"
     position x=0 y=0
     scale 1.5
 }
 
+// * Binds
+
 // Use `nix-shell -p wev --command wev` to find key names
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
+
+switch-events {
+    lid-close {
+        spawn "noctalia" "msg" "session" "lock"
+    }
+}
+
 binds {
     // General
     Mod+Ctrl+Alt+Q { quit; }
@@ -207,13 +222,9 @@ binds {
     XF86Tools { spawn-sh "noctalia msg panel-open control-center"; }
 }
 
-hotkey-overlay {
-    skip-at-startup
-    hide-not-bound
-}
+// * Noctalia (https://docs.noctalia.dev/v5/compositor-settings/niri/)
 
-
-// Noctalia Settings (https://docs.noctalia.dev/v5/compositor-settings/niri/)
+spawn-at-startup "noctalia"
 
 // Floating Noctalia settings window
 window-rule {
@@ -252,6 +263,7 @@ overview {
   }
 }
 
+// * Rules
 
 // First 60 seconds
 window-rule {
@@ -292,6 +304,7 @@ window-rule {
     on
   }
 }
+
 window-rule {
   match title="^DELTARUNE$"
 
@@ -300,6 +313,7 @@ window-rule {
     inactive-color "#666666"
   }
 }
+
 window-rule {
   match title="^DELTARUNE Chapter 1$"
 
@@ -308,6 +322,7 @@ window-rule {
     inactive-color "#666666"
   }
 }
+
 window-rule {
   match title="^DELTARUNE Chapter 2$"
 
@@ -316,6 +331,7 @@ window-rule {
     inactive-color "#666666"
   }
 }
+
 window-rule {
   match title="^DELTARUNE Chapter 3$"
 
@@ -324,6 +340,7 @@ window-rule {
     inactive-color "#666666"
   }
 }
+
 window-rule {
   match title="^DELTARUNE Chapter 4$"
 
@@ -332,6 +349,7 @@ window-rule {
     inactive-color "#666666"
   }
 }
+
 window-rule {
   match title="^DELTARUNE Chapter 5$"
 
@@ -340,6 +358,7 @@ window-rule {
     inactive-color "#666666"
   }
 }
+
 window-rule {
   match title="^DELTARUNE Chapter 6$"
 
@@ -348,6 +367,7 @@ window-rule {
     inactive-color "#666666"
   }
 }
+
 window-rule {
   match title="^DELTARUNE Chapter 7$"
 
