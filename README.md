@@ -12,16 +12,6 @@
 
 `ssh-keygen`
 
-### Windows Machine
-
-`mkdir ~/Machines && cd ~/Machines`
-
-`quickget windows 11`
-
-- Follow instructions to resolve download
-
-`nix-shell -p wget --run "wget -O ~/Machines/windows-11/virtio-win.iso https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso"`
-
 ### VSCode Runtime Arguments
 
 ```json
