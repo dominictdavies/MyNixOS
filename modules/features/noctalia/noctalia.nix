@@ -8,7 +8,7 @@
         inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 
-      environment.sessionVariables.NOCTALIA_CONFIG_HOME = self + "/modules/features/";
+      environment.sessionVariables.NOCTALIA_CONFIG_HOME = "$HOME/MyNixOS/modules/features/";
 
       programs.bash.shellAliases = {
         mynix-noctalia = "(cd ~/MyNixOS/modules/features/noctalia && noctalia config export merged > config.toml && git add config.toml && git commit -m \"Update noctalia\" && git push)";
