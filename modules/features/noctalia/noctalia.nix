@@ -9,5 +9,10 @@
       ];
 
       environment.variables.NOCTALIA_CONFIG_HOME = self + "/modules/features/";
+
+      programs.bash.shellAliases = {
+        mynix-noctalia = "(cd ~/MyNixOS/modules/features/noctalia && noctalia config export merged > config.toml && git add config.toml && git commit -m \"Update noctalia\" && git push)";
+        mynix-noctalia-switch = "mynix-noctalia && noctalia msg config-reload";
+      };
     };
 }
