@@ -8,13 +8,24 @@
       ];
 
       # niri (https://wiki.nixos.org/wiki/niri)
-      programs.niri.enable = true;
-      environment.sessionVariables.NIRI_CONFIG = "$HOME/MyNixOS/modules/features/niri/config.kdl";
+      programs = {
+        niri.enable = true;
 
-      environment.systemPackages = with pkgs; [
-        xwayland-satellite
-        posy-cursors
-      ];
+        # Start niri automatically
+        bash.loginShellInit = ''
+          if [ "$(tty)" = "/dev/tty1" ]; then
+            exec niri-session
+          fi
+        '';
+      };
+
+      environment = {
+        sessionVariables.NIRI_CONFIG = "$HOME/MyNixOS/modules/features/niri/config.kdl";
+        systemPackages = with pkgs; [
+          xwayland-satellite
+          posy-cursors
+        ];
+      };
 
       xdg.portal = {
         enable = true;
