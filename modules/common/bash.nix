@@ -16,11 +16,11 @@
           mynix-pull = "(cd ~/MyNixOS && git pull --rebase)";
           mynix-pull-switch = "mynix-pull && mynix-switch";
           mynix-pull-boot = "mynix-pull && mynix-boot";
-          mynix-update = "(cd ~/MyNixOS && nix flake update && git add flake.lock && git commit -m \"Update flake\" && git push)";
-          mynix-update-switch = "mynix-update && mynix-switch";
-          mynix-update-boot = "mynix-update && mynix-boot";
-          mynix-all-switch = "mynix-pull && mynix-update && mynix-switch";
-          mynix-all-boot = "mynix-pull && mynix-update && mynix-boot";
+          mynix-flake = "(cd ~/MyNixOS && nix flake update && git add flake.lock && git commit -m \"Update flake\" && git push)";
+          mynix-flake-switch = "mynix-flake && mynix-switch";
+          mynix-flake-boot = "mynix-flake && mynix-boot";
+          mynix-all-switch = "mynix-pull && mynix-flake && mynix-switch";
+          mynix-all-boot = "mynix-pull && mynix-flake && mynix-boot";
 
           # Shells
           shell = "cp ~/MyNixOS/shells/shell.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
