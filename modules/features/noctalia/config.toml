@@ -230,16 +230,16 @@ directory = "/home/dominictdavies/MyNixOS/assets/wallpapers"
     enabled = true
 
     [wallpaper.default]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
 
     [wallpaper.last]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
 
     [wallpaper.monitors.DP-2]
     path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
 
     [wallpaper.monitors.DP-4]
     path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
@@ -248,7 +248,7 @@ directory = "/home/dominictdavies/MyNixOS/assets/wallpapers"
     path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
 
 [widget.battery]
 show_label = false
