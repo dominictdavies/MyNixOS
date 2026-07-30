@@ -41,7 +41,7 @@
 
       security = {
         polkit.enable = true;
-        pam.services.login.fprintAuth = false;
+        pam.services.login.enableGnomeKeyring = true;
       };
 
       programs = {
