@@ -238,9 +238,9 @@ layer-rule {
 // Set transparent workspace background color so the backdrop is visible at all times
 layout {
   background-color "transparent"
-  gaps 16
+  gaps 12
   focus-ring {
-    width 8
+    width 4
     active-color "#ffffff"
     inactive-color "#666666"
   }
