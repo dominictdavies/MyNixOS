@@ -9,7 +9,7 @@
 
       # niri (https://wiki.nixos.org/wiki/niri)
       programs.niri.enable = true;
-      environment.variables.NIRI_CONFIG = self + "/modules/features/niri/config.kdl";
+      environment.sessionVariables.NIRI_CONFIG = self + "/modules/features/niri/config.kdl";
 
       environment.systemPackages = with pkgs; [
         xwayland-satellite
