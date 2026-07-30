@@ -19,6 +19,7 @@
 "password-store": "gnome-libsecret"
 ```
 
-## Known Issues
+## TODO
 
-- VSCode requires manually specifying keyring
+- Add dominion and domicile
+- Automatically specify VSCode keyring
