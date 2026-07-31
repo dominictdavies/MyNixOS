@@ -14,7 +14,7 @@
         proton-vpn-cli
 
         # Tools
-        obsidian
+        logseq
         scrcpy
         super-productivity
 
