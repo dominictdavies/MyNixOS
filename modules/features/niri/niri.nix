@@ -24,7 +24,7 @@
         sessionVariables.NIRI_CONFIG = "$HOME/MyNixOS/modules/features/niri/config.kdl";
         systemPackages = with pkgs; [
           xwayland-satellite
-          posy-cursors
+          bibata-cursors
         ];
       };
 
@@ -35,13 +35,5 @@
           xdg-desktop-portal-gnome
         ];
       };
-
-      # GTK/Chromium apps (e.g. Steam's CEF-based UI) resolve the cursor
-      # theme via GtkSettings, which without an XSETTINGS daemon falls back
-      # to the conventional ~/.icons/default theme rather than XCURSOR_THEME.
-      systemd.tmpfiles.rules = [
-        "d /home/dominictdavies/.icons 0755 dominictdavies users -"
-        "L+ /home/dominictdavies/.icons/default - - - - ${pkgs.posy-cursors}/share/icons/Posy_Cursor_Black"
-      ];
     };
 }

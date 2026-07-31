@@ -22,7 +22,7 @@ input {
 
 cursor {
     xcursor-size 40
-    xcursor-theme "Posy_Cursor_Black"
+    xcursor-theme "Bibata-Modern-Classic"
     hide-after-inactive-ms 2000
 }
 
