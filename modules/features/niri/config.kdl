@@ -21,7 +21,7 @@ input {
 }
 
 cursor {
-    xcursor-size 40
+    xcursor-size 24
     xcursor-theme "Bibata-Modern-Classic"
     hide-after-inactive-ms 2000
 }
