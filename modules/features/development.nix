@@ -4,7 +4,6 @@
     {
       environment.systemPackages = with pkgs; [
         # Programming
-        claude-code
         devenv
         vscodium
 
