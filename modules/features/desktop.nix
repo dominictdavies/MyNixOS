@@ -20,7 +20,7 @@
 
         # Media
         firefox
-        spotify
+        ncspot
         vesktop
       ];
 
