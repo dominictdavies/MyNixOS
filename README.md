@@ -12,14 +12,6 @@
 
 `ssh-keygen`
 
-### VSCode Runtime Arguments
-
-```json
-// Use GNOME keyring
-"password-store": "gnome-libsecret"
-```
-
 ## TODO
 
 - Add dominion and domicile
-- Automatically specify VSCode keyring

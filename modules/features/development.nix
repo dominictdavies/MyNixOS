@@ -6,7 +6,7 @@
         # Programming
         claude-code
         devenv
-        vscode
+        vscodium
 
         # Audio
         audacity
