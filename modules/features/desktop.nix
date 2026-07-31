@@ -14,7 +14,7 @@
         proton-vpn-cli
 
         # Tools
-        logseq
+        joplin-desktop
         scrcpy
         super-productivity
 
