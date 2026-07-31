@@ -13,7 +13,8 @@
 
         # Start niri automatically
         bash.loginShellInit = ''
-          if [ "$(tty)" = "/dev/tty1" ]; then
+          if [ "$(tty)" = "/dev/tty1" ] && [ -z "''${NIRI_AUTOSTARTED:-}" ]; then
+            export NIRI_AUTOSTARTED=1
             exec niri-session
           fi
         '';
