@@ -19,9 +19,9 @@
         super-productivity
 
         # Media
-        (discord.override { commandLineArgs = "--ozone-platform=x11"; }) # Fix keybinds
         firefox
         spotify
+        vesktop
       ];
 
       xdg.mime.defaultApplications = {
