@@ -16,14 +16,6 @@
       nixpkgs.config.allowUnfreePredicate =
         pkg:
         builtins.elem (lib.getName pkg) [
-          # Firmware
-          "b43-firmware"
-          "broadcom-bt-firmware"
-          "facetimehd-firmware"
-          "facetimehd-calibration"
-          "xone-dongle-firmware"
-
-          # Steam
           "steam"
           "steam-unwrapped"
         ];
