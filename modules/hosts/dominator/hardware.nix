@@ -12,7 +12,7 @@
     {
       imports = [
         (modulesPath + "/installer/scan/not-detected.nix")
-        self.nixosModules.gpu
+        self.nixosModules.graphics
       ];
 
       boot.initrd.availableKernelModules = [
