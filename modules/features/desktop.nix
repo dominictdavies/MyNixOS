@@ -1,7 +1,7 @@
 { self, ... }:
 {
   flake.nixosModules.desktop =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       imports = with self.nixosModules; [
         gnome
@@ -55,8 +55,8 @@
 
         bash.shellAliases = {
           open = "xdg-open";
-          help-keyboard = "open ~/MyNixOS/assets/information/keyboard_layout.png";
-          help-cards = "open ~/MyNixOS/assets/information/card_functionality.png";
+          help-keyboard = "open ${config.my.repoRoot}/assets/information/keyboard_layout.png";
+          help-cards = "open ${config.my.repoRoot}/assets/information/card_functionality.png";
         };
       };
 
