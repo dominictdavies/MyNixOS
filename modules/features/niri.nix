@@ -1,7 +1,7 @@
 { self, ... }:
 {
   flake.nixosModules.niri =
-    { pkgs, ... }:
+    { config, pkgs, ... }:
     {
       imports = [
         self.nixosModules.noctalia
@@ -21,7 +21,7 @@
       };
 
       environment = {
-        sessionVariables.NIRI_CONFIG = "$HOME/MyNixOS/modules/features/niri/config.kdl";
+        sessionVariables.NIRI_CONFIG = "${config.my.repoRoot}/dotfiles/niri.kdl";
         systemPackages = with pkgs; [
           xwayland-satellite
           bibata-cursors
