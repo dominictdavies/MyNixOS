@@ -12,7 +12,6 @@
           enable = true;
 
           shellAliases = {
-            # MyNixOS
             mynix-switch = "nh os switch";
             mynix-boot = "nh os boot";
             mynix-pull = "(cd ${config.my.repoRoot} && git pull --rebase)";
@@ -23,11 +22,6 @@
             mynix-flake-boot = "mynix-flake && mynix-boot";
             mynix-all-switch = "mynix-pull && mynix-flake && mynix-switch";
             mynix-all-boot = "mynix-pull && mynix-flake && mynix-boot";
-
-            # Shells
-            shell = "cp ${config.my.repoRoot}/shells/shell.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
-            shell-python = "cp ${config.my.repoRoot}/shells/python.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
-            shell-rust = "cp ${config.my.repoRoot}/shells/rust.nix ./shell.nix && echo use nix > .envrc && direnv allow .";
           };
         };
 
