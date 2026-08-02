@@ -1,0 +1,9 @@
+{
+    "workbench.startupEditor": "none",
+    "files.autoSave": "afterDelay",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "editor.formatOnSave": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false
+}

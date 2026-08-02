@@ -1,11 +1,15 @@
+{ self, ... }:
 {
   flake.nixosModules.development =
     { pkgs, ... }:
     {
+      imports = [
+        self.nixosModules.vscodium
+      ];
+
       environment.systemPackages = with pkgs; [
         # Programming
         devenv
-        vscodium
 
         # Audio
         audacity
