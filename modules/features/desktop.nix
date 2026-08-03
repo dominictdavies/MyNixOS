@@ -12,15 +12,14 @@
         # Terminal
         kitty
         proton-vpn-cli
+        scrcpy
 
         # Tools
         joplin-desktop
-        scrcpy
         super-productivity
 
         # Media
         firefox
-        ncspot
         vesktop
       ];
 
