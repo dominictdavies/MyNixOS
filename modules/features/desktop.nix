@@ -36,17 +36,21 @@
         power-profiles-daemon.enable = true;
         upower.enable = true;
         gnome.gnome-keyring.enable = true;
+
+        # Printing (https://wiki.nixos.org/wiki/Printing)
+
+        avahi = {
+          enable = true;
+          nssmdns4 = true;
+          openFirewall = true;
+        };
+
         printing = {
           enable = true;
           drivers = with pkgs; [
             cups-filters
             cups-browsed
           ];
-        };
-        avahi = {
-          enable = true;
-          nssmdns4 = true;
-          openFirewall = true;
         };
       };
 
