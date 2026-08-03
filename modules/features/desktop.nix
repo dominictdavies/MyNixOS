@@ -20,6 +20,7 @@
 
         # Media
         firefox
+        jellyfin
         vesktop
       ];
 
