@@ -1,7 +1,7 @@
 [bar.default]
 center = [ "workspaces" ]
 contact_shadow = true
-end = [ "notifications", "bluetooth", "network", "volume", "brightness", "battery", "clock" ]
+end = [ "notifications", "network", "bluetooth", "volume", "brightness", "battery", "clock" ]
 margin_ends = 0
 radius = 0
 shadow = false
@@ -217,6 +217,7 @@ telemetry_enabled = true
     direction = "center"
 
 [theme]
+mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "soft"
 
@@ -230,16 +231,16 @@ directory = "/home/dominictdavies/MyNixOS/assets/wallpapers"
     enabled = true
 
     [wallpaper.default]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/terraria_king_slime.png"
 
     [wallpaper.last]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/terraria_king_slime.png"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/terraria_king_slime.png"
 
     [wallpaper.monitors.DP-4]
     path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
@@ -248,7 +249,7 @@ directory = "/home/dominictdavies/MyNixOS/assets/wallpapers"
     path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/terraria_king_slime.png"
 
 [widget.battery]
 show_label = false
