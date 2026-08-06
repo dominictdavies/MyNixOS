@@ -69,8 +69,9 @@
 
         bash.shellAliases = {
           open = "xdg-open";
-          help-keyboard = "open ${config.my.repoRoot}/assets/information/keyboard_layout.png";
           help-cards = "open ${config.my.repoRoot}/assets/information/card_functionality.png";
+          help-keyboard = "open ${config.my.repoRoot}/assets/information/keyboard_layout.png";
+          help-latex = "open ${config.my.repoRoot}/assets/information/latex_symbols.pdf";
         };
       };
 
