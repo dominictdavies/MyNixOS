@@ -17,7 +17,6 @@
         gnome-music
         nautilus
         papers
-        showtime
         snapshot
         gnome-system-monitor
         gnome-text-editor

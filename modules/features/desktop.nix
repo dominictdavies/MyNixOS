@@ -21,6 +21,7 @@
         # Media
         firefox
         vesktop
+        vlc
       ];
 
       xdg.mime.defaultApplications = {
