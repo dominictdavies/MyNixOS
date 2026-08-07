@@ -20,6 +20,7 @@
 
         # Media
         firefox
+        soundfont-fluid
         vesktop
         vlc
       ];
