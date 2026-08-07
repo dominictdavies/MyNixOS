@@ -4,7 +4,10 @@
     "git.confirmSync": false,
     "git.autofetch": true,
     "editor.formatOnSave": true,
-    "editor.rulers": [80],
+    "editor.rulers": [
+        80
+    ],
     "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "editor.renderWhitespace": "trailing"
 }
