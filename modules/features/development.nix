@@ -10,6 +10,7 @@
       environment.systemPackages = with pkgs; [
         # Programming
         devenv
+        nixfmt
 
         # Audio
         audacity
