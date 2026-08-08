@@ -17,11 +17,11 @@
         # Tools
         joplin-desktop
         super-productivity
+        vlc
 
         # Media
         firefox
         vesktop
-        vlc
       ];
 
       xdg.mime.defaultApplications = {
