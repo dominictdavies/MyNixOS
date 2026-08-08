@@ -28,5 +28,10 @@
         # Game
         godot
       ];
+
+      # Auto Activation (https://devenv.sh/auto-activation/)
+      programs.bash.interactiveShellInit = ''
+        eval "$(devenv hook bash)"
+      '';
     };
 }
