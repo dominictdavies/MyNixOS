@@ -12,5 +12,6 @@
     "editor.renderWhitespace": "trailing",
     "git.suggestSmartCommit": false,
     "latex-workshop.latex.outDir": "%DIR%/build/",
-    "latex-workshop.formatting.latex": "latexindent"
+    "latex-workshop.formatting.latex": "latexindent",
+    "python.terminal.useEnvFile": true
 }
