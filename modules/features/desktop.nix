@@ -11,6 +11,7 @@
       environment.systemPackages = with pkgs; [
         # Terminal
         kitty
+        opencode
         proton-vpn-cli
         scrcpy
 

@@ -194,6 +194,7 @@ binds {
     Mod+Alt+J { spawn-sh "joplin-desktop"; }
     Mod+Alt+M { spawn-sh "gnome-calculator"; }
     Mod+Alt+N { spawn-sh "nautilus"; }
+    Mod+Alt+O { spawn-sh "kitty --hold opencode"; }
     Mod+Alt+P { spawn-sh "scrcpy"; }
     Mod+Alt+Q { spawn-sh "~/MyNixOS/scripts/flip_coin.sh"; }
     Mod+Alt+R { spawn-sh "remmina"; }
