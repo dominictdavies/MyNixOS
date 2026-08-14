@@ -26,8 +26,24 @@
       ];
 
       xdg.mime.defaultApplications = {
-        "image/png" = "org.gnome.Loupe.desktop";
+        "audio/flac" = "vlc.desktop";
+        "audio/mp4" = "vlc.desktop";
+        "audio/mpeg" = "vlc.desktop";
+        "audio/ogg" = "vlc.desktop";
+        "audio/wav" = "vlc.desktop";
+
+        "video/mp4" = "vlc.desktop";
+        "video/webm" = "vlc.desktop";
+        "video/quicktime" = "vlc.desktop";
+        "video/x-matroska" = "vlc.desktop";
+        "video/x-msvideo" = "vlc.desktop";
+
+        "image/bmp" = "org.gnome.Loupe.desktop";
+        "image/gif" = "org.gnome.Loupe.desktop";
         "image/jpeg" = "org.gnome.Loupe.desktop";
+        "image/png" = "org.gnome.Loupe.desktop";
+        "image/webp" = "org.gnome.Loupe.desktop";
+
         "application/pdf" = "org.gnome.Papers.desktop";
       };
 
