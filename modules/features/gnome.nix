@@ -20,6 +20,9 @@
         snapshot
         gnome-system-monitor
         gnome-text-editor
+
+        # Trash support (https://wiki.gnome.org/Projects/gvfs)
+        gvfs
       ];
     };
 }
