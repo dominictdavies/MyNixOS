@@ -2,6 +2,9 @@
   flake.nixosModules.gnome =
     { pkgs, ... }:
     {
+      # Trash support (https://wiki.gnome.org/Projects/gvfs)
+      services.gvfs.enable = true;
+
       environment.systemPackages = with pkgs; [
         # GNOME (https://apps.gnome.org/en/)
         baobab
@@ -20,9 +23,6 @@
         snapshot
         gnome-system-monitor
         gnome-text-editor
-
-        # Trash support (https://wiki.gnome.org/Projects/gvfs)
-        gvfs
       ];
     };
 }
