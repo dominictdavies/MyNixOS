@@ -10,7 +10,7 @@ line=$(shuf -n 1 "$SCRIPT_DIR/advice_list.txt")
 author=$(echo "$line" | grep -oP ' ~ \K.*')
 advice=$(echo "$line" | sed 's/ ~.*//')
 
-echo "$advice" | grep -oP '[^.!?]+[.!?]' | while read -r sentence; do
+echo "$advice" | grep -oP '[^,.!?]+[,.!?]' | while read -r sentence; do
     toast "$author" "$sentence"
     sleep 5
 done
