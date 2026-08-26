@@ -10,6 +10,9 @@
       ];
 
       environment.systemPackages = with pkgs; [
+        # Desktop
+        papirus-icon-theme
+
         # CLI
         opencode
         proton-vpn-cli
@@ -81,7 +84,10 @@
 
         dconf.profiles.user.databases = [
           {
-            settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+            settings."org/gnome/desktop/interface" = {
+              color-scheme = "prefer-dark";
+              icon-theme = "Papirus-Dark";
+            };
           }
         ];
 
