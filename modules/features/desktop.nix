@@ -5,18 +5,18 @@
     {
       imports = with self.nixosModules; [
         gnome
+        kitty
         niri
       ];
 
       environment.systemPackages = with pkgs; [
-        # Terminal
-        kitty
+        # CLI
         opencode
         proton-vpn-cli
-        scrcpy
 
         # Tools
         joplin-desktop
+        scrcpy
         super-productivity
         vlc
 
