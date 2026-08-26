@@ -6,6 +6,8 @@
       extraGroups = [
         "wheel"
         "networkmanager"
+        "storage"
+        "plugdev"
       ];
     };
   };
