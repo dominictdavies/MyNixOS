@@ -4,6 +4,9 @@
     {
       environment.systemPackages = with pkgs; [
         kitty
+      ];
+
+      fonts.packages = with pkgs; [
         nerd-fonts.jetbrains-mono
       ];
 
