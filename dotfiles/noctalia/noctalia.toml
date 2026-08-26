@@ -32,7 +32,7 @@ order = [ "default" ]
     concave_edge_corners = true
     contact_shadow = true
     enabled = true
-    end = [ "notifications", "bluetooth", "network", "volume", "brightness", "battery", "clock" ]
+    end = [ "notifications", "network", "bluetooth", "volume", "brightness", "battery", "clock" ]
     font_weight = 500
     hover_highlight = true
     layer = "top"
@@ -249,33 +249,34 @@ tint_intensity = 0.0
 wallpaper = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
 
 [lockscreen_widgets]
-enabled = true
+enabled = false
 schema_version = 2
 widget_order = [
-    "lockscreen-login-box@HDMI-A-1",
-    "lockscreen-login-box@DP-2",
-    "lockscreen-widget-0000000000000001",
-    "lockscreen-widget-0000000000000003"
+    "lockscreen-login-box@DP-5",
+    "lockscreen-login-box@DP-7",
+    "lockscreen-login-box@DP-3",
+    "lockscreen-login-box@DP-4",
+    "lockscreen-login-box@eDP-1"
 ]
 
     [lockscreen_widgets.grid]
-    cell_size = 24
+    cell_size = 16
     major_interval = 4
     visible = true
 
-    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
     box_height = 196.0
-    box_width = 720.0
-    cx = 1280.0
-    cy = 1032.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
     enabled = true
-    output = "DP-2"
-    placement_height = 1440.0
-    placement_width = 2560.0
+    output = "DP-3"
+    placement_height = 0.0
+    placement_width = 0.0
     rotation = 0.0
     type = "login_box"
 
-        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
         background_color = "surface_variant"
         background_opacity = 0.88
         background_radius = 12.0
@@ -291,19 +292,19 @@ widget_order = [
         show_unlock_hint = true
         show_weather = true
 
-    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-4"]
     box_height = 196.0
     box_width = 720.0
-    cx = 1280.0
+    cx = 960.0
     cy = 961.0
     enabled = true
-    output = "HDMI-A-1"
-    placement_height = 1080.0
-    placement_width = 2560.0
+    output = "DP-4"
+    placement_height = 0.0
+    placement_width = 0.0
     rotation = 0.0
     type = "login_box"
 
-        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-4".settings]
         background_color = "surface_variant"
         background_opacity = 0.88
         background_radius = 12.0
@@ -319,49 +320,89 @@ widget_order = [
         show_unlock_hint = true
         show_weather = true
 
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-    box_height = 128.0
-    box_width = 288.0
-    cx = 1280.0
-    cy = 368.0
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-5"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1720.0
+    cy = 1258.0
     enabled = true
-    output = "DP-2"
+    output = "DP-5"
     placement_height = 1440.0
-    placement_width = 2560.0
+    placement_width = 3440.0
     rotation = 0.0
-    type = "clock"
+    type = "login_box"
 
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-5".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
-    box_height = 312.0
-    box_width = 360.0
-    cx = 1284.0
-    cy = 620.0
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-7"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1720.0
+    cy = 1258.0
     enabled = true
-    output = "DP-2"
-    placement_height = 1440.0
-    placement_width = 2560.0
+    output = "DP-7"
+    placement_height = 0.0
+    placement_width = 0.0
     rotation = 0.0
-    type = "fancy_audio_visualizer"
+    type = "login_box"
 
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
-        background = false
-        background_color = "surface"
-        background_opacity = 0.80000000000000004
-        background_padding = 10
-        background_radius = 12
-        bar_width = 0.59999999999999998
-        bloom_intensity = 0.5
-        fade_when_idle = true
-        inner_diameter = 0.69999999999999996
-        primary_color = "primary"
-        ring_opacity = 0.80000000000000004
-        rotation_speed = 0.5
-        secondary_color = "secondary"
-        sensitivity = 1.5
-        visualization_mode = "bars_rings"
-        wave_thickness = 1.0
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-7".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 720.0
+    cy = 841.0
+    enabled = true
+    output = "eDP-1"
+    placement_height = 960.0
+    placement_width = 1440.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
 [nightlight]
 enabled = true
@@ -665,7 +706,7 @@ wallpaper_scheme = "soft"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "kitty", "niri", "starship" ]
-    community_ids = [ "vscode" ]
+    community_ids = []
     enable_builtin_templates = true
     enable_community_templates = true
 
@@ -710,7 +751,7 @@ show_label = false
 type = "brightness"
 
 [widget.clock]
-format = "{:%H:%M %d/%m/%Y}"
+format = "{:%H:%M %d/%m}"
 type = "clock"
 
 [widget.cpu]

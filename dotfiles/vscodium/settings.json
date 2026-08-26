@@ -14,5 +14,5 @@
     "latex-workshop.latex.outDir": "%DIR%/build/",
     "latex-workshop.formatting.latex": "latexindent",
     "python.terminal.useEnvFile": true,
-    "workbench.colorTheme": "NoctaliaTheme"
+    "workbench.colorTheme": "Dark+"
 }
