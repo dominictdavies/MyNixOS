@@ -1,19 +1,19 @@
 {
-    "workbench.startupEditor": "none",
-    "files.autoSave": "afterDelay",
-    "git.confirmSync": false,
-    "git.autofetch": true,
     "editor.formatOnSave": true,
+    "editor.renderWhitespace": "trailing",
     "editor.rulers": [
         80
     ],
     "editor.wordWrap": "on",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "editor.renderWhitespace": "trailing",
+    "files.autoSave": "afterDelay",
+    "git.autofetch": true,
+    "git.confirmSync": false,
     "git.suggestSmartCommit": false,
-    "latex-workshop.latex.outDir": "%DIR%/build/",
     "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.latex.outDir": "%DIR%/build/",
     "python.terminal.useEnvFile": true,
-    "workbench.colorTheme": "Dark+"
+    "workbench.colorTheme": "Dark+",
+    "workbench.startupEditor": "none"
 }
