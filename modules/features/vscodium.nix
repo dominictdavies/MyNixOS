@@ -1,4 +1,3 @@
-{ self, ... }:
 {
   flake.nixosModules.vscodium =
     { pkgs, config, ... }:
