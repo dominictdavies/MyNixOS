@@ -14,4 +14,4 @@
 
 ## TODO
 
-- Add dominion and domicile
+- Add dominion
