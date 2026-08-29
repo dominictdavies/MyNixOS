@@ -38,10 +38,12 @@
 
         # Customisable shell prompt
         starship.enable = true;
-        fonts.packages = with pkgs; [
-          nerd-fonts.jetbrains-mono
-        ];
       };
+
+      # Starship dependency
+      fonts.packages = with pkgs; [
+        nerd-fonts.jetbrains-mono
+      ];
 
       # Prevent zoxide warning
       environment.sessionVariables._ZO_DOCTOR = 0;
