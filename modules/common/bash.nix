@@ -1,7 +1,7 @@
 { self, ... }:
 {
   flake.nixosModules.common =
-    { config, ... }:
+    { config, pkgs, ... }:
     {
       imports = [
         self.nixosModules.nh
