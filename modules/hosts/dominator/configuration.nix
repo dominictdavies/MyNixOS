@@ -10,6 +10,7 @@
           dominatorHardware
           desktop
           gaming
+          zfs
         ];
 
         # Do not modify! (https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion)
