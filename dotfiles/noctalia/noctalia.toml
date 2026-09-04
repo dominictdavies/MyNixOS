@@ -72,6 +72,8 @@ sync_all_monitors = false
 
 [calendar]
 enabled = false
+event_date_format = "%A %e %B"
+event_time_format = "%H:%M"
 refresh_minutes = 15
 
 [control_center]
@@ -83,8 +85,6 @@ sidebar_section = "compact"
 width = 700
 
     [control_center.calendar]
-    event_date_format = "%A %e %B"
-    event_time_format = "%H:%M"
     show_events_card = true
     show_week_numbers = false
 
@@ -471,7 +471,7 @@ scale = 1.0
 [plugin_settings]
 
 [plugins]
-auto_update = true
+auto_update = "all"
 enabled = []
 
     [[plugins.source]]
@@ -728,6 +728,30 @@ transition_on_startup = false
     interval_seconds = 600
     order = "random"
     recursive = true
+
+    [wallpaper.default]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+
+    [wallpaper.last]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+
+    [wallpaper.monitors.DP-2]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
+
+    [wallpaper.monitors.DP-4]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
+
+    [wallpaper.monitors.DP-5]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/subnautica_lost_river.png"
+
+    [wallpaper.monitors.DP-7]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/subnautica_lost_river.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
 
 [weather]
 effects = true
