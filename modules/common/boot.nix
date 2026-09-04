@@ -10,8 +10,7 @@
         };
       };
 
-      # Setup RAID
-      swraid.enable = true;
+      # Disable USB autosuspend
       extraModprobeConfig = ''
         options usbcore autosuspend=-1
       '';
