@@ -1,9 +1,11 @@
 {
-  flake.nixosModules.zfs = {
-    environment.systemPackages = with pkgs; [
-      zfs
-    ];
+  flake.nixosModules.zfs =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = with pkgs; [
+        zfs
+      ];
 
-    services.zfs.autoScrub.enable = true;
-  };
+      services.zfs.autoScrub.enable = true;
+    };
 }
