@@ -18,7 +18,6 @@
         proton-vpn-cli
 
         # Tools
-        bambu-studio
         joplin-desktop
         scrcpy
         super-productivity
