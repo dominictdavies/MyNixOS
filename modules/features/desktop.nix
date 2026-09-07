@@ -18,6 +18,7 @@
         proton-vpn-cli
 
         # Tools
+        gpu-screen-recorder
         joplin-desktop
         scrcpy
         super-productivity
