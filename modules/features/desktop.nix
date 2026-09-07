@@ -18,6 +18,7 @@
         proton-vpn-cli
 
         # Tools
+        bambu-studio
         clamav
         easyeffects
         gpu-screen-recorder
