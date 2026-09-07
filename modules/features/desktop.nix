@@ -18,6 +18,7 @@
         proton-vpn-cli
 
         # Tools
+        bambu-studio
         gpu-screen-recorder
         joplin-desktop
         scrcpy
