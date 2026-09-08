@@ -1,7 +1,19 @@
-{ self, ... }:
+{ self, inputs, ... }:
 {
   flake.nixosModules.niri =
     { config, pkgs, ... }:
+    let
+      # From the 3akev/xwayland-satellite fix-dropdown-menu branch
+      xwayland-satellite = pkgs.xwayland-satellite.overrideAttrs (old: {
+        version = "fix-dropdown-menu";
+        src = inputs.xwayland-satellite;
+        cargoDeps = old.cargoDeps.overrideAttrs (deps: {
+          vendorStaging = deps.vendorStaging.overrideAttrs (s: {
+            outputHash = "sha256-s1gl9eR6Mt2QLrhfcowstPFjzwE/lz4PJhJzWYHoIHg=";
+          });
+        });
+      });
+    in
     {
       imports = [
         self.nixosModules.noctalia

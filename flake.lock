@@ -133,7 +133,51 @@
         "import-tree": "import-tree",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "noctalia": "noctalia"
+        "noctalia": "noctalia",
+        "xwayland-satellite": "xwayland-satellite"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "xwayland-satellite",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769222645,
+        "narHash": "sha256-gu6oZ86zLudBZMq8LL1qdtYt/S69GV5keQVXdvBrVSU=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "22da29e7f3d8cff75009cbbcf992c7cb66920cfd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "xwayland-satellite": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1788875807,
+        "narHash": "sha256-GqtHTJZd1hInZoZT22Uhq3I1rGYIc76tSj56dsqaK1I=",
+        "owner": "3akev",
+        "repo": "xwayland-satellite",
+        "rev": "22cde7d2883a846f26fee8b7a26994f7e08e7a94",
+        "type": "github"
+      },
+      "original": {
+        "owner": "3akev",
+        "ref": "fix-dropdown-menu",
+        "repo": "xwayland-satellite",
+        "type": "github"
       }
     }
   },
