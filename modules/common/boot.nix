@@ -1,7 +1,7 @@
 {
   flake.nixosModules.common = {
     boot.loader = {
-      timeout = 3;
+      timeout = 1;
       efi.canTouchEfiVariables = true;
       limine = {
         enable = true;
