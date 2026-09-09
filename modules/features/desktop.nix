@@ -19,7 +19,6 @@
 
         # Tools
         bambu-studio
-        gpu-screen-recorder-gtk
         joplin-desktop
         scrcpy
         super-productivity
@@ -98,6 +97,11 @@
           help-cards = "open ${config.my.repoRoot}/assets/information/card_functionality.png";
           help-keyboard = "open ${config.my.repoRoot}/assets/information/keyboard_layout.png";
           help-latex = "open ${config.my.repoRoot}/assets/information/latex_symbols.pdf";
+        };
+
+        gpu-screen-recorder = {
+          enable = true;
+          ui.enable = true;
         };
       };
 
