@@ -33,6 +33,7 @@ order = [ "default" ]
     contact_shadow = true
     enabled = true
     end = [ "recorder", "notifications", "bluetooth", "network", "volume", "brightness", "battery", "clock" ]
+    font_scale = 1.0
     font_weight = 500
     hover_highlight = true
     layer = "top"
@@ -268,6 +269,7 @@ widget_order = [
     box_width = 720.0
     cx = 1280.0
     cy = 1032.0
+    enabled = true
     output = "DP-2"
     placement_height = 1440.0
     placement_width = 2560.0
@@ -290,123 +292,12 @@ widget_order = [
         show_unlock_hint = true
         show_weather = true
 
-    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
-    box_height = 196.0
-    box_width = 810.0
-    cx = 960.0
-    cy = 898.0
-    enabled = true
-    output = "DP-3"
-    placement_height = 0.0
-    placement_width = 0.0
-    rotation = 0.0
-    type = "login_box"
-
-        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
-
-    [lockscreen_widgets.widget."lockscreen-login-box@DP-4"]
-    box_height = 196.0
-    box_width = 720.0
-    cx = 960.0
-    cy = 961.0
-    enabled = true
-    output = "DP-4"
-    placement_height = 0.0
-    placement_width = 0.0
-    rotation = 0.0
-    type = "login_box"
-
-        [lockscreen_widgets.widget."lockscreen-login-box@DP-4".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
-
-    [lockscreen_widgets.widget."lockscreen-login-box@DP-5"]
-    box_height = 196.0
-    box_width = 810.0
-    cx = 1720.0
-    cy = 1258.0
-    enabled = true
-    output = "DP-5"
-    placement_height = 1440.0
-    placement_width = 3440.0
-    rotation = 0.0
-    type = "login_box"
-
-        [lockscreen_widgets.widget."lockscreen-login-box@DP-5".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
-
-    [lockscreen_widgets.widget."lockscreen-login-box@DP-7"]
-    box_height = 196.0
-    box_width = 810.0
-    cx = 1720.0
-    cy = 1258.0
-    enabled = true
-    output = "DP-7"
-    placement_height = 0.0
-    placement_width = 0.0
-    rotation = 0.0
-    type = "login_box"
-
-        [lockscreen_widgets.widget."lockscreen-login-box@DP-7".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
-
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
     box_height = 196.0
     box_width = 720.0
     cx = 1280.0
     cy = 961.0
+    enabled = true
     output = "HDMI-A-1"
     placement_height = 1080.0
     placement_width = 2560.0
@@ -429,50 +320,26 @@ widget_order = [
         show_unlock_hint = true
         show_weather = true
 
-    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 196.0
-    box_width = 720.0
-    cx = 720.0
-    cy = 841.0
-    enabled = true
-    output = "eDP-1"
-    placement_height = 960.0
-    placement_width = 1440.0
-    rotation = 0.0
-    type = "login_box"
-
-        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
-
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 128.0
     box_width = 288.0
     cx = 1280.0
     cy = 368.0
+    enabled = true
     output = "DP-2"
     placement_height = 1440.0
     placement_width = 2560.0
     rotation = 0.0
     type = "clock"
 
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
     box_height = 312.0
     box_width = 360.0
     cx = 1284.0
     cy = 620.0
+    enabled = true
     output = "DP-2"
     placement_height = 1440.0
     placement_width = 2560.0
@@ -510,6 +377,7 @@ collapse_on_dismiss = true
 enable_daemon = true
 filter_order = [ "filter" ]
 history_retention_hours = 0
+keep_dismissed_in_history = true
 layer = "top"
 max_visible = 0
 monitors = []
@@ -569,13 +437,13 @@ directory = "/mnt/terra/Unsorted"
 replay_duration = 240
 replay_enabled = true
 replay_filename_pattern = "clip_%Y%m%d_%H%M%S"
-video_codec = "h264"
+video_codec = "vp9"
 video_qp = 20
 video_source = "portal"
 
 [plugins]
 auto_update = "all"
-enabled = [ "noctalia/screen_recorder" ]
+enabled = []
 
     [[plugins.source]]
     enabled = true
@@ -685,6 +553,8 @@ time_format = "{:%H:%M}"
     size = 32
 
     [shell.screenshot]
+    annotate = false
+    close_on_copy = true
     confirm_region = false
     copy_to_clipboard = true
     directory = "/home/dominictdavies/Pictures/Screenshots"
@@ -757,6 +627,9 @@ time_format = "{:%H:%M}"
     alpha = 0.55000001192092896
     direction = "center"
 
+    [shell.window_switcher]
+    mru = false
+
 [storage]
 key_file = ""
 key_source = "secret-service"
@@ -804,6 +677,7 @@ community_palette = "Oxocarbon"
 custom_palette = ""
 mode = "dark"
 pure_black_dark = false
+shell_mode = "follow"
 source = "wallpaper"
 wallpaper_scheme = "soft"
 
@@ -831,33 +705,6 @@ transition_on_startup = false
     interval_seconds = 600
     order = "random"
     recursive = true
-
-    [wallpaper.default]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
-
-    [wallpaper.last]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
-
-    [wallpaper.monitors.DP-2]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
-
-    [wallpaper.monitors.DP-3]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/deltarune.png"
-
-    [wallpaper.monitors.DP-4]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
-
-    [wallpaper.monitors.DP-5]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/subnautica_lost_river.png"
-
-    [wallpaper.monitors.DP-7]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/subnautica_lost_river.png"
-
-    [wallpaper.monitors.HDMI-A-1]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
-
-    [wallpaper.monitors.eDP-1]
-    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
 
 [weather]
 effects = true
