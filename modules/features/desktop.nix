@@ -19,7 +19,7 @@
 
         # Tools
         bambu-studio
-        gpu-screen-recorder
+        gpu-screen-recorder-gtk
         joplin-desktop
         scrcpy
         super-productivity
