@@ -79,7 +79,7 @@
 
         clamav = {
           daemon.enable = true;
-          clamav.updater.enable = true;
+          updater.enable = true;
         };
       };
 
