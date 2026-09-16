@@ -18,6 +18,7 @@
         proton-vpn-cli
 
         # Tools
+        clamav
         gpu-screen-recorder
         joplin-desktop
         scrcpy
@@ -72,6 +73,13 @@
             cups-filters
             cups-browsed
           ];
+        };
+
+        # ClamAV (https://wiki.nixos.org/wiki/Clamav)
+
+        clamav = {
+          daemon.enable = true;
+          clamav.updater.enable = true;
         };
       };
 
