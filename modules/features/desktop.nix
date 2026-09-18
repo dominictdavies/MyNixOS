@@ -19,6 +19,7 @@
 
         # Tools
         clamav
+        easyeffects
         gpu-screen-recorder
         joplin-desktop
         scrcpy
