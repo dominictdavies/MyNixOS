@@ -234,10 +234,10 @@ window-rule {
   open-maximized true
 }
 
-// Fullscreen
+// Maximised
 window-rule {
-  match app-id="qemu|vlc"
-  open-fullscreen true
+  match app-id="vlc"
+  open-maximized true
 }
 
 // Phone Dimensions
