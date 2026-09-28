@@ -10,6 +10,7 @@
           dominatorHardware
           desktop
           gaming
+          printing
           zfs
         ];
 
