@@ -18,6 +18,7 @@
         proton-vpn-cli
 
         # Tools
+        bambuddy
         clamav
         easyeffects
         gpu-screen-recorder
