@@ -135,7 +135,6 @@ magnification_scale = 1.4500000476837158
 main_axis_padding = 16
 margin_edge = 0
 margin_ends = 0
-monitors = []
 pinned = []
 position = "bottom"
 radius = 16
@@ -705,6 +704,18 @@ transition_on_startup = false
     interval_seconds = 600
     order = "random"
     recursive = true
+
+    [wallpaper.default]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+
+    [wallpaper.last]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+
+    [wallpaper.monitors.DP-2]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/dominictdavies/MyNixOS/assets/wallpapers/stanley_parable_skip_button.png"
 
 [weather]
 effects = true
