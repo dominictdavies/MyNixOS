@@ -187,23 +187,30 @@ binds {
     Mod+Alt+Return { spawn-sh "kitty"; }
     Mod+Alt+A { spawn-sh "~/MyNixOS/scripts/advice/advice_random.sh"; }
     Mod+Alt+B { spawn-sh "firefox"; }
-    Mod+Alt+C { spawn-sh "codium"; }
+    Mod+Alt+C { spawn-sh "gnome-calculator"; }
     Mod+Alt+D { spawn-sh "vesktop"; }
-    Mod+Alt+F { spawn-sh "kitty --hold fastfetch"; }
-    Mod+Alt+G { spawn-sh "gimp"; }
+    Mod+Alt+E { spawn-sh "easyeffects"; }
+    Mod+Alt+F { spawn-sh "nautilus"; }
+    Mod+Alt+G { spawn-sh "godot"; }
     Mod+Alt+H { spawn-sh "bash -ci 'open https://home.google.com/u/0/home/1'"; }
-    Mod+Alt+I { spawn-sh "inkscape"; }
+    Mod+Alt+I { spawn-sh "gimp"; }
     Mod+Alt+J { spawn-sh "joplin-desktop"; }
-    Mod+Alt+M { spawn-sh "gnome-calculator"; }
-    Mod+Alt+N { spawn-sh "nautilus"; }
+    Mod+Alt+K { spawn-sh "gnome-disks"; }
+    Mod+Alt+L { spawn-sh "gnome-logs"; }
+    Mod+Alt+M { spawn-sh "gnome-system-monitor"; }
+    Mod+Alt+N { spawn-sh "gnome-text-editor"; }
     Mod+Alt+O { spawn-sh "kitty --hold opencode"; }
-    Mod+Alt+P { spawn-sh "scrcpy"; }
+    Mod+Alt+P { spawn-sh "inkscape"; }
     Mod+Alt+Q { spawn-sh "~/MyNixOS/scripts/flip_coin.sh"; }
-    Mod+Alt+R { spawn-sh "remmina"; }
+    Mod+Alt+R { spawn-sh "obs"; }
     Mod+Alt+S { spawn-sh "steam"; }
+    Mod+Alt+T { spawn-sh "super-productivity"; }
     Mod+Alt+U { spawn-sh "baobab"; }
     Mod+Alt+V { spawn-sh "vlc"; }
-    Mod+Alt+Z { spawn-sh "super-productivity"; }
+    Mod+Alt+W { spawn-sh "gnome-connections"; }
+    Mod+Alt+X { spawn-sh "nixos-help"; }
+    Mod+Alt+Y { spawn-sh "scrcpy"; }
+    Mod+Alt+Z { spawn-sh "kitty --hold fastfetch"; }
     Mod+Alt+3 { spawn-sh "bash -ci deltarune"; }
 
     // Noctalia
