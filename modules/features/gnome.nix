@@ -6,8 +6,9 @@
       services.gvfs.enable = true;
 
       environment.systemPackages = with pkgs; [
-        # Used to edit app settings
-        dconf
+        # Supply GTK and gsettings
+        gtk4
+        glib
 
         # GNOME (https://apps.gnome.org/en/)
         baobab
