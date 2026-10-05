@@ -94,9 +94,14 @@
 
         dconf.profiles.user.databases = [
           {
-            settings."org/gnome/desktop/interface" = {
-              color-scheme = "prefer-dark";
-              icon-theme = "Papirus-Dark";
+            settings = {
+              "org/gnome/desktop/interface" = {
+                color-scheme = "prefer-dark";
+                icon-theme = "Papirus-Dark";
+              };
+              "org/gnome/nautilus/preferences" = {
+                default-sort-order = "mtime";
+              };
             };
           }
         ];
