@@ -6,6 +6,10 @@
       services.gvfs.enable = true;
 
       environment.systemPackages = with pkgs; [
+        # Supply gsettings and default schemas
+        glib
+        gsettings-desktop-schemas
+
         # GNOME (https://apps.gnome.org/en/)
         baobab
         gnome-calculator
