@@ -6,8 +6,7 @@
       services.gvfs.enable = true;
 
       environment.systemPackages = with pkgs; [
-        # Supply gsettings and default schemas
-        glib
+        # Supply default schemas
         gsettings-desktop-schemas
 
         # GNOME (https://apps.gnome.org/en/)
