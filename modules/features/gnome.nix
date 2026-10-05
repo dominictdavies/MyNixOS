@@ -6,9 +6,9 @@
       services.gvfs.enable = true;
 
       environment.systemPackages = with pkgs; [
-        # Supply gsettings and default schemas
+        # Supply GTK and gsettings
+        gtk4
         glib
-        gsettings-desktop-schemas
 
         # GNOME (https://apps.gnome.org/en/)
         baobab
