@@ -60,10 +60,10 @@ order = [ "default" ]
         [bar.default.dead_zone]
 
 [battery]
-warning_threshold = 10
+warning_threshold = 20
 
     [battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_0"]
-    warning_threshold = 10
+    warning_threshold = 20
 
 [brightness]
 enable_ddcutil = false
