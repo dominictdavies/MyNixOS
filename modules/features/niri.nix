@@ -23,7 +23,7 @@
         sessionVariables.NIRI_CONFIG = "${config.my.repoRoot}/dotfiles/niri.kdl";
         systemPackages = with pkgs; [
           xwayland-satellite
-          posy-cursors
+          kdePackages.breeze-icons
         ];
       };
 
