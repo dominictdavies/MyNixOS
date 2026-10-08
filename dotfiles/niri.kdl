@@ -21,8 +21,8 @@ input {
 }
 
 cursor {
-    xcursor-size 24
-    xcursor-theme "breeze_cursors"
+    xcursor-size 40
+    xcursor-theme "Posy_Cursor_Black"
     hide-after-inactive-ms 2000
 }
 

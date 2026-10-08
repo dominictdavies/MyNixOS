@@ -32,8 +32,9 @@
       ];
 
       xdg = {
-        icons.fallbackCursorThemes = [ "breeze_cursors" ];
         mime.defaultApplications = {
+          "inode/directory" = "org.gnome.Nautilus.desktop";
+
           "audio/flac" = "vlc.desktop";
           "audio/mp4" = "vlc.desktop";
           "audio/mpeg" = "vlc.desktop";
