@@ -33,6 +33,7 @@
       ];
 
       xdg = {
+        icons.fallbackCursorThemes = [ "black" ];
         mime.defaultApplications = {
           "inode/directory" = "org.gnome.Nautilus.desktop";
 
