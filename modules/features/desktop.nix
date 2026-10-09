@@ -22,6 +22,7 @@
         easyeffects
         gpu-screen-recorder
         joplin-desktop
+        lxappearance
         scrcpy
         super-productivity
         vlc
