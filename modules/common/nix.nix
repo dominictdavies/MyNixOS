@@ -17,6 +17,7 @@
         pkg:
         builtins.elem (lib.getName pkg) [
           "bambu-studio"
+          "claude-code"
           "steam"
           "steam-unwrapped"
         ];
