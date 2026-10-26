@@ -199,7 +199,7 @@ binds {
     Mod+Alt+L { spawn-sh "gnome-logs"; }
     Mod+Alt+M { spawn-sh "gnome-system-monitor"; }
     Mod+Alt+N { spawn-sh "gnome-text-editor"; }
-    Mod+Alt+O { spawn-sh "kitty --hold opencode"; }
+    Mod+Alt+O { spawn-sh "kitty --hold llama-server -hf unsloth/Qwen3.8-27B-GGUF:Q4_K_XL"; }
     Mod+Alt+P { spawn-sh "inkscape"; }
     Mod+Alt+Q { spawn-sh "~/MyNixOS/scripts/flip_coin.sh"; }
     Mod+Alt+R { spawn-sh "obs"; }
