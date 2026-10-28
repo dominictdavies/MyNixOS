@@ -14,7 +14,7 @@
         papirus-icon-theme
 
         # CLI
-        llama-cpp-vulkan
+        llama-cpp-rocm
         proton-vpn-cli
 
         # Tools
