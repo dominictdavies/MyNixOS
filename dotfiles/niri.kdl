@@ -185,7 +185,7 @@ binds {
 
     // Apps
     Mod+Alt+Return { spawn-sh "kitty"; }
-    Mod+Alt+A { spawn-sh "~/MyNixOS/scripts/advice/advice_random.sh"; }
+    Mod+Alt+A { spawn-sh "kitty --hold llama-server -m ~/Models/AI/Swift-1.5-Qwen3.8-27B-GSQ-RCO-IQ3_XXS.gguf -fa on -ngl 99 -c 32768 --port 9931 --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0.0 --presence-penalty 0.0 --repeat-penalty 1.0 --no-reasoning-preserve"; }
     Mod+Alt+B { spawn-sh "firefox"; }
     Mod+Alt+C { spawn-sh "gnome-calculator"; }
     Mod+Alt+D { spawn-sh "vesktop"; }
@@ -199,7 +199,7 @@ binds {
     Mod+Alt+L { spawn-sh "gnome-logs"; }
     Mod+Alt+M { spawn-sh "gnome-system-monitor"; }
     Mod+Alt+N { spawn-sh "gnome-text-editor"; }
-    Mod+Alt+O { spawn-sh "kitty --hold llama-server -m ~/Models/AI/Swift-1.5-Qwen3.8-27B-GSQ-RCO-IQ3_XXS.gguf -fa on -ngl 99 -c 32768 --port 9931 --temp 1.0 --top-p 0.95 --top-k 20 --min-p 0.0 --presence-penalty 0.0 --repeat-penalty 1.0 --no-reasoning-preserve"; }
+    Mod+Alt+O { spawn-sh ""; }
     Mod+Alt+P { spawn-sh "inkscape"; }
     Mod+Alt+Q { spawn-sh "~/MyNixOS/scripts/flip_coin.sh"; }
     Mod+Alt+R { spawn-sh "obs"; }
