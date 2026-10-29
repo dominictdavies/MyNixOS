@@ -185,7 +185,7 @@ binds {
 
     // Apps
     Mod+Alt+Return { spawn-sh "kitty"; }
-    Mod+Alt+A { spawn-sh "$HOME/MyNixOS/scripts/llama_swift.sh"; }
+    Mod+Alt+A { spawn-sh "$HOME/MyNixOS/scripts/llama_server.sh"; }
     Mod+Alt+B { spawn-sh "firefox"; }
     Mod+Alt+C { spawn-sh "gnome-calculator"; }
     Mod+Alt+D { spawn-sh "vesktop"; }
