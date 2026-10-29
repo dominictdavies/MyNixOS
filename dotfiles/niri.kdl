@@ -204,7 +204,7 @@ binds {
             --presence-penalty 0.0 \\
             --repeat-penalty 1.0 \\
             --spec-type draft-mtp \\
-            --spec-draft-n-max 1"
+            --spec-draft-n-max 1";
     }
     Mod+Alt+B { spawn-sh "firefox"; }
     Mod+Alt+C { spawn-sh "gnome-calculator"; }
