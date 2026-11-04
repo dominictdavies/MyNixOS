@@ -24,7 +24,7 @@
 
           time.timeZone = "Australia/Perth";
 
-          # Do not modify! (matches the 24.05 bootstrap)
+          # Do not modify! (latest stateVersion nix-on-droid supports)
           system.stateVersion = "24.05";
         }
       )
