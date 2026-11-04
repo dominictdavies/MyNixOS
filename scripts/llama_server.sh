@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 kitty --hold llama-server \
-    --model $HOME/Models/AI/Swift-1.5-Qwen3.8-27B-GSQ-RCO-IQ3_XXS-mtp.gguf \
+    --model "$HOME/Models/AI/Swift-1.5-Qwen3.8-27B-GSQ-RCO-IQ3_XXS-mtp.gguf" \
     --n-gpu-layers 99 \
     --ctx-size 65536 \
     --cache-type-k q8_0 \
