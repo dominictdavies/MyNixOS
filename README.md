@@ -11,7 +11,3 @@
 ### Generate Keys
 
 `ssh-keygen`
-
-## TODO
-
-- Add dominion

@@ -1,18 +1,17 @@
 {
-  flake.nixosModules.zfs =
-    { pkgs, ... }:
-    {
-      networking.hostId = "01234567";
+  flake.nixosModules.zfs = {
+    # TODO: Replace with output from `head -c4 /dev/urandom | od -A none -t x4`
+    networking.hostId = "01234567";
 
-      boot = {
-        supportedFilesystems = [ "zfs" ];
+    boot = {
+      supportedFilesystems = [ "zfs" ];
 
-        zfs = {
-          extraPools = [ "terra" ];
-          forceImportRoot = false;
-        };
+      zfs = {
+        extraPools = [ "terra" ];
+        forceImportRoot = false;
       };
-
-      services.zfs.autoScrub.enable = true;
     };
+
+    services.zfs.autoScrub.enable = true;
+  };
 }
