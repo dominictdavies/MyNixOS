@@ -26,7 +26,10 @@
         };
 
         # Command-line fuzzy finder
-        fzf.fuzzyCompletion = true;
+        fzf = {
+          fuzzyCompletion = true;
+          keybindings = true;
+        };
 
         # Smarter `cd` command
         zoxide = {
