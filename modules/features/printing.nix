@@ -5,5 +5,22 @@
       environment.systemPackages = with pkgs; [
         bambu-studio
       ];
+
+      # Printing (https://wiki.nixos.org/wiki/Printing)
+      services = {
+        avahi = {
+          enable = true;
+          nssmdns4 = true;
+          openFirewall = true;
+        };
+
+        printing = {
+          enable = true;
+          drivers = with pkgs; [
+            cups-filters
+            cups-browsed
+          ];
+        };
+      };
     };
 }
