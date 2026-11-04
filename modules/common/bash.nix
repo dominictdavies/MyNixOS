@@ -17,7 +17,7 @@
             mynix-pull = "(cd ${config.my.repoRoot} && git pull --rebase)";
             mynix-pull-switch = "mynix-pull && mynix-switch";
             mynix-pull-boot = "mynix-pull && mynix-boot";
-            mynix-flake = "(cd ${config.my.repoRoot} && nix flake update && git add flake.lock && git commit -m \"Update flake\" && git push)";
+            mynix-flake = "(cd ${config.my.repoRoot} && nix flake update && (git diff --quiet HEAD -- flake.lock || (git commit -m \"Update flake\" flake.lock && git push)))";
             mynix-flake-switch = "mynix-flake && mynix-switch";
             mynix-flake-boot = "mynix-flake && mynix-boot";
             mynix-all-switch = "mynix-pull && mynix-flake && mynix-switch";
