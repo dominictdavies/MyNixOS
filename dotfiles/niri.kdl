@@ -28,7 +28,7 @@ cursor {
 
 // * Outputs
 
-// Domino
+// Dominion
 output "eDP-1" {
     focus-at-startup
     mode "2880x1920@120.000"

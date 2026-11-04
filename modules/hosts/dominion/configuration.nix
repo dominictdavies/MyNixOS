@@ -1,13 +1,13 @@
 { self, inputs, ... }:
 {
-  flake.nixosConfigurations.domino = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.dominion = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       {
-        networking.hostName = "domino";
+        networking.hostName = "dominion";
         imports = with self.nixosModules; [
           common
           development
-          dominoHardware
+          dominionHardware
           desktop
           gaming
         ];
