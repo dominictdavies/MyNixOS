@@ -4,6 +4,7 @@
     {
       environment.systemPackages = with pkgs; [
         fastfetch
+        speedtest-go
         zip
         unzip
       ];
