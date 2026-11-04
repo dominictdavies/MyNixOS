@@ -14,8 +14,8 @@
       services.greetd = {
         enable = true;
         settings.default_session = {
-          command = "${pkgs.niri}/bin/niri-session";
-          user = "dominictdavies";
+          command = "${config.programs.niri.package}/bin/niri-session";
+          user = config.my.username;
         };
       };
 
