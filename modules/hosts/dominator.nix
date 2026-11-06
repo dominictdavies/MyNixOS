@@ -6,10 +6,10 @@
         networking.hostName = "dominator";
         imports = with self.nixosModules; [
           common
-          development
-          dominatorHardware
           desktop
+          development
           gaming
+          graphics
           printing
           zfs
         ];

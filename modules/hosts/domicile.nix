@@ -1,15 +1,12 @@
 { self, inputs, ... }:
 {
-  flake.nixosConfigurations.dominion = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.domicile = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       {
-        networking.hostName = "dominion";
+        networking.hostName = "domicile";
         imports = with self.nixosModules; [
           common
-          development
-          dominionHardware
-          desktop
-          gaming
+          acer
         ];
 
         # Do not modify! (https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion)
