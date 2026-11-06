@@ -9,6 +9,7 @@
     pkgs.writeShellApplication {
       name = "install";
       runtimeInputs = [
+        pkgs.cryptsetup
         pkgs.git
         pkgs.mkpasswd
         pkgs.nix-output-monitor

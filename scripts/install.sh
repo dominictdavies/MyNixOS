@@ -20,8 +20,17 @@ nix_args=(--extra-experimental-features "nix-command flakes")
 
 password_file=/tmp/disko-password # Must match `passwordFile` in modules/common/disko.nix
 
+# Unmount and lock the new disk (on exit, and from any previous aborted run)
+release_disk() {
+    if mountpoint -q /mnt; then
+        umount -R /mnt 2>/dev/null || umount -Rl /mnt
+    fi
+    cryptsetup close cryptroot 2>/dev/null || true # Must match the LUKS `name` in modules/common/disko.nix
+}
+release_disk
+
 workdir=$(mktemp -d)
-trap 'rm -rf "$workdir" "$password_file"' EXIT
+trap 'rm -rf "$workdir" "$password_file"; release_disk' EXIT
 
 echo ">>> Cloning $repo_url"
 repo=$workdir/MyNixOS
@@ -110,5 +119,4 @@ mkdir -p "/mnt/home/$username"
 cp -a "$repo" "/mnt/home/$username/MyNixOS"
 chown -R 1000:100 "/mnt/home/$username/MyNixOS"
 
-umount -R /mnt
 echo ">>> Done! Reboot and remove the USB"
