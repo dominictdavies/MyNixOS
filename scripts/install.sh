@@ -63,7 +63,7 @@ echo
 read -rp "ALL DATA ON $disk WILL BE ERASED. Type the host name ($host) to continue: " confirm
 [[ $confirm == "$host" ]] || die "aborted"
 
-# One password for both disk encryption and the user (the user's is only applied on creation)
+# One password for both disk encryption and the user
 while true; do
     read -rsp "New password: " password
     echo
@@ -75,20 +75,33 @@ done
 (umask 077 && printf '%s' "$password" >"$password_file")
 hash=$(mkpasswd --method=yescrypt --stdin <<<"$password")
 unset password password2
-system_config=$(jq -cn --arg user "$username" --arg hash "$hash" \
-    '{users: {users: {($user): {initialHashedPassword: $hash}}}}')
 
-# Copy of the repo for the user's home on the new system (owned by the first normal user, uid 1000)
-cp -a "$repo" "$workdir/home-repo"
-chown -R 1000:100 "$workdir/home-repo"
+# Partition, format, and mount at /mnt (disko's script, pointed at the chosen disk)
+echo ">>> Partitioning $disk"
+disko_script=$(nix "${nix_args[@]}" build --no-link --print-out-paths --impure \
+    --argstr flake "git+file://$repo" --argstr host "$host" --argstr disk "$disk" \
+    --expr '{ flake, host, disk }:
+      let
+        system = builtins.getAttr host (builtins.getFlake flake).nixosConfigurations;
+        withDisk = system.extendModules {
+          modules = [ { disko.devices.disk.main.device = system.pkgs.lib.mkForce disk; } ];
+        };
+      in
+      withDisk.config.system.build.diskoScript')
+"$disko_script" --yes-wipe-all-disks
 
-# Partition, format, and install
-echo ">>> Installing '$host' to $disk"
-disko-install \
-    --flake "$repo#$host" \
-    --disk main "$disk" \
-    --write-efi-boot-entries \
-    --system-config "$system_config" \
-    --extra-files "$workdir/home-repo" "/home/$username/MyNixOS"
+# Build and install straight onto the new disk (not into the live USB's RAM)
+echo ">>> Installing '$host'"
+nixos-install --flake "$repo#$host" --root /mnt --no-root-passwd --no-channel-copy
 
+echo ">>> Setting password for $username"
+printf '%s:%s\n' "$username" "$hash" |
+    nixos-enter --root /mnt -c '/nix/var/nix/profiles/system/sw/bin/chpasswd -e'
+
+# Repo in the user's home (owned by the first normal user, uid 1000)
+mkdir -p "/mnt/home/$username"
+cp -a "$repo" "/mnt/home/$username/MyNixOS"
+chown -R 1000:100 "/mnt/home/$username/MyNixOS"
+
+umount -R /mnt
 echo ">>> Done! Reboot and remove the USB"

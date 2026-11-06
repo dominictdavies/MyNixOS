@@ -9,10 +9,9 @@
     pkgs.writeShellApplication {
       name = "install";
       runtimeInputs = [
-        inputs.disko.packages.x86_64-linux.disko-install
         pkgs.git
-        pkgs.jq
         pkgs.mkpasswd
+        pkgs.nixos-install-tools
         pkgs.util-linux
       ];
       text = builtins.readFile ../scripts/install.sh;
