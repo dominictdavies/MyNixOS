@@ -4,6 +4,7 @@
     {
       environment.systemPackages = with pkgs; [
         bambu-studio
+        freecad
       ];
 
       # Printing (https://wiki.nixos.org/wiki/Printing)
