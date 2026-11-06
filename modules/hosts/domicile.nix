@@ -7,7 +7,6 @@
         imports = with self.nixosModules; [
           common
           acer
-          desktop
         ];
 
         # Do not modify! (https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion)
