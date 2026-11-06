@@ -1,9 +1,9 @@
 { inputs, ... }:
 {
   flake.nixosModules.acer = {
-    imports = [
-      # Acer Laptop
-      inputs.nixos-hardware.nixosModules.acer-aspire-4810t
+    imports = with inputs.nixos-hardware.nixosModules; [
+      common-cpu-intel
+      common-pc-laptop
     ];
 
     # Laptop (https://wiki.nixos.org/wiki/Laptop)
