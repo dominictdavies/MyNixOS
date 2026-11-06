@@ -90,9 +90,16 @@ disko_script=$(nix "${nix_args[@]}" build --no-link --print-out-paths --impure \
       withDisk.config.system.build.diskoScript')
 "$disko_script" --yes-wipe-all-disks
 
-# Build and install straight onto the new disk (not into the live USB's RAM)
+# Build straight onto the new disk (not into the live USB's RAM), with nom showing progress
+echo ">>> Building '$host'"
+install_tmp=$(mktemp -d -p /mnt)
+TMPDIR=$install_tmp nom build "${nix_args[@]}" "$repo#nixosConfigurations.$host.config.system.build.toplevel" \
+    --store /mnt --extra-substituters "auto?trusted=1" --out-link "$install_tmp/system"
+system=$(readlink -f "$install_tmp/system")
+
 echo ">>> Installing '$host'"
-nixos-install --flake "$repo#$host" --root /mnt --no-root-passwd --no-channel-copy
+nixos-install --system "$system" --root /mnt --no-root-passwd --no-channel-copy
+rm -rf "$install_tmp"
 
 echo ">>> Setting password for $username"
 printf '%s:%s\n' "$username" "$hash" |
