@@ -35,17 +35,26 @@ fi
 [[ $disks == "main" ]] || die "expected a single disko disk named 'main', found: $disks"
 username=$(nix "${nix_args[@]}" eval --raw "$repo#nixosConfigurations.$host.config.my.username")
 
-# Pick the disk to install to, excluding the live USB
-live_disk=$(lsblk -no PKNAME "$(findmnt -no SOURCE /iso 2>/dev/null || true)" 2>/dev/null || true)
-mapfile -t candidates < <(lsblk -dpno NAME,SIZE,MODEL,TYPE |
-    awk -v live="/dev/$live_disk" '$NF == "disk" && $1 != live { $NF = ""; print }')
+# Pick the disk to install to, skipping the live USB (anything mounted or containing an ISO filesystem)
+# and compressed RAM swap
+candidates=()
+while read -r name; do
+    if [[ $name == /dev/zram* ]] || lsblk -nrpo MOUNTPOINTS,FSTYPE "$name" | grep -qE '^/|iso9660'; then
+        continue
+    fi
+    candidates+=("$(lsblk -dpno NAME,SIZE,MODEL "$name")")
+done < <(lsblk -dpno NAME,TYPE | awk '$2 == "disk" { print $1 }')
 [[ ${#candidates[@]} -gt 0 ]] || die "no disks found"
 
-echo ">>> Select the disk to install '$host' to"
-PS3="Disk: "
-select choice in "${candidates[@]}"; do
-    [[ -n $choice ]] && break
-done
+if [[ ${#candidates[@]} -eq 1 ]]; then
+    choice=${candidates[0]}
+else
+    echo ">>> Select the disk to install '$host' to"
+    PS3="Disk: "
+    select choice in "${candidates[@]}"; do
+        [[ -n $choice ]] && break
+    done
+fi
 disk=${choice%% *}
 
 echo
@@ -56,9 +65,9 @@ read -rp "ALL DATA ON $disk WILL BE ERASED. Type the host name ($host) to contin
 
 # One password for both disk encryption and the user (the user's is only applied on creation)
 while true; do
-    read -rsp "Password: " password
+    read -rsp "New password: " password
     echo
-    read -rsp "Repeat password: " password2
+    read -rsp "Retype new password: " password2
     echo
     [[ -n $password && $password == "$password2" ]] && break
     echo "Passwords are empty or do not match, try again"
