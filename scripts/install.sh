@@ -94,7 +94,7 @@ disko_script=$(nix "${nix_args[@]}" build --no-link --print-out-paths --impure \
 echo ">>> Building '$host'"
 install_tmp=$(mktemp -d -p /mnt)
 TMPDIR=$install_tmp nom build "${nix_args[@]}" "$repo#nixosConfigurations.$host.config.system.build.toplevel" \
-    --store /mnt --extra-substituters "auto?trusted=1" --out-link "$install_tmp/system"
+    --eval-store auto --store /mnt --extra-substituters "auto?trusted=1" --out-link "$install_tmp/system"
 system=$(readlink -f "$install_tmp/system")
 
 echo ">>> Installing '$host'"
