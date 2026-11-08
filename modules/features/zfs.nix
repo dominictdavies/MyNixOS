@@ -1,7 +1,6 @@
 {
   flake.nixosModules.zfs = {
-    # TODO: Replace with output from `head -c4 /dev/urandom | od -A none -t x4`
-    networking.hostId = "01234567";
+    networking.hostId = "5d0be851";
 
     boot = {
       supportedFilesystems = [ "zfs" ];
