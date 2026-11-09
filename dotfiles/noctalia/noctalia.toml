@@ -1,27 +1,45 @@
 [bar.default]
+center = [ "workspaces" ]
 end = [ "recorder", "notifications", "bluetooth", "network", "volume", "brightness", "battery", "clock" ]
+margin_ends = 0
+radius = 0
 start = [ "clipboard", "taskbar", "media" ]
 
 [battery]
 warning_threshold = 20
 
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[hot_corners]
+enabled = true
+
+    [hot_corners.top_right]
+    action = "launcher"
+
+[location]
+auto_locate = true
+
 [lockscreen]
+blur_intensity = 0.0
+tint_intensity = 0.0
 wallpaper = "~/MyNixOS/assets/wallpapers/stanley_parable_desk_lined.png"
 
-[plugin_settings."noctalia/screen_recorder"]
-audio_codec = "flac"
-audio_source = "both"
-color_range = "full"
-directory = "/mnt/terra/Unsorted"
-replay_duration = 240
-replay_enabled = true
-replay_filename_pattern = "clip_%Y%m%d_%H%M%S"
-video_codec = "vp9"
-video_qp = 20
-video_source = "portal"
+[nightlight]
+enabled = true
 
 [shell]
 avatar_path = "~/MyNixOS/assets/profile.png"
+telemetry_enabled = true
 
 [theme]
 mode = "dark"
@@ -33,6 +51,19 @@ wallpaper_scheme = "soft"
 
 [wallpaper]
 directory = "~/MyNixOS/assets/wallpapers"
+
+    [wallpaper.automation]
+    enabled = true
+
+[widget.battery]
+show_label = false
+
+[widget.brightness]
+show_label = false
+
+[widget.media]
+hide_when_idle = true
+hide_when_no_media = true
 
 [widget.network]
 show_label = false
