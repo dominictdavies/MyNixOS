@@ -19,7 +19,6 @@
 
         # Tools
         anki
-        clamav
         easyeffects
         gpu-screen-recorder
         joplin-desktop
@@ -66,13 +65,6 @@
         power-profiles-daemon.enable = true;
         upower.enable = true;
         gnome.gnome-keyring.enable = true;
-
-        # ClamAV (https://wiki.nixos.org/wiki/Clamav)
-
-        clamav = {
-          daemon.enable = true;
-          updater.enable = true;
-        };
       };
 
       security = {
