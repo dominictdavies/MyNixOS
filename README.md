@@ -12,14 +12,14 @@
 1. Run `ssh-keygen` and add the public key to GitHub
 2. `git -C ~/MyNixOS remote set-url origin git@github.com:dominictdavies/MyNixOS.git`
 
+### Fingerprint
+
+1. `sudo fprint-enroll`
+2. `sudo fprint-verify`
+
 ### Cursor
 
 1. `lxappearance`
 2. Select the "Mouse Cursor" heading
 3. Install a cursor from `~/MyNixOS/assets/cursor`
 4. Apply the cursor and reboot
-
-### Fingerprint
-
-1. `sudo fprint-enroll`
-2. `sudo fprint-verify`
