@@ -12,6 +12,7 @@
           enable = true;
 
           shellAliases = {
+            # MyNixOS
             mynix-switch = "nh os switch";
             mynix-boot = "nh os boot";
             mynix-pull = "(cd ${config.my.repoRoot} && git pull --rebase)";
@@ -22,6 +23,9 @@
             mynix-flake-boot = "mynix-flake && mynix-boot";
             mynix-all-switch = "mynix-pull && mynix-flake && mynix-switch";
             mynix-all-boot = "mynix-pull && mynix-flake && mynix-boot";
+
+            # Miscellaneous
+            try = "nix-shell -p";
           };
         };
 
