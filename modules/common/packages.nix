@@ -4,9 +4,8 @@
     {
       environment.systemPackages = with pkgs; [
         fastfetch
+        openssh
         speedtest-go
-        zip
-        unzip
       ];
     };
 }

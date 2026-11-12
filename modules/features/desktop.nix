@@ -25,7 +25,9 @@
         lxappearance
         scrcpy
         super-productivity
+        unzip
         vlc
+        zip
 
         # Media
         firefox
