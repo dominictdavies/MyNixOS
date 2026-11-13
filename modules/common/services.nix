@@ -1,8 +1,8 @@
 {
   flake.nixosModules.common = {
     services = {
+      cockpit.enable = true;
       fwupd.enable = true;
-      netdata.enable = true;
       tailscale.enable = true;
     };
 
