@@ -5,7 +5,7 @@
       services = {
         cockpit = {
           enable = true;
-          allowed-origins = [ "https://${config.networking.hostName}.tailefeb39.ts.net" ];
+          allowed-origins = [ "https://${config.networking.hostName}:9090" ];
         };
         fwupd.enable = true;
         tailscale.enable = true;
