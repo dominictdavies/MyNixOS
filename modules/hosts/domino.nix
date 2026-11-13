@@ -3,31 +3,6 @@
   # Nix-on-Droid (https://github.com/nix-community/nix-on-droid)
   flake.nixOnDroidConfigurations.domino = inputs.nix-on-droid.lib.nixOnDroidConfiguration {
     pkgs = import inputs.nixpkgs { system = "aarch64-linux"; };
-    modules = [
-      (
-        { pkgs, ... }:
-        {
-          environment = {
-            packages = with pkgs; [
-              fastfetch
-              git
-              openssh
-            ];
-
-            # Back up existing /etc files instead of failing on the first switch
-            etcBackupExtension = ".bak";
-          };
-
-          nix.extraOptions = ''
-            experimental-features = nix-command flakes
-          '';
-
-          time.timeZone = "Australia/Perth";
-
-          # Do not modify! (latest stateVersion nix-on-droid supports)
-          system.stateVersion = "24.05";
-        }
-      )
-    ];
+    modules = [ ../features/domino.nix ];
   };
 }

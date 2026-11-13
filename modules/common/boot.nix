@@ -3,7 +3,7 @@
     { config, ... }:
     {
       boot.loader = {
-        timeout = 1;
+        timeout = 2;
         efi.canTouchEfiVariables = true;
         limine = {
           enable = true;
