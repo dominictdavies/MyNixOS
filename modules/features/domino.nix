@@ -13,6 +13,12 @@
         etcBackupExtension = ".bak";
       };
 
+      # resolv.conf is hardcoded to public DNS, so MagicDNS names don't resolve
+      networking.hosts = {
+        "100.65.68.2" = [ "domicile" ];
+        "100.98.63.45" = [ "dominator" ];
+      };
+
       nix.extraOptions = ''
         experimental-features = nix-command flakes
       '';
