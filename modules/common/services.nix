@@ -10,7 +10,10 @@
         fwupd.enable = true;
         tailscale = {
           enable = true;
-          extraSetFlags = [ "--operator=${config.my.username}" ];
+          extraSetFlags = [
+            "--operator=${config.my.username}"
+            "--ssh=false"
+          ];
         };
       };
 
