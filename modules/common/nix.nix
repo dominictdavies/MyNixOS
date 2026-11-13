@@ -1,6 +1,6 @@
 {
   flake.nixosModules.common =
-    { config, lib, ... }:
+    { lib, ... }:
     {
       nix.settings = {
         auto-optimise-store = true;
@@ -8,7 +8,6 @@
           "nix-command"
           "flakes"
         ];
-        trusted-users = [ "${config.my.username}" ];
       };
 
       nixpkgs.config.allowUnfreePredicate =
