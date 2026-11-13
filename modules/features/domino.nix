@@ -22,6 +22,8 @@
       networking.hosts = {
         "100.65.68.2" = [ "domicile" ];
         "100.98.63.45" = [ "dominator" ];
+        "100.70.165.74" = [ "dominion" ];
+        "100.89.21.70" = [ "domino" ];
       };
 
       nix.extraOptions = ''
