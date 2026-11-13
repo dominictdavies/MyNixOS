@@ -18,4 +18,5 @@ kitty --hold llama-server \
     --spec-draft-n-max 1 \
     --host localhost \
     --port 9931 \
-    --cors-origins localhost
+    --cors-origins localhost \
+    --agent
