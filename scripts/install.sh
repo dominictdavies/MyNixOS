@@ -43,6 +43,8 @@ if ! disks=$(nix "${nix_args[@]}" eval --raw "$repo#nixosConfigurations.$host.co
 fi
 [[ $disks == "main" ]] || die "expected a single disko disk named 'main', found: $disks"
 username=$(nix "${nix_args[@]}" eval --raw "$repo#nixosConfigurations.$host.config.my.username")
+initrd_host_key=$(nix "${nix_args[@]}" eval --raw "$repo#nixosConfigurations.$host.config.boot.initrd.network.ssh.hostKeys" \
+    --apply 'keys: toString (builtins.head keys)')
 
 # Pick the disk to install to, skipping the live USB (anything mounted or containing an ISO filesystem)
 # and compressed RAM swap
@@ -106,6 +108,11 @@ TMPDIR=$install_tmp nom build "${nix_args[@]}" "$repo#nixosConfigurations.$host.
     --eval-store auto --store "local?root=/mnt&require-sigs=false" --extra-substituters "auto?trusted=1" \
     --out-link "$install_tmp/system"
 system=$(readlink -f "$install_tmp/system")
+
+# Boot-time SSH host key must exist before the bootloader is installed (see remote-unlock.nix)
+echo ">>> Generating initrd SSH host key"
+mkdir -p "$(dirname "/mnt$initrd_host_key")"
+ssh-keygen -q -t ed25519 -N "" -f "/mnt$initrd_host_key"
 
 echo ">>> Installing '$host'"
 nixos-install --system "$system" --root /mnt --no-root-passwd --no-channel-copy

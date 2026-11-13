@@ -14,6 +14,7 @@
         pkgs.mkpasswd
         pkgs.nix-output-monitor
         pkgs.nixos-install-tools
+        pkgs.openssh
         pkgs.util-linux
       ];
       text = builtins.readFile ../scripts/install.sh;
