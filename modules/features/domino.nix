@@ -11,11 +11,6 @@
 
         # Back up existing /etc files instead of failing on the first switch
         etcBackupExtension = ".bak";
-
-        # Without this, glibc stops at DNS and never reads /etc/hosts
-        etc."nsswitch.conf".text = ''
-          hosts: files dns
-        '';
       };
 
       # resolv.conf is hardcoded to public DNS, so MagicDNS names don't resolve
