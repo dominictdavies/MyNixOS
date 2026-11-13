@@ -1,12 +1,7 @@
-{ self, ... }:
 {
   flake.nixosModules.common =
     { config, pkgs, ... }:
     {
-      imports = [
-        self.nixosModules.nh
-      ];
-
       programs = {
         bash = {
           enable = true;

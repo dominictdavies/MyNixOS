@@ -1,6 +1,4 @@
 {
-  # Hardware support shared by all hosts (replaces per-host `nixos-generate-config` output)
-  # Disk layout is in disko.nix, host-specific hardware is imported in each host's file in hosts/
   flake.nixosModules.common =
     { config, modulesPath, ... }:
     {

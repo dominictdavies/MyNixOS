@@ -1,7 +1,5 @@
 { inputs, ... }:
 {
-  # Declarative disk layout (https://github.com/nix-community/disko)
-  # Partitions are referenced by label rather than UUID, so this is the same on every host
   flake.nixosModules.common =
     { lib, ... }:
     {
@@ -9,6 +7,7 @@
         inputs.disko.nixosModules.disko
       ];
 
+      # Declarative Disk Partitioning (https://github.com/nix-community/disko)
       disko.devices.disk.main = {
         type = "disk";
 

@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.nh =
+  flake.nixosModules.common =
     { config, ... }:
     {
       programs.nh = {
