@@ -6,6 +6,7 @@
         cockpit = {
           enable = true;
           allowed-origins = [ "https://${config.networking.hostName}:9090" ];
+          settings.Session.IdleTimeout = 0;
         };
         fwupd.enable = true;
         tailscale = {
