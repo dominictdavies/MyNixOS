@@ -8,7 +8,10 @@
           allowed-origins = [ "https://${config.networking.hostName}:9090" ];
         };
         fwupd.enable = true;
-        tailscale.enable = true;
+        tailscale = {
+          enable = true;
+          extraSetFlags = [ "--operator=${config.my.username}" ];
+        };
       };
 
       # Compressed swap in RAM (helps systemd-oomd under memory pressure)

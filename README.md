@@ -12,6 +12,11 @@
 1. Run `ssh-keygen` and add the public key to GitHub
 2. `git -C ~/MyNixOS remote set-url origin git@github.com:dominictdavies/MyNixOS.git`
 
+### Tailscale
+
+1. `tailscale up`
+2. `tailscale status`
+
 ### Fingerprint
 
 1. `sudo fprint-enroll`
