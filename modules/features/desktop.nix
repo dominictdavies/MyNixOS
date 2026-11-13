@@ -71,7 +71,7 @@
 
       security = {
         polkit.enable = true;
-        pam.services.login.enableGnomeKeyring = true;
+        pam.services.greetd.enableGnomeKeyring = true;
 
         # Realtime scheduling for PipeWire
         rtkit.enable = true;
