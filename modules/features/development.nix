@@ -1,38 +1,34 @@
 { self, ... }:
 {
-  flake.nixosModules.development =
-    { pkgs, ... }:
-    {
-      imports = [
-        self.nixosModules.vscodium
-      ];
+  flake.nixosModules.development = { pkgs, ... }: {
+    imports = with self.nixosModules; [ vscodium ];
 
-      environment.systemPackages = with pkgs; [
-        # Programming
-        devenv
-        nixfmt
+    environment.systemPackages = with pkgs; [
+      # Programming
+      devenv
+      nixfmt
 
-        # Audio
-        audacity
+      # Audio
+      audacity
 
-        # Image
-        gimp
+      # Image
+      gimp
 
-        # PDF
-        inkscape
-        poppler-utils
+      # PDF
+      inkscape
+      poppler-utils
 
-        # Video
-        obs-studio
-        shotcut
+      # Video
+      obs-studio
+      shotcut
 
-        # Game
-        godot
-      ];
+      # Game
+      godot
+    ];
 
-      # Auto Activation (https://devenv.sh/auto-activation/)
-      programs.bash.interactiveShellInit = ''
-        eval "$(devenv hook bash)"
-      '';
-    };
+    # Auto Activation (https://devenv.sh/auto-activation/)
+    programs.bash.interactiveShellInit = ''
+      eval "$(devenv hook bash)"
+    '';
+  };
 }

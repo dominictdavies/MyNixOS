@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ inputs, self, ... }:
 {
   flake.nixosConfigurations.dominion = inputs.nixpkgs.lib.nixosSystem {
     modules = [

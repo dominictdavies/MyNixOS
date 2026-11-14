@@ -1,15 +1,14 @@
 { self, ... }:
 {
-  flake.nixosModules.desktop =
-    { pkgs, config, ... }:
-    {
-      imports = with self.nixosModules; [
-        gnome
-        kitty
-        niri
-      ];
+  flake.nixosModules.desktop = { config, pkgs, ... }: {
+    imports = with self.nixosModules; [
+      gnome
+      kitty
+      niri
+    ];
 
-      environment.systemPackages = with pkgs; [
+    environment = {
+      systemPackages = with pkgs; [
         # Desktop
         papirus-icon-theme
 
@@ -34,80 +33,83 @@
         vesktop
       ];
 
-      xdg = {
-        icons.fallbackCursorThemes = [ "black" ];
-        mime.defaultApplications = {
-          "inode/directory" = "org.gnome.Nautilus.desktop";
-
-          "audio/flac" = "vlc.desktop";
-          "audio/mp4" = "vlc.desktop";
-          "audio/mpeg" = "vlc.desktop";
-          "audio/ogg" = "vlc.desktop";
-          "audio/wav" = "vlc.desktop";
-
-          "video/mp4" = "vlc.desktop";
-          "video/webm" = "vlc.desktop";
-          "video/quicktime" = "vlc.desktop";
-          "video/x-matroska" = "vlc.desktop";
-          "video/x-msvideo" = "vlc.desktop";
-
-          "image/bmp" = "org.gnome.Loupe.desktop";
-          "image/gif" = "org.gnome.Loupe.desktop";
-          "image/jpeg" = "org.gnome.Loupe.desktop";
-          "image/png" = "org.gnome.Loupe.desktop";
-          "image/webp" = "org.gnome.Loupe.desktop";
-
-          "application/pdf" = "org.gnome.Papers.desktop";
-        };
-      };
-
-      hardware.bluetooth.enable = true;
-
-      services = {
-        power-profiles-daemon.enable = true;
-        upower.enable = true;
-        gnome.gnome-keyring.enable = true;
-      };
-
-      security = {
-        polkit.enable = true;
-        pam.services.greetd.enableGnomeKeyring = true;
-
-        # Realtime scheduling for PipeWire
-        rtkit.enable = true;
-      };
-
-      programs = {
-        seahorse.enable = true;
-
-        dconf.profiles.user.databases = [
-          {
-            settings = {
-              "org/gnome/desktop/interface" = {
-                color-scheme = "prefer-dark";
-                icon-theme = "Papirus-Dark";
-              };
-              "org/gnome/nautilus/preferences" = {
-                default-sort-order = "mtime";
-              };
-            };
-          }
-        ];
-
-        bash.shellAliases = {
-          open = "xdg-open";
-          help-cards = "open ${config.my.repoRoot}/assets/information/card_functionality.png";
-          help-keyboard = "open ${config.my.repoRoot}/assets/information/keyboard_layout.png";
-          help-latex = "open ${config.my.repoRoot}/assets/information/latex_symbols.pdf";
-        };
-
-        gpu-screen-recorder = {
-          enable = true;
-          ui.enable = true;
-        };
-      };
-
       # Make apps try to use Wayland
-      environment.sessionVariables.NIXOS_OZONE_WL = 1;
+      sessionVariables.NIXOS_OZONE_WL = 1;
     };
+
+    xdg = {
+      icons.fallbackCursorThemes = [ "black" ];
+
+      mime.defaultApplications = {
+        "inode/directory" = "org.gnome.Nautilus.desktop";
+
+        "audio/flac" = "vlc.desktop";
+        "audio/mp4" = "vlc.desktop";
+        "audio/mpeg" = "vlc.desktop";
+        "audio/ogg" = "vlc.desktop";
+        "audio/wav" = "vlc.desktop";
+
+        "video/mp4" = "vlc.desktop";
+        "video/webm" = "vlc.desktop";
+        "video/quicktime" = "vlc.desktop";
+        "video/x-matroska" = "vlc.desktop";
+        "video/x-msvideo" = "vlc.desktop";
+
+        "image/bmp" = "org.gnome.Loupe.desktop";
+        "image/gif" = "org.gnome.Loupe.desktop";
+        "image/jpeg" = "org.gnome.Loupe.desktop";
+        "image/png" = "org.gnome.Loupe.desktop";
+        "image/webp" = "org.gnome.Loupe.desktop";
+
+        "application/pdf" = "org.gnome.Papers.desktop";
+      };
+    };
+
+    hardware.bluetooth.enable = true;
+
+    services = {
+      gnome.gnome-keyring.enable = true;
+      power-profiles-daemon.enable = true;
+      upower.enable = true;
+    };
+
+    security = {
+      polkit.enable = true;
+      pam.services.greetd.enableGnomeKeyring = true;
+
+      # Realtime scheduling for PipeWire
+      rtkit.enable = true;
+    };
+
+    programs = {
+      seahorse.enable = true;
+
+      dconf.profiles.user.databases = [
+        {
+          settings = {
+            "org/gnome/desktop/interface" = {
+              color-scheme = "prefer-dark";
+              icon-theme = "Papirus-Dark";
+            };
+
+            "org/gnome/nautilus/preferences" = {
+              default-sort-order = "mtime";
+            };
+          };
+        }
+      ];
+
+      bash.shellAliases = {
+        open = "xdg-open";
+        help-cards = "open ${config.my.repoRoot}/assets/information/card_functionality.png";
+        help-keyboard = "open ${config.my.repoRoot}/assets/information/keyboard_layout.png";
+        help-latex = "open ${config.my.repoRoot}/assets/information/latex_symbols.pdf";
+      };
+
+      gpu-screen-recorder = {
+        enable = true;
+        ui.enable = true;
+      };
+    };
+  };
 }

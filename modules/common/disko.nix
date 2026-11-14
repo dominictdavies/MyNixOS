@@ -1,55 +1,54 @@
 { inputs, ... }:
 {
-  flake.nixosModules.common =
-    { lib, ... }:
-    {
-      imports = [
-        inputs.disko.nixosModules.disko
-      ];
+  flake.nixosModules.common = { lib, ... }: {
+    imports = with inputs.disko.nixosModules; [ disko ];
 
-      # Declarative Disk Partitioning (https://github.com/nix-community/disko)
-      disko.devices.disk.main = {
-        type = "disk";
+    # Declarative Disk Partitioning (https://github.com/nix-community/disko)
+    disko.devices.disk.main = {
+      type = "disk";
 
-        # Only used when formatting (the install script passes the chosen disk)
-        device = lib.mkDefault "/dev/nvme0n1";
+      # Only used when formatting (the install script passes the chosen disk)
+      device = lib.mkDefault "/dev/nvme0n1";
 
-        content = {
-          type = "gpt";
-          partitions = {
-            ESP = {
-              size = "1G";
-              type = "EF00";
+      content = {
+        type = "gpt";
+
+        partitions = {
+          ESP = {
+            size = "1G";
+            type = "EF00";
+
+            content = {
+              type = "filesystem";
+              format = "vfat";
+              mountpoint = "/boot";
+              mountOptions = [
+                "dmask=0077"
+                "fmask=0077"
+              ];
+            };
+          };
+
+          luks = {
+            size = "100%";
+
+            content = {
+              type = "luks";
+              name = "cryptroot";
+              settings.allowDiscards = true;
+
+              # Only read when formatting (written by the install script)
+              passwordFile = "/tmp/disko-password";
+
               content = {
                 type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-                mountOptions = [
-                  "fmask=0077"
-                  "dmask=0077"
-                ];
-              };
-            };
-
-            luks = {
-              size = "100%";
-              content = {
-                type = "luks";
-                name = "cryptroot";
-                settings.allowDiscards = true;
-
-                # Only read when formatting (written by the install script)
-                passwordFile = "/tmp/disko-password";
-
-                content = {
-                  type = "filesystem";
-                  format = "ext4";
-                  mountpoint = "/";
-                };
+                format = "ext4";
+                mountpoint = "/";
               };
             };
           };
         };
       };
     };
+  };
 }
