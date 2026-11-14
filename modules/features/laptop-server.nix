@@ -2,7 +2,9 @@
 {
   flake.nixosModules.laptop-server = {
     imports = with inputs.nixos-hardware.nixosModules; [
-      common-cpu-intel
+      common-cpu-amd
+      common-cpu-amd-pstate
+      common-gpu-amd
       common-pc-laptop
     ];
 
