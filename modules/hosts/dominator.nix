@@ -11,7 +11,6 @@
           gaming
           graphics
           printing
-          zfs
         ];
 
         # Do not modify! (https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion)
