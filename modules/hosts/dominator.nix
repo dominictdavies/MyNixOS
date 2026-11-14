@@ -10,6 +10,7 @@
           development
           gaming
           graphics
+          nfs-client
           printing
         ];
 

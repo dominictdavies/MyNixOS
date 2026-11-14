@@ -10,6 +10,7 @@
           development
           framework
           gaming
+          nfs-client
         ];
 
         # Do not modify! (https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion)

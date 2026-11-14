@@ -7,6 +7,7 @@
         imports = with self.nixosModules; [
           common
           laptop-server
+          nfs-server
           zfs
         ];
 
