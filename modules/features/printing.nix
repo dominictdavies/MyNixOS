@@ -1,8 +1,8 @@
 {
   flake.nixosModules.printing = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
-      bambu-studio
       freecad
+      orca-slicer
     ];
 
     # Printing (https://wiki.nixos.org/wiki/Printing)

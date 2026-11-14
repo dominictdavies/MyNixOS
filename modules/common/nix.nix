@@ -1,6 +1,5 @@
 let
   unfreePackages = [
-    "bambu-studio"
     "steam"
     "steam-unwrapped"
   ];
