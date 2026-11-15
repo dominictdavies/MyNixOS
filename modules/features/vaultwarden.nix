@@ -12,7 +12,7 @@
           ROCKET_PORT = 8222;
 
           # Set to true just long enough to create the first account
-          SIGNUPS_ALLOWED = true;
+          SIGNUPS_ALLOWED = false;
         };
       };
 
