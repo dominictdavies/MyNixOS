@@ -8,6 +8,7 @@
           common
           laptop-server
           nfs-server
+          vaultwarden
           zfs
         ];
 
