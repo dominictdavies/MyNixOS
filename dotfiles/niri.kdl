@@ -380,10 +380,3 @@ layout {
     inactive-color "#666666"
   }
 }
-
-// Disable workspace shadows in the overview
-overview {
-  workspace-shadow {
-    off
-  }
-}
