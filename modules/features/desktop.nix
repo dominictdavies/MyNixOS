@@ -2,7 +2,7 @@
 {
   flake.nixosModules.desktop = { pkgs, ... }: {
     imports = with self.nixosModules; [
-      gnome
+      gnome-apps
       kitty
       niri
     ];
@@ -41,8 +41,6 @@
       icons.fallbackCursorThemes = [ "black" ];
 
       mime.defaultApplications = {
-        "inode/directory" = "org.gnome.Nautilus.desktop";
-
         "audio/flac" = "vlc.desktop";
         "audio/mp4" = "vlc.desktop";
         "audio/mpeg" = "vlc.desktop";
@@ -54,14 +52,6 @@
         "video/quicktime" = "vlc.desktop";
         "video/x-matroska" = "vlc.desktop";
         "video/x-msvideo" = "vlc.desktop";
-
-        "image/bmp" = "org.gnome.Loupe.desktop";
-        "image/gif" = "org.gnome.Loupe.desktop";
-        "image/jpeg" = "org.gnome.Loupe.desktop";
-        "image/png" = "org.gnome.Loupe.desktop";
-        "image/webp" = "org.gnome.Loupe.desktop";
-
-        "application/pdf" = "org.gnome.Papers.desktop";
       };
     };
 
@@ -75,7 +65,6 @@
 
     security = {
       polkit.enable = true;
-      pam.services.greetd.enableGnomeKeyring = true;
 
       # Realtime scheduling for PipeWire
       rtkit.enable = true;
@@ -86,15 +75,9 @@
 
       dconf.profiles.user.databases = [
         {
-          settings = {
-            "org/gnome/desktop/interface" = {
-              color-scheme = "prefer-dark";
-              icon-theme = "Papirus-Dark";
-            };
-
-            "org/gnome/nautilus/preferences" = {
-              default-sort-order = "mtime";
-            };
+          settings."org/gnome/desktop/interface" = {
+            color-scheme = "prefer-dark";
+            icon-theme = "Papirus-Dark";
           };
         }
       ];

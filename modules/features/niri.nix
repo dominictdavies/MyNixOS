@@ -16,6 +16,9 @@
       };
     };
 
+    # Unlock the GNOME keyring when logging in through greetd
+    security.pam.services.greetd.enableGnomeKeyring = true;
+
     environment = {
       sessionVariables.NIRI_CONFIG = "${my.repoRoot}/dotfiles/niri.kdl";
       systemPackages = with pkgs; [
