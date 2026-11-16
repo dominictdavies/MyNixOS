@@ -1,6 +1,8 @@
 # MyNixOS
 
-Follow [Preparation](#preparation), then [Installation](#installation) on domicile, dominator, and dominion, then every host section below in order.
+Follow [Preparation](#preparation), then [Installation](#installation) on the server, computer, and laptop, then every host section below in order.
+
+Values in angle brackets come from `my` in `modules/options.nix`, e.g. `<server>` is `my.hosts.server.name` and `<backups>` is `my.storage.backups`.
 
 ## Preparation
 
@@ -11,14 +13,14 @@ Follow [Preparation](#preparation), then [Installation](#installation) on domici
 
 1. Boot a NixOS live USB and connect to the internet
 2. Check that the hardware from `nixos-generate-config --show-hardware-config` is covered by your selected host, including its Ethernet driver (`readlink /sys/class/net/en*/device/driver`) in `modules/common/remote-unlock.nix`
-3. `sudo nix --extra-experimental-features "nix-command flakes" run --refresh github:dominictdavies/MyNixOS#install -- <host>`
+3. `sudo nix --extra-experimental-features "nix-command flakes" run --refresh github:<repo>#install -- <host>`
 4. Reboot and remove the live USB
 
 ### Keys
 
 1. `ssh-keygen`
-2. Add the public key to GitHub and `modules/common/users.nix`
-3. `git -C ~/MyNixOS remote set-url origin git@github.com:dominictdavies/MyNixOS.git`
+2. Add the public key to GitHub and `my.sshKeys`
+3. `git -C <repoRoot> remote set-url origin git@github.com:<repo>.git`
 4. Commit, push, and run `mynix-pull-switch` on the other hosts
 
 ### Tailscale
@@ -27,80 +29,80 @@ Follow [Preparation](#preparation), then [Installation](#installation) on domici
 2. `tailscale up`
 3. `tailscale status`
 4. Disable key expiry for the host in the Tailscale admin console
-5. Update the host's IP in `networking.hosts` in `modules/features/domino.nix`
-6. Set `my.tailnet` in `modules/common/options.nix` to the tailnet DNS name (`<tailnet>` below) if it differs
+5. Update the host's `tailscaleIp` in `my.hosts`
+6. Set `my.tailnet` to the tailnet DNS name (`<tailnet>`) if it differs
 7. Commit and push
 
-## Domicile
+## Server
 
 ### ZFS
 
 1. `lsblk -d -o NAME,SIZE,TRAN,MODEL,SERIAL` and `ls -l /dev/disk/by-id/` to match the four drives to their `/dev/disk/by-id/` paths
-2. `sudo zpool create -o ashift=12 -o autoexpand=on terra raidz1 <drives>`
-3. `sudo zfs create -o mountpoint=/mnt/terra -o compression=lz4 -o atime=off terra/data`
-4. `sudo chown dominictdavies:users /mnt/terra`
-5. `mkdir /mnt/terra/Backups`
+2. `sudo zpool create -o ashift=12 -o autoexpand=on <pool> raidz1 <drives>`
+3. `sudo zfs create -o mountpoint=<mountPoint> -o compression=lz4 -o atime=off <pool>/data`
+4. `sudo chown <username>:users <mountPoint>`
+5. `mkdir <backups>`
 6. Reboot
 
 ### WebDAV
 
 1. `sudo install -D -m 600 /dev/null /etc/secrets/webdav.env`
 2. Add `WEBDAV_USERNAME` and `WEBDAV_PASSWORD` to `/etc/secrets/webdav.env`
-3. `mkdir -p /mnt/terra/Backups/Super-Productivity`
+3. `mkdir -p <backups>/Super-Productivity`
 4. `sudo systemctl restart webdav`
 
 ### Vaultwarden
 
 1. Temporarily set `SIGNUPS_ALLOWED = true` in `modules/features/vaultwarden.nix` and rebuild
-2. Create an account at `https://domicile.<tailnet>`
+2. Create an account at `https://<server>.<tailnet>`
 3. Set `SIGNUPS_ALLOWED = false` and rebuild
 4. Add the WebDAV login from step 2 of [WebDAV](#webdav)
 
 To restore from a backup instead:
 
 1. `sudo systemctl stop vaultwarden`
-2. `sudo cp -a /mnt/terra/Backups/Vaultwarden/. /var/lib/vaultwarden/`
+2. `sudo cp -a <backups>/Vaultwarden/. /var/lib/vaultwarden/`
 3. `sudo chown -R vaultwarden:vaultwarden /var/lib/vaultwarden`
 4. `sudo systemctl start vaultwarden`
 
-## Dominator
+## Computer
 
 ### Bitwarden Extension
 
 1. Install the Bitwarden extension in Firefox
-2. Select "self-hosted" and log in with `https://domicile.<tailnet>`
+2. Select "self-hosted" and log in with `https://<server>.<tailnet>`
 
 ### Super Productivity
 
 1. In Settings -> Sync, select WebDAV
-2. Use the base URL `https://domicile.<tailnet>/super-productivity` and the WebDAV login from [Vaultwarden](#vaultwarden)
+2. Use the base URL `https://<server>.<tailnet>/super-productivity` and the WebDAV login from [Vaultwarden](#vaultwarden)
 
 ### Cursor
 
 1. `lxappearance`
 2. Select the "Mouse Cursor" heading
-3. Install a cursor from `~/MyNixOS/assets/cursor`
+3. Install a cursor from `<repoRoot>/assets/cursor`
 4. Apply the cursor and reboot
 
-## Dominion
+## Laptop
 
 ### Desktop
 
-1. Follow every section of [Dominator](#dominator)
+1. Follow every section of [Computer](#computer)
 
 ### Fingerprint
 
 1. `sudo fprint-enroll`
 2. `sudo fprint-verify`
 
-## Domino
+## Phone
 
 ### Nix-on-Droid
 
 1. Install the Nix-on-Droid app and complete its first-time setup with flakes enabled
-2. `nix-on-droid switch --flake github:dominictdavies/MyNixOS#domino --refresh`
+2. `nix-on-droid switch --flake github:<repo>#<phone> --refresh`
 3. Restart the app
-4. `git clone https://github.com/dominictdavies/MyNixOS.git ~/MyNixOS`
+4. `git clone https://github.com/<repo>.git <repoRoot>`
 5. Follow every step of [Keys](#keys)
 
 ### Tailscale App
@@ -118,10 +120,10 @@ To restore from a backup instead:
 ### Syncthing
 
 1. Install the Syncthing-Fork app
-2. Set `devices.domino.id` in `modules/features/syncthing.nix` to the app's device ID
-3. Commit, push, and run `mynix-pull-switch` on domicile
-4. Run `syncthing device-id --home ~/.config/syncthing` on domicile, and add domicile as a device with that ID and the address `tcp://domicile.<tailnet>:22000`
-5. Add a "Send Only" folder with the ID `aegis` for `Backups/Aegis`, shared with domicile
+2. Set `my.hosts.phone.syncthingId` to the app's device ID
+3. Commit, push, and run `mynix-pull-switch` on the server
+4. Run `syncthing device-id --home ~/.config/syncthing` on the server, and add it as a device with that ID and the address `tcp://<server>.<tailnet>:22000`
+5. Add a "Send Only" folder with the ID `aegis` for `Backups/Aegis`, shared with the server
 
 ### Bitwarden App
 

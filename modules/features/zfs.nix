@@ -1,3 +1,4 @@
+{ my, ... }:
 {
   flake.nixosModules.zfs = {
     networking.hostId = "5d0be851";
@@ -6,7 +7,7 @@
       supportedFilesystems = [ "zfs" ];
 
       zfs = {
-        extraPools = [ "terra" ];
+        extraPools = [ my.storage.pool ];
         forceImportRoot = false;
       };
     };
@@ -14,11 +15,11 @@
     services = {
       zfs.autoScrub.enable = true;
 
-      # Snapshot every dataset in terra, keeping a rolling history
+      # Snapshot every dataset in the pool, keeping a rolling history
       sanoid = {
         enable = true;
 
-        datasets.terra = {
+        datasets.${my.storage.pool} = {
           recursive = true;
           autosnap = true;
           autoprune = true;

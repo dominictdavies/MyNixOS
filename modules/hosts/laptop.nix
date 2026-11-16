@@ -1,17 +1,21 @@
-{ inputs, self, ... }:
 {
-  flake.nixosConfigurations.dominator = inputs.nixpkgs.lib.nixosSystem {
+  inputs,
+  my,
+  self,
+  ...
+}:
+{
+  flake.nixosConfigurations.${my.hosts.laptop.name} = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       {
-        networking.hostName = "dominator";
+        networking.hostName = my.hosts.laptop.name;
         imports = with self.nixosModules; [
           common
           desktop
           development
+          framework
           gaming
-          graphics
           nfs-client
-          printing
         ];
 
         # Do not modify! (https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion)

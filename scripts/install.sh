@@ -5,7 +5,9 @@
 
 set -euo pipefail
 
-repo_url="https://github.com/dominictdavies/MyNixOS.git"
+# MY_REPO, MY_REPO_ROOT, and MY_USERNAME are set from `my` in modules/install.nix
+repo_url="https://github.com/$MY_REPO.git"
+username=$MY_USERNAME
 
 die() {
     echo "error: $*" >&2
@@ -42,7 +44,6 @@ if ! disks=$(nix "${nix_args[@]}" eval --raw "$repo#nixosConfigurations.$host.co
     die "host '$host' does not exist"
 fi
 [[ $disks == "main" ]] || die "expected a single disko disk named 'main', found: $disks"
-username=$(nix "${nix_args[@]}" eval --raw "$repo#nixosConfigurations.$host.config.my.username")
 initrd_host_key=$(nix "${nix_args[@]}" eval --raw "$repo#nixosConfigurations.$host.config.boot.initrd.network.ssh.hostKeys" \
     --apply 'keys: toString (builtins.head keys)')
 
@@ -123,8 +124,8 @@ printf '%s:%s\n' "$username" "$hash" |
     nixos-enter --root /mnt -c '/nix/var/nix/profiles/system/sw/bin/chpasswd -e'
 
 # Repo in the user's home (owned by the first normal user, uid 1000)
-mkdir -p "/mnt/home/$username"
-cp -a "$repo" "/mnt/home/$username/MyNixOS"
-chown -R 1000:100 "/mnt/home/$username/MyNixOS"
+mkdir -p "$(dirname "/mnt$MY_REPO_ROOT")"
+cp -a "$repo" "/mnt$MY_REPO_ROOT"
+chown -R 1000:100 "/mnt$MY_REPO_ROOT"
 
 echo ">>> Done! Reboot and remove the USB"

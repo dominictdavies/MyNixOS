@@ -1,5 +1,6 @@
+{ my, ... }:
 {
-  flake.nixosModules.common = { config, ... }: {
+  flake.nixosModules.common = {
     # Remote Disk Unlocking (https://wiki.nixos.org/wiki/Remote_disk_unlocking)
     boot.initrd = {
       availableKernelModules = [
@@ -14,7 +15,7 @@
 
         ssh = {
           enable = true;
-          authorizedKeys = config.users.users.${config.my.username}.openssh.authorizedKeys.keys;
+          authorizedKeys = my.sshKeys;
           hostKeys = [ "/etc/secrets/initrd/ssh_host_ed25519_key" ];
         };
       };

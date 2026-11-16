@@ -1,3 +1,4 @@
+{ my, ... }:
 {
   flake.nixosModules.common = { config, ... }: {
     services = {
@@ -12,7 +13,7 @@
       tailscale = {
         enable = true;
         extraSetFlags = [
-          "--operator=${config.my.username}"
+          "--operator=${my.username}"
           "--ssh=false"
         ];
       };

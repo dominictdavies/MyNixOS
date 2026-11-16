@@ -1,6 +1,6 @@
-{ self, ... }:
+{ my, self, ... }:
 {
-  flake.nixosModules.desktop = { config, pkgs, ... }: {
+  flake.nixosModules.desktop = { pkgs, ... }: {
     imports = with self.nixosModules; [
       gnome
       kitty
@@ -101,9 +101,9 @@
 
       bash.shellAliases = {
         open = "xdg-open";
-        help-cards = "open ${config.my.repoRoot}/assets/information/card_functionality.png";
-        help-keyboard = "open ${config.my.repoRoot}/assets/information/keyboard_layout.png";
-        help-latex = "open ${config.my.repoRoot}/assets/information/latex_symbols.pdf";
+        help-cards = "open ${my.repoRoot}/assets/information/card_functionality.png";
+        help-keyboard = "open ${my.repoRoot}/assets/information/keyboard_layout.png";
+        help-latex = "open ${my.repoRoot}/assets/information/latex_symbols.pdf";
       };
 
       gpu-screen-recorder = {

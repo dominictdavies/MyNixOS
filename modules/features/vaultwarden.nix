@@ -1,11 +1,12 @@
+{ my, ... }:
 {
   flake.nixosModules.vaultwarden = { config, ... }: {
     services = {
       # Vaultwarden (https://wiki.nixos.org/wiki/Vaultwarden)
       vaultwarden = {
         enable = true;
-        domain = "${config.networking.hostName}.${config.my.tailnet}";
-        backupDir = "/mnt/terra/Backups/Vaultwarden";
+        domain = "${config.networking.hostName}.${my.tailnet}";
+        backupDir = "${my.storage.backups}/Vaultwarden";
 
         config = {
           ROCKET_ADDRESS = "127.0.0.1";
@@ -29,7 +30,7 @@
       tailscale.permitCertUid = config.services.caddy.user;
     };
 
-    # Only back up while terra is mounted, never onto the root disk
-    systemd.services.backup-vaultwarden.unitConfig.RequiresMountsFor = "/mnt/terra";
+    # Only back up while the pool is mounted, never onto the root disk
+    systemd.services.backup-vaultwarden.unitConfig.RequiresMountsFor = my.storage.mountPoint;
   };
 }

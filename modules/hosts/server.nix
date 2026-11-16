@@ -1,9 +1,14 @@
-{ inputs, self, ... }:
 {
-  flake.nixosConfigurations.domicile = inputs.nixpkgs.lib.nixosSystem {
+  inputs,
+  my,
+  self,
+  ...
+}:
+{
+  flake.nixosConfigurations.${my.hosts.server.name} = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       {
-        networking.hostName = "domicile";
+        networking.hostName = my.hosts.server.name;
         imports = with self.nixosModules; [
           common
           laptop-server

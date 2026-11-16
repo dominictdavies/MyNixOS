@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, my, ... }:
 let
   pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
 in
@@ -14,6 +14,13 @@ in
       pkgs.openssh
       pkgs.util-linux
     ];
+
+    runtimeEnv = {
+      MY_REPO = my.repo;
+      MY_REPO_ROOT = my.repoRoot;
+      MY_USERNAME = my.username;
+    };
+
     text = builtins.readFile ../scripts/install.sh;
   };
 }

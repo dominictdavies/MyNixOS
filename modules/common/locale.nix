@@ -1,6 +1,7 @@
+{ my, ... }:
 {
   flake.nixosModules.common = {
-    time.timeZone = "Australia/Perth";
-    i18n.defaultLocale = "en_AU.UTF-8";
+    time.timeZone = my.timeZone;
+    i18n.defaultLocale = my.locale;
   };
 }

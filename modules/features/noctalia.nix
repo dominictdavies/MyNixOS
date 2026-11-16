@@ -1,6 +1,6 @@
-{ inputs, ... }:
+{ inputs, my, ... }:
 {
-  flake.nixosModules.noctalia = { config, pkgs, ... }: {
+  flake.nixosModules.noctalia = { pkgs, ... }: {
     # Noctalia (https://docs.noctalia.dev/v5/configuration)
     environment = {
       systemPackages = [
@@ -10,7 +10,7 @@
         pkgs.jo
       ];
 
-      sessionVariables.NOCTALIA_CONFIG_HOME = "${config.my.repoRoot}/dotfiles/";
+      sessionVariables.NOCTALIA_CONFIG_HOME = "${my.repoRoot}/dotfiles/";
     };
   };
 }

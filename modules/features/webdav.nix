@@ -1,10 +1,11 @@
+{ my, ... }:
 {
   flake.nixosModules.webdav = { config, ... }: {
     services = {
       # Sync target for Super Productivity (https://github.com/hacdias/webdav)
       webdav = {
         enable = true;
-        user = config.my.username;
+        user = my.username;
         group = "users";
 
         # Holds WEBDAV_USERNAME and WEBDAV_PASSWORD, kept out of the Nix store
@@ -15,7 +16,7 @@
           port = 8223;
           prefix = "/super-productivity";
           behindProxy = true;
-          directory = "/mnt/terra/Backups/Super-Productivity";
+          directory = "${my.storage.backups}/Super-Productivity";
           permissions = "CRUD";
 
           users = [
@@ -31,7 +32,7 @@
       caddy = {
         enable = true;
 
-        virtualHosts."${config.networking.hostName}.${config.my.tailnet}".extraConfig = ''
+        virtualHosts."${config.networking.hostName}.${my.tailnet}".extraConfig = ''
           @webdav path ${config.services.webdav.settings.prefix} ${config.services.webdav.settings.prefix}/*
 
           handle @webdav {
@@ -44,7 +45,7 @@
       tailscale.permitCertUid = config.services.caddy.user;
     };
 
-    # Only serve while terra is mounted, never from the root disk
-    systemd.services.webdav.unitConfig.RequiresMountsFor = "/mnt/terra";
+    # Only serve while the pool is mounted, never from the root disk
+    systemd.services.webdav.unitConfig.RequiresMountsFor = my.storage.mountPoint;
   };
 }

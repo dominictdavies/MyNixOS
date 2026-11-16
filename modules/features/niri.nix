@@ -1,4 +1,4 @@
-{ self, ... }:
+{ my, self, ... }:
 {
   flake.nixosModules.niri = { config, pkgs, ... }: {
     imports = with self.nixosModules; [ noctalia ];
@@ -12,12 +12,12 @@
 
       settings.default_session = {
         command = "${config.programs.niri.package}/bin/niri-session";
-        user = config.my.username;
+        user = my.username;
       };
     };
 
     environment = {
-      sessionVariables.NIRI_CONFIG = "${config.my.repoRoot}/dotfiles/niri.kdl";
+      sessionVariables.NIRI_CONFIG = "${my.repoRoot}/dotfiles/niri.kdl";
       systemPackages = with pkgs; [
         kdePackages.breeze-icons
         xwayland-satellite

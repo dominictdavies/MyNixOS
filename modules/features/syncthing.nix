@@ -1,11 +1,12 @@
+{ my, ... }:
 {
-  flake.nixosModules.syncthing = { config, ... }: {
+  flake.nixosModules.syncthing = {
     # Syncthing (https://wiki.nixos.org/wiki/Syncthing)
     services.syncthing = {
       enable = true;
-      user = config.my.username;
+      user = my.username;
       group = "users";
-      dataDir = "/home/${config.my.username}";
+      dataDir = my.home;
       overrideDevices = true;
       overrideFolders = true;
 
@@ -18,17 +19,17 @@
           urAccepted = -1;
         };
 
-        devices.domino.id = "XMBWKYF-ARGGKN7-NGCJP2I-P7JS4NA-G2LNKQ2-CY5RCFK-QIZSGVK-YXLGSA6";
+        devices.${my.hosts.phone.name}.id = my.hosts.phone.syncthingId;
 
         folders.aegis = {
-          path = "/mnt/terra/Backups/Aegis";
-          devices = [ "domino" ];
+          path = "${my.storage.backups}/Aegis";
+          devices = [ my.hosts.phone.name ];
           type = "receiveonly";
         };
       };
     };
 
-    # Only sync while terra is mounted, never onto the root disk
-    systemd.services.syncthing.unitConfig.RequiresMountsFor = "/mnt/terra";
+    # Only sync while the pool is mounted, never onto the root disk
+    systemd.services.syncthing.unitConfig.RequiresMountsFor = my.storage.mountPoint;
   };
 }
