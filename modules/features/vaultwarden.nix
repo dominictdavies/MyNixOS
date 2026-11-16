@@ -4,7 +4,7 @@
       # Vaultwarden (https://wiki.nixos.org/wiki/Vaultwarden)
       vaultwarden = {
         enable = true;
-        domain = "${config.networking.hostName}.tailefeb39.ts.net";
+        domain = "${config.networking.hostName}.${config.my.tailnet}";
         backupDir = "/mnt/terra/Backups/Vaultwarden";
 
         config = {

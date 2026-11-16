@@ -10,6 +10,7 @@
           nfs-server
           syncthing
           vaultwarden
+          webdav
           zfs
         ];
 

@@ -12,6 +12,15 @@
 
       # The hostname is always Android's "localhost", so hardcode it in the prompt
       sessionVariables.PS1 = ''\u@domino:\w\\$ '';
+
+      # Same git identity as the NixOS hosts (modules/common/git.nix)
+      etc.gitconfig.text = ''
+        [init]
+          defaultBranch = main
+        [user]
+          name = dominictdavies
+          email = dominictdavies@gmail.com
+      '';
     };
 
     user.userName = "dominictdavies";

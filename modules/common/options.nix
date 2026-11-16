@@ -14,6 +14,13 @@
         example = "/home/alice/MyNixOS";
         description = "Absolute path to the root of MyNixOS";
       };
+
+      tailnet = lib.mkOption {
+        type = lib.types.str;
+        default = "tailefeb39.ts.net";
+        example = "tail1234.ts.net";
+        description = "Domain of the Tailscale tailnet, used for HTTPS addresses";
+      };
     };
   };
 }
