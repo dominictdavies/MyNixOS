@@ -22,6 +22,7 @@
         gpu-screen-recorder
         joplin-desktop
         lxappearance
+        qbittorrent
         scrcpy
         super-productivity
         unzip
