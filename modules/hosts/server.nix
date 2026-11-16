@@ -11,6 +11,7 @@
         networking.hostName = my.hosts.server.name;
         imports = with self.nixosModules; [
           common
+          jellyfin
           laptop-server
           nfs-server
           syncthing

@@ -65,6 +65,11 @@ To restore from a backup instead:
 3. `sudo chown -R vaultwarden:vaultwarden /var/lib/vaultwarden`
 4. `sudo systemctl start vaultwarden`
 
+### Jellyfin
+
+1. Create an admin account at `https://<server>.<tailnet>:8920` and save it in Vaultwarden
+2. Add a library for each media folder in `<mountPoint>`
+
 ## Computer
 
 ### Cursor
@@ -145,3 +150,8 @@ To restore from a backup instead:
 
 1. Install the Joplin app
 2. Follow every step of [Joplin](#joplin)
+
+### Jellyfin App
+
+1. Install the Jellyfin app
+2. Log in to `https://<server>.<tailnet>:8920` with the account from [Jellyfin](#jellyfin)
