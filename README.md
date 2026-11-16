@@ -48,7 +48,7 @@ Values in angle brackets come from `my` in `modules/options.nix`, e.g. `<server>
 
 1. `sudo install -D -m 600 /dev/null /etc/secrets/webdav.env`
 2. Add `WEBDAV_USERNAME` and `WEBDAV_PASSWORD` to `/etc/secrets/webdav.env`
-3. `mkdir -p <backups>/Super-Productivity`
+3. `mkdir -p <backups>/WebDAV/joplin`
 4. `sudo systemctl restart webdav`
 
 ### Vaultwarden
@@ -67,6 +67,13 @@ To restore from a backup instead:
 
 ## Computer
 
+### Cursor
+
+1. `lxappearance`
+2. Select the "Mouse Cursor" heading
+3. Install a cursor from `<repoRoot>/assets/cursor`
+4. Apply the cursor and reboot
+
 ### Bitwarden Extension
 
 1. Install the Bitwarden extension in Firefox
@@ -75,14 +82,13 @@ To restore from a backup instead:
 ### Super Productivity
 
 1. In Settings -> Sync, select WebDAV
-2. Use the base URL `https://<server>.<tailnet>/super-productivity` and the WebDAV login from [Vaultwarden](#vaultwarden)
+2. Use the base URL `https://<server>.<tailnet>/webdav` and the WebDAV login from [Vaultwarden](#vaultwarden), keeping the default `super-productivity` folder
 
-### Cursor
+### Joplin
 
-1. `lxappearance`
-2. Select the "Mouse Cursor" heading
-3. Install a cursor from `<repoRoot>/assets/cursor`
-4. Apply the cursor and reboot
+1. In the synchronisation settings, select WebDAV
+2. Use the URL `https://<server>.<tailnet>/webdav/joplin` and the WebDAV login from [Vaultwarden](#vaultwarden)
+3. In the encryption settings, enable encryption, or enter its password if another device already did
 
 ## Laptop
 
@@ -134,3 +140,8 @@ To restore from a backup instead:
 
 1. Install the Super Productivity app
 2. Follow every step of [Super Productivity](#super-productivity)
+
+### Joplin App
+
+1. Install the Joplin app
+2. Follow every step of [Joplin](#joplin)

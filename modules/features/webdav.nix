@@ -2,7 +2,7 @@
 {
   flake.nixosModules.webdav = { config, ... }: {
     services = {
-      # Sync target for Super Productivity (https://github.com/hacdias/webdav)
+      # Sync target for Super Productivity and Joplin, each in its own folder (https://github.com/hacdias/webdav)
       webdav = {
         enable = true;
         user = my.username;
@@ -14,9 +14,9 @@
         settings = {
           address = "127.0.0.1";
           port = 8223;
-          prefix = "/super-productivity";
+          prefix = "/webdav";
           behindProxy = true;
-          directory = "${my.storage.backups}/Super-Productivity";
+          directory = "${my.storage.backups}/WebDAV";
           permissions = "CRUD";
 
           users = [
