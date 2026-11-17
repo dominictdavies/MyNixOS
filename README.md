@@ -38,7 +38,7 @@ Values in angle brackets come from `my` in `modules/options.nix`, e.g. `<server>
 ### ZFS
 
 1. `lsblk -d -o NAME,SIZE,TRAN,MODEL,SERIAL` and `ls -l /dev/disk/by-id/` to match the four drives to their `/dev/disk/by-id/` paths
-2. `sudo zpool create -o ashift=12 -o autoexpand=on <pool> raidz1 <drives>`
+2. `sudo zpool create -o ashift=12 -o autoexpand=on -o failmode=continue <pool> raidz1 <drives>`
 3. `sudo zfs create -o mountpoint=<mountPoint> -o compression=lz4 -o atime=off <pool>/data`
 4. `sudo chown <username>:users <mountPoint>`
 5. `mkdir <backups>`
