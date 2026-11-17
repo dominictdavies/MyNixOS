@@ -6,6 +6,9 @@
     boot = {
       supportedFilesystems = [ "zfs" ];
 
+      # Drive enclosure's Realtek bridges lock up under heavy load in UAS mode
+      kernelParams = [ "usb-storage.quirks=0bda:9201:u" ];
+
       zfs = {
         extraPools = [ my.storage.pool ];
         forceImportRoot = false;
