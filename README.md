@@ -44,19 +44,11 @@ Values in angle brackets come from `my` in `modules/options.nix`, e.g. `<server>
 5. `mkdir <backups>`
 6. Reboot
 
-### WebDAV
-
-1. `sudo install -D -m 600 /dev/null /etc/secrets/webdav.env`
-2. Add `WEBDAV_USERNAME` and `WEBDAV_PASSWORD` to `/etc/secrets/webdav.env`
-3. `mkdir -p <backups>/WebDAV/joplin`
-4. `sudo systemctl restart webdav`
-
 ### Vaultwarden
 
 1. Temporarily set `SIGNUPS_ALLOWED = true` in `modules/features/vaultwarden.nix` and rebuild
 2. Create an account at `https://<server>.<tailnet>`
 3. Set `SIGNUPS_ALLOWED = false` and rebuild
-4. Add the WebDAV login from step 2 of [WebDAV](#webdav)
 
 To restore from a backup instead:
 
@@ -64,6 +56,13 @@ To restore from a backup instead:
 2. `sudo cp -a <backups>/Vaultwarden/. /var/lib/vaultwarden/`
 3. `sudo chown -R vaultwarden:vaultwarden /var/lib/vaultwarden`
 4. `sudo systemctl start vaultwarden`
+
+### WebDAV
+
+1. `sudo install -D -m 600 /dev/null /etc/secrets/webdav.env`
+2. Add `WEBDAV_USERNAME` and `WEBDAV_PASSWORD` to `/etc/secrets/webdav.env` and save them in Vaultwarden
+3. `mkdir -p <backups>/WebDAV/joplin`
+4. `sudo systemctl restart webdav`
 
 ### Jellyfin
 
@@ -87,12 +86,12 @@ To restore from a backup instead:
 ### Super Productivity
 
 1. In Settings -> Sync, select WebDAV
-2. Use the base URL `https://<server>.<tailnet>/webdav` and the WebDAV login from [Vaultwarden](#vaultwarden), keeping the default `super-productivity` folder
+2. Use the base URL `https://<server>.<tailnet>/webdav` and the login from [WebDAV](#webdav), keeping the default `super-productivity` folder
 
 ### Joplin
 
 1. In the synchronisation settings, select WebDAV
-2. Use the URL `https://<server>.<tailnet>/webdav/joplin` and the WebDAV login from [Vaultwarden](#vaultwarden)
+2. Use the URL `https://<server>.<tailnet>/webdav/joplin` and the login from [WebDAV](#webdav)
 3. In the encryption settings, enable encryption, or enter its password if another device already did
 
 ## Laptop
