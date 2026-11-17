@@ -29,11 +29,5 @@
 
       "application/pdf" = "org.gnome.Papers.desktop";
     };
-
-    programs.dconf.profiles.user.databases = [
-      {
-        settings."org/gnome/nautilus/preferences".default-sort-order = "mtime";
-      }
-    ];
   };
 }
